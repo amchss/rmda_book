@@ -18,9 +18,14 @@ Descriptive analysis is a statistical method used to summarize and describe the 
 
 Descriptive methods can be categorized into two types:
 
+:::
+
 -   Graphical Descriptive Methods
 
 -   Numerical Descriptive Methods
 
+:::{style="text-align:justify"}
+
 In the following chapters, we will describe each of these methods in detail. Let's deepen your understanding of graphical and numerical descriptive methods, as well as how to implement these techniques using R.
+
 :::

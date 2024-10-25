@@ -14,7 +14,7 @@
     "href": "descriptive_statistics.html",
     "title": "1  Descriptive Statistics",
     "section": "",
-    "text": "1.1 Goal\nThe goal of this session is to introduce the basic concepts of descriptive analysis, focusing on how to summarize and present data in meaningful ways. By the end of this chapter, students will:",
+    "text": "1.1 Goal",
     "crumbs": [
       "Statistical Methods",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Descriptive Statistics</span>"
@@ -25,7 +25,7 @@
     "href": "descriptive_statistics.html#goal",
     "title": "1  Descriptive Statistics",
     "section": "",
-    "text": "Be able to describe variables using both graphical and numerical methods",
+    "text": "The goal of this session is to introduce the basic concepts of descriptive analysis, focusing on how to summarize and present data in meaningful ways. By the end of this chapter, students will:\n\nBe able to describe variables using both graphical and numerical methods",
     "crumbs": [
       "Statistical Methods",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Descriptive Statistics</span>"
@@ -36,7 +36,7 @@
     "href": "descriptive_statistics.html#what-is-descriptive-analysis",
     "title": "1  Descriptive Statistics",
     "section": "1.2 What is Descriptive Analysis",
-    "text": "1.2 What is Descriptive Analysis\nDescriptive analysis is a statistical method used to summarize and describe the main features of a dataset. It provides a simple overview of the data, highlighting key aspects such as central tendency, variability, and distribution. This type of analysis is essential for understanding the basic characteristics of the data before applying more complex statistical methods.\nDescriptive methods can be categorized into two types:\n\nGraphical Descriptive Methods\nNumerical Descriptive Methods\n\nIn the following chapters, we will describe each of these methods in detail. Let’s deepen your understanding of graphical and numerical descriptive methods, as well as how to implement these techniques using R.",
+    "text": "1.2 What is Descriptive Analysis\n\nDescriptive analysis is a statistical method used to summarize and describe the main features of a dataset. It provides a simple overview of the data, highlighting key aspects such as central tendency, variability, and distribution. This type of analysis is essential for understanding the basic characteristics of the data before applying more complex statistical methods.\nDescriptive methods can be categorized into two types:\n\n\nGraphical Descriptive Methods\nNumerical Descriptive Methods\n\n\nIn the following chapters, we will describe each of these methods in detail. Let’s deepen your understanding of graphical and numerical descriptive methods, as well as how to implement these techniques using R.",
     "crumbs": [
       "Statistical Methods",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Descriptive Statistics</span>"
@@ -179,7 +179,7 @@
     "href": "inferential_statistics.html",
     "title": "4  Inferential Statistics",
     "section": "",
-    "text": "4.1 Population, Sample and Sampling Process\nInferential statistics operates on the fundamental idea that we can infer characteristics of a population from a carefully selected sample. Since studying an entire population is often impractical or impossible due to time, cost, or accessibility constraints, researchers rely on samples. The goal is to use the sample data to draw conclusions or make estimates about the larger population.",
+    "text": "4.1 Population, Sample and Sampling Process",
     "crumbs": [
       "Statistical Methods",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Inferential Statistics</span>"
@@ -190,7 +190,7 @@
     "href": "inferential_statistics.html#population-sample-and-sampling-process",
     "title": "4  Inferential Statistics",
     "section": "",
-    "text": "Population: This refers to the entire group of individuals or items that we are interested in studying. For example, in a medical study, the population could be all individuals with a certain medical condition.\nSample: A sample is a subset of the population that is selected for analysis. The sample must be representative of the population to ensure that the inferences made are valid. For example, selecting 500 individuals with the condition from different regions provides a sample from the larger population.\nSampling Process: The sampling process involves selecting individuals from the population in a way that ensures the sample reflects the population’s characteristics.\n\n\n\n\nImage modified from “Research Methods for the Social Sciences: An Introduction” (2020) by Valerie Sheppard.",
+    "text": "Inferential statistics operates on the fundamental idea that we can infer characteristics of a population from a carefully selected sample. Since studying an entire population is often impractical or impossible due to time, cost, or accessibility constraints, researchers rely on samples. The goal is to use the sample data to draw conclusions or make estimates about the larger population.\n\nPopulation: This refers to the entire group of individuals or items that we are interested in studying. For example, in a medical study, the population could be all individuals with a certain medical condition.\nSample: A sample is a subset of the population that is selected for analysis. The sample must be representative of the population to ensure that the inferences made are valid. For example, selecting 500 individuals with the condition from different regions provides a sample from the larger population.\nSampling Process: The sampling process involves selecting individuals from the population in a way that ensures the sample reflects the population’s characteristics.\n\n\n\n\n\nImage modified from “Research Methods for the Social Sciences: An Introduction” (2020) by Valerie Sheppard.",
     "crumbs": [
       "Statistical Methods",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Inferential Statistics</span>"
@@ -201,7 +201,7 @@
     "href": "inferential_statistics.html#focus-areas",
     "title": "4  Inferential Statistics",
     "section": "4.2 Focus Areas",
-    "text": "4.2 Focus Areas\nIn following chapters, we are focusing on three key areas of inferential statistics:\n\nHypothesis Testing\nInterval Estimation\nRegression Analysis\n\nEach of these areas plays a crucial role in understanding and applying inferential methods effectively. We will also explore how to implement these concepts using R, providing you with practical tools to analyze data and draw meaningful conclusions.",
+    "text": "4.2 Focus Areas\n\nIn following chapters, we are focusing on three key areas of inferential statistics:\n\nHypothesis Testing\nInterval Estimation\nRegression Analysis\n\nEach of these areas plays a crucial role in understanding and applying inferential methods effectively. We will also explore how to implement these concepts using R, providing you with practical tools to analyze data and draw meaningful conclusions.",
     "crumbs": [
       "Statistical Methods",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Inferential Statistics</span>"
