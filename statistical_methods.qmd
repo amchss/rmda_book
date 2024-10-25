@@ -1,5 +1,7 @@
 # Statistical Methods
 
+:::{style="text-align:justify"}
+
 Welcome to the session on Statistical Methods! The goal of this session is to help you understand the fundamental concepts of biostatistics and the different types of variables used in data analysis. By the end of this session, you will be familiar with these concepts and ready to explore the two key branches of statistics: descriptive and inferential.
 
 By the end of this chapter, students will:
@@ -10,9 +12,13 @@ By the end of this chapter, students will:
 
 -   Be able to differentiate between the two major parts of statistics: descriptive and inferential analysis
 
+:::
+
 ## Introduction to Biostatistics and Types of Variables
 
 ### Biostatistics
+
+:::{style="text-align:justify"}
 
 **Biostatistics** is the application of statistical methods to biological and medical data. It helps clinicians make informed decisions based on data collected from clinical trials, observational studies, and patient records.
 
@@ -22,7 +28,11 @@ If, as we observe a characteristic, we find that it takes on different values in
 
 For example, if we are observing the characteristic'height' in a group of people, we will notice that height varies from person to person. Therefore, height is a variable.
 
+:::
+
 ### Types of Variables
+
+:::{style="text-align:justify"}
 
 Variables are essential in data analysis and are categorized into four types:
 
@@ -36,7 +46,11 @@ Variables are essential in data analysis and are categorized into four types:
 
 -   **Continuous Variables**: Numerical variables that can take any value within a range (e.g., patient weight, height).
 
+:::
+
 ### Two Major Parts of Statistics
+
+:::{style="text-align:justify"}
 
 Statistics is divided into two main areas:
 
@@ -45,3 +59,5 @@ Statistics is divided into two main areas:
 2.  **Inferential Statistics**: Making predictions or inferences about a population based on a sample.
 
 Explore the following chapters to deepen your understanding of descriptive and inferential statistical methods, as well as how to implement these techniques using R.
+
+:::
