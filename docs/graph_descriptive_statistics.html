@@ -249,7 +249,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div style="text-align:justify">
 <p>Graphical methods are crucial for understanding data at a glance. Depending on the number and type of variables, we use different graphical techniques. The graphical methods provided here are just some of the available methods for data visualization. There are many others that can be explored in more detail later. This is intended to be a basic introduction to help you get started.</p>
+</div>
 <section id="graphical-methods-for-a-single-variable" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="graphical-methods-for-a-single-variable"><span class="header-section-number">2.1</span> Graphical Methods for a Single Variable</h2>
 <table class="caption-top table">
@@ -330,6 +332,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-visualization-using-r-introduction-to-grammar-of-graphics" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="data-visualization-using-r-introduction-to-grammar-of-graphics"><span class="header-section-number">2.3</span> Data Visualization Using R: Introduction to Grammar of Graphics</h2>
+<div style="text-align:justify">
 <p>Data visualization in R can be effectively done using the <code>ggplot2</code> package, which is included in the popular <code>tidyverse</code> collection of R packages. <code>ggplot2</code> is based on the <strong>Grammar of Graphics</strong>, a structured approach that allows you to build plots layer by layer. This grammar provides a framework for describing and creating visualizations by combining different graphical elements. The idea is that any plot can be constructed by breaking it down into components.</p>
 <p>The visualisation using <code>ggplot2</code> package, which follows the philosophy of grammar of graphics, breaks down a plot into several components:</p>
 <ul>
@@ -372,8 +375,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>This will simply give you a blank plot. You then need to add layers to specify what the plot will contain.</p>
 </section>
+</div>
 <section id="aesthetics-aes" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="aesthetics-aes">Aesthetics (aes)</h4>
+<div style="text-align:justify">
 <p>Aesthetic mappings define how data is mapped to visual properties. They include properties such as:</p>
 <ul>
 <li><p>x and y axes: Mapped to variables in your data.</p></li>
@@ -393,9 +398,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>In this example, <code>height</code> is mapped to the x-axis and <code>weight</code> to the y-axis</p>
+</div>
 </section>
 <section id="layers-in-ggplot2" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="layers-in-ggplot2">Layers in <code>ggplot2</code></h4>
+<div style="text-align:justify">
 <p>The power of <code>ggplot2</code> lies in its layering system. After creating the base plot with <code>ggplot()</code>, you can add multiple layers.</p>
 <p>You add these layers using the + operator</p>
 <p>For Example:</p>
@@ -426,13 +433,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Each layer builds on the previous one, progressively adding more information to the visualization.</p>
 <p><strong><em>Note</em></strong></p>
 <p>Every geometric layer starts with <code>geom_</code> in ggplot2.</p>
+</div>
 </section>
 </section>
 <section id="visualising-a-single-variable-using-r" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="visualising-a-single-variable-using-r"><span class="header-section-number">2.4</span> Visualising a Single Variable using R</h2>
+<div style="text-align:justify">
 <p>Graphical methods are essential for summarizing and understanding the distribution of a single variable. In this section, we will explore different types of plots for visualizing one variable, based on its type (nominal, ordinal, discrete, or continuous). The key graphical methods include bar charts, boxplots, histograms, and density plots.</p>
+</div>
 <section id="bar-chart" class="level3" data-number="2.4.1">
 <h3 data-number="2.4.1" class="anchored" data-anchor-id="bar-chart"><span class="header-section-number">2.4.1</span> Bar Chart</h3>
+<div style="text-align:justify">
 <p>A <strong>bar chart</strong> is used to represent categorical data (nominal or ordinal). Each bar represents the frequency (or count) of a category. It’s commonly used for visualizing nominal variables like gender or education level.</p>
 <p>Example:</p>
 <div class="cell">
@@ -452,9 +463,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="boxplot" class="level3" data-number="2.4.2">
 <h3 data-number="2.4.2" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">2.4.2</span> Boxplot</h3>
+<div style="text-align:justify">
 <p>A boxplot is used to represent the distribution of a continuous variable. It shows the median, quartiles, and potential outliers.</p>
 <p>Example:</p>
 <div class="cell">
@@ -474,9 +487,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="histogram" class="level3" data-number="2.4.3">
 <h3 data-number="2.4.3" class="anchored" data-anchor-id="histogram"><span class="header-section-number">2.4.3</span> Histogram</h3>
+<div style="text-align:justify">
 <p>A histogram is used to visualize the distribution of a continuous variable by dividing the data into bins and counting the number of observations in each bin. It’s useful for understanding the shape, spread, and central tendency of continuous variables like age or income.</p>
 <p>Example:</p>
 <div class="cell">
@@ -522,9 +537,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="density-plot" class="level3" data-number="2.4.4">
 <h3 data-number="2.4.4" class="anchored" data-anchor-id="density-plot"><span class="header-section-number">2.4.4</span> Density Plot</h3>
+<div style="text-align:justify">
 <p>A density plot is a smoothed version of a histogram, used for continuous data. It provides an estimate of the probability distribution of a continuous variable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Density plot example for a continuous variable</span></span>
@@ -570,9 +587,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="combining-multiple-geometries-overlaying-histogram-and-density-plot" class="level3" data-number="2.4.5">
 <h3 data-number="2.4.5" class="anchored" data-anchor-id="combining-multiple-geometries-overlaying-histogram-and-density-plot"><span class="header-section-number">2.4.5</span> Combining Multiple Geometries: Overlaying Histogram and Density Plot</h3>
+<div style="text-align:justify">
 <p>One of the strengths of <code>ggplot2</code> is its ability to add multiple geometric shapes (geoms) to a single plot. For example, you can overlay a <strong>density plot</strong> on top of a <strong>histogram</strong> to visualize both the frequency distribution and the smoothed probability distribution of a continuous variable in a single canvas.</p>
 <p>Example: Histogram and Density Plot Together</p>
 <div class="cell">
@@ -619,13 +638,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</div>
 </section>
 </section>
 <section id="visualising-two-variables-using-r" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="visualising-two-variables-using-r"><span class="header-section-number">2.5</span> Visualising Two Variables using R</h2>
+<div style="text-align:justify">
 <p>When working with two variables, visualizing the relationship between them helps reveal patterns, associations, or differences. The appropriate plot depends on the types of variables involved (categorical, continuous, or a combination). In this section, we will explore different graphical methods for visualizing two variables: stacked bar charts, grouped bar charts, scatter plots, box plots by category, and regression lines with standard error.</p>
+</div>
 <section id="stacked-bar-chart" class="level3" data-number="2.5.1">
 <h3 data-number="2.5.1" class="anchored" data-anchor-id="stacked-bar-chart"><span class="header-section-number">2.5.1</span> Stacked Bar Chart</h3>
+<div style="text-align:justify">
 <p>A <strong>stacked bar chart</strong> is used when both variables are categorical. It displays the distribution of one variable while stacking the bars based on the categories of the second variable.</p>
 <p>Example:</p>
 <div class="cell">
@@ -642,9 +665,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="grouped-bar-chart" class="level3" data-number="2.5.2">
 <h3 data-number="2.5.2" class="anchored" data-anchor-id="grouped-bar-chart"><span class="header-section-number">2.5.2</span> Grouped Bar Chart</h3>
+<div style="text-align:justify">
 <p>A grouped bar chart is another option for visualizing two categorical variables. Instead of stacking the bars, it places bars for each category side-by-side, allowing for a clearer comparison between categories.</p>
 <p>Example:</p>
 <div class="cell">
@@ -662,9 +687,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="scatter-plot" class="level3" data-number="2.5.3">
 <h3 data-number="2.5.3" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">2.5.3</span> Scatter Plot</h3>
+<div style="text-align:justify">
 <p>A scatter plot is used to visualize the relationship between two continuous variables. Each point on the plot represents an observation, and patterns like clusters, trends, or outliers can be detected.</p>
 <p>Example:</p>
 <div class="cell">
@@ -685,9 +712,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="box-plot-by-category" class="level3" data-number="2.5.4">
 <h3 data-number="2.5.4" class="anchored" data-anchor-id="box-plot-by-category"><span class="header-section-number">2.5.4</span> Box Plot by Category</h3>
+<div style="text-align:justify">
 <p>A box plot by category is useful when comparing the distribution of a continuous variable across different categories of a categorical variable. It shows the median, quartiles, and potential outliers within each category.</p>
 <p>Example:</p>
 <div class="cell">
@@ -708,9 +737,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="combining-multiple-geometries-scatter-plot-with-regression-line" class="level3" data-number="2.5.5">
 <h3 data-number="2.5.5" class="anchored" data-anchor-id="combining-multiple-geometries-scatter-plot-with-regression-line"><span class="header-section-number">2.5.5</span> Combining Multiple Geometries: Scatter Plot with Regression Line</h3>
+<div style="text-align:justify">
 <p>A scatter plot with a regression line helps visualize the relationship between two continuous variables. Adding a regression line shows the trend, while the standard error (SE) band around the line indicates the uncertainty in the estimate of the relationship.</p>
 <p>While regression is an inferential method (used for making predictions or understanding relationships), the purpose of this example is to demonstrate how multiple geometries can be combined when visualizing two variables.</p>
 <p>Example:</p>
@@ -754,13 +785,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</div>
 </section>
 </section>
 <section id="visualizing-three-variables-using-r" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="visualizing-three-variables-using-r"><span class="header-section-number">2.6</span> Visualizing Three Variables using R</h2>
+<div style="text-align:justify">
 <p>When working with three variables, we can extend basic plots like scatter plots by adding a third variable as an aesthetic element such as color or fill. This allows us to represent more dimensions of the data in a single plot. One common approach is to use <strong>color</strong> to represent a categorical or continuous variable in a scatter plot.</p>
 <p>Example: Scatter Plot with Color for a Third Variable</p>
 <p>In this example, we’ll create a scatter plot of two continuous variables and use color to represent a third categorical variable. This can help identify patterns or groupings based on the third variable.</p>
+</div>
 <section id="example" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="example">Example</h4>
 <div class="cell">
@@ -812,6 +846,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="visualizing-four-variables-using-r" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="visualizing-four-variables-using-r"><span class="header-section-number">2.7</span> Visualizing Four Variables using R</h2>
+<div style="text-align:justify">
 <p>To visualize four variables, we can use a combination of <strong>color</strong> (or fill) for the third variable and <strong>facet wrapping</strong> for the fourth variable. Facet wrapping creates a series of smaller plots based on the levels of a categorical variable, allowing us to compare the relationships across different subgroups.</p>
 <p>Example: Scatter Plot with Color and Facet Wrap</p>
 <p>In this example, we’ll use a scatter plot with color representing a third variable, and facet wrapping to display different plots for each level of the fourth variable.</p>
@@ -834,6 +869,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figure class="figure">
 <p><img src="graph_descriptive_statistics_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
+</div>
 </div>
 </div>
 </div>

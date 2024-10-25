@@ -246,6 +246,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div style="text-align:justify">
 <p>Welcome to the world of numerical descriptive methods! These techniques are your go-to tools for exploring data and understanding key concepts like distribution, central tendency, and variability. Think of them as helpful signs that guide you in figuring out how your data works.</p>
 <p>These methods can be broadly categorized into two key areas: <a href="https://www.nios.ac.in/media/documents/SecMathcour/Eng/Chapter-25.pdf">measures of central tendency</a> and <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3198538/">measures of dispersion</a>. Both are crucial for painting a comprehensive picture of your data. However, we won’t be diving too deeply into these measures in this section; you can read more about them through the provided links. Instead, let’s consider something important: the choice of summary measures depends on the type of variable you’re working with. Whether you’re dealing with categorical variables (like nominal and ordinal data) or numeric variables (which can be discrete or continuous), different summary statistics come into play.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -254,15 +255,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption>Image by pikisuperstar on Freepik</figcaption>
 </figure>
 </div>
+</div>
 <p><br></p>
 <section id="types-of-variables-and-summary-measures" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="types-of-variables-and-summary-measures"><span class="header-section-number">3.1</span> Types of Variables and Summary Measures</h2>
+<div style="text-align:justify">
 <p>So, what exactly should you use when analyzing your data? Let’s break it down!</p>
+</div>
 <section id="numerical-methods-for-a-single-variable" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="numerical-methods-for-a-single-variable"><span class="header-section-number">3.1.1</span> Numerical Methods for a Single Variable</h3>
+<div style="text-align:justify">
 <p>When you’re focusing on just one variable, numerical methods allow you to summarize and analyze your data through various statistical measures. For numeric variables, you can explore measures of central tendency like the mean, median, and mode. These give you a glimpse into the typical values of your dataset. But that’s not all—measures of dispersion, such as standard deviation, variance, and range, tell you how spread out your data is.</p>
 <p>And don’t forget about categorical variables! For nominal and ordinal data, you can utilize frequency, proportion, and percentage to get a clearer picture of your dataset.</p>
 <p>Here’s a handy table to summarize the types of variables and their corresponding summary measures:</p>
+</div>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 41%">
@@ -290,9 +296,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="numerical-methods-for-two-variable" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="numerical-methods-for-two-variable"><span class="header-section-number">3.1.2</span> Numerical Methods for Two Variable</h3>
+<div style="text-align:justify">
 <p>When you’re analyzing two variables, the methods you choose will depend on the types of variables involved. If you’re working with categorical variables, like nominal and ordinal, you might find yourself comparing frequencies or proportions.</p>
 <p>But when numeric variables enter the equation, you’ve got a whole new set of tools at your disposal. Think correlation and comparing means—these methods help you uncover relationships and differences between the variables, bringing you closer to understanding the data dynamics at play.</p>
 <p>Here’s a breakdown of some of the choices available to you:</p>
+</div>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 31%">
@@ -335,12 +343,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="numerical-methods-for-a-single-variable-using-r" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="numerical-methods-for-a-single-variable-using-r"><span class="header-section-number">3.2</span> Numerical Methods for a Single Variable using R</h2>
+<div style="text-align:justify">
 <p>As we mentioned earlier, there are various ways to describe variables based on their types. In this section, we’ll explore how to describe different variables using R. First, we’ll look at numerical variables (both discrete and continuous), and then we’ll dive into categorical variables (nominal and ordinal).</p>
+</div>
 <section id="describing-a-single-numerical-discrete-categorical-variable-using-r" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="describing-a-single-numerical-discrete-categorical-variable-using-r"><span class="header-section-number">3.2.1</span> Describing a Single Numerical (Discrete / Categorical) Variable using R</h3>
+<div style="text-align:justify">
 <p>Now, let’s explore how to describe numerical variables. We can use various measures, including mean, median, range, standard deviation, interquartile range, and percentiles.</p>
+</div>
 <section id="mean" class="level4" data-number="3.2.1.1">
 <h4 data-number="3.2.1.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">3.2.1.1</span> Mean</h4>
+<div style="text-align:justify">
 <p>The mean is the average of all the data points.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean</span></span>
@@ -390,10 +403,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>By adding this small argument, you’ll get the correct mean without being tripped up by missing data!</p>
+</div>
 <p><br></p>
 </section>
 <section id="median" class="level4" data-number="3.2.1.2">
 <h4 data-number="3.2.1.2" class="anchored" data-anchor-id="median"><span class="header-section-number">3.2.1.2</span> Median</h4>
+<div style="text-align:justify">
 <p>The median is the middle value when the data is ordered.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the median</span></span>
@@ -416,9 +431,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Try finding median using <code>pull</code> function from the <code>dplyr</code> package.</p>
 <p><br></p>
+</div>
 </section>
 <section id="range" class="level4" data-number="3.2.1.3">
 <h4 data-number="3.2.1.3" class="anchored" data-anchor-id="range"><span class="header-section-number">3.2.1.3</span> Range</h4>
+<div style="text-align:justify">
 <p>The range is the difference between the maximum and minimum values.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the range</span></span>
@@ -455,10 +472,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] 0</code></pre>
 </div>
 </div>
+</div>
 <p><br></p>
 </section>
 <section id="standard-deviation" class="level4" data-number="3.2.1.4">
 <h4 data-number="3.2.1.4" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">3.2.1.4</span> Standard Deviation</h4>
+<div style="text-align:justify">
 <p>Standard deviation measures the amount of variation or dispersion in a variable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the standard deviation</span></span>
@@ -470,10 +489,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(height) <span class="sc">|&gt;</span> </span>
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sd</span>(<span class="at">na.rm =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <p><br></p>
 </section>
 <section id="percentiles" class="level4" data-number="3.2.1.5">
 <h4 data-number="3.2.1.5" class="anchored" data-anchor-id="percentiles"><span class="header-section-number">3.2.1.5</span> Percentiles</h4>
+<div style="text-align:justify">
 <p>Percentiles indicate the relative standing of a value within the dataset.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate specific percentiles (e.g., 25th and 75th percentiles)</span></span>
@@ -501,9 +522,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><br></p>
+</div>
 </section>
 <section id="inter-quartile-range" class="level4" data-number="3.2.1.6">
 <h4 data-number="3.2.1.6" class="anchored" data-anchor-id="inter-quartile-range"><span class="header-section-number">3.2.1.6</span> Inter Quartile Range</h4>
+<div style="text-align:justify">
 <p>The IQR is the range between the 25th percentile (Q1) and the 75th percentile (Q3).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the IQR</span></span>
@@ -534,9 +557,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  37 </code></pre>
 </div>
 </div>
+</div>
 </section>
 <section id="combining-multiple-summary-measures" class="level4" data-number="3.2.1.7">
 <h4 data-number="3.2.1.7" class="anchored" data-anchor-id="combining-multiple-summary-measures"><span class="header-section-number">3.2.1.7</span> Combining Multiple Summary Measures</h4>
+<div style="text-align:justify">
 <p>If you want to combine multiple measures as a single outcome, it is also possible.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> </span>
@@ -556,15 +581,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><br></p>
+</div>
 </section>
 </section>
 <section id="describing-a-single-categorical-nominal-ordinal-variable-using-r" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="describing-a-single-categorical-nominal-ordinal-variable-using-r"><span class="header-section-number">3.2.2</span> Describing a Single Categorical (Nominal / Ordinal) Variable using R</h3>
+<div style="text-align:justify">
 <p>Now let’s dive into categorical variables! When working with categorical data, we often summarize it using frequencies (how often each category appears), percentages (what proportion of the total each category makes up), and cumulative percentages (the running total of those percentages). Let’s explore how to do all of this in a tidy way using R.</p>
 <p>We’ll continue working with the NHANES dataset to see this in action.</p>
 <p><br></p>
+</div>
 <section id="frequency" class="level4" data-number="3.2.2.1">
 <h4 data-number="3.2.2.1" class="anchored" data-anchor-id="frequency"><span class="header-section-number">3.2.2.1</span> Frequency</h4>
+<div style="text-align:justify">
 <p>Frequency tells us how many times each category appears in the data. Let’s calculate the frequency for the income variable (<code>hh_income</code>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the frequency of each category in 'hh_income'</span></span>
@@ -592,10 +621,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 13  &lt;NA&gt;           811</code></pre>
 </div>
 </div>
+</div>
 <p><br></p>
 </section>
 <section id="percent" class="level4" data-number="3.2.2.2">
 <h4 data-number="3.2.2.2" class="anchored" data-anchor-id="percent"><span class="header-section-number">3.2.2.2</span> Percent</h4>
+<div style="text-align:justify">
 <p>Next, we’ll calculate the percentage for each category, which shows the relative proportion of each category within the dataset.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the percentage for each category in 'hh_income'</span></span>
@@ -625,9 +656,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><br></p>
+</div>
 </section>
 <section id="cumulative-percent" class="level4" data-number="3.2.2.3">
 <h4 data-number="3.2.2.3" class="anchored" data-anchor-id="cumulative-percent"><span class="header-section-number">3.2.2.3</span> Cumulative Percent</h4>
+<div style="text-align:justify">
 <p>Cumulative percent shows the running total of percentages, which can help understand the distribution across categories as you move through them.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate cumulative percentage for 'hh_income'</span></span>
@@ -657,10 +690,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 13  &lt;NA&gt;           811    8.11             100   </code></pre>
 </div>
 </div>
+</div>
 </section>
 </section>
 <section id="publication-ready-tables" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="publication-ready-tables"><span class="header-section-number">3.2.3</span> Publication Ready Tables</h3>
+<div style="text-align:justify">
 <p>To create publication-ready tables, you can use the <code>gtsummary</code> package in R. Here’s an example of how to generate a summary table for a single variable dataset:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install and load the gtsummary package if not already installed</span></span>
@@ -681,23 +716,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the table</span></span>
 <span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>summary_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="sxqeilmtgz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#sxqeilmtgz table {
+<div id="qkigvccohl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qkigvccohl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#sxqeilmtgz thead, #sxqeilmtgz tbody, #sxqeilmtgz tfoot, #sxqeilmtgz tr, #sxqeilmtgz td, #sxqeilmtgz th {
+#qkigvccohl thead, #qkigvccohl tbody, #qkigvccohl tfoot, #qkigvccohl tr, #qkigvccohl td, #qkigvccohl th {
   border-style: none;
 }
 
-#sxqeilmtgz p {
+#qkigvccohl p {
   margin: 0;
   padding: 0;
 }
 
-#sxqeilmtgz .gt_table {
+#qkigvccohl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -723,12 +758,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#sxqeilmtgz .gt_caption {
+#qkigvccohl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#sxqeilmtgz .gt_title {
+#qkigvccohl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -740,7 +775,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#sxqeilmtgz .gt_subtitle {
+#qkigvccohl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -752,7 +787,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#sxqeilmtgz .gt_heading {
+#qkigvccohl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -764,13 +799,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#sxqeilmtgz .gt_bottom_border {
+#qkigvccohl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#sxqeilmtgz .gt_col_headings {
+#qkigvccohl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -785,7 +820,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#sxqeilmtgz .gt_col_heading {
+#qkigvccohl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -805,7 +840,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#sxqeilmtgz .gt_column_spanner_outer {
+#qkigvccohl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -817,15 +852,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#sxqeilmtgz .gt_column_spanner_outer:first-child {
+#qkigvccohl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sxqeilmtgz .gt_column_spanner_outer:last-child {
+#qkigvccohl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sxqeilmtgz .gt_column_spanner {
+#qkigvccohl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -837,11 +872,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#sxqeilmtgz .gt_spanner_row {
+#qkigvccohl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#sxqeilmtgz .gt_group_heading {
+#qkigvccohl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -867,7 +902,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#sxqeilmtgz .gt_empty_group_heading {
+#qkigvccohl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -882,15 +917,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#sxqeilmtgz .gt_from_md > :first-child {
+#qkigvccohl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#sxqeilmtgz .gt_from_md > :last-child {
+#qkigvccohl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#sxqeilmtgz .gt_row {
+#qkigvccohl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -909,7 +944,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#sxqeilmtgz .gt_stub {
+#qkigvccohl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -922,7 +957,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#sxqeilmtgz .gt_stub_row_group {
+#qkigvccohl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -936,15 +971,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#sxqeilmtgz .gt_row_group_first td {
+#qkigvccohl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#sxqeilmtgz .gt_row_group_first th {
+#qkigvccohl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#sxqeilmtgz .gt_summary_row {
+#qkigvccohl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -954,16 +989,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#sxqeilmtgz .gt_first_summary_row {
+#qkigvccohl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#sxqeilmtgz .gt_first_summary_row.thick {
+#qkigvccohl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#sxqeilmtgz .gt_last_summary_row {
+#qkigvccohl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -973,7 +1008,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#sxqeilmtgz .gt_grand_summary_row {
+#qkigvccohl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -983,7 +1018,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#sxqeilmtgz .gt_first_grand_summary_row {
+#qkigvccohl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -993,7 +1028,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#sxqeilmtgz .gt_last_grand_summary_row_top {
+#qkigvccohl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1003,11 +1038,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#sxqeilmtgz .gt_striped {
+#qkigvccohl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#sxqeilmtgz .gt_table_body {
+#qkigvccohl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1016,7 +1051,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#sxqeilmtgz .gt_footnotes {
+#qkigvccohl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1030,7 +1065,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#sxqeilmtgz .gt_footnote {
+#qkigvccohl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1039,7 +1074,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#sxqeilmtgz .gt_sourcenotes {
+#qkigvccohl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1053,7 +1088,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#sxqeilmtgz .gt_sourcenote {
+#qkigvccohl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1061,63 +1096,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#sxqeilmtgz .gt_left {
+#qkigvccohl .gt_left {
   text-align: left;
 }
 
-#sxqeilmtgz .gt_center {
+#qkigvccohl .gt_center {
   text-align: center;
 }
 
-#sxqeilmtgz .gt_right {
+#qkigvccohl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sxqeilmtgz .gt_font_normal {
+#qkigvccohl .gt_font_normal {
   font-weight: normal;
 }
 
-#sxqeilmtgz .gt_font_bold {
+#qkigvccohl .gt_font_bold {
   font-weight: bold;
 }
 
-#sxqeilmtgz .gt_font_italic {
+#qkigvccohl .gt_font_italic {
   font-style: italic;
 }
 
-#sxqeilmtgz .gt_super {
+#qkigvccohl .gt_super {
   font-size: 65%;
 }
 
-#sxqeilmtgz .gt_footnote_marks {
+#qkigvccohl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#sxqeilmtgz .gt_asterisk {
+#qkigvccohl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#sxqeilmtgz .gt_indent_1 {
+#qkigvccohl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#sxqeilmtgz .gt_indent_2 {
+#qkigvccohl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#sxqeilmtgz .gt_indent_3 {
+#qkigvccohl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#sxqeilmtgz .gt_indent_4 {
+#qkigvccohl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#sxqeilmtgz .gt_indent_5 {
+#qkigvccohl .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1196,21 +1231,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Try <code>df |&gt; tbl_summary</code> without selecting variables.</p>
+</div>
 </section>
 </section>
 <section id="numerical-methods-for-two-variables-using-r" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="numerical-methods-for-two-variables-using-r"><span class="header-section-number">3.3</span> Numerical Methods for Two Variables using R</h2>
+<div style="text-align:justify">
 <p>In this section, we’ll dive into how to describe relationships between two variables using R. Depending on the types of variables—categorical or numeric—the methods vary. We’ll cover three main scenarios:</p>
 <ul>
 <li><p>Two categorical variables</p></li>
 <li><p>Two numeric variables</p></li>
 <li><p>One categorical and one numeric variable</p></li>
 </ul>
+</div>
 <section id="two-categorical-variables" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="two-categorical-variables"><span class="header-section-number">3.3.1</span> Two Categorical Variables</h3>
+<div style="text-align:justify">
 <p>When working with two categorical variables, one of the most common ways to analyze the relationship between them is by using cross-tabulation.</p>
 <p>Cross-tabulation creates a <strong>contingency table</strong> that shows the frequency distribution for each combination of categories.</p>
 <p>Let’s use the <code>gender</code> and <code>race1</code> variables in the NHANES dataset to explore this.</p>
+</div>
 <section id="cross-tabulation" class="level4" data-number="3.3.1.1">
 <h4 data-number="3.3.1.1" class="anchored" data-anchor-id="cross-tabulation"><span class="header-section-number">3.3.1.1</span> Cross-Tabulation</h4>
 <div class="cell">
@@ -1235,7 +1275,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 10 male   Other      393</code></pre>
 </div>
 </div>
+<div style="text-align:justify">
 <p>This table shows how the categories of gender and race1 are distributed across each other. But to make this even more informative, let’s add percentages.</p>
+</div>
 </section>
 <section id="cross-tabulation-with-percentages" class="level4" data-number="3.3.1.2">
 <h4 data-number="3.3.1.2" class="anchored" data-anchor-id="cross-tabulation-with-percentages"><span class="header-section-number">3.3.1.2</span> Cross-Tabulation with Percentages</h4>
@@ -1264,14 +1306,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 10 male   Other      393    7.89</code></pre>
 </div>
 </div>
+<div style="text-align:justify">
 <p>This output gives us a clearer picture of the relationship between the two categorical variables by showing the percentage of each race within each gender group.</p>
+</div>
 </section>
 </section>
 <section id="two-numeric-variables" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="two-numeric-variables"><span class="header-section-number">3.3.2</span> Two Numeric Variables</h3>
+<div style="text-align:justify">
 <p>When both variables are numeric, we can correlation to explore the relationship between them.</p>
+</div>
 <section id="correlation" class="level4" data-number="3.3.2.1">
 <h4 data-number="3.3.2.1" class="anchored" data-anchor-id="correlation"><span class="header-section-number">3.3.2.1</span> Correlation</h4>
+<div style="text-align:justify">
 <p>Correlation measures the strength and direction of the linear relationship between two numeric variables. The most common measure is Pearson’s correlation coefficient.</p>
 <p>Let’s calculate the correlation between <code>height</code> and <code>weight</code>.</p>
 <div class="cell">
@@ -1298,13 +1345,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Here, <code>use = "complete.obs"</code> ensures that rows with missing values (NA) are ignored during the correlation calculation, just like <code>na.rm = TRUE</code> would do.</p>
+</div>
 </section>
 </section>
 <section id="one-categorical-and-one-numeric-variables" class="level3" data-number="3.3.3">
 <h3 data-number="3.3.3" class="anchored" data-anchor-id="one-categorical-and-one-numeric-variables"><span class="header-section-number">3.3.3</span> One categorical and One Numeric Variables</h3>
+<div style="text-align:justify">
 <p>When you have one categorical and one numeric variable, you’re often interested in comparing the distribution of the numeric variable across different categories. Group-wise summaries and box plots are common methods for this.</p>
 <p>Let’s look at the relationship between gender (categorical) and height (numeric).</p>
 <p>Group-Wise Summaries We can calculate summary statistics (like mean and median) for height within each gender category.</p>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group-wise summary of height by gender</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
@@ -1326,6 +1376,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="publication-ready-tables-for-two-variables" class="level3" data-number="3.3.4">
 <h3 data-number="3.3.4" class="anchored" data-anchor-id="publication-ready-tables-for-two-variables"><span class="header-section-number">3.3.4</span> Publication Ready Tables for Two Variables</h3>
+<div style="text-align:justify">
 <p>When you need to present results in a polished, publication-ready format, the gtsummary package in R is an excellent tool. It allows you to easily create clean, professional tables summarizing relationships between two variables. Below is an example of how you can use gtsummary to generate a table for a two-variable analysis, showcasing how your results can be made ready for publication.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a publication-ready table for two categorical variables</span></span>
@@ -1337,23 +1388,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the table</span></span>
 <span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>table_cat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="mwgnxxceja" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mwgnxxceja table {
+<div id="gzqjupailq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gzqjupailq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mwgnxxceja thead, #mwgnxxceja tbody, #mwgnxxceja tfoot, #mwgnxxceja tr, #mwgnxxceja td, #mwgnxxceja th {
+#gzqjupailq thead, #gzqjupailq tbody, #gzqjupailq tfoot, #gzqjupailq tr, #gzqjupailq td, #gzqjupailq th {
   border-style: none;
 }
 
-#mwgnxxceja p {
+#gzqjupailq p {
   margin: 0;
   padding: 0;
 }
 
-#mwgnxxceja .gt_table {
+#gzqjupailq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1379,12 +1430,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#mwgnxxceja .gt_caption {
+#gzqjupailq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mwgnxxceja .gt_title {
+#gzqjupailq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1396,7 +1447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#mwgnxxceja .gt_subtitle {
+#gzqjupailq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1408,7 +1459,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#mwgnxxceja .gt_heading {
+#gzqjupailq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1420,13 +1471,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#mwgnxxceja .gt_bottom_border {
+#gzqjupailq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mwgnxxceja .gt_col_headings {
+#gzqjupailq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1441,7 +1492,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#mwgnxxceja .gt_col_heading {
+#gzqjupailq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1461,7 +1512,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#mwgnxxceja .gt_column_spanner_outer {
+#gzqjupailq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1473,15 +1524,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#mwgnxxceja .gt_column_spanner_outer:first-child {
+#gzqjupailq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mwgnxxceja .gt_column_spanner_outer:last-child {
+#gzqjupailq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mwgnxxceja .gt_column_spanner {
+#gzqjupailq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1493,11 +1544,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#mwgnxxceja .gt_spanner_row {
+#gzqjupailq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mwgnxxceja .gt_group_heading {
+#gzqjupailq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1523,7 +1574,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#mwgnxxceja .gt_empty_group_heading {
+#gzqjupailq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1538,15 +1589,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#mwgnxxceja .gt_from_md > :first-child {
+#gzqjupailq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mwgnxxceja .gt_from_md > :last-child {
+#gzqjupailq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mwgnxxceja .gt_row {
+#gzqjupailq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1565,7 +1616,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#mwgnxxceja .gt_stub {
+#gzqjupailq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1578,7 +1629,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#mwgnxxceja .gt_stub_row_group {
+#gzqjupailq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1592,15 +1643,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#mwgnxxceja .gt_row_group_first td {
+#gzqjupailq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mwgnxxceja .gt_row_group_first th {
+#gzqjupailq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mwgnxxceja .gt_summary_row {
+#gzqjupailq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1610,16 +1661,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#mwgnxxceja .gt_first_summary_row {
+#gzqjupailq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mwgnxxceja .gt_first_summary_row.thick {
+#gzqjupailq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mwgnxxceja .gt_last_summary_row {
+#gzqjupailq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1629,7 +1680,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#mwgnxxceja .gt_grand_summary_row {
+#gzqjupailq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1639,7 +1690,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#mwgnxxceja .gt_first_grand_summary_row {
+#gzqjupailq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1649,7 +1700,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#mwgnxxceja .gt_last_grand_summary_row_top {
+#gzqjupailq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1659,11 +1710,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#mwgnxxceja .gt_striped {
+#gzqjupailq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mwgnxxceja .gt_table_body {
+#gzqjupailq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1672,7 +1723,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#mwgnxxceja .gt_footnotes {
+#gzqjupailq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1686,7 +1737,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#mwgnxxceja .gt_footnote {
+#gzqjupailq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1695,7 +1746,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#mwgnxxceja .gt_sourcenotes {
+#gzqjupailq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1709,7 +1760,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#mwgnxxceja .gt_sourcenote {
+#gzqjupailq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1717,63 +1768,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#mwgnxxceja .gt_left {
+#gzqjupailq .gt_left {
   text-align: left;
 }
 
-#mwgnxxceja .gt_center {
+#gzqjupailq .gt_center {
   text-align: center;
 }
 
-#mwgnxxceja .gt_right {
+#gzqjupailq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mwgnxxceja .gt_font_normal {
+#gzqjupailq .gt_font_normal {
   font-weight: normal;
 }
 
-#mwgnxxceja .gt_font_bold {
+#gzqjupailq .gt_font_bold {
   font-weight: bold;
 }
 
-#mwgnxxceja .gt_font_italic {
+#gzqjupailq .gt_font_italic {
   font-style: italic;
 }
 
-#mwgnxxceja .gt_super {
+#gzqjupailq .gt_super {
   font-size: 65%;
 }
 
-#mwgnxxceja .gt_footnote_marks {
+#gzqjupailq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mwgnxxceja .gt_asterisk {
+#gzqjupailq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mwgnxxceja .gt_indent_1 {
+#gzqjupailq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mwgnxxceja .gt_indent_2 {
+#gzqjupailq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mwgnxxceja .gt_indent_3 {
+#gzqjupailq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mwgnxxceja .gt_indent_4 {
+#gzqjupailq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mwgnxxceja .gt_indent_5 {
+#gzqjupailq .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1852,23 +1903,23 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
 <span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the table</span></span>
 <span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>table_cat_num</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="sdqzdxrxcc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#sdqzdxrxcc table {
+<div id="yyqplbtqvw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yyqplbtqvw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#sdqzdxrxcc thead, #sdqzdxrxcc tbody, #sdqzdxrxcc tfoot, #sdqzdxrxcc tr, #sdqzdxrxcc td, #sdqzdxrxcc th {
+#yyqplbtqvw thead, #yyqplbtqvw tbody, #yyqplbtqvw tfoot, #yyqplbtqvw tr, #yyqplbtqvw td, #yyqplbtqvw th {
   border-style: none;
 }
 
-#sdqzdxrxcc p {
+#yyqplbtqvw p {
   margin: 0;
   padding: 0;
 }
 
-#sdqzdxrxcc .gt_table {
+#yyqplbtqvw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1894,12 +1945,12 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-left-color: #D3D3D3;
 }
 
-#sdqzdxrxcc .gt_caption {
+#yyqplbtqvw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#sdqzdxrxcc .gt_title {
+#yyqplbtqvw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1911,7 +1962,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-bottom-width: 0;
 }
 
-#sdqzdxrxcc .gt_subtitle {
+#yyqplbtqvw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1923,7 +1974,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-top-width: 0;
 }
 
-#sdqzdxrxcc .gt_heading {
+#yyqplbtqvw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1935,13 +1986,13 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-right-color: #D3D3D3;
 }
 
-#sdqzdxrxcc .gt_bottom_border {
+#yyqplbtqvw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#sdqzdxrxcc .gt_col_headings {
+#yyqplbtqvw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1956,7 +2007,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-right-color: #D3D3D3;
 }
 
-#sdqzdxrxcc .gt_col_heading {
+#yyqplbtqvw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1976,7 +2027,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   overflow-x: hidden;
 }
 
-#sdqzdxrxcc .gt_column_spanner_outer {
+#yyqplbtqvw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1988,15 +2039,15 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 4px;
 }
 
-#sdqzdxrxcc .gt_column_spanner_outer:first-child {
+#yyqplbtqvw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sdqzdxrxcc .gt_column_spanner_outer:last-child {
+#yyqplbtqvw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sdqzdxrxcc .gt_column_spanner {
+#yyqplbtqvw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2008,11 +2059,11 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   width: 100%;
 }
 
-#sdqzdxrxcc .gt_spanner_row {
+#yyqplbtqvw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#sdqzdxrxcc .gt_group_heading {
+#yyqplbtqvw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2038,7 +2089,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   text-align: left;
 }
 
-#sdqzdxrxcc .gt_empty_group_heading {
+#yyqplbtqvw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2053,15 +2104,15 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   vertical-align: middle;
 }
 
-#sdqzdxrxcc .gt_from_md > :first-child {
+#yyqplbtqvw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#sdqzdxrxcc .gt_from_md > :last-child {
+#yyqplbtqvw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#sdqzdxrxcc .gt_row {
+#yyqplbtqvw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2080,7 +2131,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   overflow-x: hidden;
 }
 
-#sdqzdxrxcc .gt_stub {
+#yyqplbtqvw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2093,7 +2144,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#sdqzdxrxcc .gt_stub_row_group {
+#yyqplbtqvw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2107,15 +2158,15 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   vertical-align: top;
 }
 
-#sdqzdxrxcc .gt_row_group_first td {
+#yyqplbtqvw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#sdqzdxrxcc .gt_row_group_first th {
+#yyqplbtqvw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#sdqzdxrxcc .gt_summary_row {
+#yyqplbtqvw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2125,16 +2176,16 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#sdqzdxrxcc .gt_first_summary_row {
+#yyqplbtqvw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#sdqzdxrxcc .gt_first_summary_row.thick {
+#yyqplbtqvw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#sdqzdxrxcc .gt_last_summary_row {
+#yyqplbtqvw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2144,7 +2195,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-bottom-color: #D3D3D3;
 }
 
-#sdqzdxrxcc .gt_grand_summary_row {
+#yyqplbtqvw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2154,7 +2205,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#sdqzdxrxcc .gt_first_grand_summary_row {
+#yyqplbtqvw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2164,7 +2215,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-top-color: #D3D3D3;
 }
 
-#sdqzdxrxcc .gt_last_grand_summary_row_top {
+#yyqplbtqvw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2174,11 +2225,11 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-bottom-color: #D3D3D3;
 }
 
-#sdqzdxrxcc .gt_striped {
+#yyqplbtqvw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#sdqzdxrxcc .gt_table_body {
+#yyqplbtqvw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2187,7 +2238,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-bottom-color: #D3D3D3;
 }
 
-#sdqzdxrxcc .gt_footnotes {
+#yyqplbtqvw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2201,7 +2252,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-right-color: #D3D3D3;
 }
 
-#sdqzdxrxcc .gt_footnote {
+#yyqplbtqvw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2210,7 +2261,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#sdqzdxrxcc .gt_sourcenotes {
+#yyqplbtqvw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2224,7 +2275,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-right-color: #D3D3D3;
 }
 
-#sdqzdxrxcc .gt_sourcenote {
+#yyqplbtqvw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2232,63 +2283,63 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#sdqzdxrxcc .gt_left {
+#yyqplbtqvw .gt_left {
   text-align: left;
 }
 
-#sdqzdxrxcc .gt_center {
+#yyqplbtqvw .gt_center {
   text-align: center;
 }
 
-#sdqzdxrxcc .gt_right {
+#yyqplbtqvw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sdqzdxrxcc .gt_font_normal {
+#yyqplbtqvw .gt_font_normal {
   font-weight: normal;
 }
 
-#sdqzdxrxcc .gt_font_bold {
+#yyqplbtqvw .gt_font_bold {
   font-weight: bold;
 }
 
-#sdqzdxrxcc .gt_font_italic {
+#yyqplbtqvw .gt_font_italic {
   font-style: italic;
 }
 
-#sdqzdxrxcc .gt_super {
+#yyqplbtqvw .gt_super {
   font-size: 65%;
 }
 
-#sdqzdxrxcc .gt_footnote_marks {
+#yyqplbtqvw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#sdqzdxrxcc .gt_asterisk {
+#yyqplbtqvw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#sdqzdxrxcc .gt_indent_1 {
+#yyqplbtqvw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#sdqzdxrxcc .gt_indent_2 {
+#yyqplbtqvw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#sdqzdxrxcc .gt_indent_3 {
+#yyqplbtqvw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#sdqzdxrxcc .gt_indent_4 {
+#yyqplbtqvw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#sdqzdxrxcc .gt_indent_5 {
+#yyqplbtqvw .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2340,23 +2391,23 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
 <span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the table</span></span>
 <span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>table_cat_num</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="lbbpiycrzi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lbbpiycrzi table {
+<div id="zjxdgdwlux" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zjxdgdwlux table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#lbbpiycrzi thead, #lbbpiycrzi tbody, #lbbpiycrzi tfoot, #lbbpiycrzi tr, #lbbpiycrzi td, #lbbpiycrzi th {
+#zjxdgdwlux thead, #zjxdgdwlux tbody, #zjxdgdwlux tfoot, #zjxdgdwlux tr, #zjxdgdwlux td, #zjxdgdwlux th {
   border-style: none;
 }
 
-#lbbpiycrzi p {
+#zjxdgdwlux p {
   margin: 0;
   padding: 0;
 }
 
-#lbbpiycrzi .gt_table {
+#zjxdgdwlux .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2382,12 +2433,12 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-left-color: #D3D3D3;
 }
 
-#lbbpiycrzi .gt_caption {
+#zjxdgdwlux .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#lbbpiycrzi .gt_title {
+#zjxdgdwlux .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2399,7 +2450,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-bottom-width: 0;
 }
 
-#lbbpiycrzi .gt_subtitle {
+#zjxdgdwlux .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2411,7 +2462,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-top-width: 0;
 }
 
-#lbbpiycrzi .gt_heading {
+#zjxdgdwlux .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2423,13 +2474,13 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-right-color: #D3D3D3;
 }
 
-#lbbpiycrzi .gt_bottom_border {
+#zjxdgdwlux .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#lbbpiycrzi .gt_col_headings {
+#zjxdgdwlux .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2444,7 +2495,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-right-color: #D3D3D3;
 }
 
-#lbbpiycrzi .gt_col_heading {
+#zjxdgdwlux .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2464,7 +2515,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   overflow-x: hidden;
 }
 
-#lbbpiycrzi .gt_column_spanner_outer {
+#zjxdgdwlux .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2476,15 +2527,15 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 4px;
 }
 
-#lbbpiycrzi .gt_column_spanner_outer:first-child {
+#zjxdgdwlux .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lbbpiycrzi .gt_column_spanner_outer:last-child {
+#zjxdgdwlux .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lbbpiycrzi .gt_column_spanner {
+#zjxdgdwlux .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2496,11 +2547,11 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   width: 100%;
 }
 
-#lbbpiycrzi .gt_spanner_row {
+#zjxdgdwlux .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#lbbpiycrzi .gt_group_heading {
+#zjxdgdwlux .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2526,7 +2577,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   text-align: left;
 }
 
-#lbbpiycrzi .gt_empty_group_heading {
+#zjxdgdwlux .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2541,15 +2592,15 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   vertical-align: middle;
 }
 
-#lbbpiycrzi .gt_from_md > :first-child {
+#zjxdgdwlux .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lbbpiycrzi .gt_from_md > :last-child {
+#zjxdgdwlux .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lbbpiycrzi .gt_row {
+#zjxdgdwlux .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2568,7 +2619,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   overflow-x: hidden;
 }
 
-#lbbpiycrzi .gt_stub {
+#zjxdgdwlux .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2581,7 +2632,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#lbbpiycrzi .gt_stub_row_group {
+#zjxdgdwlux .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2595,15 +2646,15 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   vertical-align: top;
 }
 
-#lbbpiycrzi .gt_row_group_first td {
+#zjxdgdwlux .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#lbbpiycrzi .gt_row_group_first th {
+#zjxdgdwlux .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#lbbpiycrzi .gt_summary_row {
+#zjxdgdwlux .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2613,16 +2664,16 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#lbbpiycrzi .gt_first_summary_row {
+#zjxdgdwlux .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#lbbpiycrzi .gt_first_summary_row.thick {
+#zjxdgdwlux .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#lbbpiycrzi .gt_last_summary_row {
+#zjxdgdwlux .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2632,7 +2683,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-bottom-color: #D3D3D3;
 }
 
-#lbbpiycrzi .gt_grand_summary_row {
+#zjxdgdwlux .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2642,7 +2693,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#lbbpiycrzi .gt_first_grand_summary_row {
+#zjxdgdwlux .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2652,7 +2703,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-top-color: #D3D3D3;
 }
 
-#lbbpiycrzi .gt_last_grand_summary_row_top {
+#zjxdgdwlux .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2662,11 +2713,11 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-bottom-color: #D3D3D3;
 }
 
-#lbbpiycrzi .gt_striped {
+#zjxdgdwlux .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lbbpiycrzi .gt_table_body {
+#zjxdgdwlux .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2675,7 +2726,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-bottom-color: #D3D3D3;
 }
 
-#lbbpiycrzi .gt_footnotes {
+#zjxdgdwlux .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2689,7 +2740,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-right-color: #D3D3D3;
 }
 
-#lbbpiycrzi .gt_footnote {
+#zjxdgdwlux .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2698,7 +2749,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#lbbpiycrzi .gt_sourcenotes {
+#zjxdgdwlux .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2712,7 +2763,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-right-color: #D3D3D3;
 }
 
-#lbbpiycrzi .gt_sourcenote {
+#zjxdgdwlux .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2720,63 +2771,63 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#lbbpiycrzi .gt_left {
+#zjxdgdwlux .gt_left {
   text-align: left;
 }
 
-#lbbpiycrzi .gt_center {
+#zjxdgdwlux .gt_center {
   text-align: center;
 }
 
-#lbbpiycrzi .gt_right {
+#zjxdgdwlux .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lbbpiycrzi .gt_font_normal {
+#zjxdgdwlux .gt_font_normal {
   font-weight: normal;
 }
 
-#lbbpiycrzi .gt_font_bold {
+#zjxdgdwlux .gt_font_bold {
   font-weight: bold;
 }
 
-#lbbpiycrzi .gt_font_italic {
+#zjxdgdwlux .gt_font_italic {
   font-style: italic;
 }
 
-#lbbpiycrzi .gt_super {
+#zjxdgdwlux .gt_super {
   font-size: 65%;
 }
 
-#lbbpiycrzi .gt_footnote_marks {
+#zjxdgdwlux .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#lbbpiycrzi .gt_asterisk {
+#zjxdgdwlux .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#lbbpiycrzi .gt_indent_1 {
+#zjxdgdwlux .gt_indent_1 {
   text-indent: 5px;
 }
 
-#lbbpiycrzi .gt_indent_2 {
+#zjxdgdwlux .gt_indent_2 {
   text-indent: 10px;
 }
 
-#lbbpiycrzi .gt_indent_3 {
+#zjxdgdwlux .gt_indent_3 {
   text-indent: 15px;
 }
 
-#lbbpiycrzi .gt_indent_4 {
+#zjxdgdwlux .gt_indent_4 {
   text-indent: 20px;
 }
 
-#lbbpiycrzi .gt_indent_5 {
+#zjxdgdwlux .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2812,6 +2863,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
 
 </table>
 
+</div>
 </div>
 </div>
 </div>

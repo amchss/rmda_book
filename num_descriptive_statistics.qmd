@@ -1,24 +1,36 @@
 # Descriptive Statistics: Numerical Methods
 
+:::{style="text-align:justify"}
+
 Welcome to the world of numerical descriptive methods! These techniques are your go-to tools for exploring data and understanding key concepts like distribution, central tendency, and variability. Think of them as helpful signs that guide you in figuring out how your data works.
 
 These methods can be broadly categorized into two key areas: [measures of central tendency](https://www.nios.ac.in/media/documents/SecMathcour/Eng/Chapter-25.pdf) and [measures of dispersion](https://pmc.ncbi.nlm.nih.gov/articles/PMC3198538/). Both are crucial for painting a comprehensive picture of your data. However, we won’t be diving too deeply into these measures in this section; you can read more about them through the provided links. Instead, let’s consider something important: the choice of summary measures depends on the type of variable you’re working with. Whether you're dealing with categorical variables (like nominal and ordinal data) or numeric variables (which can be discrete or continuous), different summary statistics come into play.
 
 ![Image by pikisuperstar on Freepik](images/descriptive_stat.jpg){fig-align="center" width="300"}
 
+:::
+
 <br>
 
 ## Types of Variables and Summary Measures
 
+:::{style="text-align:justify"}
+
 So, what exactly should you use when analyzing your data? Let’s break it down!
 
+:::
+
 ### Numerical Methods for a Single Variable
+
+:::{style="text-align:justify"}
 
 When you're focusing on just one variable, numerical methods allow you to summarize and analyze your data through various statistical measures. For numeric variables, you can explore measures of central tendency like the mean, median, and mode. These give you a glimpse into the typical values of your dataset. But that's not all—measures of dispersion, such as standard deviation, variance, and range, tell you how spread out your data is.
 
 And don’t forget about categorical variables! For nominal and ordinal data, you can utilize frequency, proportion, and percentage to get a clearer picture of your dataset.
 
 Here’s a handy table to summarize the types of variables and their corresponding summary measures:
+
+:::
 
 +-----------------------------------------+----------------------------------------------------------+
 | **Type of Variable**                    | **Summary Measures**                                     |
@@ -34,11 +46,15 @@ Here’s a handy table to summarize the types of variables and their correspondi
 
 ### Numerical Methods for Two Variable
 
+:::{style="text-align:justify"}
+
 When you’re analyzing two variables, the methods you choose will depend on the types of variables involved. If you're working with categorical variables, like nominal and ordinal, you might find yourself comparing frequencies or proportions.
 
 But when numeric variables enter the equation, you've got a whole new set of tools at your disposal. Think correlation and comparing means—these methods help you uncover relationships and differences between the variables, bringing you closer to understanding the data dynamics at play.
 
 Here’s a breakdown of some of the choices available to you:
+
+:::
 
 +-------------------------------------+-------------------+----------------------+-------------------------------------+
 | **Type of Variables**               | **Nominal**       | **Ordinal**          | **Numeric (Discrete / Continuous)** |
@@ -55,6 +71,8 @@ Here’s a breakdown of some of the choices available to you:
 <br>
 
 ## Numerical Methods for a Single Variable using R
+
+:::{style="text-align:justify"}
 
 As we mentioned earlier, there are various ways to describe variables based on their types. In this section, we’ll explore how to describe different variables using R. First, we’ll look at numerical variables (both discrete and continuous), and then we’ll dive into categorical variables (nominal and ordinal).
 
@@ -73,11 +91,19 @@ df <- df1 |>
   select(id, survey_yr, gender, age, race1, education, marital_status, hh_income, home_own, home_rooms, poverty, work, weight, height)
 ```
 
+:::
+
 ### Describing a Single Numerical (Discrete / Categorical) Variable using R
+
+:::{style="text-align:justify"}
 
 Now, let’s explore how to describe numerical variables. We can use various measures, including mean, median, range, standard deviation, interquartile range, and percentiles.
 
+:::
+
 #### Mean
+
+:::{style="text-align:justify"}
 
 The mean is the average of all the data points.
 
@@ -125,9 +151,13 @@ df |>
 
 By adding this small argument, you’ll get the correct mean without being tripped up by missing data!
 
+:::
+
 <br>
 
 #### Median
+
+:::{style="text-align:justify"}
 
 The median is the middle value when the data is ordered.
 
@@ -148,7 +178,11 @@ Try finding median using `pull` function from the `dplyr` package.
 
 <br>
 
+:::
+
 #### Range
+
+:::{style="text-align:justify"}
 
 The range is the difference between the maximum and minimum values.
 
@@ -187,9 +221,13 @@ df |>
 
 ```
 
+:::
+
 <br>
 
 #### Standard Deviation
+
+:::{style="text-align:justify"}
 
 Standard deviation measures the amount of variation or dispersion in a variable.
 
@@ -208,9 +246,13 @@ df |>
 
 ```
 
+:::
+
 <br>
 
 #### Percentiles
+
+:::{style="text-align:justify"}
 
 Percentiles indicate the relative standing of a value within the dataset.
 
@@ -238,7 +280,11 @@ df |>
 
 <br>
 
+:::
+
 #### Inter Quartile Range
+
+:::{style="text-align:justify"}
 
 The IQR is the range between the 25th percentile (Q1) and the 75th percentile (Q3).
 
@@ -272,7 +318,11 @@ q_3 - q_1
 
 ```
 
+:::
+
 #### Combining Multiple Summary Measures
+
+:::{style="text-align:justify"}
 
 If you want to combine multiple measures as a single outcome, it is also possible.
 
@@ -290,7 +340,11 @@ df |>
 
 <br>
 
+:::
+
 ### Describing a Single Categorical (Nominal / Ordinal) Variable using R
+
+:::{style="text-align:justify"}
 
 Now let’s dive into categorical variables! When working with categorical data, we often summarize it using frequencies (how often each category appears), percentages (what proportion of the total each category makes up), and cumulative percentages (the running total of those percentages). Let’s explore how to do all of this in a tidy way using R.
 
@@ -298,7 +352,11 @@ We’ll continue working with the NHANES dataset to see this in action.
 
 <br>
 
+:::
+
 #### Frequency
+
+:::{style="text-align:justify"}
 
 Frequency tells us how many times each category appears in the data. Let’s calculate the frequency for the income variable (`hh_income`).
 
@@ -312,9 +370,13 @@ hh_income_frequency
 
 ```
 
+:::
+
 <br>
 
 #### Percent
+
+:::{style="text-align:justify"}
 
 Next, we’ll calculate the percentage for each category, which shows the relative proportion of each category within the dataset.
 
@@ -331,7 +393,11 @@ hh_income_percent
 
 <br>
 
+:::
+
 #### Cumulative Percent
+
+:::{style="text-align:justify"}
 
 Cumulative percent shows the running total of percentages, which can help understand the distribution across categories as you move through them.
 
@@ -347,7 +413,11 @@ hh_income_cumulative
 
 ```
 
+:::
+
 ### Publication Ready Tables
+
+:::{style="text-align:justify"}
 
 To create publication-ready tables, you can use the `gtsummary` package in R. Here’s an example of how to generate a summary table for a single variable dataset:
 
@@ -376,7 +446,11 @@ summary_table
 
 Try `df |> tbl_summary` without selecting variables.
 
+:::
+
 ## Numerical Methods for Two Variables using R
+
+:::{style="text-align:justify"}
 
 In this section, we’ll dive into how to describe relationships between two variables using R. Depending on the types of variables—categorical or numeric—the methods vary. We’ll cover three main scenarios:
 
@@ -386,13 +460,19 @@ In this section, we’ll dive into how to describe relationships between two var
 
 -   One categorical and one numeric variable
 
+:::
+
 ### Two Categorical Variables
+
+:::{style="text-align:justify"}
 
 When working with two categorical variables, one of the most common ways to analyze the relationship between them is by using cross-tabulation.
 
 Cross-tabulation creates a **contingency table** that shows the frequency distribution for each combination of categories.
 
 Let’s use the `gender` and `race1` variables in the NHANES dataset to explore this.
+
+:::
 
 #### Cross-Tabulation
 
@@ -406,7 +486,11 @@ gender_race_table
 
 ```
 
+:::{style="text-align:justify"}
+
 This table shows how the categories of gender and race1 are distributed across each other. But to make this even more informative, let’s add percentages.
+
+:::
 
 #### Cross-Tabulation with Percentages
 
@@ -421,13 +505,23 @@ gender_race_percent
 
 ```
 
+:::{style="text-align:justify"}
+
 This output gives us a clearer picture of the relationship between the two categorical variables by showing the percentage of each race within each gender group.
+
+:::
 
 ### Two Numeric Variables
 
+:::{style="text-align:justify"}
+
 When both variables are numeric, we can correlation to explore the relationship between them.
 
+:::
+
 #### Correlation
+
+:::{style="text-align:justify"}
 
 Correlation measures the strength and direction of the linear relationship between two numeric variables. The most common measure is Pearson’s correlation coefficient.
 
@@ -450,13 +544,19 @@ df %>%
 
 Here, `use = "complete.obs"` ensures that rows with missing values (NA) are ignored during the correlation calculation, just like `na.rm = TRUE` would do.
 
+:::
+
 ### One categorical and One Numeric Variables
+
+:::{style="text-align:justify"}
 
 When you have one categorical and one numeric variable, you’re often interested in comparing the distribution of the numeric variable across different categories. Group-wise summaries and box plots are common methods for this.
 
 Let’s look at the relationship between gender (categorical) and height (numeric).
 
 Group-Wise Summaries We can calculate summary statistics (like mean and median) for height within each gender category.
+
+:::
 
 ```{r}
 # Group-wise summary of height by gender
@@ -472,6 +572,8 @@ df %>%
 ```
 
 ### Publication Ready Tables for Two Variables
+
+:::{style="text-align:justify"}
 
 When you need to present results in a polished, publication-ready format, the gtsummary package in R is an excellent tool. It allows you to easily create clean, professional tables summarizing relationships between two variables. Below is an example of how you can use gtsummary to generate a table for a two-variable analysis, showcasing how your results can be made ready for publication.
 
@@ -521,3 +623,5 @@ table_cat_num <- df  |>
 # Display the table
 table_cat_num
 ```
+
+:::

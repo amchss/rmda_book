@@ -1,6 +1,10 @@
 # Descriptive Statistics: Graphical Methods
 
+:::{style="text-align:justify"}
+
 Graphical methods are crucial for understanding data at a glance. Depending on the number and type of variables, we use different graphical techniques. The graphical methods provided here are just some of the available methods for data visualization. There are many others that can be explored in more detail later. This is intended to be a basic introduction to help you get started.
+
+:::
 
 ## Graphical Methods for a Single Variable
 
@@ -21,6 +25,8 @@ Graphical methods are crucial for understanding data at a glance. Depending on t
 | **Numeric (Discrete / Continuous)** | Grouped Bar Chart | Scatter Plot |
 
 ## Data Visualization Using R: Introduction to Grammar of Graphics
+
+:::{style="text-align:justify"}
 
 Data visualization in R can be effectively done using the `ggplot2` package, which is included in the popular `tidyverse` collection of R packages. `ggplot2` is based on the **Grammar of Graphics**, a structured approach that allows you to build plots layer by layer. This grammar provides a framework for describing and creating visualizations by combining different graphical elements. The idea is that any plot can be constructed by breaking it down into components.
 
@@ -68,7 +74,11 @@ ggplot()
 
 This will simply give you a blank plot. You then need to add layers to specify what the plot will contain.
 
+:::
+
 #### Aesthetics (aes) {.unnumbered}
+
+:::{style="text-align:justify"}
 
 Aesthetic mappings define how data is mapped to visual properties. They include properties such as:
 
@@ -88,7 +98,11 @@ ggplot(data = df,
 
 In this example, `height` is mapped to the x-axis and `weight` to the y-axis
 
+:::
+
 #### Layers in `ggplot2` {.unnumbered}
+
+:::{style="text-align:justify"}
 
 The power of `ggplot2` lies in its layering system. After creating the base plot with `ggplot()`, you can add multiple layers.
 
@@ -119,11 +133,19 @@ Each layer builds on the previous one, progressively adding more information to 
 
 Every geometric layer starts with `geom_` in ggplot2.
 
+:::
+
 ## Visualising a Single Variable using R
+
+:::{style="text-align:justify"}
 
 Graphical methods are essential for summarizing and understanding the distribution of a single variable. In this section, we will explore different types of plots for visualizing one variable, based on its type (nominal, ordinal, discrete, or continuous). The key graphical methods include bar charts, boxplots, histograms, and density plots.
 
+:::
+
 ### Bar Chart
+
+:::{style="text-align:justify"}
 
 A **bar chart** is used to represent categorical data (nominal or ordinal). Each bar represents the frequency (or count) of a category. It’s commonly used for visualizing nominal variables like gender or education level.
 
@@ -141,7 +163,11 @@ ggplot(df, aes(x = gender)) +
     y = "Count")
 ```
 
+:::
+
 ### Boxplot
+
+:::{style="text-align:justify"}
 
 A boxplot is used to represent the distribution of a continuous variable. It shows the median, quartiles, and potential outliers.
 
@@ -155,7 +181,11 @@ ggplot(df, aes(y = height)) +
 
 ```
 
+:::
+
 ### Histogram
+
+:::{style="text-align:justify"}
 
 A histogram is used to visualize the distribution of a continuous variable by dividing the data into bins and counting the number of observations in each bin. It’s useful for understanding the shape, spread, and central tendency of continuous variables like age or income.
 
@@ -186,7 +216,11 @@ ggplot(df, aes(x = height)) +
 
 ```
 
+:::
+
 ### Density Plot
+
+:::{style="text-align:justify"}
 
 A density plot is a smoothed version of a histogram, used for continuous data. It provides an estimate of the probability distribution of a continuous variable.
 
@@ -216,7 +250,11 @@ ggplot(df, aes(x = height)) +
 theme_minimal()
 ```
 
+:::
+
 ### Combining Multiple Geometries: Overlaying Histogram and Density Plot
+
+:::{style="text-align:justify"}
 
 One of the strengths of `ggplot2` is its ability to add multiple geometric shapes (geoms) to a single plot. For example, you can overlay a **density plot** on top of a **histogram** to visualize both the frequency distribution and the smoothed probability distribution of a continuous variable in a single canvas.
 
@@ -253,11 +291,19 @@ ggplot(df, aes(x = height)) +
 
 ```
 
+:::
+
 ## Visualising Two Variables using R
+
+:::{style="text-align:justify"}
 
 When working with two variables, visualizing the relationship between them helps reveal patterns, associations, or differences. The appropriate plot depends on the types of variables involved (categorical, continuous, or a combination). In this section, we will explore different graphical methods for visualizing two variables: stacked bar charts, grouped bar charts, scatter plots, box plots by category, and regression lines with standard error.
 
+:::
+
 ### Stacked Bar Chart
+
+:::{style="text-align:justify"}
 
 A **stacked bar chart** is used when both variables are categorical. It displays the distribution of one variable while stacking the bars based on the categories of the second variable.
 
@@ -271,7 +317,11 @@ ggplot(df, aes(x = gender, fill = race1)) +
   labs(title = "Stacked Bar Chart of Gender by Race", x = "Gender", y = "Count", fill = "Race")
 ```
 
+:::
+
 ### Grouped Bar Chart
+
+:::{style="text-align:justify"}
 
 A grouped bar chart is another option for visualizing two categorical variables. Instead of stacking the bars, it places bars for each category side-by-side, allowing for a clearer comparison between categories.
 
@@ -287,7 +337,11 @@ ggplot(df, aes(x = race1, fill = gender)) +
 
 ```
 
+:::
+
 ### Scatter Plot
+
+:::{style="text-align:justify"}
 
 A scatter plot is used to visualize the relationship between two continuous variables. Each point on the plot represents an observation, and patterns like clusters, trends, or outliers can be detected.
 
@@ -302,7 +356,11 @@ ggplot(df, aes(x = height, y = weight)) +
 
 ```
 
+:::
+
 ### Box Plot by Category
+
+:::{style="text-align:justify"}
 
 A box plot by category is useful when comparing the distribution of a continuous variable across different categories of a categorical variable. It shows the median, quartiles, and potential outliers within each category.
 
@@ -317,7 +375,11 @@ ggplot(df, aes(x = gender, y = height)) +
 
 ```
 
+:::
+
 ### Combining Multiple Geometries: Scatter Plot with Regression Line
+
+:::{style="text-align:justify"}
 
 A scatter plot with a regression line helps visualize the relationship between two continuous variables. Adding a regression line shows the trend, while the standard error (SE) band around the line indicates the uncertainty in the estimate of the relationship.
 
@@ -346,13 +408,19 @@ ggplot(df, aes(x = height, y = weight)) +
 
 ```
 
+:::
+
 ## Visualizing Three Variables using R
+
+:::{style="text-align:justify"}
 
 When working with three variables, we can extend basic plots like scatter plots by adding a third variable as an aesthetic element such as color or fill. This allows us to represent more dimensions of the data in a single plot. One common approach is to use **color** to represent a categorical or continuous variable in a scatter plot.
 
 Example: Scatter Plot with Color for a Third Variable
 
 In this example, we'll create a scatter plot of two continuous variables and use color to represent a third categorical variable. This can help identify patterns or groupings based on the third variable.
+
+:::
 
 #### Example {.unnumbered}
 
@@ -386,6 +454,8 @@ ggplot(df,
 
 ## Visualizing Four Variables using R
 
+:::{style="text-align:justify"}
+
 To visualize four variables, we can use a combination of **color** (or fill) for the third variable and **facet wrapping** for the fourth variable. Facet wrapping creates a series of smaller plots based on the levels of a categorical variable, allowing us to compare the relationships across different subgroups.
 
 Example: Scatter Plot with Color and Facet Wrap
@@ -403,3 +473,5 @@ ggplot(df,
   labs(title = "Scatter Plot of Height vs Weight by Race and gender", 
        x = "Height", y = "Weight", color = "Gender")
 ```
+
+:::
