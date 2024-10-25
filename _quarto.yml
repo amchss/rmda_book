@@ -1,0 +1,28 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Research Methodologies & Data Analysis Using R"
+  author: "Team"
+  date: "14/11/2024"
+  page-navigation: true
+  chapters:
+  - index.qmd
+  - preface.qmd
+  - part: statistical_methods.qmd
+    chapters:
+      - descriptive_statistics.qmd
+      - graph_descriptive_statistics.qmd
+      - num_descriptive_statistics.qmd
+      - inferential_statistics.qmd
+      - regression.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+

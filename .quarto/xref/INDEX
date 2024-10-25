@@ -1,0 +1,35 @@
+{
+  "index.qmd": {
+    "index.html": "9e1b19a4"
+  },
+  "preface.qmd": {
+    "preface.html": "0dc6bb34"
+  },
+  "statistical_methods.qmd": {
+    "statistical_methods.html": "b55fe196"
+  },
+  "descriptive_statistics_v2.qmd": {
+    "descriptive_statistics_v2.html": "264c9aac"
+  },
+  "inferential_statistics.qmd": {
+    "inferential_statistics.html": "1f5e5d10"
+  },
+  "graphical_descriptive_statistics.qmd": {
+    "graphical_descriptive_statistics.html": "2967c05c"
+  },
+  "numerical_descriptive_statistics.qmd": {
+    "numerical_descriptive_statistics.html": "1652412f"
+  },
+  "descriptive_statistics.qmd": {
+    "descriptive_statistics.html": "99b8e292"
+  },
+  "graph_descriptive_statistics.qmd": {
+    "graph_descriptive_statistics.html": "4d0c5155"
+  },
+  "num_descriptive_statistics.qmd": {
+    "num_descriptive_statistics.html": "d6ae5580"
+  },
+  "regression.qmd": {
+    "regression.html": "376886f3"
+  }
+}
