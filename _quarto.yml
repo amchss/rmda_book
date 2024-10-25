@@ -17,6 +17,7 @@ book:
       - num_descriptive_statistics.qmd
       - inferential_statistics.qmd
       - regression.qmd
+      - hypothesis_testing.qmd
 
 bibliography: references.bib
 
