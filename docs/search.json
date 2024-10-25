@@ -20,24 +20,16 @@
   {
     "objectID": "descriptive_statistics.html#goal",
     "href": "descriptive_statistics.html#goal",
-    "title": "1  Descriptive Statistics",
-    "section": "",
-    "text": "The goal of this session is to introduce the basic concepts of descriptive analysis, focusing on how to summarize and present data in meaningful ways. By the end of this chapter, students will:\n\nBe able to describe variables using both graphical and numerical methods",
-    "crumbs": [
-      "Statistical Methods",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Descriptive Statistics</span>"
-    ]
+    "title": "2  Descriptive Statistics",
+    "section": "2.1 Goal",
+    "text": "2.1 Goal\n\nThe goal of this session is to introduce the basic concepts of descriptive analysis, focusing on how to summarize and present data in meaningful ways. By the end of this chapter, students will:\n\nBe able to describe variables using both graphical and numerical methods"
   },
   {
     "objectID": "descriptive_statistics.html#what-is-descriptive-analysis",
     "href": "descriptive_statistics.html#what-is-descriptive-analysis",
-    "title": "1  Descriptive Statistics",
-    "section": "1.2 What is Descriptive Analysis",
-    "text": "1.2 What is Descriptive Analysis\n\nDescriptive analysis is a statistical method used to summarize and describe the main features of a dataset. It provides a simple overview of the data, highlighting key aspects such as central tendency, variability, and distribution. This type of analysis is essential for understanding the basic characteristics of the data before applying more complex statistical methods.\nDescriptive methods can be categorized into two types:\n\n\nGraphical Descriptive Methods\nNumerical Descriptive Methods\n\n\nIn the following chapters, we will describe each of these methods in detail. Let’s deepen your understanding of graphical and numerical descriptive methods, as well as how to implement these techniques using R.",
-    "crumbs": [
-      "Statistical Methods",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Descriptive Statistics</span>"
-    ]
+    "title": "2  Descriptive Statistics",
+    "section": "2.2 What is Descriptive Analysis",
+    "text": "2.2 What is Descriptive Analysis\n\nDescriptive analysis is a statistical method used to summarize and describe the main features of a dataset. It provides a simple overview of the data, highlighting key aspects such as central tendency, variability, and distribution. This type of analysis is essential for understanding the basic characteristics of the data before applying more complex statistical methods.\nDescriptive methods can be categorized into two types:\n\n\nGraphical Descriptive Methods\nNumerical Descriptive Methods\n\n\nIn the following chapters, we will describe each of these methods in detail. Let’s deepen your understanding of graphical and numerical descriptive methods, as well as how to implement these techniques using R."
   },
   {
     "objectID": "graph_descriptive_statistics.html",
