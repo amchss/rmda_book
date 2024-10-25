@@ -31,5 +31,14 @@
   },
   "regression.qmd": {
     "regression.html": "376886f3"
+  },
+  "study_design.qmd": {
+    "study_design.html": "ace9b5c3"
+  },
+  "research_methods.qmd": {
+    "research_methods.html": "50895d8b"
+  },
+  "hypothesis_testing.qmd": {
+    "hypothesis_testing.html": "b34db917"
   }
 }

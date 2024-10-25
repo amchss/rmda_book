@@ -10,6 +10,9 @@ book:
   chapters:
   - index.qmd
   - preface.qmd
+  - part: research_methods.qmd
+    chapters:
+      - study_design.qmd
   - part: statistical_methods.qmd
     chapters:
       - descriptive_statistics.qmd
