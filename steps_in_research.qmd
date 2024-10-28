@@ -43,6 +43,7 @@ With the methodology in place, researchers proceed to collect data. This phase c
 After data collection, the analysis phase begins. Researchers employ statistical tools, qualitative analysis methods, or other techniques to interpret the data. This step reveals patterns, relationships, and insights, providing answers to the research questions or validating the hypothesis.
 
 - **Interpretation, Generalisation & Reporting**
+
 The final step is reporting the research findings. This includes writing a detailed report or paper, presenting at conferences, or publishing in academic journals. Sharing results is crucial for advancing knowledge and sparking further inquiry in the field.
 
 ## Research as a Cyclical Process
@@ -60,10 +61,6 @@ flowchart TB
   F --> G(Interpretation, Generalisation & Reporting)
   G --> A
 ```
-
-
-
-
 
 
 
