@@ -24,7 +24,7 @@ In this session, we will focus on two important types of regression: linear regr
 
 :::
 
-## Simple Linear Regression (SLR)
+## Simple Linear Regression
 
 :::{style="text-align:justify"}
 
@@ -62,7 +62,7 @@ These assumptions can be illustrated visually:
 
 :::
 
-### The SLR Model
+### The Simple Linear Regression Model
 
 :::{style="text-align:justify"}
 
@@ -99,7 +99,7 @@ Where:
 
 :::
 
-## Simple Linear Regression (SLR) Using R
+## Simple Linear Regression Using R
 
 :::{style="text-align:justify"}
 
@@ -150,11 +150,15 @@ df <- df |>
 df <- df |> 
   mutate(Race1 = factor(Race1, levels = c("White", "Black", "Mexican", "Hispanic", "Other")))
 
+
+
 # Clean names
 
 df <- df |> 
   janitor::clean_names()
 
+df <- df |> 
+  rename(race = race1)
 ```
 
 
@@ -190,6 +194,10 @@ tidy(model)
 The Simple Linear Regression (SLR) model fits the relationship between height and weight in the adult population from the NHANES dataset. Below is a breakdown of the model output:
 
 **Model Equation**
+
+The general form is
+
+$$Y = \beta_0 + \beta_1 X$$
 
 The model equation based on the output can be written as:
 
@@ -254,7 +262,7 @@ Here’s how you can perform the simple linear regression with a categorical var
 
 ```{r}
 # SLR Model with Categorical Independent Variable
-model_cat <- lm(weight ~ race1, data = df)
+model_cat <- lm(weight ~ race, data = df)
 
 summary(model_cat)
 
@@ -273,22 +281,26 @@ The Simple Linear Regression (SLR) model fits the relationship between race and 
 
 **Model Equation**
 
+$$Y = \beta_0 + \beta_1 \text{(Group1)} + \beta_2 \text{(Group2)} + \dots + 
+\\ \beta_k \text{(Group\(k\))}$$
+
 The model equation based on the output can be written as:
 
-$$\hat{y} = 82.53 + 5.36 \times \text{(Black)} - 1.91 \times \text{(Mexican)} - 4.27 \times \text{(Hispanic)} - 9.50 \times \text{(Other)}$$
+$$\hat{y} = 82.53 + 5.36 \times \text{(Black)} - 1.91 \times \text{(Mexican)} -
+\\ 4.27 \times \text{(Hispanic)} - 9.50 \times \text{(Other)}$$
 
 
 **Coefficients**
 
 - **Intercept:** The estimated average weight for individuals in the reference category (White) is 82.53 units.
 
-- `race1Black`: Black individuals have an average weight that is 5.36 units heavier than the reference category (White).
+- `raceBlack`: Black individuals have an average weight that is 5.36 units heavier than the reference category (White).
 
-- `race1Mexican`: Mexican individuals weigh, on average, 1.91 units less than the reference category (White).
+- `raceMexican`: Mexican individuals weigh, on average, 1.91 units less than the reference category (White).
 
-- `race1Hispanic`: Hispanic individuals have an average weight that is 4.27 units less than the reference category (White).
+- `raceHispanic`: Hispanic individuals have an average weight that is 4.27 units less than the reference category (White).
 
-- `race1Other`: Individuals in the Other category weigh, on average, 9.50 units less than the reference category (White).
+- `raceOther`: Individuals in the Other category weigh, on average, 9.50 units less than the reference category (White).
 
 **Residuals**
 
@@ -302,7 +314,72 @@ Residuals indicate the differences between observed and predicted weights. They 
 
 - **Adjusted R-squared:** 0.02448, which adjusts for the number of predictors in the model.
 
-**Model Significance**
 
-The F-statistic is 47.55 with a p-value of < 2.2e-16, indicating that the model is statistically significant and at least one of the race categories significantly predicts weight.
+
+## Multiple Linear Regression using R
+
+Multiple linear regression expands on simple linear regression by incorporating multiple independent variables (predictors) to predict the outcome variable (dependent variable). This approach allows us to analyze how each predictor contributes to the outcome, while controlling for other variables.
+
+The general form of a multiple linear regression model with k predictors,
+
+$$Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_k X_k + \epsilon$$
+
+
+Where:
+
+- $Y$: Dependent variable
+
+- $X_1, X_2,...,X_k$: Independent variables (predictors)
+
+- $ \beta_0$: Intercept (the expected value of $Y$ when all $X$ variables are zero)
+
+- $,  \beta_1,  \beta_2, ...,  \beta_k$: Coefficients for each independent variable, indicating the expected change in $Y$ for a one-unit change in that variable, holding other variables constant.
+
+- $\epsilon$: Error term (the difference between the observed and predicted values)
+
+
+**Research Question**
+
+Is there an association between height and race (independent variables) with weight in adult individuals from the NHANES dataset?
+
+```{r}
+# multiple linear regression model 
+
+model_mult <- lm(weight ~ height + race, data = df)
+
+summary(model_mult)
+
+# Tidying the output for better interpretation
+tidy(model_mult)
+```
+
+**Model**
+
+$$\text{Weight} = -78.35 + 0.946 \times \text{Height} + 6.333 \times \text{raceBlack} + \\ 2.847 \times \text{raceMexican} + 1.233 \times \text{raceHispanic} - \\ 5.369 \times \text{raceOther}$$
+
+
+Let’s analyze the case of an individual with certain characteristics (height and race)
+
+- For a Black Individual:
+
+- Height: 175 cm
+
+Race: Black (which is coded as 1 in the model, while other races are coded as 0)
+
+
+$$Weight = − 78.35 + 0.946 × 175 + 6.333 × 1 + 2.847 × 0 + 1.233 × 0 − 5.369 × 0$$
+$$Weight = − 78.35 + 165.55 + 6.333 = 93.533 kg$$
+
+Therefore, the estimated average weight for a Black individual who is 175 cm tall is approximately 93.53 kg.
+
+For a White Individual:
+
+Height: 175 cm
+Race: White (which is coded as 0 in the model)
+Plugging these values into the model:
+
+
+$$Weight = − 78.35 + 165.55 = 87.20 kg$$
+
+Therefore, the estimated average weight for a White individual who is 175 cm tall is approximately 87.20 kg.
 
