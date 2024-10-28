@@ -1,0 +1,49 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Observational Study Design: Descriptive
+
+## Descriptive Study Design
+
+Descriptive study design is a research methodology that aims to provide a detailed account of a population, phenomenon, or event. Unlike experimental designs, which seek to establish causal relationships through manipulation of variables, descriptive studies focus on painting a comprehensive picture of the characteristics and conditions as they exist in real life.
+
+### The Primary Goal of Descriptive Studies
+
+To describe the characteristics of a population or phenomenon. This includes gathering information about demographics, behaviors, attitudes, or conditions without influencing or altering them.
+
+
+### Limitations of Descriptive Studies
+
+While descriptive studies provide essential insights, they do not establish causal relationships. They are limited by the absence of manipulation of variables, which means that findings must be interpreted with caution.
+
+### Classification of Descriptive Study Design
+
+```{mermaid}
+flowchart TB
+  A[Descriptive Study] --> B(Individual Level)
+  A[Descriptive Study] --> C(Population Level)
+  B --> D(Case Reports)
+  B --> E(Case Series)
+  C --> F(Ecological Studies)
+ 
+```
+
+First let us delve into the individual level descriptive studies.
+
+### Case Reports
+
+A case report is a detailed account of a specific clinical instance involving an individual patient. It serves as one of the earliest forms of medical research, emerging from the **careful observations** made by physicians and healthcare providers during their clinical practice. It serves as valuable tool for generating hypotheses, particularly in emerging health issues, as they document unique clinical presentations and associations.They provide detailed accounts of individual patient experiences, which can inform clinical practice and enhance understanding of rare or novel conditions.
+
+### Role of Case Reports in Understanding the Zika Virus Outbreak
+
+The emergence of the Zika virus in Latin America marked a significant public health concern, particularly due to its association with serious fetal anomalies, including microcephaly. Case reports played a crucial role in elucidating the relationship between Zika virus infection and adverse pregnancy outcomes, significantly enhancing our understanding of this public health crisis.
+
+A case report that first documented instance of maternal Zika virus infection associated with fetal microcephaly in Colombia, mirroring presentations previously observed in Brazil during the 2015–2016 outbreak is presented [here](https://pmc.ncbi.nlm.nih.gov/articles/PMC5470308/) 
+
+### Case Series
+
+
+

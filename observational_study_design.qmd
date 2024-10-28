@@ -1,0 +1,46 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+## Observational Study Design
+
+An observational study is a type of research design where researchers observe and analyze subjects without manipulating any variables. This approach allows for the examination of real-world conditions and associations between exposures (such as risk factors or interventions) and outcomes (like diseases or behaviors) in a natural setting.
+
+![](images/observe-01.jpeg){fig-align="center"}
+
+### Types of Observational Study Design
+
+Broadly observational study designs are categorised as two:
+
+-   Descriptive Study Designs
+-   Analytical Study Designs
+
+### Differentiate Descriptive & Analytical study design
+
+The above links will take you to each of the study design and its characteristics, while to have a quick differentiation of the two, here is a table summarising the key points.
+
+```{r,echo=FALSE}
+library(kableExtra)
+df <- data.frame("Descriptive Study" = c("Describes phenomena as they exist", "Describes occurrence of outcome", "Deals with 'who', 'what','when', 'where'","Generates hypothesis", "No comparison group"),
+"Analytical Study" = c("Understands phenomena", "Measures association between exposure & outcome", "Deals with 'why' and 'how'","Tests hypothesis","Presence of comparison group"))
+
+kable(df, caption = "To Differentiate Descriptive & Analytical Study Design")
+```
+
+### Classification of Desciptive & Analytical study design
+
+Each of the above mentioned study designs are further sub-classified as shown in the figure below:
+
+```{mermaid}
+flowchart LR
+  A[Observational Study] --> B(Descriptive Study)
+  A[Observational Study] --> C(Analytical Study)
+  B --> D(Case Reports)
+  B --> E(Case Series)
+  B --> F(Ecological Studies)
+  C --> G(Cross Sectional)
+  C --> H(Case Control)
+  C --> I[Cohort study]
+```

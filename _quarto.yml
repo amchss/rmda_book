@@ -12,7 +12,17 @@ book:
   - preface.qmd
   - part: research_methods.qmd
     chapters:
-      - study_design.qmd
+      - understanding_research.qmd
+      - need_for_research.qmd
+      - types_of_research.qmd
+      - steps_in_research.qmd
+      
+  - part: study_design.qmd
+    chapters:
+      - observational_study_design.qmd
+      - descriptive_observational_design.qmd
+      - analytical_observational_design.qmd
+      - experimental_study_design.qmd
   - part: statistical_methods.qmd
     chapters:
       - descriptive_statistics.qmd
