@@ -1,4 +1,43 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Epidemiological Study Designs
 
-# Study Design
+The goal of this session is to introduce different study designs used in epidemiology, understand their strengths and limitations and thereby equip us to choose appropriate designs for various research questions.
+
+## What is a 'Study Design' ?
+
+-   A framework, or a set of methods and procedures used to collect and analyze data on variables specified in a particular research problem.
+
+-   A strategy, a direction to follow, in order that your objective is achieved or the question you ask is answered.
+
+-   A specific plan or protocol for conducting the study, which allows the investigator to translate the conceptual hypothesis into an operational one.
+
+## What determine the type of Study Design?
+
+-   The nature of question
+
+-   The goal of research
+
+-   The availability of resources
+
+## Study designs are broadly categorised into two
+
+-   Observational Study Design
+
+-   Experimental Study Design
+
+The above links will take you to each of the study design and its characteristics, while to have a quick differentiation of the two, here is a table summarising the key points.
+
+```{r, echo=FALSE}
+library(kableExtra)
+df <- data.frame("Characteristics" = c("Definition", "Control", "Generalisable", "Feasibility"),
+"Observational Study" = c("Observes & measures variables without manipulating them", "Limited control over extraneous variables or confounders","May not be generalised","Less expensive, less time consuming, easy to conduct"),
+"Experimental Study" = c("Manipulates the variables to determine their effect on another", "Strict control over variables by process of randomisation", "May be generalised","Expensive, time consuming, complex conduct"))
+
+kable(df, caption = "To Differentiate Observational & Experimental Study Design")
 
 
+```

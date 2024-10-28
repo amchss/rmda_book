@@ -1,0 +1,18 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+## Experimental Study Design
+
+An experimental study design is a research approach used to investigate causal relationships between variables. In this design, the researcher manipulates one or more independent variables to observe the effect on a dependent variable, while controlling for other factors.
+
+![](images/experiment.jpg){fig-align="center" width="250"}
+
+### Types of Experimental Study Design
+
+Broadly experimental study designs are categorised as two:
+
+-   Randomised Control Trial
+-   Non Randomised Controlled Trial

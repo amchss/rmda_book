@@ -40,5 +40,29 @@
   },
   "hypothesis_testing.qmd": {
     "hypothesis_testing.html": "b34db917"
+  },
+  "observational_study_design.qmd": {
+    "observational_study_design.html": "1188bb9d"
+  },
+  "experimental_study_design.qmd": {
+    "experimental_study_design.html": "a997157c"
+  },
+  "understanding_research.qmd": {
+    "understanding_research.html": "4a9eddfe"
+  },
+  "need_for_research.qmd": {
+    "need_for_research.html": "756ecde2"
+  },
+  "descriptive_observational_design.qmd": {
+    "descriptive_observational_design.html": "aa64cc14"
+  },
+  "analytical_observational_design.qmd": {
+    "analytical_observational_design.html": "630ccaee"
+  },
+  "types_of_research.qmd": {
+    "types_of_research.html": "d029e159"
+  },
+  "steps_in_research.qmd": {
+    "steps_in_research.html": "6eb34732"
   }
 }
