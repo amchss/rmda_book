@@ -1,71 +1,59 @@
 {
   "index.qmd": {
-    "index.html": "9e1b19a4"
+    "index.html": "89944cc2"
   },
   "preface.qmd": {
-    "preface.html": "0dc6bb34"
-  },
-  "statistical_methods.qmd": {
-    "statistical_methods.html": "b55fe196"
-  },
-  "descriptive_statistics_v2.qmd": {
-    "descriptive_statistics_v2.html": "264c9aac"
-  },
-  "inferential_statistics.qmd": {
-    "inferential_statistics.html": "1f5e5d10"
-  },
-  "graphical_descriptive_statistics.qmd": {
-    "graphical_descriptive_statistics.html": "2967c05c"
-  },
-  "numerical_descriptive_statistics.qmd": {
-    "numerical_descriptive_statistics.html": "1652412f"
-  },
-  "descriptive_statistics.qmd": {
-    "descriptive_statistics.html": "99b8e292"
-  },
-  "graph_descriptive_statistics.qmd": {
-    "graph_descriptive_statistics.html": "4d0c5155"
-  },
-  "num_descriptive_statistics.qmd": {
-    "num_descriptive_statistics.html": "d6ae5580"
-  },
-  "regression.qmd": {
-    "regression.html": "376886f3"
-  },
-  "study_design.qmd": {
-    "study_design.html": "ace9b5c3"
+    "preface.html": "6bbacfc1"
   },
   "research_methods.qmd": {
-    "research_methods.html": "50895d8b"
-  },
-  "hypothesis_testing.qmd": {
-    "hypothesis_testing.html": "b34db917"
-  },
-  "observational_study_design.qmd": {
-    "observational_study_design.html": "1188bb9d"
-  },
-  "experimental_study_design.qmd": {
-    "experimental_study_design.html": "a997157c"
+    "research_methods.html": "9843c9cc"
   },
   "understanding_research.qmd": {
-    "understanding_research.html": "4a9eddfe"
+    "understanding_research.html": "eee051a4"
   },
   "need_for_research.qmd": {
-    "need_for_research.html": "756ecde2"
-  },
-  "descriptive_observational_design.qmd": {
-    "descriptive_observational_design.html": "aa64cc14"
-  },
-  "analytical_observational_design.qmd": {
-    "analytical_observational_design.html": "630ccaee"
+    "need_for_research.html": "04337e4b"
   },
   "types_of_research.qmd": {
-    "types_of_research.html": "d029e159"
+    "types_of_research.html": "c5c2cc65"
   },
   "steps_in_research.qmd": {
-    "steps_in_research.html": "6eb34732"
+    "steps_in_research.html": "6e38fff3"
+  },
+  "study_design.qmd": {
+    "study_design.html": "26238fdf"
+  },
+  "observational_study_design.qmd": {
+    "observational_study_design.html": "e888f60c"
+  },
+  "descriptive_observational_design.qmd": {
+    "descriptive_observational_design.html": "c2fa94b4"
+  },
+  "analytical_observational_design.qmd": {
+    "analytical_observational_design.html": "e60c1f22"
+  },
+  "experimental_study_design.qmd": {
+    "experimental_study_design.html": "54c82374"
+  },
+  "statistical_methods.qmd": {
+    "statistical_methods.html": "2d6b1b78"
+  },
+  "descriptive_statistics.qmd": {
+    "descriptive_statistics.html": "369e97ee"
+  },
+  "graph_descriptive_statistics.qmd": {
+    "graph_descriptive_statistics.html": "0ef1e50c"
+  },
+  "num_descriptive_statistics.qmd": {
+    "num_descriptive_statistics.html": "bf935148"
+  },
+  "inferential_statistics.qmd": {
+    "inferential_statistics.html": "d10f2dcd"
+  },
+  "hypothesis_testing.qmd": {
+    "hypothesis_testing.html": "e06292e4"
   },
   "regression_analysis.qmd": {
-    "regression_analysis.html": "792215f5"
+    "regression_analysis.html": "c3a99713"
   }
 }
