@@ -318,6 +318,9 @@ window.Quarto = {
   <li><a href="#simple-linear-regression-with-a-numeric-independent-variable" id="toc-simple-linear-regression-with-a-numeric-independent-variable" class="nav-link" data-scroll-target="#simple-linear-regression-with-a-numeric-independent-variable"><span class="header-section-number">14.2.1</span> Simple Linear Regression with a Numeric Independent Variable</a></li>
   <li><a href="#simple-linear-regression-with-a-categorical-independent-variable" id="toc-simple-linear-regression-with-a-categorical-independent-variable" class="nav-link" data-scroll-target="#simple-linear-regression-with-a-categorical-independent-variable"><span class="header-section-number">14.2.2</span> Simple Linear Regression with a Categorical Independent Variable</a></li>
   </ul></li>
+  <li><a href="#multiple-linear-regression-using-r" id="toc-multiple-linear-regression-using-r" class="nav-link" data-scroll-target="#multiple-linear-regression-using-r"><span class="header-section-number">14.3</span> Multiple Linear Regression using R</a></li>
+  <li><a href="#logistic-regression-using-r" id="toc-logistic-regression-using-r" class="nav-link" data-scroll-target="#logistic-regression-using-r"><span class="header-section-number">14.4</span> Logistic Regression using R</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -405,9 +408,9 @@ window.Quarto = {
 <h3 data-number="14.1.3" class="anchored" data-anchor-id="interpreting-the-model"><span class="header-section-number">14.1.3</span> Interpreting the Model</h3>
 <div style="text-align:justify">
 <ul>
-<li><p><strong>Intercept (<span class="math inline">\(\beta_0\)</span>)</strong>: The intercept tells us the expected value of the dependent variable when the independent variable is zero. However, in some cases, like the relationship between height and weight, interpreting the intercept might not make practical sense (e.g., predicting weight when height is zero).</p></li>
-<li><p><strong>Slope (<span class="math inline">\(\beta_1\)</span>)</strong>: The slope indicates the change in the dependent variable for a one-unit change in the independent variable. For example, if we are looking at the relationship between height and weight, the slope tells us how much weight is expected to increase (or decrease) for every unit increase in height.</p></li>
-<li><p><strong>Error term (<span class="math inline">\(\epsilon\)</span>)</strong>: The error term captures the variation in the dependent variable that is not explained by the independent variable. In practice, our model won’t perfectly predict every observation, and this error term accounts for the difference between observed values and the values predicted by the model.</p></li>
+<li><p><strong>Intercept (</strong><span class="math inline">\(\beta_0\)</span>): The intercept tells us the expected value of the dependent variable when the independent variable is zero. However, in some cases, like the relationship between height and weight, interpreting the intercept might not make practical sense (e.g., predicting weight when height is zero).</p></li>
+<li><p><strong>Slope (</strong><span class="math inline">\(\beta_1\)</span>): The slope indicates the change in the dependent variable for a one-unit change in the independent variable. For example, if we are looking at the relationship between height and weight, the slope tells us how much weight is expected to increase (or decrease) for every unit increase in height.</p></li>
+<li><p><strong>Error term (</strong><span class="math inline">\(\epsilon\)</span>): The error term captures the variation in the dependent variable that is not explained by the independent variable. In practice, our model won’t perfectly predict every observation, and this error term accounts for the difference between observed values and the values predicted by the model.</p></li>
 </ul>
 </div>
 </section>
@@ -510,7 +513,7 @@ F-statistic:  1882 on 1 and 7412 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>The general form is</p>
 <p><span class="math display">\[Y = \beta_0 + \beta_1 X\]</span></p>
 <p>The model equation based on the output can be written as:</p>
-<p><span class="math display">\[\hat{y} = -78.07 + 0.95 \times \text{Height}\]</span></p>
+<p><span class="math display">\[\text{Weight} = -78.07 + 0.95 \times \text{Height}\]</span></p>
 <p>Where:</p>
 <ul>
 <li><p><span class="math inline">\(\hat{y}\)</span> is the predicted weight (in kg)</p></li>
@@ -537,7 +540,7 @@ F-statistic:  1882 on 1 and 7412 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </section>
 <section id="simple-linear-regression-with-a-categorical-independent-variable" class="level3" data-number="14.2.2">
-<h3 data-number="14.2.2" class="anchored"><span class="header-section-number">14.2.2</span> Simple Linear Regression with a Categorical Independent Variable</h3>
+<h3 data-number="14.2.2" class="anchored" data-anchor-id="simple-linear-regression-with-a-categorical-independent-variable"><span class="header-section-number">14.2.2</span> Simple Linear Regression with a Categorical Independent Variable</h3>
 <p>When dealing with a categorical independent variable, simple linear regression can be used to analyze how the different categories influence the dependent variable. In this case, we’ll explore the relationship between height and race in adults using the NHANES dataset.</p>
 <p><strong>Research Question</strong></p>
 <p>Is there an association between race and weight in adult individuals from the NHANES dataset?</p>
@@ -611,8 +614,12 @@ F-statistic: 47.55 on 4 and 7415 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li><p><strong>Multiple R-squared:</strong> 0.02501, meaning that approximately 2.5% of the variability in weight is explained by race.</p></li>
 <li><p><strong>Adjusted R-squared:</strong> 0.02448, which adjusts for the number of predictors in the model.</p></li>
 </ul>
+</div>
+</section>
+</section>
 <section id="multiple-linear-regression-using-r" class="level2" data-number="14.3">
 <h2 data-number="14.3" class="anchored" data-anchor-id="multiple-linear-regression-using-r"><span class="header-section-number">14.3</span> Multiple Linear Regression using R</h2>
+<div style="text-align:justify">
 <p>Multiple linear regression expands on simple linear regression by incorporating multiple independent variables (predictors) to predict the outcome variable (dependent variable). This approach allows us to analyze how each predictor contributes to the outcome, while controlling for other variables.</p>
 <p>The general form of a multiple linear regression model with k predictors,</p>
 <p><span class="math display">\[Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_k X_k + \epsilon\]</span></p>
@@ -672,7 +679,7 @@ F-statistic:   414 on 5 and 7408 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <p><strong>Model</strong></p>
-<p><span class="math display">\[\text{Weight} = -78.35 + 0.946 \times \text{Height} + 6.333 \times \text{raceBlack} + \\ 2.847 \times \text{raceMexican} + 1.233 \times \text{raceHispanic} - \\ 5.369 \times \text{raceOther}\]</span></p>
+<p><span class="math display">\[\text{Weight} = -78.35 + 0.946 \times \text{Height} + 6.333 \times \text{raceBlack}\]</span> <span class="math display">\[2.847 \times \text{raceMexican} + 1.233 \times \text{raceHispanic} - \]</span> <span class="math display">\[5.369 \times \text{raceOther}\]</span></p>
 <p>Let’s analyze the case of an individual with certain characteristics (height and race)</p>
 <ul>
 <li><p>For a Black Individual:</p></li>
@@ -685,11 +692,101 @@ F-statistic:   414 on 5 and 7408 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>Height: 175 cm Race: White (which is coded as 0 in the model) Plugging these values into the model:</p>
 <p><span class="math display">\[Weight = − 78.35 + 165.55 = 87.20 kg\]</span></p>
 <p>Therefore, the estimated average weight for a White individual who is 175 cm tall is approximately 87.20 kg.</p>
-
-
-</section>
+<p>In addition, we observe that the coefficient for the Hispanic category is not statistically significant (p = 0.199), suggesting that, for this model, being Hispanic does not have a statistically significant impact on weight compared to the reference category (White) when controlling for height. This lack of significance indicates that the model does not provide evidence of a meaningful difference in weight between White and Hispanic individuals at the same height within this dataset.</p>
 </div>
 </section>
+<section id="logistic-regression-using-r" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="logistic-regression-using-r"><span class="header-section-number">14.4</span> Logistic Regression using R</h2>
+<div style="text-align:justify">
+<p>In this book, we’re providing a basic introduction to performing logistic regression using R, without diving deeply into the underlying concepts. For readers interested in a more detailed exploration of logistic regression, please refer to <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8710907/pdf/fmch-2021-001290.pdf">(Harris, 2021)</a>.</p>
+<p>In the following example, we aim to address the following research question:</p>
+<p>“Is there an association between age, BMI category, and the likelihood of diabetes in the adult population from the dataset?”</p>
+<p>This logistic regression model will help determine if age and BMI classification (underweight, normal weight, overweight, and obesity) are significant predictors of diabetes status, providing insights into factors contributing to diabetes risk in the study population.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>model_logistic <span class="ot">&lt;-</span> <span class="fu">glm</span>(diabetes <span class="sc">~</span> age <span class="sc">+</span> bmi_who, <span class="at">data =</span> df,</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="st">"binomial"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To get the summary of the model</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_logistic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = diabetes ~ age + bmi_who, family = "binomial", 
+    data = df)
+
+Coefficients:
+                     Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)         -6.662789   0.616689 -10.804  &lt; 2e-16 ***
+age                  0.056303   0.002673  21.061  &lt; 2e-16 ***
+bmi_who18.5_to_24.9  0.678591   0.604095   1.123 0.261303    
+bmi_who25.0_to_29.9  1.187684   0.599514   1.981 0.047582 *  
+bmi_who30.0_plus     2.089203   0.597437   3.497 0.000471 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 4754.5  on 7381  degrees of freedom
+Residual deviance: 4023.6  on 7377  degrees of freedom
+  (99 observations deleted due to missingness)
+AIC: 4033.6
+
+Number of Fisher Scoring iterations: 6</code></pre>
+</div>
+</div>
+<p><strong>The Model Equation</strong></p>
+<p>The logistic regression model equation for predicting the log-odds of diabetes is:</p>
+<p><span class="math display">\[\log\left(\frac{1 - P(\text{diabetes})}{P(\text{diabetes})}\right) = -6.66 + 0.056 \times \text{age} + 0.679 \times \text{BMI}_{18.5-24.9} + \]</span> <span class="math display">\[1.188 \times \text{BMI}_{25.0-29.9} + 2.089 \times \text{BMI}_{30.0+}\]</span></p>
+<p><strong>Interpretation</strong></p>
+<p>For a more intuitive interpretation, we can exponentiate the coefficients to convert them from log-odds to odds ratios, making it easier to discuss the association between each predictor and the likelihood of diabetes.</p>
+<p>Code for Odds Ratio Conversion To compute the odds ratios along with confidence intervals for each coefficient:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>OR <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">coef</span>(model_logistic)) <span class="co"># odds ratio</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>or_ci <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">confint</span>(model_logistic)) <span class="co"># Confidence Interval of odd ratio</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Waiting for profiling to be done...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">OR =</span> OR,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">CI =</span> or_ci</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> result <span class="sc">|&gt;</span> </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">"Variable"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>()</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  Variable                 OR CI.2.5.. CI.97.5..
+  &lt;chr&gt;                 &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)         0.00128 0.000301   0.00367
+2 age                 1.06    1.05       1.06   
+3 bmi_who18.5_to_24.9 1.97    0.707      8.21   
+4 bmi_who25.0_to_29.9 3.28    1.19      13.6    
+5 bmi_who30.0_plus    8.08    2.95      33.4    </code></pre>
+</div>
+</div>
+<p>Here’s a summary of the interpretation based on the odds ratios (OR) and confidence intervals:</p>
+<ul>
+<li><p><strong>Intercept</strong>: The intercept represents the baseline odds of having diabetes when all predictors are at their reference levels (age = 0 and BMI &lt;18.5). The odds are very low at 0.00128, indicating a low baseline risk in the reference group.</p></li>
+<li><p><strong>Age</strong>: With an odds ratio of 1.06 (95% CI: 1.05 to 1.06), each additional year of age is associated with a 6% increase in the odds of having diabetes, assuming all other factors remain constant. The confidence interval is narrow and above 1, suggesting a statistically significant effect of age on diabetes risk.</p></li>
+<li><p><strong>BMI Category (18.5–24.9)</strong>: This group has an odds ratio of 1.97 (95% CI: 0.707 to 8.21) compared to the reference category (presumably BMI &lt; 18.5). The CI is wide and includes 1, suggesting that this effect is not statistically significant at conventional levels. This indicates that adults in the BMI 18.5–24.9 category may have an increased risk, but this finding is uncertain.</p></li>
+<li><p><strong>BMI Category (25.0–29.9)</strong>: The odds ratio for this category is 3.28 (95% CI: 1.19 to 13.6), indicating that individuals in this BMI range have approximately 3.28 times the odds of having diabetes compared to the reference group. The confidence interval does not include 1, suggesting this result is statistically significant.</p></li>
+<li><p><strong>BMI Category (30.0+)</strong>: With an odds ratio of 8.08 (95% CI: 2.95 to 33.4), individuals with a BMI over 30 have over 8 times the odds of having diabetes compared to the reference group. The confidence interval is well above 1, indicating a strong and statistically significant association between a high BMI and increased diabetes risk.</p></li>
+</ul>
+</div>
+</section>
+<section id="summary" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="summary">Summary</h2>
+<div style="text-align:justify">
+<p>In this chapter, we explored essential regression techniques and their applications in R, equipping clinicians with fundamental tools for examining associations between variables. We began with simple linear regression, analyzing both continuous and categorical variables to understand relationships in straightforward contexts. We then expanded to multiple linear regression, enabling the examination of multiple predictors simultaneously and offering a more nuanced view of relationships. Finally, we introduced logistic regression for binary outcomes, which is especially useful in clinical research where dichotomous results, such as disease status, are common.</p>
+<p>Throughout the chapter, we not only developed a clear understanding of these models but also learned how to effectively implement and interpret them using R. These foundational methods provide a versatile toolkit for clinicians to address a wide range of research questions, laying a groundwork for further exploration into more advanced statistical modeling.</p>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
