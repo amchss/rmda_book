@@ -1,1 +1,9 @@
 # Ethics in Research
+
+Ethics is more than a set of guidelines; it serves as the foundation for responsible conduct in research and beyond. In a world increasingly driven by innovation and inquiry, the importance of ethical considerations cannot be overstated. This chapter will underscore the pivotal role ethics plays in shaping research practices, ensuring that the pursuit of knowledge aligns with moral values and societal well-being. By linking ethics to axiology---the philosophical study of values---we will highlight how ethical frameworks guide researchers in making decisions that reflect our collective values.
+
+We will begin by exploring the etymological origins of the term "ethics," providing a historical context that lays the groundwork for understanding its evolution. This background will include a candid examination of ethics' darker history, where moral lapses have led to significant societal repercussions, reminding us of the necessity of vigilance in ethical considerations.
+
+Next, we will outline the core principles of ethics that are fundamental to research, followed by an examination of various ethical theories that inform our understanding of right and wrong. A key focus will be the differentiation between medical ethics and public health ethics, as each field presents unique ethical challenges and responsibilities.
+
+As we progress through these topics, we will emphasize the critical importance of ethics in research, arguing that ethical integrity not only protects participants but also enhances the credibility and societal value of research outcomes. This chapter aims to provide a comprehensive framework for understanding the intersection of ethics and research, reinforcing the idea that ethical conduct is essential for fostering trust and advancing knowledge in our society.
