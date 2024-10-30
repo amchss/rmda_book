@@ -22,7 +22,7 @@ Let's enlist the steps one by one.
 
 The research journey begins with the identification of a specific problem or question. This step requires a clear definition of the issue at hand, ensuring that the research is focused and relevant. Engaging with existing literature can help refine the problem and clarify its significance.
 
-- **Reveiwing the Literature**
+- **Reviewing the Literature**
 
 Once the problem is identified, a comprehensive literature review is conducted. This step involves analyzing existing studies, theories, and frameworks related to the topic. The insights gained from this review not only provide context but also highlight gaps in current knowledge, informing the research design.
 
