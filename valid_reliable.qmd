@@ -8,7 +8,7 @@ editor_options:
 
 ## Validity
 
-Validity refers to the extent to which a research study measures what it is intended to measure. In simpler terms, it assesses whether the results of a study accurately reflect the concepts or variables being studied. 
+Validity refers to the extent to which a study measures what it is intended to measure. In simpler terms, it assesses whether the results of a study accurately reflect the concepts or variables being studied.  
 
 ### Definitions
 
