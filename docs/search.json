@@ -408,5 +408,12 @@
     "title": "14  Inferential Statistics: Regression Analysis",
     "section": "Summary",
     "text": "Summary\n\nIn this chapter, we explored essential regression techniques and their applications in R, equipping clinicians with fundamental tools for examining associations between variables. We began with simple linear regression, analyzing both continuous and categorical variables to understand relationships in straightforward contexts. We then expanded to multiple linear regression, enabling the examination of multiple predictors simultaneously and offering a more nuanced view of relationships. Finally, we introduced logistic regression for binary outcomes, which is especially useful in clinical research where dichotomous results, such as disease status, are common.\nThroughout the chapter, we not only developed a clear understanding of these models but also learned how to effectively implement and interpret them using R. These foundational methods provide a versatile toolkit for clinicians to address a wide range of research questions, laying a groundwork for further exploration into more advanced statistical modeling."
+  },
+  {
+    "objectID": "philosophical_underpinning.html",
+    "href": "philosophical_underpinning.html",
+    "title": "2  Philosophical Underpinnings of Research",
+    "section": "",
+    "text": "The pursuit of knowledge is deeply rooted in philosophical inquiry, shaping the very foundation of research. Understanding the philosophical underpinnings of research is essential for scholars and practitioners alike, as it informs the way we approach questions, interpret data, and derive conclusions.\nPhilosophy encompasses a range of inquiries into existence, knowledge, and values, each of which holds profound implications for research. By examining the epistemological, ontological, and axiological dimensions of inquiry, researchers can better appreciate the frameworks that guide their work.\nAs we delve into the philosophical foundations of research, it is crucial to recognize that our beliefs and assumptions shape not only the questions we ask but also how we engage with the world around us. By reflecting on these philosophical dimensions, researchers can cultivate a more nuanced understanding of their own positionality, ultimately enhancing the rigor and relevance of their work."
   }
 ]
