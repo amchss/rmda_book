@@ -1,0 +1,70 @@
+# Inferential Statistics: Hypothesis Testing
+
+::: {style="text-align:justify"}
+
+Hypothesis testing is a statistical approach that helps determine if there is sufficient evidence to reject a null hypothesis in favor of an alternative hypothesis. In R, various built-in functions allow you to perform different hypothesis tests, including t-tests, chi-squared tests, and ANOVA. In this chapter, we explore commonly used hypothesis testing methods in R, providing an introductory look at their applications and functions.
+
+For a more in-depth understanding, refer to additional resources.
+
+-   [Hypothesis testing, type I and type II errors](https://pmc.ncbi.nlm.nih.gov/articles/PMC2996198/): This paper explores the essentials of hypothesis testing in research, covering characteristics and types of hypotheses, statistical principles, type I and type II errors, effect size, alpha and beta, statistical power, and p-values [@banerjee2009].
+
+-   [Hypothesis Tests](https://pmc.ncbi.nlm.nih.gov/articles/PMC7807926/pdf/main.pdf): This article aims to provide readers with a clear understanding of the purpose of hypothesis testing, guidance on selecting the appropriate test for various research scenarios using a reference table, and insights into interpreting p-values effectively [@walker2019].
+
+:::
+
+## One-Sample T-Test
+
+The one-sample t-test is a statistical method that compares the mean of a sample to a known reference value—usually a population mean—to assess if there is a significant difference. In this context, using the NHANES dataset, we can investigate whether the mean blood pressure (BP) of a sample of adults differs significantly from the standard "normal" BP value. For adults, normal BP is often considered to be around 120 mmHg for systolic pressure.
+
+Here’s how we can set up and conduct this test:
+
+**Hypotheses:**
+
+**Null Hypothesis ($H_0$)**: The mean blood pressure of the sample is equal to the normal value (120 mmHg).
+
+**Alternative Hypothesis ($H_1$)**: The mean blood pressure of the sample differs from 120 mmHg.
+
+**R Implementation**: We’ll use the `t.test()` function to conduct the one-sample t-test, specifying 120 as the value for comparison.
+
+```{r}
+pacman::p_load(tidyverse)
+
+# Load NHANES data
+
+
+df <- NHANES::NHANES
+
+df <- df |> 
+  janitor::clean_names()
+
+
+
+# Filter to include only adults
+df <- df |> 
+  filter(age >= 18)
+
+# Conduct a one-sample t-test
+t_test_result <- t.test(df$bp_sys_ave, mu = 120, na.rm = TRUE)
+
+# View the result
+t_test_result
+
+```
+
+Interpretation of Results:
+
+- t-Statistic: 3.618
+
+- Degrees of Freedom: 7,204
+
+- p-value: 0.0002981
+
+- 95% Confidence Interval for Mean BP: (120.33, 121.12)
+
+- Sample Mean: 120.73 mmHg
+
+With a p-value of 0.0003 (below 0.05), we conclude that the sample’s average blood pressure of 120.73 mmHg is statistically different from the normal BP value of 120 mmHg. However, for clinicians, it’s essential to think about what this small difference actually means for patient care.
+
+In this case, while there’s a statistically significant difference, the 0.73 mmHg increase from the standard value is likely too small to have clinical importance. This reminds us that even if a result is statistically significant, it’s the practical impact on patient outcomes that ultimately matters.
+
+## References {.unnumbered}
