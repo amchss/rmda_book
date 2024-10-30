@@ -26,6 +26,7 @@ book:
   - part: validity_reliability_research.qmd
     chapters:
       - valid_reliable.qmd
+      - reliable_valid.qmd
       - bias_in_research.qmd
   - part: ethics_in_research.qmd
   - part: statistical_methods.qmd

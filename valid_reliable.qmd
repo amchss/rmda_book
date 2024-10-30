@@ -4,13 +4,11 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Validity & Reliability in Research
-
-## Validity
+# Validity in Research
 
 Validity refers to the extent to which a study measures what it is intended to measure. In simpler terms, it assesses whether the results of a study accurately reflect the concepts or variables being studied.  
 
-### Definitions
+## Definitions
 
 - The soundness or appropriateness of a test or instrument in measuring what it is designed to measure.
         
@@ -22,27 +20,13 @@ Validity refers to the extent to which a study measures what it is intended to m
 
 When discussing validity in research, particularly in clinical research, two crucial concepts emerge, **sensitivity and specificity**. These metrics are essential for evaluating the performance of diagnostic tests and measurement instruments, helping clinicians understand how accurately these tools identify the presence or absence of a condition.
 
-### Sensitivity
+## Sensitivity
 
 Sensitivity refers to the ability of a test to correctly identify those individuals who have the condition, also known as true positives. A highly sensitive test minimizes false negatives, ensuring that most individuals with the condition are accurately detected. This is particularly important in scenarios where missing a diagnosis could lead to significant consequences, such as in screening for serious illnesses.
 
-### Specificity
+## Specificity
 
 Specificity measures the test's ability to correctly identify individuals who do not have the condition, known as true negatives. A test with high specificity reduces the likelihood of false positives, ensuring that those without the condition are not mistakenly diagnosed. This is crucial for avoiding unnecessary anxiety, further testing, or treatment for individuals who are actually healthy.
 
 Together, sensitivity and specificity provide a more nuanced understanding of a test’s validity. They allow researchers to assess not only how accurately a test identifies true cases but also how effectively it distinguishes between those who have the condition and those who do not.
-
-## Reliability
-
-### Definitions
-
-- The degree to which a test or measure produces the same scores when applied in the same circumstances
-            
-             - Nelson 1997
-
-- The degree of stability expected when a 
-measurement is repeated under identical 
-conditions; degree to which the results obtained 
-from a measurement procedure can be replicated              
-             - Last
 

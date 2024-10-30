@@ -448,5 +448,40 @@
     "title": "16  Inferential Statistics: Hypothesis Testing",
     "section": "16.1 One-Sample T-Test",
     "text": "16.1 One-Sample T-Test\nThe one-sample t-test is a statistical method that compares the mean of a sample to a known reference value—usually a population mean—to assess if there is a significant difference. In this context, using the NHANES dataset, we can investigate whether the mean blood pressure (BP) of a sample of adults differs significantly from the standard “normal” BP value. For adults, normal BP is often considered to be around 120 mmHg for systolic pressure.\nHere’s how we can set up and conduct this test:\nHypotheses:\nNull Hypothesis (\\(H_0\\)): The mean blood pressure of the sample is equal to the normal value (120 mmHg).\nAlternative Hypothesis (\\(H_1\\)): The mean blood pressure of the sample differs from 120 mmHg.\nR Implementation: We’ll use the t.test() function to conduct the one-sample t-test, specifying 120 as the value for comparison.\n\npacman::p_load(tidyverse)\n\n# Load NHANES data\n\n\ndf <- NHANES::NHANES\n\ndf <- df |> \n  janitor::clean_names()\n\n\n\n# Filter to include only adults\ndf <- df |> \n  filter(age >= 18)\n\n# Conduct a one-sample t-test\nt_test_result <- t.test(df$bp_sys_ave, mu = 120, na.rm = TRUE)\n\n# View the result\nt_test_result\n\n\n    One Sample t-test\n\ndata:  df$bp_sys_ave\nt = 3.6188, df = 7204, p-value = 0.0002981\nalternative hypothesis: true mean is not equal to 120\n95 percent confidence interval:\n 120.3334 121.1215\nsample estimates:\nmean of x \n 120.7274 \n\n\nInterpretation of Results:\n\nt-Statistic: 3.618\nDegrees of Freedom: 7,204\np-value: 0.0002981\n95% Confidence Interval for Mean BP: (120.33, 121.12)\nSample Mean: 120.73 mmHg\n\nWith a p-value of 0.0003 (below 0.05), we conclude that the sample’s average blood pressure of 120.73 mmHg is statistically different from the normal BP value of 120 mmHg. However, for clinicians, it’s essential to think about what this small difference actually means for patient care.\nIn this case, while there’s a statistically significant difference, the 0.73 mmHg increase from the standard value is likely too small to have clinical importance. This reminds us that even if a result is statistically significant, it’s the practical impact on patient outcomes that ultimately matters."
+  },
+  {
+    "objectID": "valid_reliable.html#definitions",
+    "href": "valid_reliable.html#definitions",
+    "title": "10  Validity in Research",
+    "section": "10.1 Definitions",
+    "text": "10.1 Definitions\n\nThe soundness or appropriateness of a test or instrument in measuring what it is designed to measure.\n   - Vincent 1999\nDegree to which the data measure what they were intended to measure – that is, the results of a measurement correspond to the true state of the phenomenon being measured.\n    - Fletcher\n\nWhen discussing validity in research, particularly in clinical research, two crucial concepts emerge, sensitivity and specificity. These metrics are essential for evaluating the performance of diagnostic tests and measurement instruments, helping clinicians understand how accurately these tools identify the presence or absence of a condition."
+  },
+  {
+    "objectID": "valid_reliable.html#sensitivity",
+    "href": "valid_reliable.html#sensitivity",
+    "title": "10  Validity in Research",
+    "section": "10.2 Sensitivity",
+    "text": "10.2 Sensitivity\nSensitivity refers to the ability of a test to correctly identify those individuals who have the condition, also known as true positives. A highly sensitive test minimizes false negatives, ensuring that most individuals with the condition are accurately detected. This is particularly important in scenarios where missing a diagnosis could lead to significant consequences, such as in screening for serious illnesses."
+  },
+  {
+    "objectID": "valid_reliable.html#specificity",
+    "href": "valid_reliable.html#specificity",
+    "title": "10  Validity in Research",
+    "section": "10.3 Specificity",
+    "text": "10.3 Specificity\nSpecificity measures the test’s ability to correctly identify individuals who do not have the condition, known as true negatives. A test with high specificity reduces the likelihood of false positives, ensuring that those without the condition are not mistakenly diagnosed. This is crucial for avoiding unnecessary anxiety, further testing, or treatment for individuals who are actually healthy.\nTogether, sensitivity and specificity provide a more nuanced understanding of a test’s validity. They allow researchers to assess not only how accurately a test identifies true cases but also how effectively it distinguishes between those who have the condition and those who do not."
+  },
+  {
+    "objectID": "reliable_valid.html",
+    "href": "reliable_valid.html",
+    "title": "11  Reliability in Research",
+    "section": "",
+    "text": "12 Definitions\n\nThe degree to which a test or measure produces the same scores when applied in the same circumstances\n       - Nelson 1997\nThe degree of stability expected when a measurement is repeated under identical conditions; degree to which the results obtained from a measurement procedure can be replicated\n- Last"
+  },
+  {
+    "objectID": "reliable_valid.html#definitions",
+    "href": "reliable_valid.html#definitions",
+    "title": "11  Reliability in Research",
+    "section": "11.1 Definitions",
+    "text": "11.1 Definitions\n\nThe degree to which a test or measure produces the same scores when applied in the same circumstances\n       - Nelson 1997\nThe degree of stability expected when a measurement is repeated under identical conditions; degree to which the results obtained from a measurement procedure can be replicated\n- Last"
   }
 ]
