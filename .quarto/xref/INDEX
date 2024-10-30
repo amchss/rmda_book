@@ -58,5 +58,17 @@
   },
   "philosophical_underpinning.qmd": {
     "philosophical_underpinning.html": "bd26db9a"
+  },
+  "bias_in_research.qmd": {
+    "bias_in_research.html": "038eae41"
+  },
+  "ethics_in_research.qmd": {
+    "ethics_in_research.html": "f306048f"
+  },
+  "validity_reliability_research.qmd": {
+    "validity_reliability_research.html": "717c1101"
+  },
+  "valid_reliable.qmd": {
+    "valid_reliable.html": "535e738d"
   }
 }

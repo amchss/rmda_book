@@ -230,22 +230,15 @@
     "objectID": "statistical_methods.html#introduction-to-biostatistics-and-types-of-variables",
     "href": "statistical_methods.html#introduction-to-biostatistics-and-types-of-variables",
     "title": "Statistical Methods",
-    "section": "",
-    "text": "Biostatistics\n\nBiostatistics is the application of statistical methods to biological and medical data. It helps clinicians make informed decisions based on data collected from clinical trials, observational studies, and patient records.\n\nVariables\nIf, as we observe a characteristic, we find that it takes on different values in different persons, places, or things, we label the characteristic a variable.\nFor example, if we are observing the characteristic’height’ in a group of people, we will notice that height varies from person to person. Therefore, height is a variable.\n\n\n\n\nTypes of Variables\n\nVariables are essential in data analysis and are categorized into four types:\n\n\n\nTypes of Variables\n\n\n\nNominal Variables: Categorical variables with no inherent order (e.g., blood type: A, B, AB, O).\nOrdinal Variables: Categorical variables with a meaningful order but unequal intervals (e.g., pain scale: mild, moderate, severe).\nDiscrete Variables: Numerical variables with distinct, countable values (e.g., number of patients in a clinic).\nContinuous Variables: Numerical variables that can take any value within a range (e.g., patient weight, height).\n\n\n\n\nTwo Major Parts of Statistics\n\nStatistics is divided into two main areas:\n\nDescriptive Statistics: Summarizing and describing data.\nInferential Statistics: Making predictions or inferences about a population based on a sample.\n\nExplore the following chapters to deepen your understanding of descriptive and inferential statistical methods, as well as how to implement these techniques using R.",
-    "crumbs": [
-      "Statistical Methods"
-    ]
+    "section": "Introduction to Biostatistics and Types of Variables",
+    "text": "Introduction to Biostatistics and Types of Variables\n\nBiostatistics\n\nBiostatistics is the application of statistical methods to biological and medical data. It helps clinicians make informed decisions based on data collected from clinical trials, observational studies, and patient records.\n\nVariables\nIf, as we observe a characteristic, we find that it takes on different values in different persons, places, or things, we label the characteristic a variable.\nFor example, if we are observing the characteristic’height’ in a group of people, we will notice that height varies from person to person. Therefore, height is a variable.\n\n\n\n\nTypes of Variables\n\nVariables are essential in data analysis and are categorized into four types:\n\n\n\nTypes of Variables\n\n\n\nNominal Variables: Categorical variables with no inherent order (e.g., blood type: A, B, AB, O).\nOrdinal Variables: Categorical variables with a meaningful order but unequal intervals (e.g., pain scale: mild, moderate, severe).\nDiscrete Variables: Numerical variables with distinct, countable values (e.g., number of patients in a clinic).\nContinuous Variables: Numerical variables that can take any value within a range (e.g., patient weight, height).\n\n\n\n\nTwo Major Parts of Statistics\n\nStatistics is divided into two main areas:\n\nDescriptive Statistics: Summarizing and describing data.\nInferential Statistics: Making predictions or inferences about a population based on a sample.\n\nExplore the following chapters to deepen your understanding of descriptive and inferential statistical methods, as well as how to implement these techniques using R."
   },
   {
     "objectID": "experimental_study_design.html",
     "href": "experimental_study_design.html",
-    "title": "8  Experimental Study Design",
+    "title": "9  Experimental Study Design",
     "section": "",
-    "text": "An experimental study design is a research approach used to investigate causal relationships between variables. In this design, the researcher manipulates one or more independent variables to observe the effect on a dependent variable, while controlling for other factors.\n\n\n\n\n\n\n8.0.1 Types of Experimental Study Design\nBroadly experimental study designs are categorised as two:\n\nRandomised Control Trial\nNon Randomised Controlled Trial",
-    "crumbs": [
-      "Epidemiological Study Designs",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Experimental Study Design</span>"
-    ]
+    "text": "An experimental study design is a research approach used to investigate causal relationships between variables. In this design, the researcher manipulates one or more independent variables to observe the effect on a dependent variable, while controlling for other factors.\n\n\n\n\n\n\n9.0.1 Types of Experimental Study Design\nBroadly experimental study designs are categorised as two:\n\nRandomised Control Trial\nNon Randomised Controlled Trial"
   },
   {
     "objectID": "descriptive_observational_design.html",
@@ -294,31 +287,22 @@
     "objectID": "study_design.html#what-is-a-study-design",
     "href": "study_design.html#what-is-a-study-design",
     "title": "Epidemiological Study Designs",
-    "section": "",
-    "text": "A framework, or a set of methods and procedures used to collect and analyze data on variables specified in a particular research problem.\nA strategy, a direction to follow, in order that your objective is achieved or the question you ask is answered.\nA specific plan or protocol for conducting the study, which allows the investigator to translate the conceptual hypothesis into an operational one.",
-    "crumbs": [
-      "Epidemiological Study Designs"
-    ]
+    "section": "What is a ‘Study Design’ ?",
+    "text": "What is a ‘Study Design’ ?\n\nA framework, or a set of methods and procedures used to collect and analyze data on variables specified in a particular research problem.\nA strategy, a direction to follow, in order that your objective is achieved or the question you ask is answered.\nA specific plan or protocol for conducting the study, which allows the investigator to translate the conceptual hypothesis into an operational one."
   },
   {
     "objectID": "study_design.html#what-determine-the-type-of-study-design",
     "href": "study_design.html#what-determine-the-type-of-study-design",
     "title": "Epidemiological Study Designs",
     "section": "What determine the type of Study Design?",
-    "text": "What determine the type of Study Design?\n\nThe nature of question\nThe goal of research\nThe availability of resources",
-    "crumbs": [
-      "Epidemiological Study Designs"
-    ]
+    "text": "What determine the type of Study Design?\n\nThe nature of question\nThe goal of research\nThe availability of resources"
   },
   {
     "objectID": "study_design.html#study-designs-are-broadly-categorised-into-two",
     "href": "study_design.html#study-designs-are-broadly-categorised-into-two",
     "title": "Epidemiological Study Designs",
     "section": "Study designs are broadly categorised into two",
-    "text": "Study designs are broadly categorised into two\n\nObservational Study Design\nExperimental Study Design\n\nThe above links will take you to each of the study design and its characteristics, while to have a quick differentiation of the two, here is a table summarising the key points.\n\n\n\nTo Differentiate Observational & Experimental Study Design\n\n\n\n\n\n\n\nCharacteristics\nObservational.Study\nExperimental.Study\n\n\n\n\nDefinition\nObserves & measures variables without manipulating them\nManipulates the variables to determine their effect on another\n\n\nControl\nLimited control over extraneous variables or confounders\nStrict control over variables by process of randomisation\n\n\nGeneralisable\nMay not be generalised\nMay be generalised\n\n\nFeasibility\nLess expensive, less time consuming, easy to conduct\nExpensive, time consuming, complex conduct",
-    "crumbs": [
-      "Epidemiological Study Designs"
-    ]
+    "text": "Study designs are broadly categorised into two\n\nObservational Study Design\nExperimental Study Design\n\nThe above links will take you to each of the study design and its characteristics, while to have a quick differentiation of the two, here is a table summarising the key points.\n\n\n\nTo Differentiate Observational & Experimental Study Design\n\n\n\n\n\n\n\nCharacteristics\nObservational.Study\nExperimental.Study\n\n\n\n\nDefinition\nObserves & measures variables without manipulating them\nManipulates the variables to determine their effect on another\n\n\nControl\nLimited control over extraneous variables or confounders\nStrict control over variables by process of randomisation\n\n\nGeneralisable\nMay not be generalised\nMay be generalised\n\n\nFeasibility\nLess expensive, less time consuming, easy to conduct\nExpensive, time consuming, complex conduct"
   },
   {
     "objectID": "steps_in_research.html",
@@ -336,7 +320,7 @@
     "href": "steps_in_research.html#steps-in-research-process",
     "title": "5  Research as a Process",
     "section": "5.1 Steps in Research Process",
-    "text": "5.1 Steps in Research Process\nFamiliarity with the steps involved in the research process enhances the rigor of the research. Each stage, contributes to the validity of the findings and following established procedures reduces bias and increases the reliability of results.\nLet’s enlist the steps one by one.\n\nIdentifying the Research Problem\n\nThe research journey begins with the identification of a specific problem or question. This step requires a clear definition of the issue at hand, ensuring that the research is focused and relevant. Engaging with existing literature can help refine the problem and clarify its significance.\n\nReveiwing the Literature\n\nOnce the problem is identified, a comprehensive literature review is conducted. This step involves analyzing existing studies, theories, and frameworks related to the topic. The insights gained from this review not only provide context but also highlight gaps in current knowledge, informing the research design.\n\nFormulating a Research Question or Hypothesis\n\nBased on the literature review, researchers can formulate a hypothesis or a set of research questions. This step is crucial as it guides the direction of the study, framing what the researcher aims to discover or test. A well-defined hypothesis provides a clear focus for the research.\n\nResearch Design\n\nThe next step involves designing the research methodology. This includes selecting appropriate research methods (qualitative, quantitative, or mixed-methods), determining data collection techniques, and establishing a plan for analysis. A well-structured methodology is essential for obtaining valid and reliable results.\n\nData Collection\n\nWith the methodology in place, researchers proceed to collect data. This phase can involve surveys, experiments, interviews, or observational studies, depending on the research design. Effective data collection is critical, as it forms the foundation for analysis and interpretation.\n\nData Analysis & Hypothesis Testing\n\nAfter data collection, the analysis phase begins. Researchers employ statistical tools, qualitative analysis methods, or other techniques to interpret the data. This step reveals patterns, relationships, and insights, providing answers to the research questions or validating the hypothesis.\n\nInterpretation, Generalisation & Reporting\n\nThe final step is reporting the research findings. This includes writing a detailed report or paper, presenting at conferences, or publishing in academic journals. Sharing results is crucial for advancing knowledge and sparking further inquiry in the field."
+    "text": "5.1 Steps in Research Process\nFamiliarity with the steps involved in the research process enhances the rigor of the research. Each stage, contributes to the validity of the findings and following established procedures reduces bias and increases the reliability of results.\nLet’s enlist the steps one by one.\n\nIdentifying the Research Problem\n\nThe research journey begins with the identification of a specific problem or question. This step requires a clear definition of the issue at hand, ensuring that the research is focused and relevant. Engaging with existing literature can help refine the problem and clarify its significance.\n\nReviewing the Literature\n\nOnce the problem is identified, a comprehensive literature review is conducted. This step involves analyzing existing studies, theories, and frameworks related to the topic. The insights gained from this review not only provide context but also highlight gaps in current knowledge, informing the research design.\n\nFormulating a Research Question or Hypothesis\n\nBased on the literature review, researchers can formulate a hypothesis or a set of research questions. This step is crucial as it guides the direction of the study, framing what the researcher aims to discover or test. A well-defined hypothesis provides a clear focus for the research.\n\nResearch Design\n\nThe next step involves designing the research methodology. This includes selecting appropriate research methods (qualitative, quantitative, or mixed-methods), determining data collection techniques, and establishing a plan for analysis. A well-structured methodology is essential for obtaining valid and reliable results.\n\nData Collection\n\nWith the methodology in place, researchers proceed to collect data. This phase can involve surveys, experiments, interviews, or observational studies, depending on the research design. Effective data collection is critical, as it forms the foundation for analysis and interpretation.\n\nData Analysis & Hypothesis Testing\n\nAfter data collection, the analysis phase begins. Researchers employ statistical tools, qualitative analysis methods, or other techniques to interpret the data. This step reveals patterns, relationships, and insights, providing answers to the research questions or validating the hypothesis.\n\nInterpretation, Generalisation & Reporting\n\nThe final step is reporting the research findings. This includes writing a detailed report or paper, presenting at conferences, or publishing in academic journals. Sharing results is crucial for advancing knowledge and sparking further inquiry in the field."
   },
   {
     "objectID": "steps_in_research.html#research-as-a-cyclical-process",
@@ -418,5 +402,54 @@
     "title": "2  Philosophical Underpinnings of Research",
     "section": "2.1 Few Fundamental Concepts and thier Importance in Research",
     "text": "2.1 Few Fundamental Concepts and thier Importance in Research\n\n2.1.1 Ontology\nOntology is the study of being and existence. It concerns the nature of reality and what entities exist in the world.\nIn the context of research, ontology influences how researchers conceptualize the nature of the phenomena they study. For instance, a researcher may adopt a realist ontology, believing that a reality exists independent of human perceptions, or a constructivist ontology, where reality is seen as socially constructed."
+  },
+  {
+    "objectID": "bias_in_research.html",
+    "href": "bias_in_research.html",
+    "title": "6  Bias in Research",
+    "section": "",
+    "text": "Bias refers to a systematic tendency to favor one perspective, outcome, or group over others, leading to distortion in research, decision-making, or judgment.\nIn research, bias can result from various factors, including the way studies are designed, how data is collected, and how results are interpreted. This can lead to inaccurate conclusions that do not reflect the true nature of the subject being studied.\nTo understand the issue of bias in research, it’s important to recognize how our own experiences and beliefs can shape what we see and understand.\nWe will start with a quote by Francis Bacon:\n“The Idols of Tribe have their foundation in human nature itself, and in the tribe or race of men. For it is a false assertion that the sense of man is the measure of things. On the contrary, all perceptions as well of the sense as of the mind are according to the measure of the individual and not according to the measure of the universe. And the human understanding is like a false mirror, which, receiving rays irregularly, distorts and discolors the nature of things by mingling its own nature with it.”\n  - Francis Bacon, Novum Organum\nBacon’s words remind us that our understanding of the world is influenced by who we are and where we come from. In research, this means our personal biases can affect how we design studies, analyze data, and draw conclusions."
+  },
+  {
+    "objectID": "bias_in_research.html#definition",
+    "href": "bias_in_research.html#definition",
+    "title": "10  Bias in Research",
+    "section": "10.1 Definition",
+    "text": "10.1 Definition\nDeviation of results or inferences from the truth, or processes leading to such deviation. Any trend in the collection, analysis, interpretation, publication, or review of data that can lead to conclusions that are systematically different from the truth."
+  },
+  {
+    "objectID": "bias_in_research.html#definitions",
+    "href": "bias_in_research.html#definitions",
+    "title": "11  Bias in Research",
+    "section": "11.1 Definitions",
+    "text": "11.1 Definitions\n\nDeviation of results or inferences from the truth, or processes leading to such deviation. Any trend in the collection, analysis, interpretation, publication, or review of data that can lead to conclusions that are systematically different from the truth.\nA process at any stage of inference tending to produce results that depart systematically from true values.\n\n“The Idols of Tribe have their foundation in human nature itself, and in the tribe or race of men. For it is a false assertion that the sense of man is the measure of things. On the contrary, all perceptions as well of the sense as of the mind are according to the measure of the individual and not according to the measure of the universe. And the human understanding is like a false mirror, which, receiving rays irregularly, distorts and discolors the nature of things by mingling its own nature with it.”\n  - Francis Bacon, Novum Organum\nBacon’s words remind us that our understanding of the world is influenced by who we are and where we come from. In research, this means our personal biases can affect how we design studies, analyze data, and draw conclusions."
+  },
+  {
+    "objectID": "valid_reliable.html",
+    "href": "valid_reliable.html",
+    "title": "10  Validity & Reliability in Research",
+    "section": "",
+    "text": "11 Validity\nValidity refers to the extent to which a research study measures what it is intended to measure. In simpler terms, it assesses whether the results of a study accurately reflect the concepts or variables being studied."
+  },
+  {
+    "objectID": "valid_reliable.html#validity",
+    "href": "valid_reliable.html#validity",
+    "title": "10  Validity & Reliability in Research",
+    "section": "10.1 Validity",
+    "text": "10.1 Validity\nValidity refers to the extent to which a research study measures what it is intended to measure. In simpler terms, it assesses whether the results of a study accurately reflect the concepts or variables being studied.\n\n10.1.1 Definitions\n\nThe soundness or appropriateness of a test or instrument in measuring what it is designed to measure.\n   - Vincent 1999\nDegree to which the data measure what they were intended to measure – that is, the results of a measurement correspond to the true state of the phenomenon being measured.\n    - Fletcher\n\nWhen discussing validity in research, particularly in clinical research, two crucial concepts emerge, sensitivity and specificity. These metrics are essential for evaluating the performance of diagnostic tests and measurement instruments, helping clinicians understand how accurately these tools identify the presence or absence of a condition.\n\n\n10.1.2 Sensitivity\nSensitivity refers to the ability of a test to correctly identify those individuals who have the condition, also known as true positives. A highly sensitive test minimizes false negatives, ensuring that most individuals with the condition are accurately detected. This is particularly important in scenarios where missing a diagnosis could lead to significant consequences, such as in screening for serious illnesses.\n\n\n10.1.3 Specificity\nSpecificity measures the test’s ability to correctly identify individuals who do not have the condition, known as true negatives. A test with high specificity reduces the likelihood of false positives, ensuring that those without the condition are not mistakenly diagnosed. This is crucial for avoiding unnecessary anxiety, further testing, or treatment for individuals who are actually healthy.\nTogether, sensitivity and specificity provide a more nuanced understanding of a test’s validity. They allow researchers to assess not only how accurately a test identifies true cases but also how effectively it distinguishes between those who have the condition and those who do not."
+  },
+  {
+    "objectID": "valid_reliable.html#reliability",
+    "href": "valid_reliable.html#reliability",
+    "title": "10  Validity & Reliability in Research",
+    "section": "10.2 Reliability",
+    "text": "10.2 Reliability\n\n10.2.1 Definitions\n\nThe degree to which a test or measure produces the same scores when applied in the same circumstances\n       - Nelson 1997\nThe degree of stability expected when a measurement is repeated under identical conditions; degree to which the results obtained from a measurement procedure can be replicated\n- Last"
+  },
+  {
+    "objectID": "validity_reliability_research.html",
+    "href": "validity_reliability_research.html",
+    "title": "Cornerstones of Credible Research",
+    "section": "",
+    "text": "In the realm of research, the concepts of validity and reliability are fundamental to ensuring that our findings are both accurate and trustworthy. Validity refers to the extent to which a study measures what it claims to measure. In other words, it assesses whether the tools and methods used in research accurately capture the intended phenomena. Reliability, on the other hand, pertains to the consistency and stability of those measurements over time. A reliable instrument yields similar results under consistent conditions, reinforcing the credibility of the data.\nThe significance of these concepts cannot be overstated. Without validity, we risk drawing erroneous conclusions that can misinform policy, practice, or further research. Similarly, without reliability, our results may fluctuate unpredictably, undermining their usefulness. Together, validity and reliability form the backbone of rigorous research, ensuring that our findings contribute meaningfully to knowledge and understanding. We will understand both the concept in detail in this session."
   }
 ]

@@ -17,13 +17,17 @@ book:
       - need_for_research.qmd
       - types_of_research.qmd
       - steps_in_research.qmd
-      
   - part: study_design.qmd
     chapters:
       - observational_study_design.qmd
       - descriptive_observational_design.qmd
       - analytical_observational_design.qmd
       - experimental_study_design.qmd
+  - part: validity_reliability_research.qmd
+    chapters:
+      - valid_reliable.qmd
+      - bias_in_research.qmd
+  - part: ethics_in_research.qmd
   - part: statistical_methods.qmd
     chapters:
       - descriptive_statistics.qmd
