@@ -29,6 +29,8 @@ book:
       - reliable_valid.qmd
       - bias_in_research.qmd
   - part: ethics_in_research.qmd
+    chapters:
+      - understanding_ethics.qmd
   - part: statistical_methods.qmd
     chapters:
       - descriptive_statistics.qmd
