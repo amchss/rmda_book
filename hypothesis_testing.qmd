@@ -90,11 +90,13 @@ In this case, while there’s a statistically significant difference, the 0.73 m
 
 The **two-sample t-test** is a statistical test used to compare the means of two independent groups. In this context, we want to test whether there is a significant difference in height between males and females using the NHANES dataset.
 
-Null Hypothesis (H₀): There is no difference in the mean height between males and females.
+**Hypotheses:**
 
-Alternative Hypothesis (H₁): There is a difference in the mean height between males and females.
+**Null Hypothesis ($H_0$)**: There is no difference in the mean height between males and females.
 
-Conduct the Test in R: Assuming we have loaded and cleaned the NHANES dataset, we can perform the two-sample t-test on height.
+**Alternative Hypothesis ($H_1$)**: : There is a difference in the mean height between males and females.
+
+**Conduct the Test in R**: Assuming we have loaded and cleaned the NHANES dataset, we can perform the two-sample t-test on height.
 
 
 ```{r}
@@ -129,7 +131,7 @@ Conclusion: The very low p-value (< 0.05) indicates that we reject the null hypo
 
 :::
 
-## Paired t-test:
+## Paired t-test
 
 ::: {style="text-align:justify"}
 
@@ -194,5 +196,106 @@ The average difference in systolic blood pressure is approximately -4.55 mmHg, s
 The results of the paired t-test indicate that the intervention was effective, resulting in a statistically significant decrease in systolic blood pressure among individuals with a BMI greater than 25. The average decrease of 4.55 mmHg is both statistically significant and clinically relevant. This finding underscores the importance of the intervention in managing blood pressure among this population, suggesting that similar strategies may be beneficial for further lowering systolic blood pressure and improving cardiovascular health.
 
 :::
+
+## Chi-Squared Test
+
+The chi-squared test is a statistical method used to determine if there is a significant association between two categorical variables. By comparing the observed frequency distribution of categories with the expected distribution (assuming no association), the test evaluates whether the variables are independent of each other or if there is an association. This test is particularly useful in analyzing relationships in large datasets with categorical data, like survey responses or patient characteristics.
+
+As an example, we’ll use the chi-squared test to examine whether there is an association between BMI category and diabetes status among adults in our dataset.
+
+**Hypotheses:**
+
+**Null Hypothesis ($H_0$)**: There is no association between BMI category and diabetes status (BMI and diabetes status are independent).
+
+**Alternative Hypothesis ($H_1$)**:  There is an association between BMI category and diabetes status.
+
+**Data Preparation**
+
+Ensure that the bmi_who and diabetes variables are factors:
+
+If not then make it factor variable.
+
+```{r}
+class(df$bmi_who)
+
+class(df$diabetes)
+```
+
+Both variables are factor.
+
+
+**Creating a Contingency Table in Tidy Format**
+
+To perform a chi-squared test, we first need a contingency table that shows the counts of individuals in each combination of bmi_who and diabetes categories. 
+
+```{r}
+# Create contingency table in tidy format
+contingency_table <- table(df$bmi_who, df$diabetes)
+
+```
+
+**Performing the Chi-Squared Test**
+
+To assess whether an association exists between BMI category and diabetes, we apply the chi-squared test as follows:
+
+```{r}
+# Conduct the chi-squared test
+chi_test <- chisq.test(contingency_table)
+
+# View the test results
+chi_test
+
+
+```
+
+
+**Interpretation of Chi-Squared Test Results**
+
+- Chi-Squared Statistic (X-squared): 206.12
+
+- Degrees of Freedom (df): 3
+
+- p-value: < 2.2e-16
+
+Since the p-value is extremely small (less than 0.05), we reject the null hypothesis, indicating that there is a statistically significant association between BMI category and diabetes status. This suggests that diabetes prevalence differs across BMI categories in our sample. 
+
+However, while statistical significance tells us there is an association, it does not reveal the direction or strength of the relationship. To determine the strength and direction—such as whether higher BMI categories are positively associated with increased diabetes risk—you could perform a regression analysis.
+
+For binary outcomes like diabetes status, logistic regression would be a suitable approach. It would allow us to model the probability of diabetes as a function of BMI categories while providing insights into how each category impacts the likelihood of diabetes, as reflected by odds ratios. This approach also enables adjustments for potential confounders, offering a more comprehensive understanding of the relationship.
+
+## One-way ANOVA 
+
+One-way ANOVA (Analysis of Variance) is used to compare the means of more than two groups to determine if at least one group mean differs significantly from the others. This method is suitable when we have a categorical independent variable (factor) with multiple levels and a continuous dependent variable. For example, we could use one-way ANOVA to test if the average blood pressure differs across BMI categories.
+
+As an example, we’ll use the one-way ANOVA To determine if average systolic blood pressure varies across BMI categories.
+
+**Hypotheses:**
+
+**Null Hypothesis ($H_0$)**: The average systolic blood pressure is the same across all BMI categories.
+
+**Alternative Hypothesis ($H_1$)**:  The average systolic blood pressure differs for at least one BMI category.
+
+```{r}
+# Fit the ANOVA model
+anova_model <- aov(bp_sys_ave ~ bmi_who, data = df)
+
+# View the summary
+summary(anova_model)
+
+```
+
+**Interpretation of One-Way ANOVA Results**
+
+- **Degrees of Freedom (Df)**: The degrees of freedom for the BMI categories is 3, meaning there are four BMI groups. The residual degrees of freedom is 7116, accounting for the total sample size minus the number of groups.
+
+- **Sum of Squares (Sum Sq)**: This indicates the variability within each group (Residuals) and between the groups (BMI categories). A larger Sum of Squares for the BMI groups relative to the residuals suggests substantial variation in systolic blood pressure due to BMI category.
+
+- **Mean Squares (Mean Sq)**: This is the Sum of Squares divided by the respective degrees of freedom. The larger Mean Square for BMI groups indicates a larger variability attributed to BMI categories compared to random error.
+
+- **F-value**: The F-value of 50.35 is substantial, suggesting that the variation in systolic blood pressure between the BMI categories is much greater than within each category.
+
+- **p-value (< 2e-16)**: The extremely small p-value is well below 0.05, leading us to reject the null hypothesis. This indicates that there is a statistically significant difference in systolic blood pressure among the different BMI categories in this sample.
+
+Since the ANOVA indicates a significant difference, a post-hoc analysis (such as Tukey's HSD) could be conducted to identify which BMI categories specifically differ from each other in terms of average systolic blood pressure.
 
 ## References {.unnumbered}
