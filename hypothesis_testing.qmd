@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Inferential Statistics: Hypothesis Testing
 
 ::: {style="text-align:justify"}
@@ -14,15 +19,17 @@ For a more in-depth understanding, refer to additional resources.
 
 ## One-Sample T-Test
 
+::: {style="text-align:justify"}
+
 The one-sample t-test is a statistical method that compares the mean of a sample to a known reference value—usually a population mean—to assess if there is a significant difference. In this context, using the NHANES dataset, we can investigate whether the mean blood pressure (BP) of a sample of adults differs significantly from the standard "normal" BP value. For adults, normal BP is often considered to be around 120 mmHg for systolic pressure.
 
 Here’s how we can set up and conduct this test:
 
 **Hypotheses:**
 
-**Null Hypothesis ($H_0$)**: The mean blood pressure of the sample is equal to the normal value (120 mmHg).
+**Null Hypothesis ($H_0$)**: The mean systolic blood pressure of the sample is equal to the normal value (120 mmHg).
 
-**Alternative Hypothesis ($H_1$)**: The mean blood pressure of the sample differs from 120 mmHg.
+**Alternative Hypothesis ($H_1$)**: The mean systolic blood pressure of the sample differs from 120 mmHg.
 
 **R Implementation**: We’ll use the `t.test()` function to conduct the one-sample t-test, specifying 120 as the value for comparison.
 
@@ -37,6 +44,12 @@ df <- NHANES::NHANES
 df <- df |> 
   janitor::clean_names()
 
+df <- df |> 
+  mutate(bp_sys_post = case_when(
+    bmi > 25 ~ round(bp_sys_ave + runif(n(), -8, -1), 0),  # Generate a new random number for each row
+    TRUE ~ round(bp_sys_ave + runif(n(), -2, 2), 0)        # Same for those with bmi <= 25
+  ))
+
 
 
 # Filter to include only adults
@@ -49,9 +62,11 @@ t_test_result <- t.test(df$bp_sys_ave, mu = 120, na.rm = TRUE)
 # View the result
 t_test_result
 
+
 ```
 
-Interpretation of Results:
+
+**Interpretation of Results:**
 
 - t-Statistic: 3.618
 
@@ -66,5 +81,118 @@ Interpretation of Results:
 With a p-value of 0.0003 (below 0.05), we conclude that the sample’s average blood pressure of 120.73 mmHg is statistically different from the normal BP value of 120 mmHg. However, for clinicians, it’s essential to think about what this small difference actually means for patient care.
 
 In this case, while there’s a statistically significant difference, the 0.73 mmHg increase from the standard value is likely too small to have clinical importance. This reminds us that even if a result is statistically significant, it’s the practical impact on patient outcomes that ultimately matters.
+
+:::
+
+## Two-sample t-test
+
+::: {style="text-align:justify"}
+
+The **two-sample t-test** is a statistical test used to compare the means of two independent groups. In this context, we want to test whether there is a significant difference in height between males and females using the NHANES dataset.
+
+Null Hypothesis (H₀): There is no difference in the mean height between males and females.
+
+Alternative Hypothesis (H₁): There is a difference in the mean height between males and females.
+
+Conduct the Test in R: Assuming we have loaded and cleaned the NHANES dataset, we can perform the two-sample t-test on height.
+
+
+```{r}
+# Conduct two-sample t-test for height difference between males and females
+t_test_height <- t.test(height ~ gender, data = df, var.equal = TRUE)
+
+# View the results
+t_test_height
+
+```
+
+In the t.test() function in R, the argument var.equal = TRUE specifies that we assume the two groups have equal variances. By default, the two-sample t-test in R does not assume equal variances (this is called Welch's t-test). When var.equal = TRUE, we perform a pooled two-sample t-test, where the variances from each group are combined (or "pooled") to estimate a common variance.
+
+**Interpretation of Results**
+
+- t-Statistic: -80.661
+
+- Degrees of Freedom (df): 7,422
+
+- p-value: < 2.2e-16
+
+- 95% Confidence Interval for the Difference in 
+- Means: (-14.15, -13.48)
+
+- Sample Means:
+
+Female: 162.06 cm
+
+Male: 175.87 cm
+
+Conclusion: The very low p-value (< 0.05) indicates that we reject the null hypothesis, suggesting that there is a statistically significant difference in average height between males and females in this sample. The 95% confidence interval suggests that males are, on average, between 13.48 and 14.15 cm taller than females.
+
+:::
+
+## Paired t-test:
+
+::: {style="text-align:justify"}
+
+To examine the effect of an intervention, a paired t-test can be used to compare blood pressure (BP) measurements taken pre- and post-intervention among individuals with a BMI greater than 25. The paired t-test is ideal for dependent samples, where each individual has measurements in both conditions (pre and post), allowing us to assess whether the intervention significantly impacted BP.
+
+For the paired t-test examining blood pressure changes before and after an intervention among individuals with a BMI over 25, the hypotheses can be outlined as follows:
+
+**Hypotheses:**
+
+**Null Hypothesis ($H_0$)**: The mean systolic blood pressure before the intervention is equal to the mean blood pressure after the intervention for individuals with a BMI greater than 25. This implies that the intervention had no effect on blood pressure. 
+
+**Alternative Hypothesis ($H_1$)**:  The mean systolic blood pressure before the intervention is different from the mean blood pressure after the intervention for individuals with a BMI greater than 25, suggesting a potential effect of the intervention on blood pressure.
+
+If the test results in a p-value less than our significance threshold (typically 0.05), we would reject the null hypothesis and conclude that there is a statistically significant difference in blood pressure, likely attributable to the intervention.
+
+```{r}
+
+# Filter the dataset for individuals with BMI > 25
+df_filtered <- df %>%
+  filter(bmi > 25)
+
+# Run a paired t-test
+t_test_result <- t.test(
+  df_filtered$bp_sys_post,
+  df_filtered$bp_sys_ave,
+  paired = TRUE)
+
+# Display the result
+t_test_result
+
+
+```
+
+
+**Paired t-Test Results Interpretation**
+
+- T-Statistic:
+
+The t-statistic is -155.16, indicating a significant difference in systolic blood pressure (BP) between the average pre-intervention and post-intervention measurements.
+
+- Degrees of Freedom (df):
+
+The degrees of freedom is 4855, indicating a large sample size, which adds robustness to the statistical findings.
+
+= P-Value:
+
+The p-value is < 2.2e-16, which is extremely low and suggests a statistically significant difference in systolic blood pressure before and after the intervention. Since this p-value is well below the standard threshold of 0.05, we reject the null hypothesis, indicating that there is a meaningful change in BP levels.
+Alternative Hypothesis:
+
+The alternative hypothesis states that the true mean difference in systolic blood pressure between the two measurements (pre- and post-intervention) is not equal to zero.
+
+- 95% Confidence Interval:
+
+The 95% confidence interval for the mean difference is (-4.603987, -4.489094). This interval indicates that we can be 95% confident that the true mean decrease in systolic blood pressure lies between -4.60 mmHg and -4.49 mmHg. Since the entire interval is negative, this strongly supports the conclusion that the intervention has led to a significant reduction in systolic BP.
+
+- Mean Difference:
+
+The average difference in systolic blood pressure is approximately -4.55 mmHg, suggesting that, on average, individuals with a BMI greater than 25 experienced a decrease of 4.55 mmHg in systolic BP following the intervention.
+
+- Conclusion
+
+The results of the paired t-test indicate that the intervention was effective, resulting in a statistically significant decrease in systolic blood pressure among individuals with a BMI greater than 25. The average decrease of 4.55 mmHg is both statistically significant and clinically relevant. This finding underscores the importance of the intervention in managing blood pressure among this population, suggesting that similar strategies may be beneficial for further lowering systolic blood pressure and improving cardiovascular health.
+
+:::
 
 ## References {.unnumbered}
