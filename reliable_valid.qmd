@@ -8,6 +8,8 @@ editor_options:
 
 ## Definitions
 
+::: {style="text-align:justify"}
+
 - The degree to which a test or measure produces the same scores when applied in the same circumstances
             
              - Nelson 1997
@@ -18,3 +20,4 @@ conditions; degree to which the results obtained
 from a measurement procedure can be replicated              
              - Last
 
+:::

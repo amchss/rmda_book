@@ -6,15 +6,25 @@ editor_options:
 
 # Philosophical Underpinnings of Research
 
+::: {style="text-align:justify"}
+
 The pursuit of knowledge is deeply rooted in philosophical inquiry, shaping the very foundation of research. Understanding the philosophical underpinnings of research is essential for scholars and practitioners alike, as it informs the way we approach questions, interpret data, and derive conclusions.
 
 Philosophy encompasses a range of inquiries into existence, knowledge, and values, each of which holds profound implications for research. By examining the epistemological, ontological, and axiological dimensions of inquiry, researchers can better appreciate the frameworks that guide their work.
 
+:::
+
 ## Few Fundamental Concepts and their Importance in Research
+
+::: {style="text-align:justify"}
 
 Research, as we stated earlier, is discovering and validating innovative approaches to investigate and comprehend reality. By investigating reality, we mean to understand its nature and to gather knowledge about the reality and make sense about the same. This understanding of research takes us to the philosophical concepts of ontology, epistemology and axiology.
 
+:::
+
 ### Ontology
+
+::: {style="text-align:justify"}
 
 Ontology is the study of being and existence. It concerns the **nature and structure of reality** and what entities exist in the world.
 
@@ -25,41 +35,74 @@ The first stage in formulating research design is to articulate the ontology. In
 
 Broadly ontology may be divided into two, which is discussed below.
 
+:::
+
 ### Objectivist Ontology
+
+::: {style="text-align:justify"}
 
 The belief that the lives of others continue **independently of our perceptions**, and so can be measured. An objective perspective, views reality as composed of solid objects that can be **consistently measured and tested, existing independently of perception**. This approach assumes that universal principles and facts can be established through robust, replicable methods, as exemplified in physical sciences. It suggests that measurable attributes, like someone's height, would yield the same results regardless of the observer.
 
+:::
+
 ### Subjectivist Ontology
+
+::: {style="text-align:justify"}
 
 A subjective ontology posits that our **perceptions shape reality**, emphasizing the role of cultural, historical, and individual factors in shaping facts. This approach highlights the multiple experiences of reality based on individual differences, especially evident in social sciences. It suggests that reality varies with each person's unique perspectives and interpretations, which can differ significantly across time and social contexts. Although it acknowledges the power of subjectivity, some argue that it paradoxically requires objectivity to claim its universality. Critics also argue that certain observable characteristics, like those of elements, seem independent of subjective interpretation.
 
 The next stage in formulating research design is about the ways of gaining knowledge and it involves elucidating the process by which valid knowledge can be obtained. This entails a clear understanding of the nature and basis of knowledge claims, which is the essence of epistemology.
 
+:::
+
 ## Epistemology
+
+::: {style="text-align:justify"}
 
 Epistemology is the study of knowledge, how we know what we know. It examines the **nature, sources, and limits of knowledge**.
 
 In research, epistemological considerations affect the researcher's approach to acquiring knowledge.An objective ontology is typically aligned with what is called a **positivist** (sometimes also referred to as, **'foundationalist'**) epistemological approach to knowledge, while subjectivity tends to be driven by an **interpretivist** (sometimes also referred to as **'constructivist'**) epistemology.This implies, positivist epistemology emphasizes objective measurements and observable phenomena, while an interpretivist epistemology focuses on subjective experiences and understanding human behavior.
 
+:::
+
 ### Positivism
+
+::: {style="text-align:justify"}
 
 All knowledge regarding matters of fact is based on the "positive" data of experience. Strict adherence to the testimony of observation and experience is the all-important imperative of positivism. Positivism is most commonly associated with the natural sciences.It emphasizes objective measurements and observable phenomena.
 
+:::
+
 ### Realism
+
+::: {style="text-align:justify"}
 
 An epistemological position that acknowledges a reality independent of the senses that is accessible to the researcher's tools and theoretical speculations. It implies that the categories created by scientists refer to real objects in the natural or social worlds.
 
+:::
+
 ### Critical Realism
+
+::: {style="text-align:justify"}
 
 A realist epistemology that asserts that the study of the social world should be concerned with the identification of the structures that generate that world. Critical realism is critical because its practitioners aim to identify structures in order to change them, so that inequalities and injustices may be counteracted.
 
+:::
+
 ### Interpretivism
+
+::: {style="text-align:justify"}
 
 An epistemological position that requires the social scientist to grasp the subjective meaning of social action, it focuses on subjective experiences and understanding human behavior.
 
+:::
+
 ## Axiology
 
+::: {style="text-align:justify"}
+
 Axiology is the study of **values and ethics**. It explores what is considered valuable, including moral principles and aesthetic judgments.It refers to the researcher’s understanding of values and their role in research. It examines values, deals with issues of right and wrong and measures the level of development and types of perceptual biases.
+
 Values thus inform the bias, which a researcher as an individual can bring to the research project.
 
 Values reflect either the personal beliefs or the feelings of a researcher.There are numerous points at which bias and the intrusion of values can occur. Values can materialize at any point during the course of research. The researcher may develop an affection or sympathy, which was not necessarily present at the outset of an investigation, for
@@ -68,13 +111,21 @@ the people being studied. It is quite common, for example, for researchers worki
 Axiology also makes the researcher consider the ethical questions involved in conduct of research. 
 This is further dealt in detail in the chapter Ethics in Research.
 
+:::
+
 ## Methodology
+
+::: {style="text-align:justify"}
 
 As we progress in our exploration of research foundations, we transition from the core concepts of ontology, epistemology, and axiology, which form the philosophical bedrock of research, to understanding the two principal research paradigms or methodologies - **Quantitative & Qualitative** Methodologies. 
 
 This shift allows us to apply these abstract principles into actionable frameworks that guide the structure and execution of research studies. By understanding the major difference in **Qualitative and Quantitative** methodologies, we align our philosophical perspectives with practical strategies that dictate how we collect, analyze, and interpret data.
 
+:::
+
 ### Differentiate Quantitative & Qualitative Research Methodology
+
+::: {style="text-align:justify"}
 
 ```{r,echo=FALSE}
 library(kableExtra)
@@ -85,4 +136,5 @@ df <- data.frame ("Characteristics" = c("Ontology", "Epistemology", "Axiology", 
 kable(df, caption = "Differentiate Quantitative & Qualitative Research Methodology")
 ```
 
+:::
 
