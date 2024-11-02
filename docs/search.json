@@ -451,16 +451,16 @@
   {
     "objectID": "valid_reliable.html#sensitivity",
     "href": "valid_reliable.html#sensitivity",
-    "title": "10  Validity in Research",
-    "section": "10.2 Sensitivity",
-    "text": "10.2 Sensitivity\nSensitivity refers to the ability of a test to correctly identify those individuals who have the condition, also known as true positives. A highly sensitive test minimizes false negatives, ensuring that most individuals with the condition are accurately detected. This is particularly important in scenarios where missing a diagnosis could lead to significant consequences, such as in screening for serious illnesses."
+    "title": "9  Validity in Research",
+    "section": "9.5 Sensitivity",
+    "text": "9.5 Sensitivity\nSensitivity refers to the ability of a test to correctly identify those individuals who have the condition, also known as true positives. A highly sensitive test minimizes false negatives, ensuring that most individuals with the condition are accurately detected. This is particularly important in scenarios where missing a diagnosis could lead to significant consequences, such as in screening for serious illnesses."
   },
   {
     "objectID": "valid_reliable.html#specificity",
     "href": "valid_reliable.html#specificity",
-    "title": "10  Validity in Research",
-    "section": "10.3 Specificity",
-    "text": "10.3 Specificity\nSpecificity measures the test’s ability to correctly identify individuals who do not have the condition, known as true negatives. A test with high specificity reduces the likelihood of false positives, ensuring that those without the condition are not mistakenly diagnosed. This is crucial for avoiding unnecessary anxiety, further testing, or treatment for individuals who are actually healthy.\nTogether, sensitivity and specificity provide a more nuanced understanding of a test’s validity. They allow researchers to assess not only how accurately a test identifies true cases but also how effectively it distinguishes between those who have the condition and those who do not."
+    "title": "9  Validity in Research",
+    "section": "9.6 Specificity",
+    "text": "9.6 Specificity\nSpecificity measures the test’s ability to correctly identify individuals who do not have the condition, known as true negatives. A test with high specificity reduces the likelihood of false positives, ensuring that those without the condition are not mistakenly diagnosed. This is crucial for avoiding unnecessary anxiety, further testing, or treatment for individuals who are actually healthy.\nTogether, sensitivity and specificity provide a more nuanced understanding of a test’s validity. They allow researchers to assess not only how accurately a test identifies true cases but also how effectively it distinguishes between those who have the condition and those who do not."
   },
   {
     "objectID": "reliable_valid.html",
@@ -488,6 +488,34 @@
     "href": "philosophical_underpinning.html#few-fundamental-concepts-and-their-importance-in-research",
     "title": "2  Philosophical Underpinnings of Research",
     "section": "2.1 Few Fundamental Concepts and their Importance in Research",
-    "text": "2.1 Few Fundamental Concepts and their Importance in Research\n\n2.1.1 Ontology\nOntology is the study of being and existence. It concerns the nature of reality and what entities exist in the world.\nIn the context of research, ontology influences how researchers conceptualize the nature of the phenomena they study. For instance, a researcher may adopt a realist ontology, believing that a reality exists independent of human perceptions, or a constructivist ontology, where reality is seen as socially constructed."
+    "text": "2.1 Few Fundamental Concepts and their Importance in Research\nResearch, as we stated earlier, is discovering and validating innovative approaches to investigate and comprehend reality. By investigating reality, we mean to understand its nature and to gather knowledge about the reality and make sense about the same. This understanding of research takes us to the philosophical concepts of ontology, epistemology and axiology.\n\n2.1.1 Ontology\nOntology is the study of being and existence. It concerns the nature and structure of reality and what entities exist in the world.\n\nIt was called first philosophy by Aristotle.\nOrigin comes from the Latin term ontologia, science of being.\n\nIn the context of research, ontology influences how researchers conceptualize the nature of the reality they study. For instance, a researcher may adopt an objectivist ontology, believing that a reality exists independent of human perceptions, or a subjectivist/constructivist/constructionist ontology, where reality is seen as socially constructed.\nBroadly ontology may be divided into two, which is discussed below.\n\n\n2.1.2 Objectivist Ontology"
+  },
+  {
+    "objectID": "valid_reliable.html#main-types-of-validity-typically-distinguished-in-research",
+    "href": "valid_reliable.html#main-types-of-validity-typically-distinguished-in-research",
+    "title": "9  Validity in Research",
+    "section": "9.1 Main types of validity typically distinguished in research:",
+    "text": "9.1 Main types of validity typically distinguished in research:\n\nMeasurement Validity\nInternal Validity\nExternal Validity\nEcological Validity"
+  },
+  {
+    "objectID": "valid_reliable.html#measurement-validity",
+    "href": "valid_reliable.html#measurement-validity",
+    "title": "9  Validity in Research",
+    "section": "9.2 Measurement Validity",
+    "text": "9.2 Measurement Validity\nThe soundness or appropriateness of a test or instrument or it could be even an indicator to measure a concept, in measuring what it is designed to measure.\n\n9.2.1 Several Ways of Establishing Measurement Validity\n\nFace Validity, reflects the content of the concept in question.It can be established by consulting experts to see if the measure accurately addresses the intended concept."
+  },
+  {
+    "objectID": "valid_reliable.html#conventional-paradigms-of-validity",
+    "href": "valid_reliable.html#conventional-paradigms-of-validity",
+    "title": "9  Validity in Research",
+    "section": "9.3 Conventional Paradigms of Validity",
+    "text": "9.3 Conventional Paradigms of Validity\n\nInternal validity The best approximation of truth or falsity of a statement implying a relationship or its absence between two variables –indicative of causation.\nExternal validity The validity with which we infer that the presumed causal relationships can be generalised to and across alternative measures of the cause and effect and across different types of persons, settings and times."
+  },
+  {
+    "objectID": "valid_reliable.html#few-terms-in-clinical-resaerch",
+    "href": "valid_reliable.html#few-terms-in-clinical-resaerch",
+    "title": "9  Validity in Research",
+    "section": "9.4 Few terms in clinical resaerch",
+    "text": "9.4 Few terms in clinical resaerch\nWhen discussing validity in clinical research, two crucial concepts emerge, sensitivity and specificity. These metrics are essential for evaluating the performance of diagnostic tests and measurement instruments, helping clinicians understand how accurately these tools identify the presence or absence of a condition."
   }
 ]

@@ -3,21 +3,33 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
+
 # Philosophical Underpinnings of Research
 
-The pursuit of knowledge is deeply rooted in philosophical inquiry, shaping the very foundation of research. Understanding the philosophical underpinnings of research is essential for scholars and practitioners alike, as it informs the way we approach questions, interpret data, and derive conclusions. 
+The pursuit of knowledge is deeply rooted in philosophical inquiry, shaping the very foundation of research. Understanding the philosophical underpinnings of research is essential for scholars and practitioners alike, as it informs the way we approach questions, interpret data, and derive conclusions.
 
-Philosophy encompasses a range of inquiries into existence, knowledge, and values, each of which holds profound implications for research. By examining the epistemological, ontological, and axiological dimensions of inquiry, researchers can better appreciate the frameworks that guide their work. 
+Philosophy encompasses a range of inquiries into existence, knowledge, and values, each of which holds profound implications for research. By examining the epistemological, ontological, and axiological dimensions of inquiry, researchers can better appreciate the frameworks that guide their work.
 
-As we delve into the philosophical foundations of research, it is crucial to recognize that our beliefs and assumptions shape not only the questions we ask but also how we engage with the world around us. By reflecting on these philosophical dimensions, researchers can cultivate a more nuanced understanding of their own positionality, ultimately enhancing the rigor and relevance of their work.
 
 ## Few Fundamental Concepts and their Importance in Research
 
+Research, as we stated earlier, is discovering and validating innovative approaches to investigate and comprehend reality. By investigating reality, we mean to understand its nature and to gather knowledge about the reality and make sense about the same. This understanding of research takes us to the philosophical concepts of ontology, epistemology and axiology.
+
 ### Ontology
 
-Ontology is the study of being and existence. It concerns the **nature of reality** and what entities exist in the world.
+Ontology is the study of being and existence. It concerns the **nature and structure of reality** and what entities exist in the world.
 
-In the context of research, ontology influences how researchers conceptualize the nature of the phenomena they study. For instance, a researcher may adopt a realist ontology, believing that a reality exists independent of human perceptions, or a constructivist ontology, where reality is seen as socially constructed.
+-   It was called **first philosophy** by Aristotle.
+-   Origin comes from the Latin term **ontologia**, *science of being*.
+
+In the context of research, ontology influences how researchers conceptualize the nature of the reality they study. For instance, a researcher may adopt an objectivist ontology, believing that a reality exists independent of human perceptions, or a subjectivist/constructivist/constructionist ontology, where reality is seen as socially constructed.
+
+Broadly ontology may be divided into two, which is discussed below.
+
+
+### Objectivist Ontology
+
+
 
 ## Epistemology
 

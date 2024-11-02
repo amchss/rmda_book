@@ -14,7 +14,6 @@ book:
     chapters:
       - understanding_research.qmd
       - philosophical_underpinning.qmd
-      - need_for_research.qmd
       - types_of_research.qmd
       - steps_in_research.qmd
   - part: study_design.qmd
