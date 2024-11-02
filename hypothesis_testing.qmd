@@ -168,36 +168,31 @@ t_test_result
 
 **Paired t-Test Results Interpretation**
 
-- T-Statistic:
 
 The t-statistic is -155.16, indicating a significant difference in systolic blood pressure (BP) between the average pre-intervention and post-intervention measurements.
 
-- Degrees of Freedom (df):
 
 The degrees of freedom is 4855, indicating a large sample size, which adds robustness to the statistical findings.
-
-= P-Value:
 
 The p-value is < 2.2e-16, which is extremely low and suggests a statistically significant difference in systolic blood pressure before and after the intervention. Since this p-value is well below the standard threshold of 0.05, we reject the null hypothesis, indicating that there is a meaningful change in BP levels.
 Alternative Hypothesis:
 
 The alternative hypothesis states that the true mean difference in systolic blood pressure between the two measurements (pre- and post-intervention) is not equal to zero.
 
-- 95% Confidence Interval:
 
 The 95% confidence interval for the mean difference is (-4.603987, -4.489094). This interval indicates that we can be 95% confident that the true mean decrease in systolic blood pressure lies between -4.60 mmHg and -4.49 mmHg. Since the entire interval is negative, this strongly supports the conclusion that the intervention has led to a significant reduction in systolic BP.
 
-- Mean Difference:
 
 The average difference in systolic blood pressure is approximately -4.55 mmHg, suggesting that, on average, individuals with a BMI greater than 25 experienced a decrease of 4.55 mmHg in systolic BP following the intervention.
 
-- Conclusion
 
 The results of the paired t-test indicate that the intervention was effective, resulting in a statistically significant decrease in systolic blood pressure among individuals with a BMI greater than 25. The average decrease of 4.55 mmHg is both statistically significant and clinically relevant. This finding underscores the importance of the intervention in managing blood pressure among this population, suggesting that similar strategies may be beneficial for further lowering systolic blood pressure and improving cardiovascular health.
 
 :::
 
 ## Chi-Squared Test
+
+::: {style="text-align:justify"}
 
 The chi-squared test is a statistical method used to determine if there is a significant association between two categorical variables. By comparing the observed frequency distribution of categories with the expected distribution (assuming no association), the test evaluates whether the variables are independent of each other or if there is an association. This test is particularly useful in analyzing relationships in large datasets with categorical data, like survey responses or patient characteristics.
 
@@ -263,7 +258,11 @@ However, while statistical significance tells us there is an association, it doe
 
 For binary outcomes like diabetes status, logistic regression would be a suitable approach. It would allow us to model the probability of diabetes as a function of BMI categories while providing insights into how each category impacts the likelihood of diabetes, as reflected by odds ratios. This approach also enables adjustments for potential confounders, offering a more comprehensive understanding of the relationship.
 
+:::
+
 ## One-way ANOVA 
+
+::: {style="text-align:justify"}
 
 One-way ANOVA (Analysis of Variance) is used to compare the means of more than two groups to determine if at least one group mean differs significantly from the others. This method is suitable when we have a categorical independent variable (factor) with multiple levels and a continuous dependent variable. For example, we could use one-way ANOVA to test if the average blood pressure differs across BMI categories.
 
@@ -297,5 +296,8 @@ summary(anova_model)
 - **p-value (< 2e-16)**: The extremely small p-value is well below 0.05, leading us to reject the null hypothesis. This indicates that there is a statistically significant difference in systolic blood pressure among the different BMI categories in this sample.
 
 Since the ANOVA indicates a significant difference, a post-hoc analysis (such as Tukey's HSD) could be conducted to identify which BMI categories specifically differ from each other in terms of average systolic blood pressure.
+
+:::
+
 
 ## References {.unnumbered}
