@@ -39,21 +39,21 @@
     "href": "valid_reliable.html#measurement-validity",
     "title": "9  Validity in Research",
     "section": "9.2 Measurement Validity",
-    "text": "9.2 Measurement Validity\n\nThe soundness or appropriateness of a test or instrument or it could be even an indicator to measure a concept, in measuring what it is designed to measure.\n\n\n9.2.1 Several Ways of Establishing Measurement Validity\n\n\nFace Validity, reflects the content of the concept in question.It can be established by consulting experts to see if the measure accurately addresses the intended concept.\nConcurrent Validity,one of the main approaches to establishing measurement validity. It entails relating a measure to a criterion on which cases (e.g. people) are known to differ and that is relevant to the concept in question."
+    "text": "9.2 Measurement Validity\n\nThe soundness or appropriateness of a test or instrument or it could be even an indicator to measure a concept, in measuring what it is designed to measure.\n\n\n9.2.1 Several Ways of Establishing Measurement Validity\n\n\nFace Validity: Reflects the content of the concept in question.It can be established by consulting experts to see if the measure accurately addresses the intended concept.\nContent Validity: Infers that the test measures all aspects contributing to the concept/variable of interest.\nConcurrent Validity: Infers that the test produces similar results to a previously validated test.It entails relating a measure to a criterion on which cases (e.g. people) are known to differ and that is relevant to the concept in question.\nPredictive Validity: Infers that the test provides a valid reflection of future performance using a similar test. Here, the researcher uses a future criterion measure, rather than a contemporary one, as in concurrent validity.\nConstruct Validity: Infers not only that the test is measuring what it is supposed to, but also that it is capable of detecting what should exist,theoretically. Therefore relates to hypothetical or intangible constructs, researcher is encouraged to deduce hypotheses from a theory that is relevant to the concept."
   },
   {
     "objectID": "valid_reliable.html#conventional-paradigms-of-validity",
     "href": "valid_reliable.html#conventional-paradigms-of-validity",
     "title": "9  Validity in Research",
     "section": "9.3 Conventional Paradigms of Validity",
-    "text": "9.3 Conventional Paradigms of Validity\n\n\nInternal validity The best approximation of truth or falsity of a statement implying a relationship or its absence between two variables –indicative of causation.\nExternal validity The validity with which we infer that the presumed causal relationships can be generalised to and across alternative measures of the cause and effect and across different types of persons, settings and times."
+    "text": "9.3 Conventional Paradigms of Validity\n\n\nInternal validity: The best approximation of truth or falsity of a statement implying a relationship or its absence between two variables –indicative of causation.\nExternal validity: The validity with which we infer that the presumed causal relationships can be generalised to and across alternative measures of the cause and effect and across different types of persons, settings and times."
   },
   {
     "objectID": "reliable_valid.html#definitions",
     "href": "reliable_valid.html#definitions",
     "title": "10  Reliability in Research",
     "section": "10.1 Definitions",
-    "text": "10.1 Definitions\n\nThe degree to which a test or measure produces the same scores when applied in the same circumstances\n       - Nelson 1997\nThe degree of stability expected when a measurement is repeated under identical conditions; degree to which the results obtained from a measurement procedure can be replicated\n- Last"
+    "text": "10.1 Definitions\n\n\nThe degree to which a test or measure produces the same scores when applied in the same circumstances\n       - Nelson 1997\nThe degree of stability expected when a measurement is repeated under identical conditions; degree to which the results obtained from a measurement procedure can be replicated\n- Last"
   },
   {
     "objectID": "hypothesis_testing.html#one-sample-t-test",
@@ -292,5 +292,12 @@
     "title": "14  Descriptive Statistics: Graphical Methods",
     "section": "14.7 Visualizing Four Variables using R",
     "text": "14.7 Visualizing Four Variables using R\n\nTo visualize four variables, we can use a combination of color (or fill) for the third variable and facet wrapping for the fourth variable. Facet wrapping creates a series of smaller plots based on the levels of a categorical variable, allowing us to compare the relationships across different subgroups.\nExample: Scatter Plot with Color and Facet Wrap\nIn this example, we’ll use a scatter plot with color representing a third variable, and facet wrapping to display different plots for each level of the fourth variable.\n\n# Scatter plot with color and facet wrap for a fourth variable\nggplot(df, \n       aes(x = height, \n           y = weight,\n           color = gender)) +\n  geom_point(size = 1) +\n    facet_wrap(~race1)+\n  labs(title = \"Scatter Plot of Height vs Weight by Race and gender\", \n       x = \"Height\", y = \"Weight\", color = \"Gender\")\n\nWarning: Removed 366 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+  },
+  {
+    "objectID": "valid_reliable.html#ecological-validity",
+    "href": "valid_reliable.html#ecological-validity",
+    "title": "9  Validity in Research",
+    "section": "9.4 Ecological Validity",
+    "text": "9.4 Ecological Validity\n\nEcological Validity is concerned with the question of whether social scientific findings are applicable to people’s everyday, natural social settings, commonly applicable in social science research.Do the tools/instruments capture the daily life conditions, opinions, values, attitudes, and knowledge base of those studied as expressed in their natural habitat?’\nFor a more in-depth understanding, refer to additional resources.\n\nValidity and Reliability in Quantitative Studies"
   }
 ]
