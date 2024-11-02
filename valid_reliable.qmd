@@ -37,8 +37,13 @@ The soundness or appropriateness of a test or instrument or it could be even an 
 
  - **Face Validity**, reflects the content of the concept in question.It can be established by consulting experts to see if the measure accurately addresses the intended concept.
  
+ - **Content Validity**,infers that the test measures all aspects contributing to the
+variable of interest
+ 
  - **Concurrent Validity**,one of the main approaches to establishing measurement validity. It entails relating a measure to a criterion on which cases (e.g. people) are known to differ
 and that is relevant to the concept in question.
+
+
 
 :::
 
