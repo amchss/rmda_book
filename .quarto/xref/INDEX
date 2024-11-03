@@ -73,5 +73,17 @@
   },
   "regression_analysis.qmd": {
     "regression_analysis.html": "2709b1de"
+  },
+  "intro_r.qmd": {
+    "intro_r.html": "8f6e16a0"
+  },
+  "install_r_rstudio.qmd": {
+    "install_r_rstudio.html": "7c04f689"
+  },
+  "fundamentals_dplyr.qmd": {
+    "fundamentals_dplyr.html": "46bb0f13"
+  },
+  "exploring_data.qmd": {
+    "exploring_data.html": "ef92caf1"
   }
 }
