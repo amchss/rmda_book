@@ -1,86 +1,77 @@
 {
+  "valid_reliable.qmd": {
+    "valid_reliable.html": "92981335"
+  },
   "index.qmd": {
-    "index.html": "89944cc2"
+    "index.html": "34ce7b1f"
   },
   "preface.qmd": {
-    "preface.html": "6bbacfc1"
+    "preface.html": "881966c8"
   },
   "research_methods.qmd": {
-    "research_methods.html": "9843c9cc"
+    "research_methods.html": "40d41c85"
   },
   "understanding_research.qmd": {
-    "understanding_research.html": "eee051a4"
-  },
-  "need_for_research.qmd": {
-    "need_for_research.html": "04337e4b"
-  },
-  "types_of_research.qmd": {
-    "types_of_research.html": "c5c2cc65"
-  },
-  "steps_in_research.qmd": {
-    "steps_in_research.html": "6e38fff3"
-  },
-  "study_design.qmd": {
-    "study_design.html": "26238fdf"
-  },
-  "observational_study_design.qmd": {
-    "observational_study_design.html": "e888f60c"
-  },
-  "descriptive_observational_design.qmd": {
-    "descriptive_observational_design.html": "c2fa94b4"
-  },
-  "analytical_observational_design.qmd": {
-    "analytical_observational_design.html": "e60c1f22"
-  },
-  "experimental_study_design.qmd": {
-    "experimental_study_design.html": "54c82374"
-  },
-  "statistical_methods.qmd": {
-    "statistical_methods.html": "2d6b1b78"
-  },
-  "descriptive_statistics.qmd": {
-    "descriptive_statistics.html": "369e97ee"
-  },
-  "graph_descriptive_statistics.qmd": {
-    "graph_descriptive_statistics.html": "0ef1e50c"
-  },
-  "num_descriptive_statistics.qmd": {
-    "num_descriptive_statistics.html": "bf935148"
-  },
-  "inferential_statistics.qmd": {
-    "inferential_statistics.html": "d10f2dcd"
-  },
-  "hypothesis_testing.qmd": {
-    "hypothesis_testing.html": "e06292e4"
-  },
-  "regression_analysis.qmd": {
-    "regression_analysis.html": "c3a99713"
+    "understanding_research.html": "13a1d717"
   },
   "philosophical_underpinning.qmd": {
-    "philosophical_underpinning.html": "bd26db9a"
+    "philosophical_underpinning.html": "c2cb1369"
   },
-  "bias_in_research.qmd": {
-    "bias_in_research.html": "038eae41"
+  "types_of_research.qmd": {
+    "types_of_research.html": "6a0dd85c"
   },
-  "ethics_in_research.qmd": {
-    "ethics_in_research.html": "f306048f"
+  "steps_in_research.qmd": {
+    "steps_in_research.html": "869d5eff"
+  },
+  "study_design.qmd": {
+    "study_design.html": "534f9d61"
+  },
+  "observational_study_design.qmd": {
+    "observational_study_design.html": "e580e246"
+  },
+  "descriptive_observational_design.qmd": {
+    "descriptive_observational_design.html": "f673dd4f"
+  },
+  "analytical_observational_design.qmd": {
+    "analytical_observational_design.html": "30f9841d"
+  },
+  "experimental_study_design.qmd": {
+    "experimental_study_design.html": "822ae18a"
   },
   "validity_reliability_research.qmd": {
-    "validity_reliability_research.html": "717c1101"
-  },
-  "valid_reliable.qmd": {
-    "valid_reliable.html": "535e738d"
+    "validity_reliability_research.html": "9f8c79b6"
   },
   "reliable_valid.qmd": {
-    "reliable_valid.html": "f5caadbf"
+    "reliable_valid.html": "d0a70f56"
+  },
+  "bias_in_research.qmd": {
+    "bias_in_research.html": "e15aa3d5"
+  },
+  "ethics_in_research.qmd": {
+    "ethics_in_research.html": "50c1cb17"
   },
   "understanding_ethics.qmd": {
-    "understanding_ethics.html": "5e5d0780"
+    "understanding_ethics.html": "1fcf9830"
   },
-  "validity.qmd": {
-    "validity.html": "f9fe31ea"
+  "statistical_methods.qmd": {
+    "statistical_methods.html": "f2e0300d"
   },
-  "reliability.qmd": {
-    "reliability.html": "20cacd7f"
+  "descriptive_statistics.qmd": {
+    "descriptive_statistics.html": "e69d5f27"
+  },
+  "graph_descriptive_statistics.qmd": {
+    "graph_descriptive_statistics.html": "ce709913"
+  },
+  "num_descriptive_statistics.qmd": {
+    "num_descriptive_statistics.html": "3da6972f"
+  },
+  "inferential_statistics.qmd": {
+    "inferential_statistics.html": "78796bbd"
+  },
+  "hypothesis_testing.qmd": {
+    "hypothesis_testing.html": "5083d892"
+  },
+  "regression_analysis.qmd": {
+    "regression_analysis.html": "2709b1de"
   }
 }
