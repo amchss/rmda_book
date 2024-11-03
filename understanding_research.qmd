@@ -1,14 +1,15 @@
----
-output: html_document
-editor_options: 
-  chunk_output_type: console
----
 
 # Research: Etymology & Definition 
 
+::: {style="text-align:justify"}
+
 The goal of this session is to explore the origin of the word 'research' and to elucidate its definition..
 
+:::
+
 ## Origin of the Word 'Research'
+
+::: {style="text-align:justify"}
 
 The word research traces its origin to the *Middle French* term **rechercher** which translates to *search again*.
 
@@ -16,7 +17,11 @@ The word research traces its origin to the *Middle French* term **rechercher** w
 
 This verb is composed of the Old French prefix "re-" meaning "again" and "cerchier" which means "to search." Therefore, "research" originally conveyed the idea of revisiting or closely examining something.
 
+:::
+
 ## Defining Research
+
+::: {style="text-align:justify"}
 
 Research may be defined as the creation of new knowledge and/or the use of existing knowledge in a new and creative way so as to generate new concepts, methodologies and understandings. This could include synthesis and analysis of previous research to the extent that it leads to new and creative outcomes.
 
@@ -41,3 +46,5 @@ Let us visit few definitions given for research by luminaries in the field.
     \- **Francis G Cornell**
 
 Cornell, here adds another dimension by asserting that effective research must be reliable, verifiable, and exhaustive. This perspective emphasizes the credibility of research findings and their importance in fostering confidence. By characterizing research as a form of human behavior, Fourier highlights its collaborative and social aspects, recognizing that research involves interaction and engagement among individuals.
+
+:::

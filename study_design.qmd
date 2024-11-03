@@ -1,13 +1,15 @@
----
-output: html_document
-editor_options: 
-  chunk_output_type: console
----
+
 # Epidemiological Study Designs
+
+::: {style="text-align:justify"}
 
 The goal of this session is to introduce different study designs used in epidemiology, understand their strengths and limitations and thereby equip us to choose appropriate designs for various research questions.
 
+:::
+
 ## What is a 'Study Design' ?
+
+::: {style="text-align:justify"}
 
 -   A framework, or a set of methods and procedures used to collect and analyze data on variables specified in a particular research problem.
 
@@ -15,7 +17,11 @@ The goal of this session is to introduce different study designs used in epidemi
 
 -   A specific plan or protocol for conducting the study, which allows the investigator to translate the conceptual hypothesis into an operational one.
 
+:::
+
 ## What determine the type of Study Design?
+
+::: {style="text-align:justify"}
 
 -   The nature of question
 
@@ -23,7 +29,11 @@ The goal of this session is to introduce different study designs used in epidemi
 
 -   The availability of resources
 
+:::
+
 ## Study designs are broadly categorised into two
+
+::: {style="text-align:justify"}
 
 -   Observational Study Design
 
@@ -41,3 +51,5 @@ kable(df, caption = "To Differentiate Observational & Experimental Study Design"
 
 
 ```
+
+:::
