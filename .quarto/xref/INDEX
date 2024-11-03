@@ -85,5 +85,11 @@
   },
   "exploring_data.qmd": {
     "exploring_data.html": "ef92caf1"
+  },
+  "exploring_data_v2.qmd": {
+    "exploring_data_v2.html": "e6608de4"
+  },
+  "fundamentals_dplyr_v2.qmd": {
+    "fundamentals_dplyr_v2.html": "13996c91"
   }
 }

@@ -33,8 +33,8 @@ book:
   - part: intro_r.qmd
     chapters:
       - install_r_rstudio.qmd
-      - fundamentals_dplyr.qmd
-      - exploring_data.qmd
+      - fundamentals_dplyr_v2.qmd
+      - exploring_data_v2.qmd
   - part: statistical_methods.qmd
     chapters:
       - descriptive_statistics.qmd
