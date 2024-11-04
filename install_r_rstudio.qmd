@@ -1,0 +1,371 @@
+---
+embed-resources: true
+---
+
+# Getting Comfortable with R and RStudio
+
+## Install R
+
+:::{style="text-align:justify"}
+
+1.  Go here: <https://cran.rstudio.com/>
+
+2.  Choose the correct "Download R for. . ." option from the top (probably Windows or macOS), then...
+
+<!-- -->
+
+a.  For Windows users, choose "Install R for the first time" (next to the base subdirectory) and then "Download R 4.4.1 for Windows"
+
+b.  For macOS users, select the appropriate version for your operating system (e.g. the latest release is version 4.4.1, will look something like R-4.4.1-arm64.pkg), then choose to Save or Open
+
+c.  Once downloaded, save, open once downloaded, agree to license, and install like you would any other software.
+
+:::
+
+![If it installs, you should be able to find the R icon in your applications.](images/Rlogo.JPG){width="80"}
+
+## Install RStudio
+
+:::{style="text-align:justify"}
+
+RStudio is a user-friendly interface for working with R. That means you must have R already installed for RStudio to work. Make sure you've successfully installed R in Step 1, then. . .
+
+1.  Go to <https://www.rstudio.com/products/rstudio/download/> to download RStudio Desktop (Open Source License). You'll know you're clicking the right one because it says "FREE" right above the download button.
+
+2.  Click download, which takes you just down the page to where you can select the correct version under Installers for Supported Platforms (almost everyone will choose one of the first two options, RStudio for Windows or macOS).
+
+3.  Click on the correct installer version, save, open once downloaded, agree to license and install like you would any other software. The version should be at least RStudio 2023.06.2 "Mountain Hydrangea", 2023.
+
+:::
+
+![If it installs, you should be able to find the RStudio icon in your applications.](images/RStudiologo.png){width="80"}
+
+## Understanding the RStudio environment
+
+### Pane layout
+
+:::{style="text-align:justify"}
+
+The RStudio environment consist of multiple windows. Each window consist of certain Panels
+
+Panels in RStudio
+
+1.  Source
+2.  Console
+3.  Environment
+4.  History
+5.  Files
+6.  Plots
+7.  Connections
+8.  Packages
+9.  Help
+10. Build
+11. Tutorial
+12. Viewer
+
+It is important to understand that not all panels will be used by you in routine as well as by us during the workshop. The workshop focuses on using R for healthcare professionals as a database management, visualization, and communication tool. The most common panels which requires attention are the source, console, environment, history, files, packages, help, tutorial, and viewer panels.
+
+:::
+
+### A guided tour
+
+:::{style="text-align:justify"}
+
+You are requested to make your own notes during the workshop. Let us dive deep into understanding the environment further in the workshop.
+
+:::
+
+## Creating a project.
+
+:::{style="text-align:justify"}
+
+It is important to understand that good workflows facilitate efficient database management. Lets discuss!
+
+:::
+
+## File types in R
+
+:::{style="text-align:justify"}
+
+The most common used file types are
+
+1.  `.R` : Script file
+2.  `.Rmd` : RMarkdown file
+3.  `.qmd` : Quarto file
+4.  `.rds` : Single R database file
+5.  `.RData` : Multiple files in a single R database file
+
+:::
+
+## Programming basics.
+
+:::{style="text-align:justify"}
+
+R is easiest to use when you know how the R language works. This section will teach you the implicit background knowledge that informs every piece of R code. You'll learn about:
+
+1.  Functions and their arguments
+2.  Objects
+3.  R's basic data types
+4.  R's basic data structures including vectors and lists
+5.  R's package system
+
+:::
+
+### Functions and their arguments.
+
+:::{style="text-align:justify"}
+
+To do anything in R, we call functions to work for us. Take for example, we want to compute square root of 5197. Now, we need to call a function `sqrt()` for the same.
+
+```{r}
+sqrt(5197)
+```
+
+**Important things to know about functions include:**
+
+1.  **Code body**.
+
+Typing code body and running it enables us understand what a function does in background.
+
+```{r}
+sqrt
+```
+
+2.  **Run a function**.
+
+To run a function, we need to add a parenthesis `()` after the code body. Within the parenthesis we add the details such as number in the above example.
+
+3.  **Help page**.
+
+Placing a question mark before the function takes you to the help page. This is an **important** aspect we need to understand. When calling help page parenthesis is not placed. This help page will enable you learn about new functions in your journey!
+
+```{r}
+#| eval: false
+
+?sqrt 
+```
+
+:::
+
+**Tip:**
+
+:::{style="text-align:justify"}
+
+Annotations are meant for humans to read and not by machines. It enables us take notes as we write. As a result, next time when you open your code even after a long time, you will know what you did last summer :)
+
+<br>
+
+**Arguments** are inputs provided to the function. There are functions which take no arguments, some take a single argument and some take multiple arguments. When there are two or more arguments, the arguments are separated by a comma.
+
+```{r}
+# No argument
+Sys.Date()
+# One argument
+sqrt(5197)
+# Two arguments
+sum(2,3)
+# Multiple arguments
+seq(from=1,
+    to = 10, 
+    by  = 2)
+```
+
+**Matching arguments**: Some arguments are understood as such by the software. Take for example, generating a sequence includes three arguments viz: from, to, by. The right inputs are automatically matched to the right argument.
+
+```{r}
+seq(1,10,2)
+```
+
+**Caution**: The wrong inputs are also matched. Best practice is to be explicit at early stages. Use argument names!
+
+```{r}
+seq(2,10,1)
+seq(by = 2,
+    to = 10,
+    from = 1)
+```
+
+Optional arguments: Some arguments are optional. They may be added or removed as per requirement. By default these optional arguments are taken by R *as default* values. Take for example, in `sum()` function, `na.rm = FALSE` is an optional argument. It ensures that the NA values are not removed by default and the sum is not returned when there are NA values. These optional arguments can be override by mentioning them explicitly.
+
+```{r}
+sum(2,3,NA)
+sum(2,3,NA, na.rm = T)
+```
+
+In contrast, the arguments which needs to be mentioned explicitly are mandatory! Without them, errors are returned as output.
+
+:::
+
+```{r}
+#| eval: false
+
+sqrt()
+```
+
+### Objects.
+
+:::{style="text-align:justify"}
+
+If we want to use the results in addition to viewing them in console, we need to store them as objects. To create an object, type the name of the object (Choose wisely, let it be explicit and self explanatory!), then provide an assignment operator. Everything to the right of the operator will be assigned to the object. You can save a single value or output of a function or multiple values or an entire data set in a single object.
+
+```{r}
+# Single value
+x <- 3
+x
+# Output from function
+x <- seq(from=1,
+    to = 10, 
+    by  = 2)
+# Better name:
+sequence_from_1_to_10 <- seq(from=1,
+    to = 10, 
+    by  = 2)
+```
+
+Creating an object helps us in viewing its contents as well make it easier to apply additional functions
+
+**Tip.** While typing functions/ object names, R prompts are provided. Choose from the prompts rather than typing the entire thing. It will ease out many things later!
+
+:::
+
+```{r}
+sequence_from_1_to_10
+sum(sequence_from_1_to_10)
+```
+
+### Vectors
+
+:::{style="text-align:justify"}
+
+R stores values as a vector which is one dimensional array. Arrays can be two dimensional (similar to excel data/ tabular data), or multidimensional. Vectors are always one dimensional!
+
+Vectors can be a single value or a combination of values. We can create our own vectors using `c()` function.
+
+```{r}
+single_number <- 3
+single_number
+number_vector <- c(1,2,3)
+number_vector
+```
+
+Creating personalized vectors is powerful as a lot of functions in R takes vectors as inputs.
+
+```{r}
+mean(number_vector)
+```
+
+Vectorized functions: The function is applied to each element of the vector:
+
+```{r}
+sqrt(number_vector)
+```
+
+If we have two vectors of similar lengths (such as columns of a research data), vectorised functions help us compute for new columns by applying the said function on each element of both the vectors and give a vector of the same length (Consider this as a new column in the research data)
+
+```{r}
+number_vector2 <- c(3,-4,5.4)
+number_vector + number_vector2
+```
+
+:::
+
+### Data Types
+
+:::{style="text-align:justify"}
+
+R recognizes different types of vectors based on the values in the vector.
+
+If all values are numbers (positive numbers, negative numbers, decimals), R will consider that vector as numerical and allows you to carry out mathematical operations/ functions. You can find the class of the vector by using `class()` function.R labels these vectors as "double", "numeric", or "integers".
+
+```{r}
+class(number_vector)
+class(number_vector2)
+```
+
+If the values are within quotation marks, it is character variable by default. It is equivalent to nominal variable.
+
+```{r}
+alphabets_vector <- c("a", "b", "c")
+class(alphabets_vector)
+integer_vector <- c(1L,2L)
+class(integer_vector)
+```
+
+Logical vectors contain TRUE and FALSE values
+
+```{r}
+logical_vector <- c(TRUE, FALSE)
+class(logical_vector)
+```
+
+Factor vectors are categorical variables. Other variable types can be converted to factor type using function`factor()`
+
+```{r}
+
+factor_vector <- factor(number_vector)
+factor_vector
+```
+
+We can add labels to factor vectors using optional arguments
+
+```{r}
+factor_vector <- factor(number_vector,
+                        levels =c(1,2,3),
+                        labels = c("level1", 
+                                   "level2", 
+                                   "level3"))
+factor_vector
+```
+
+**One vector = One type**. For example: When there is mix of numbers and characters, R will consider all as character.
+
+```{r}
+mix_vector <- c(1,"a")
+class(mix_vector)
+```
+
+Note that the number 1 has been converted into character class.
+
+```{r}
+mix_vector[1]
+mix_vector[1] |> class()
+```
+
+Double, character, integer, logical, complex, raw, dates, etc... There are many other data types and objects but for now, lets start with these. You will understand additional types as you will proceed in your R journey!
+
+:::
+
+### Lists
+
+:::{style="text-align:justify"}
+
+In addition to vectors, lists are another powerful objects. A list can be considered as a vector of vectors!! They enable you to store multiple types of vectors together. A list can be made using a `list()` function. It is similar to `c()` function but creates a list rather than a vector. It is a good practice to name the vectors in the list.
+
+```{r}
+example_list <- list(numbers = number_vector, 
+                     alphabets = alphabets_vector)
+class(example_list)
+example_list
+```
+
+The elements of a named list/ a named vector can be called by using a `$`.
+
+```{r}
+example_list$numbers
+```
+
+:::
+
+### Packages
+
+:::{style="text-align:justify"}
+
+There are thousands of functions in R. To be computationally efficient, R do not load all functions on start. It loads only base functions. As you want to use additional functions, we need to load the packages using `library()` function.
+
+\textbf{Important}
+
+The additional packages are installed once but loaded everytime you start R sessions.
+
+With these basics, lets deep dive into the workshop!! Are you ready?
+
+:::

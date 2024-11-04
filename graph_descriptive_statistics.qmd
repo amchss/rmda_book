@@ -6,21 +6,21 @@ Graphical methods are crucial for understanding data at a glance. Depending on t
 
 ## Graphical Methods for a Single Variable
 
-| **Variable Type**                   | **Graphical Method** | **Description**                                       |
-|-------------------------------------|----------------------|-------------------------------------------------------|
-| **Categorical (Nominal / Ordinal)** | Bar Chart            | Shows frequency or proportion of categories           |
-| **Discrete (Integer)**              | Histogram            | Displays the count of values across defined intervals |
-|                                     | Dot Plot             | Shows individual data points for small datasets       |
-| **Continuous (Double)**             | Histogram            | Shows the frequency distribution of continuous values |
-|                                     | Box Plot             | Displays distribution, including outliers             |
-|                                     | Density Plot         | Visualizes the density function                       |
+| **Variable Type** | **Graphical Method** | **Description** |
+|-------------------|-------------------|-----------------------------------|
+| **Categorical (Nominal / Ordinal)** | Bar Chart | Shows frequency or proportion of categories |
+| **Discrete (Integer)** | Histogram | Displays the count of values across defined intervals |
+|  | Dot Plot | Shows individual data points for small datasets |
+| **Continuous (Double)** | Histogram | Shows the frequency distribution of continuous values |
+|  | Box Plot | Displays distribution, including outliers |
+|  | Density Plot | Visualizes the density function |
 
 ## Graphical Methods for Two Variable Visualization
 
-|                                     | **Categorical (Nominal / Ordinal)** | Numeric (Discrete / Continuous) |
-|-------------------------------------|-------------------------------------|---------------------------------|
-| **Categorical (Nominal / Ordinal)** | Stacked Bar Chart                   | Grouped Bar Chart               |
-| **Numeric (Discrete / Continuous)** | Grouped Bar Chart                   | Scatter Plot                    |
+|   | **Categorical (Nominal / Ordinal)** | Numeric (Discrete / Continuous) |
+|------------------|----------------------------|--------------------------|
+| **Categorical (Nominal / Ordinal)** | Stacked Bar Chart | Box plot |
+| **Numeric (Discrete / Continuous)** | Box plot | Scatter Plot |
 
 ## Data Visualization Using R: Introduction to Grammar of Graphics
 
@@ -136,7 +136,7 @@ Graphical methods are essential for summarizing and understanding the distributi
 ### Bar Chart
 
 ::: {style="text-align:justify"}
-A **bar chart** is used to represent categorical data (nominal or ordinal). Each bar represents the frequency (or count) of a category. It's commonly used for visualizing nominal variables like gender or education level.
+A **bar chart** is used to represent categorical data (nominal or ordinal). Each bar represents the frequency (or count) of a category. It’s commonly used for visualizing nominal variables like gender or education level.
 
 Example:
 
@@ -172,7 +172,7 @@ ggplot(df, aes(y = height)) +
 ### Histogram
 
 ::: {style="text-align:justify"}
-A histogram is used to visualize the distribution of a continuous variable by dividing the data into bins and counting the number of observations in each bin. It's useful for understanding the shape, spread, and central tendency of continuous variables like age or income.
+A histogram is used to visualize the distribution of a continuous variable by dividing the data into bins and counting the number of observations in each bin. It’s useful for understanding the shape, spread, and central tendency of continuous variables like age or income.
 
 Example:
 

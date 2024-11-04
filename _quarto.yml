@@ -30,6 +30,11 @@ book:
   - part: ethics_in_research.qmd
     chapters:
       - understanding_ethics.qmd
+  - part: intro_r.qmd
+    chapters:
+      - install_r_rstudio.qmd
+      - fundamentals_dplyr_v2.qmd
+      - exploring_data_v2.qmd
   - part: statistical_methods.qmd
     chapters:
       - descriptive_statistics.qmd

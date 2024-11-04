@@ -3,27 +3,30 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
-# Inferential Statistics: Hypothesis Testing
+
+# Inferential Statistics: Hypothesis Testing and Interval Estimation
 
 ::: {style="text-align:justify"}
+In inferential statistics, hypothesis testing and interval estimation are core methods used to make conclusions about a population from sample data. While hypothesis testing determines if there is enough evidence to reject a null hypothesis, interval estimation provides a range of values (confidence intervals) likely to contain the true population parameter. Together, these tools form the basis of statistical inference.
 
-Hypothesis testing is a statistical approach that helps determine if there is sufficient evidence to reject a null hypothesis in favor of an alternative hypothesis. In R, various built-in functions allow you to perform different hypothesis tests, including t-tests, chi-squared tests, and ANOVA. In this chapter, we explore commonly used hypothesis testing methods in R, providing an introductory look at their applications and functions.
-
-For a more in-depth understanding, refer to additional resources.
+In this chapter, we explore hypothesis testing and interval estimation for various scenarios using R, including means, proportions, and categorical variables. We focus on practical implementation and provide references for more in-depth theoretical understanding. For a more in-depth understanding, refer to additional resources.
 
 -   [Hypothesis testing, type I and type II errors](https://pmc.ncbi.nlm.nih.gov/articles/PMC2996198/): This paper explores the essentials of hypothesis testing in research, covering characteristics and types of hypotheses, statistical principles, type I and type II errors, effect size, alpha and beta, statistical power, and p-values [@banerjee2009].
 
 -   [Hypothesis Tests](https://pmc.ncbi.nlm.nih.gov/articles/PMC7807926/pdf/main.pdf): This article aims to provide readers with a clear understanding of the purpose of hypothesis testing, guidance on selecting the appropriate test for various research scenarios using a reference table, and insights into interpreting p-values effectively [@walker2019].
 
+-   [Using the confidence interval confidently](https://pmc.ncbi.nlm.nih.gov/articles/PMC5723800/pdf/jtd-09-10-4125.pdf): The paper discusses the application and significance of confidence intervals (CIs) in biomedical research, particularly for estimating population parameters based on sample data. It outlines the process of calculating CIs, noting that the margin of error depends on sample variability, sample size, and confidence level. The authors highlight how CIs provide more meaningful insights than p-values alone by offering an estimated range for effect size, which is crucial for assessing clinical relevance. [@hazra2017]
 :::
 
-## One-Sample T-Test
+## Hypothesis Testing and Interval Estimation for a Mean
+
+### One-Sample T-Test: Hypothesis Testing
 
 ::: {style="text-align:justify"}
 
-The one-sample t-test is a statistical method that compares the mean of a sample to a known reference value—usually a population mean—to assess if there is a significant difference. In this context, using the NHANES dataset, we can investigate whether the mean blood pressure (BP) of a sample of adults differs significantly from the standard "normal" BP value. For adults, normal BP is often considered to be around 120 mmHg for systolic pressure.
+The one-sample t-test is a statistical method that compares the mean of a sample to a known reference value—usually a population mean—to assess if there is a significant difference. 
 
-Here’s how we can set up and conduct this test:
+In this context, using the NHANES dataset, we can investigate whether the mean blood pressure (BP) of a sample of adults differs significantly from the standard "normal" BP value, which is often considered to be around 120 mmHg for systolic pressure.
 
 **Hypotheses:**
 
@@ -65,39 +68,59 @@ t_test_result
 
 ```
 
-
 **Interpretation of Results:**
 
-- t-Statistic: 3.618
+-   t-Statistic: 3.618
 
-- Degrees of Freedom: 7,204
+-   Degrees of Freedom: 7,204
 
-- p-value: 0.0002981
+-   p-value: 0.0002981
 
-- 95% Confidence Interval for Mean BP: (120.33, 121.12)
 
-- Sample Mean: 120.73 mmHg
-
-With a p-value of 0.0003 (below 0.05), we conclude that the sample’s average blood pressure of 120.73 mmHg is statistically different from the normal BP value of 120 mmHg. However, for clinicians, it’s essential to think about what this small difference actually means for patient care.
+**Conclusion**: With a p-value of 0.0003 (below 0.05), we conclude that the sample’s average blood pressure of 120.73 mmHg is statistically different from the normal BP value of 120 mmHg. However, for clinicians, it’s essential to think about what this small difference actually means for patient care.
 
 In this case, while there’s a statistically significant difference, the 0.73 mmHg increase from the standard value is likely too small to have clinical importance. This reminds us that even if a result is statistically significant, it’s the practical impact on patient outcomes that ultimately matters.
 
 :::
 
-## Two-sample t-test
+### One-Sample T-Test: Interval Estimation
 
 ::: {style="text-align:justify"}
 
-The **two-sample t-test** is a statistical test used to compare the means of two independent groups. In this context, we want to test whether there is a significant difference in height between males and females using the NHANES dataset.
+In addition to hypothesis testing, we also estimate a confidence interval (CI) for the mean systolic blood pressure of the sample. The confidence interval provides a range of values that likely contains the true mean systolic blood pressure of the population.
+
+**95% Confidence Interval Calculation:**
+
+From our one-sample t-test results, we can compute the 95% confidence interval for the mean blood pressure:
+
+- 95% Confidence Interval for Mean BP: (120.33, 121.12)
+
+- Sample Mean: 120.73 mmHg
+
+The confidence interval indicates that we can be 95% confident that the true mean systolic blood pressure of the population lies between 120.33 mmHg and 121.12 mmHg. This information is particularly valuable in clinical practice, as it not only provides an estimate of the mean but also conveys the degree of uncertainty around that estimate.
+
+While the average blood pressure of 120.73 mmHg is statistically significant, the width of the confidence interval (0.79 mmHg) suggests that there is little variability in our estimate, reinforcing the notion that this slight increase from the standard value may lack clinical importance.
+
+Ultimately, this dual approach—hypothesis testing combined with interval estimation—allows for a more comprehensive understanding of the data and its implications for patient care. 
+
+:::
+
+## Hypothesis Testing and Interval Estimation for Two Means
+
+
+### Two-Sample T-Test: Hypothesis Testing
+
+::: {style="text-align:justify"}
+
+The two-sample t-test is a statistical method used to compare the means of two independent groups. In this context, we will examine whether there is a significant difference in height between males and females using the NHANES dataset.
 
 **Hypotheses:**
 
-**Null Hypothesis ($H_0$)**: There is no difference in the mean height between males and females.
+**Null Hypothesis (**$H_0$): There is no difference in the mean height between males and females.
 
-**Alternative Hypothesis ($H_1$)**: : There is a difference in the mean height between males and females.
+**Alternative Hypothesis (**$H_1$): : There is a difference in the mean height between males and females.
 
 **Conduct the Test in R**: Assuming we have loaded and cleaned the NHANES dataset, we can perform the two-sample t-test on height.
-
 
 ```{r}
 # Conduct two-sample t-test for height difference between males and females
@@ -112,45 +135,64 @@ In the t.test() function in R, the argument var.equal = TRUE specifies that we a
 
 **Interpretation of Results**
 
-- t-Statistic: -80.661
+-   t-Statistic: -80.661
 
-- Degrees of Freedom (df): 7,422
+-   Degrees of Freedom (df): 7,422
 
-- p-value: < 2.2e-16
+-   p-value: \< 2.2e-16
 
-- 95% Confidence Interval for the Difference in 
-- Means: (-14.15, -13.48)
 
-- Sample Means:
-
-Female: 162.06 cm
-
-Male: 175.87 cm
-
-Conclusion: The very low p-value (< 0.05) indicates that we reject the null hypothesis, suggesting that there is a statistically significant difference in average height between males and females in this sample. The 95% confidence interval suggests that males are, on average, between 13.48 and 14.15 cm taller than females.
-
+**Conclusion:** The very low p-value (\< 0.05) indicates that we reject the null hypothesis, suggesting that there is a statistically significant difference in average height between males and females in this sample.
 :::
 
-## Paired t-test
+### Two-Sample T-Test: Confidence Interval
 
 ::: {style="text-align:justify"}
 
-To examine the effect of an intervention, a paired t-test can be used to compare blood pressure (BP) measurements taken pre- and post-intervention among individuals with a BMI greater than 25. The paired t-test is ideal for dependent samples, where each individual has measurements in both conditions (pre and post), allowing us to assess whether the intervention significantly impacted BP.
+In addition to hypothesis testing, it is important to calculate the confidence interval for the difference in means to provide further context regarding the effect size.
+
+**95% Confidence Interval for the Difference in Means:**
+
+**Confidence Interval:** (-14.15, -13.48)
+This interval suggests that males are, on average, between 13.48 and 14.15 cm taller than females.
+
+**Interpretation of the Confidence Interval:**
+
+- 95% Confidence Interval for the Difference in Means: (-14.15, -13.48)
+
+- Sample Means: 
+
+  + Female: 162.06 cm 
+  + Male: 175.87 cm
+  
+The confidence interval provides a range of values that, with 95% confidence, includes the true difference in average height between males and females. Since the entire interval is negative, this reinforces our earlier conclusion that males are significantly taller than females.
+
+:::
+
+### Paired T-Test: Hypothesis Testing
+
+::: {style="text-align:justify"}
+
+The paired t-test is a statistical method used to compare two related samples, measuring the same group at two different times.
+
+For example, to examine the effect of an intervention, a paired t-test can be used to compare blood pressure (BP) measurements taken pre- and post-intervention among individuals with a BMI greater than 25. 
+
+The paired t-test is ideal for dependent samples, where each individual has measurements in both conditions (pre and post), allowing us to assess whether the intervention significantly impacted BP.
 
 For the paired t-test examining blood pressure changes before and after an intervention among individuals with a BMI over 25, the hypotheses can be outlined as follows:
 
 **Hypotheses:**
 
-**Null Hypothesis ($H_0$)**: The mean systolic blood pressure before the intervention is equal to the mean blood pressure after the intervention for individuals with a BMI greater than 25. This implies that the intervention had no effect on blood pressure. 
+**Null Hypothesis (**$H_0$): The mean systolic blood pressure before the intervention is equal to the mean blood pressure after the intervention for individuals with a BMI greater than 25. This implies that the intervention had no effect on blood pressure.
 
-**Alternative Hypothesis ($H_1$)**:  The mean systolic blood pressure before the intervention is different from the mean blood pressure after the intervention for individuals with a BMI greater than 25, suggesting a potential effect of the intervention on blood pressure.
+**Alternative Hypothesis (**$H_1$): The mean systolic blood pressure before the intervention is different from the mean blood pressure after the intervention for individuals with a BMI greater than 25, suggesting a potential effect of the intervention on blood pressure.
 
 If the test results in a p-value less than our significance threshold (typically 0.05), we would reject the null hypothesis and conclude that there is a statistically significant difference in blood pressure, likely attributable to the intervention.
 
 ```{r}
 
 # Filter the dataset for individuals with BMI > 25
-df_filtered <- df %>%
+df_filtered <- df |> 
   filter(bmi > 25)
 
 # Run a paired t-test
@@ -165,44 +207,96 @@ t_test_result
 
 ```
 
-
 **Paired t-Test Results Interpretation**
 
 
-The t-statistic is -155.16, indicating a significant difference in systolic blood pressure (BP) between the average pre-intervention and post-intervention measurements.
+- t-statistic: -150.86
+
+- Degrees of Freedom (df): 4855
+
+- p-value: < 2.2e-16
 
 
-The degrees of freedom is 4855, indicating a large sample size, which adds robustness to the statistical findings.
+The t-statistic is -155.16, indicating a significant difference in systolic blood pressure (BP) between the average pre-intervention and post-intervention measurements.The degrees of freedom is 4855, indicating a large sample size, which adds robustness to the statistical findings.
 
-The p-value is < 2.2e-16, which is extremely low and suggests a statistically significant difference in systolic blood pressure before and after the intervention. Since this p-value is well below the standard threshold of 0.05, we reject the null hypothesis, indicating that there is a meaningful change in BP levels.
-Alternative Hypothesis:
-
-The alternative hypothesis states that the true mean difference in systolic blood pressure between the two measurements (pre- and post-intervention) is not equal to zero.
+The p-value is \< 2.2e-16, which is extremely low and suggests a statistically significant difference in systolic blood pressure before and after the intervention. Since this p-value is well below the standard threshold of 0.05, we reject the null hypothesis, indicating that there is a meaningful change in BP levels. 
 
 
-The 95% confidence interval for the mean difference is (-4.603987, -4.489094). This interval indicates that we can be 95% confident that the true mean decrease in systolic blood pressure lies between -4.60 mmHg and -4.49 mmHg. Since the entire interval is negative, this strongly supports the conclusion that the intervention has led to a significant reduction in systolic BP.
+### Paired T-Test: Confidence Interval
 
+The 95% confidence interval for the mean difference is (-4.529483, -4.413268). This interval indicates that we can be 95% confident that the true mean decrease in systolic blood pressure lies between -4.53 mmHg and -4.41 mmHg. Since the entire interval is negative, this strongly supports the conclusion that the intervention has led to a significant reduction in systolic BP.
 
-The average difference in systolic blood pressure is approximately -4.55 mmHg, suggesting that, on average, individuals with a BMI greater than 25 experienced a decrease of 4.55 mmHg in systolic BP following the intervention.
+The mean difference in systolic blood pressure is approximately -4.471376 mmHg, suggesting that, on average, individuals with a BMI greater than 25 experienced a decrease of about 4.47 mmHg in systolic BP following the intervention.
 
-
-The results of the paired t-test indicate that the intervention was effective, resulting in a statistically significant decrease in systolic blood pressure among individuals with a BMI greater than 25. The average decrease of 4.55 mmHg is both statistically significant and clinically relevant. This finding underscores the importance of the intervention in managing blood pressure among this population, suggesting that similar strategies may be beneficial for further lowering systolic blood pressure and improving cardiovascular health.
+The results of the paired t-test indicate that the intervention was effective, resulting in a statistically significant decrease in systolic blood pressure among individuals with a BMI greater than 25. The average decrease of 4.47 mmHg is both statistically significant and clinically relevant. 
 
 :::
+
+
+## Hypothesis Testing and Interval Estimation for a Proportion
+
+Now we cover the concepts of hypothesis testing and interval estimation for proportions. 
+
+### Hypothesis Testing for a Proportion
+
+Our research question is:
+
+*Is the prevalence of diabetes in the adult  population equal to 10%?*
+
+
+**Hypotheses:**
+
+**Null Hypothesis (**$H_0$): The proportion of individuals with diabetes in the adult population is equal to 20% (i.e., $p = 0.10$).
+
+**Alternative Hypothesis (**$H_1$): The proportion of individuals with diabetes in the adult population is not equal to 20% (i.e., $p \neq 0.10$).
+
+**Conducting the Test in R**
+
+```{r}
+
+diabetes_count <- df |> 
+  drop_na(diabetes) |> 
+  filter(diabetes == "Yes") |> 
+  nrow()
+
+total_count <- df |> 
+  drop_na(diabetes) |>  
+  nrow()
+
+prop.test(diabetes_count, total_count, p = 0.10)
+
+
+```
+
+Interpretation of Results
+
+
+
+With a p-value of 0.8653, which is much greater than the standard significance level of 0.05, we fail to reject the null hypothesis. This indicates that there is not enough evidence to suggest that the proportion of individuals with diabetes in the population differs from 10%.
+
+In a clinical context, this suggests that the observed prevalence of diabetes in the sample is consistent with the expected prevalence, and no significant deviation is noted.
+
+### Confidence Interval for a Proportion
+
+**Interpretation of Confidence Interval**
+
+From the above result, we have the 95% confidence interval for the proportion of individuals with diabetes is approximately  (0.0927,0.1064). This interval suggests that we can be 95% confident that the true proportion of individuals with diabetes in the population lies between 9.27% and 10.64%.
+
+This finding supports the conclusion from the hypothesis test that the proportion is consistent with the specified null value of 10%, providing further assurance that the prevalence of diabetes in the population is stable and aligns with previous estimates.
+
 
 ## Chi-Squared Test
 
 ::: {style="text-align:justify"}
-
 The chi-squared test is a statistical method used to determine if there is a significant association between two categorical variables. By comparing the observed frequency distribution of categories with the expected distribution (assuming no association), the test evaluates whether the variables are independent of each other or if there is an association. This test is particularly useful in analyzing relationships in large datasets with categorical data, like survey responses or patient characteristics.
 
 As an example, we’ll use the chi-squared test to examine whether there is an association between BMI category and diabetes status among adults in our dataset.
 
 **Hypotheses:**
 
-**Null Hypothesis ($H_0$)**: There is no association between BMI category and diabetes status (BMI and diabetes status are independent).
+**Null Hypothesis (**$H_0$): There is no association between BMI category and diabetes status (BMI and diabetes status are independent).
 
-**Alternative Hypothesis ($H_1$)**:  There is an association between BMI category and diabetes status.
+**Alternative Hypothesis (**$H_1$): There is an association between BMI category and diabetes status.
 
 **Data Preparation**
 
@@ -218,10 +312,9 @@ class(df$diabetes)
 
 Both variables are factor.
 
-
 **Creating a Contingency Table in Tidy Format**
 
-To perform a chi-squared test, we first need a contingency table that shows the counts of individuals in each combination of bmi_who and diabetes categories. 
+To perform a chi-squared test, we first need a contingency table that shows the counts of individuals in each combination of bmi_who and diabetes categories.
 
 ```{r}
 # Create contingency table in tidy format
@@ -243,36 +336,33 @@ chi_test
 
 ```
 
-
 **Interpretation of Chi-Squared Test Results**
 
-- Chi-Squared Statistic (X-squared): 206.12
+-   Chi-Squared Statistic (X-squared): 206.12
 
-- Degrees of Freedom (df): 3
+-   Degrees of Freedom (df): 3
 
-- p-value: < 2.2e-16
+-   p-value: \< 2.2e-16
 
-Since the p-value is extremely small (less than 0.05), we reject the null hypothesis, indicating that there is a statistically significant association between BMI category and diabetes status. This suggests that diabetes prevalence differs across BMI categories in our sample. 
+Since the p-value is extremely small (less than 0.05), we reject the null hypothesis, indicating that there is a statistically significant association between BMI category and diabetes status. This suggests that diabetes prevalence differs across BMI categories in our sample.
 
 However, while statistical significance tells us there is an association, it does not reveal the direction or strength of the relationship. To determine the strength and direction—such as whether higher BMI categories are positively associated with increased diabetes risk—you could perform a regression analysis.
 
 For binary outcomes like diabetes status, logistic regression would be a suitable approach. It would allow us to model the probability of diabetes as a function of BMI categories while providing insights into how each category impacts the likelihood of diabetes, as reflected by odds ratios. This approach also enables adjustments for potential confounders, offering a more comprehensive understanding of the relationship.
-
 :::
 
-## One-way ANOVA 
+## One-way ANOVA
 
 ::: {style="text-align:justify"}
-
 One-way ANOVA (Analysis of Variance) is used to compare the means of more than two groups to determine if at least one group mean differs significantly from the others. This method is suitable when we have a categorical independent variable (factor) with multiple levels and a continuous dependent variable. For example, we could use one-way ANOVA to test if the average blood pressure differs across BMI categories.
 
 As an example, we’ll use the one-way ANOVA To determine if average systolic blood pressure varies across BMI categories.
 
 **Hypotheses:**
 
-**Null Hypothesis ($H_0$)**: The average systolic blood pressure is the same across all BMI categories.
+**Null Hypothesis (**$H_0$): The average systolic blood pressure is the same across all BMI categories.
 
-**Alternative Hypothesis ($H_1$)**:  The average systolic blood pressure differs for at least one BMI category.
+**Alternative Hypothesis (**$H_1$): The average systolic blood pressure differs for at least one BMI category.
 
 ```{r}
 # Fit the ANOVA model
@@ -285,19 +375,17 @@ summary(anova_model)
 
 **Interpretation of One-Way ANOVA Results**
 
-- **Degrees of Freedom (Df)**: The degrees of freedom for the BMI categories is 3, meaning there are four BMI groups. The residual degrees of freedom is 7116, accounting for the total sample size minus the number of groups.
+-   **Degrees of Freedom (Df)**: The degrees of freedom for the BMI categories is 3, meaning there are four BMI groups. The residual degrees of freedom is 7116, accounting for the total sample size minus the number of groups.
 
-- **Sum of Squares (Sum Sq)**: This indicates the variability within each group (Residuals) and between the groups (BMI categories). A larger Sum of Squares for the BMI groups relative to the residuals suggests substantial variation in systolic blood pressure due to BMI category.
+-   **Sum of Squares (Sum Sq)**: This indicates the variability within each group (Residuals) and between the groups (BMI categories). A larger Sum of Squares for the BMI groups relative to the residuals suggests substantial variation in systolic blood pressure due to BMI category.
 
-- **Mean Squares (Mean Sq)**: This is the Sum of Squares divided by the respective degrees of freedom. The larger Mean Square for BMI groups indicates a larger variability attributed to BMI categories compared to random error.
+-   **Mean Squares (Mean Sq)**: This is the Sum of Squares divided by the respective degrees of freedom. The larger Mean Square for BMI groups indicates a larger variability attributed to BMI categories compared to random error.
 
-- **F-value**: The F-value of 50.35 is substantial, suggesting that the variation in systolic blood pressure between the BMI categories is much greater than within each category.
+-   **F-value**: The F-value of 50.35 is substantial, suggesting that the variation in systolic blood pressure between the BMI categories is much greater than within each category.
 
-- **p-value (< 2e-16)**: The extremely small p-value is well below 0.05, leading us to reject the null hypothesis. This indicates that there is a statistically significant difference in systolic blood pressure among the different BMI categories in this sample.
+-   **p-value (\< 2e-16)**: The extremely small p-value is well below 0.05, leading us to reject the null hypothesis. This indicates that there is a statistically significant difference in systolic blood pressure among the different BMI categories in this sample.
 
 Since the ANOVA indicates a significant difference, a post-hoc analysis (such as Tukey's HSD) could be conducted to identify which BMI categories specifically differ from each other in terms of average systolic blood pressure.
-
 :::
-
 
 ## References {.unnumbered}

@@ -1,0 +1,163 @@
+---
+embed-resources: true
+---
+
+# Introduction to R and RStudio
+
+## What is R?
+
+:::::: {layout="[ 80, 20 ]"}
+:::: {#first-column}
+::: {style="text-align:justify"}
+-   Open source (free!) statistical programming language/software
+
+-   It can be used for:
+
+    -   Working with data - cleaning, wrangling and transforming
+    -   Conducting analyses including advanced statistical methods
+    -   Creating high-quality tables & figures
+    -   Communicate research with R Markdown
+
+-   It is constantly growing!
+
+-   Has a strong online support community
+
+-   Since it's one programming language, it is versatile enough to take you from raw data to publishable research using free, reproducible code!
+:::
+::::
+
+::: {#second-column}
+![](images/Rlogo.JPG)
+:::
+::::::
+
+## What is RStudio?
+
+:::::: {layout="[ 80, 20 ]"}
+<div>
+
+::: {style="text-align:justify"}
+-   RStudio is a free, open source IDE (integrated development environment) for R. (You must install R before you can install RStudio.)
+
+-   Its interface is organized so that the user can clearly view graphs, tables, R code, and output all at the same time.
+
+-   It also offers an Import-Wizard-like feature that allows users to import CSV, Excel, SPSS (\*.sav), and Stata (\*.dta) files into R without having to write the code to do so.
+:::
+
+</div>
+
+<div>
+
+![](images/RStudiologo.png){width="\"50%"}
+
+</div>
+::::::
+
+## R versus Others Softwares
+
+::: {style="text-align:justify"}
+Excel and SPSS are convenient for data entry, and for quickly manipulating rows and columns prior to statistical analysis. However, they are a poor choice for statistical analysis beyond the simplest descriptive statistics, or for more than a very few columns.
+:::
+
+![Proportion of articles in health decision sciences using the identified software](images/r_vs_others.JPG){width="400"}
+
+## Why should you learn R
+
+::: {style="text-align:justify"}
+-   R is becoming the "*lingua franca*" of data science
+-   Most widely used and it is rising in popularity
+-   R is also the tool of choice for data scientists at Microsoft, Google, Facebook, Amazon
+-   R's popularity in academia is important because that creates a pool of talent that feeds industry.
+-   Learning the "skills of data science" is easiest in R
+
+![Increasing use of R in scientific research](images/r_nature.JPG){width="262"}
+
+Some of the reasons for chosing R over others are are:
+
+-   Missing values are handled inconsistently, and sometimes incorrectly.
+-   Data organisation difficult.
+-   Analyses can only be done on one column at a time.
+-   Output is poorly organised.
+-   No record of how an analysis was accomplished.
+-   Some advanced analyses are impossible
+:::
+
+{{< pagebreak >}}
+
+## Health Data Science
+
+::: {style="text-align:justify"}
+Health Data Science is an emerging discipline, combining mathematics, statistics, epidemiology and informatics.
+
+R is widely used in the field of health data science and especially in healthcare industry domains like genetics, drug discovery, bioinformatics, vaccine reasearch, deep learning, epidemiology, public health, vaccine research, etc.
+
+<br>
+
+![Applications of Data Science in Healthcare](images/big_data_healthcare_applications.png){width="368"}
+
+As data-generating technologies have proliferated throughout society and industry, leading hospitals are trying to ensure this data is harnessed to achieve the best outcomes for patients. These internet of things (IoT) technologies include everything from sensors that monitor patient health and the condition of machines to wearables and patients' mobile phones. All these comprise the "Big Data" in healthcare.
+:::
+
+## Reproducible Research
+
+::: {style="text-align:justify"}
+Research is considered to be reproducible when the exact results can be reproduced if given access to the original data, software, or code.
+
+-   The same results should be obtained under the same conditions
+-   It should be possible to recreate the same conditions
+
+> Reproducibility refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator. That is, a second researcher might use the same raw data to build the same analysis files and implement the same statistical analysis in an attempt to yield the same results. Reproducibility is a minimum necessary condition for a finding to be believable and informative. --- U.S. National Science Foundation (NSF) subcommittee on Replicability in Science
+:::
+
+There are four key elements of reproducible research:
+
+-   data documentation
+-   data publication
+-   code publication
+-   output publication
+
+{{< pagebreak >}}
+
+![Baker, M. 1,500 scientists lift the lid on reproducibility. Nature 533, 452--454 (2016)](images/reproducibility_crisis.jpg)
+
+{{< pagebreak >}}
+
+![Flavours of Reproducible Research](images/reproducible-replicable-robust-generalisable.png){width="400"}
+
+**Factors behind irreproducible research**
+
+::: {style="text-align:justify"}
+-   Not enough documentation on how experiment is conducted and data is generated
+-   Data used to generate original results unavailable
+-   Software used to generate original results unavailable
+-   Difficult to recreate software environment (libraries, versions) used to generate original results
+-   Difficult to rerun the computational steps
+:::
+
+\bigskip
+
+![Threats to Reproducibility (Munafo. et. al, 2017)](images/threats_reproducibility.png){width="300"}
+
+\bigskip
+
+::: {style="text-align:justify"}
+While reproducibility is the minimum requirement and can be solved with "good enough" computational practices, replicability/ robustness/ generalisability of scientific findings are an even greater concern involving research misconduct, questionable research practices (p-hacking, HARKing, cherry-picking), sloppy methods, and other conscious and unconscious biases.
+:::
+
+\bigskip
+
+**What are the good practices of reproducible research?**
+
+\bigskip
+
+**How to make your work reproducible?**
+
+\bigskip
+
+**Reproducible workflows give you credibility!**
+
+![Cartoon created by Sidney Harris (The New Yorker)](images/miracles.jpg){width="400"}
+
+\bigskip
+
+![Reproducibility spectrum for published research. Source: Peng, RD Reproducible Research in Computational Science Science (2011)](images/reproducibility_spectrum.jpg){width="500"}
