@@ -1,95 +1,89 @@
 {
-  "valid_reliable.qmd": {
-    "valid_reliable.html": "92981335"
-  },
   "index.qmd": {
-    "index.html": "34ce7b1f"
+    "index.html": "a15781ac"
   },
   "preface.qmd": {
-    "preface.html": "881966c8"
+    "preface.html": "4349f537"
   },
   "research_methods.qmd": {
-    "research_methods.html": "40d41c85"
+    "research_methods.html": "0fd9b577"
   },
   "understanding_research.qmd": {
-    "understanding_research.html": "13a1d717"
+    "understanding_research.html": "cda4fea3"
   },
   "philosophical_underpinning.qmd": {
-    "philosophical_underpinning.html": "c2cb1369"
+    "philosophical_underpinning.html": "3be8e7b8"
   },
   "types_of_research.qmd": {
-    "types_of_research.html": "6a0dd85c"
+    "types_of_research.html": "992a2f17"
   },
   "steps_in_research.qmd": {
-    "steps_in_research.html": "869d5eff"
+    "steps_in_research.html": "40ec8377"
   },
   "study_design.qmd": {
-    "study_design.html": "534f9d61"
+    "study_design.html": "4b15a6d2"
   },
   "observational_study_design.qmd": {
-    "observational_study_design.html": "e580e246"
+    "observational_study_design.html": "749d74bc"
   },
   "descriptive_observational_design.qmd": {
-    "descriptive_observational_design.html": "f673dd4f"
+    "descriptive_observational_design.html": "0e3a1001"
   },
   "analytical_observational_design.qmd": {
-    "analytical_observational_design.html": "30f9841d"
+    "analytical_observational_design.html": "3746d2dc"
   },
   "experimental_study_design.qmd": {
-    "experimental_study_design.html": "822ae18a"
+    "experimental_study_design.html": "271f7f43"
   },
   "validity_reliability_research.qmd": {
-    "validity_reliability_research.html": "9f8c79b6"
+    "validity_reliability_research.html": "182c23ff"
+  },
+  "valid_reliable.qmd": {
+    "valid_reliable.html": "911dfe49"
   },
   "reliable_valid.qmd": {
-    "reliable_valid.html": "d0a70f56"
+    "reliable_valid.html": "8fa48be5"
   },
   "bias_in_research.qmd": {
-    "bias_in_research.html": "e15aa3d5"
+    "bias_in_research.html": "9ea1642a"
   },
   "ethics_in_research.qmd": {
-    "ethics_in_research.html": "50c1cb17"
+    "ethics_in_research.html": "0cdfb0f7"
   },
   "understanding_ethics.qmd": {
-    "understanding_ethics.html": "1fcf9830"
-  },
-  "statistical_methods.qmd": {
-    "statistical_methods.html": "f2e0300d"
-  },
-  "descriptive_statistics.qmd": {
-    "descriptive_statistics.html": "e69d5f27"
-  },
-  "graph_descriptive_statistics.qmd": {
-    "graph_descriptive_statistics.html": "ce709913"
-  },
-  "num_descriptive_statistics.qmd": {
-    "num_descriptive_statistics.html": "3da6972f"
-  },
-  "inferential_statistics.qmd": {
-    "inferential_statistics.html": "78796bbd"
-  },
-  "hypothesis_testing.qmd": {
-    "hypothesis_testing.html": "5083d892"
-  },
-  "regression_analysis.qmd": {
-    "regression_analysis.html": "2709b1de"
+    "understanding_ethics.html": "0f7263c9"
   },
   "intro_r.qmd": {
-    "intro_r.html": "8f6e16a0"
+    "intro_r.html": "e01322bd"
   },
   "install_r_rstudio.qmd": {
-    "install_r_rstudio.html": "7c04f689"
-  },
-  "fundamentals_dplyr.qmd": {
-    "fundamentals_dplyr.html": "46bb0f13"
-  },
-  "exploring_data.qmd": {
-    "exploring_data.html": "ef92caf1"
-  },
-  "exploring_data_v2.qmd": {
-    "exploring_data_v2.html": "e6608de4"
+    "install_r_rstudio.html": "f58f8e61"
   },
   "fundamentals_dplyr_v2.qmd": {
-    "fundamentals_dplyr_v2.html": "13996c91"
+    "fundamentals_dplyr_v2.html": "44a2bba9"
+  },
+  "exploring_data_v2.qmd": {
+    "exploring_data_v2.html": "101e89c2"
+  },
+  "statistical_methods.qmd": {
+    "statistical_methods.html": "82c6121a"
+  },
+  "descriptive_statistics.qmd": {
+    "descriptive_statistics.html": "41c2d336"
+  },
+  "graph_descriptive_statistics.qmd": {
+    "graph_descriptive_statistics.html": "704b58d4"
+  },
+  "num_descriptive_statistics.qmd": {
+    "num_descriptive_statistics.html": "44bd038e"
+  },
+  "inferential_statistics.qmd": {
+    "inferential_statistics.html": "f8e9c792"
+  },
+  "hypothesis_testing.qmd": {
+    "hypothesis_testing.html": "2ce9c37e"
+  },
+  "regression_analysis.qmd": {
+    "regression_analysis.html": "602f7d6c"
   }
 }
