@@ -1,5 +1,7 @@
 ---
 embed-resources: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Exploring Data with R
@@ -245,225 +247,211 @@ df |>
   filter(age >= 60 & race == "White")
 ```
 
-<!-- Which countries have incidence_100k below 5? -->
 
-<!-- ```{r} -->
-<!-- #| eval: false -->
+### `%in%`
 
-<!-- tb |>  -->
-<!--   filter(incidence_100k < 5) |>  -->
-<!--   distinct(country) -->
+:::{style="text-align:justify"}
 
-<!-- # see them all -->
-<!-- tb |>  -->
-<!--   filter(incidence_100k < 5) |>  -->
-<!--   distinct(country) |> -->
-<!--   print(n = Inf) -->
-<!-- ``` -->
+To `filter()` a categorical variable for only certain levels, we can use the `%in%` operator.
 
-<!-- ::: -->
 
-<!-- ### `%in%` -->
 
-<!-- :::{style="text-align:justify"} -->
 
-<!-- To `filter()` a categorical variable for only certain levels, we can use the `%in%` operator. -->
+Let's see data from India, Nepal, Pakistan and Bangladesh First we will have to figure out how those are spelled in this dataset. Open the spreadsheet viewer and find out. We'll see a way to find them in code later on in the course.
 
-<!-- Let's see data from India, Nepal, Pakistan and Bangladesh First we will have to figure out how those are spelled in this dataset. Open the spreadsheet viewer and find out. We'll see a way to find them in code later on in the course. -->
+Ok, so we figured out that they are spelled:
 
-<!-- Ok, so we figured out that they are spelled: -->
+-   "India"
+-   "Nepal"
+-   "Pakistan"
+-   "Bangladesh"
 
-<!-- -   "India" -->
-<!-- -   "Nepal" -->
-<!-- -   "Pakistan" -->
-<!-- -   "Bangladesh" -->
+Now we'll create a vector of countries we are interested in
 
-<!-- Now we'll create a vector of countries we are interested in -->
+```{r}
+indian_subcont <- c("India",
+           "Nepal",
+           "Pakistan",
+           "Bangladesh")
+```
 
-<!-- ```{r} -->
-<!-- indian_subcont <- c("India", -->
-<!--            "Nepal", -->
-<!--            "Pakistan", -->
-<!--            "Bangladesh") -->
-<!-- ``` -->
+And use that vector to `filter()` `tb` for countries `%in%` `indian_subcont`
 
-<!-- And use that vector to `filter()` `tb` for countries `%in%` `indian_subcont` -->
+```{r}
+#| eval: false
 
-<!-- ```{r} -->
-<!-- #| eval: false -->
+tb |> filter(country %in% indian_subcont)
+```
 
-<!-- tb |> filter(country %in% indian_subcont) -->
-<!-- ``` -->
+You can also save the results of a pipeline. Notice that the rows belonging to Indian Subcontinent are returned in the console. If we wanted to do something with those rows, it might be helpful to save them as their own dataset. To create a new object, we use the `<-` operator.
 
-<!-- You can also save the results of a pipeline. Notice that the rows belonging to Indian Subcontinent are returned in the console. If we wanted to do something with those rows, it might be helpful to save them as their own dataset. To create a new object, we use the `<-` operator. -->
+```{r}
+#| eval: false
 
-<!-- ```{r} -->
-<!-- #| eval: false -->
+indian_subcont_tb <- tb |> filter(country %in% indian_subcont)
+```
 
-<!-- indian_subcont_tb <- tb |> filter(country %in% indian_subcont) -->
-<!-- ``` -->
+:::
 
-<!-- ::: -->
+### `drop_na()`
 
-<!-- ### `drop_na()` -->
+:::{style="text-align:justify"}
 
-<!-- :::{style="text-align:justify"} -->
+The `drop_na()` function is extremely useful for when we need to subset a variable to remove missing values.
 
-<!-- The `drop_na()` function is extremely useful for when we need to subset a variable to remove missing values. -->
+Return the tb dataset without rows that were missing on the hiv_incidence_100k variable
 
-<!-- Return the tb dataset without rows that were missing on the hiv_incidence_100k variable -->
+```{r}
+#| eval: false
 
-<!-- ```{r} -->
-<!-- #| eval: false -->
+tb |> drop_na(hiv_incidence_100k)
+```
 
-<!-- tb |> drop_na(hiv_incidence_100k) -->
-<!-- ``` -->
+Return the tb dataset without any rows that had an NA in any column. \*Use with caution because this will remove a lot of data
 
-<!-- Return the tb dataset without any rows that had an NA in any column. \*Use with caution because this will remove a lot of data -->
+```{r}
+#| eval: false
 
-<!-- ```{r} -->
-<!-- #| eval: false -->
+tb |> drop_na()
+```
 
-<!-- tb |> drop_na() -->
-<!-- ``` -->
+:::
 
-<!-- ::: -->
+### `select()`
 
-<!-- ### `select()` -->
+:::{style="text-align:justify"}
 
-<!-- :::{style="text-align:justify"} -->
+Whereas the `filter()` function allows you to return only certain *rows* matching a condition, the `select()` function returns only certain *columns*. The first argument is the data, and subsequent arguments are the columns you want.
 
-<!-- Whereas the `filter()` function allows you to return only certain *rows* matching a condition, the `select()` function returns only certain *columns*. The first argument is the data, and subsequent arguments are the columns you want. -->
+See just the country, year, incidence_100k columns
 
-<!-- See just the country, year, incidence_100k columns -->
+```{r}
+#| eval: false
 
-<!-- ```{r} -->
-<!-- #| eval: false -->
+# list the column names you want to see separated by a comma
+tb |>
+  select(country, year, incidence_100k)
+```
 
-<!-- # list the column names you want to see separated by a comma -->
-<!-- tb |>  -->
-<!--   select(country, year, incidence_100k) -->
-<!-- ``` -->
+Use the - sign to drop these same columns
 
-<!-- Use the - sign to drop these same columns -->
+```{r}
+#| eval: false
 
-<!-- ```{r} -->
-<!-- #| eval: false -->
+tb |>
+  select(-country, -year, -incidence_100k)
+```
 
-<!-- tb |>  -->
-<!--   select(-country, -year, -incidence_100k) -->
-<!-- ``` -->
+:::
 
-<!-- ::: -->
+### `select()` helper functions
 
-<!-- ### `select()` helper functions -->
+:::{style="text-align:justify"}
 
-<!-- :::{style="text-align:justify"} -->
+The `starts_with()`, `ends_with()` and `contains()` functions provide very useful tools for dropping/keeping several variables at once without having to list each and every column you want to keep. The function will return columns that either start with a specific string of text, ends with a certain string of text, or contain a certain string of text.
 
-<!-- The `starts_with()`, `ends_with()` and `contains()` functions provide very useful tools for dropping/keeping several variables at once without having to list each and every column you want to keep. The function will return columns that either start with a specific string of text, ends with a certain string of text, or contain a certain string of text. -->
+```{r}
+#| eval: false
 
-<!-- ```{r} -->
-<!-- #| eval: false -->
 
+# these functions are all case sensitive
+tb |>
+  select(starts_with("percent"))
 
-<!-- # these functions are all case sensitive -->
-<!-- tb |>   -->
-<!--   select(starts_with("percent")) -->
+tb |>
+  select(ends_with("r"))
 
-<!-- tb |>  -->
-<!--   select(ends_with("r")) -->
+tb |>
+  select(contains("_"))
 
-<!-- tb |>  -->
-<!--   select(contains("_")) -->
+# columns that do not contain -
+tb |>
+  select(-contains("_"))
+```
 
-<!-- # columns that do not contain - -->
-<!-- tb |>  -->
-<!--   select(-contains("_")) -->
-<!-- ``` -->
+:::
 
-<!-- ::: -->
+### `summarize()`
 
-<!-- ### `summarize()` -->
+:::{style="text-align:justify"}
 
-<!-- :::{style="text-align:justify"} -->
+The `summarize()` function summarizes multiple values to a single value. On its own the `summarize()` function doesn't seem to be all that useful. The dplyr package provides a few convenience functions called `n()` and `n_distinct()` that tell you the number of observations or the number of distinct values of a particular variable.
 
-<!-- The `summarize()` function summarizes multiple values to a single value. On its own the `summarize()` function doesn't seem to be all that useful. The dplyr package provides a few convenience functions called `n()` and `n_distinct()` that tell you the number of observations or the number of distinct values of a particular variable. -->
+*Note* *`summarize()` is the same as `summarise()`*
 
-<!-- *Note* *`summarize()` is the same as `summarise()`* -->
+Notice that summarize takes a data frame and returns a data frame. In this case it's a 1x1 data frame with a single row and a single column.
 
-<!-- Notice that summarize takes a data frame and returns a data frame. In this case it's a 1x1 data frame with a single row and a single column. -->
+```{r}
+#| eval: false
 
-<!-- ```{r} -->
-<!-- #| eval: false -->
+tb |>
+  summarize(mean(hiv_percent))
 
-<!-- tb |>  -->
-<!--   summarize(mean(hiv_percent)) -->
+# watch out for nas. Use na.rm = TRUE to run the calculation after excluding nas.
+tb |>
+  summarize(mean(hiv_percent, na.rm = TRUE))
+```
 
-<!-- # watch out for nas. Use na.rm = TRUE to run the calculation after excluding nas. -->
-<!-- tb |>  -->
-<!--   summarize(mean(hiv_percent, na.rm = TRUE)) -->
-<!-- ``` -->
+The name of the column is the expression used to summarize the data. This usually isn't pretty, and if we wanted to work with this resulting data frame later on, we'd want to name that returned value something better.
 
-<!-- The name of the column is the expression used to summarize the data. This usually isn't pretty, and if we wanted to work with this resulting data frame later on, we'd want to name that returned value something better. -->
+```{r}
+#| eval: false
 
-<!-- ```{r} -->
-<!-- #| eval: false -->
+tb |>
+  summarize(hiv_percent = mean(hiv_percent, na.rm = TRUE))
+```
 
-<!-- tb |>  -->
-<!--   summarize(hiv_percent = mean(hiv_percent, na.rm = TRUE)) -->
-<!-- ``` -->
+:::
 
-<!-- ::: -->
+### `group_by()`
 
-<!-- ### `group_by()` -->
+:::{style="text-align:justify"}
 
-<!-- :::{style="text-align:justify"} -->
+We saw that `summarize()` isn't that useful on its own. Neither is `group_by()`. All this does is takes an existing data frame and converts it into a grouped data frame where operations are performed by group.
 
-<!-- We saw that `summarize()` isn't that useful on its own. Neither is `group_by()`. All this does is takes an existing data frame and converts it into a grouped data frame where operations are performed by group. -->
+```{r}
+#| eval: false
 
-<!-- ```{r} -->
-<!-- #| eval: false -->
+tb |>
+  group_by(year)
 
-<!-- tb |>  -->
-<!--   group_by(year) -->
+tb |>
+  group_by(year, who_region)
+```
 
-<!-- tb |>  -->
-<!--   group_by(year, who_region) -->
-<!-- ``` -->
+:::
 
-<!-- ::: -->
+### `group_by()` and `summarize()` together
 
-<!-- ### `group_by()` and `summarize()` together -->
+:::{style="text-align:justify"}
 
-<!-- :::{style="text-align:justify"} -->
+The real power comes in where `group_by()` and `summarize()` are used together. First, write the `group_by()` statement. Then pipe the result to a call to `summarize()`.
 
-<!-- The real power comes in where `group_by()` and `summarize()` are used together. First, write the `group_by()` statement. Then pipe the result to a call to `summarize()`. -->
+Let's summarize the mean incidence of tb for each year
 
-<!-- Let's summarize the mean incidence of tb for each year -->
+```{r}
+#| eval: false
 
-<!-- ```{r} -->
-<!-- #| eval: false -->
+tb |>
+  group_by(year) |>
+  summarize(mean_inc = mean(incidence_100k, na.rm = TRUE))
 
-<!-- tb |>  -->
-<!--   group_by(year) |>  -->
-<!--   summarize(mean_inc = mean(incidence_100k, na.rm = TRUE)) -->
+#sort the output by descending mean_inc
+tb |>
+  group_by(year) |>
+  summarize(mean_inc = mean(incidence_100k, na.rm = TRUE)) |>
+  arrange(desc(mean_inc))
+```
 
-<!-- #sort the output by descending mean_inc -->
-<!-- tb |>  -->
-<!--   group_by(year) |>  -->
-<!--   summarize(mean_inc = mean(incidence_100k, na.rm = TRUE)) |>  -->
-<!--   arrange(desc(mean_inc)) -->
-<!-- ``` -->
+:::
 
-<!-- ::: -->
+### `mutate()`
 
-<!-- ### `mutate()` -->
+:::{style="text-align:justify"}
 
-<!-- :::{style="text-align:justify"} -->
+Mutate creates a new variable or modifies an existing one.
 
-<!-- Mutate creates a new variable or modifies an existing one. -->
-
-<!-- ![](images/dplyr_mutate.png){fig-align="center" width="300"} -->
+![](images/dplyr_mutate.png){fig-align="center" width="300"}
 
 Lets create a column called `ind_sub` if the country is in the Indian Subcontinent.
 
@@ -628,81 +616,81 @@ Let us now use the `pivot` functions to reshape the data in practice. The two `p
 
 {{< pagebreak >}}
 
-<!-- # EXERCISE -->
+# EXERCISE
 
-<!-- 1. In 2007, which 10 countries had the highest incidence_100k? (*Hint: filter() then arrange(), then head()*). Then `select()` only the country and the incidence_100k columns. -->
+1. In 2007, which 10 countries had the highest incidence_100k? (*Hint: filter() then arrange(), then head()*). Then `select()` only the country and the incidence_100k columns.
 
-<!-- ```{r} -->
+```{r}
 
-<!-- tb |> -->
+tb |>
 
-<!--   filter(year == 2007) |> -->
+  filter(year == 2007) |>
 
-<!--   arrange(desc(incidence_100k)) |> -->
+  arrange(desc(incidence_100k)) |>
 
-<!--   head(10) |> -->
+  head(10) |>
 
-<!--   select(country, incidence_100k) -->
+  select(country, incidence_100k)
 
-<!-- ``` -->
+```
 
-<!-- 2. Within the South East Asia who_region, which *countries* have incidence_100K > 300? -->
+2. Within the South East Asia who_region, which *countries* have incidence_100K > 300?
 
-<!-- ```{r} -->
+```{r}
 
-<!-- tb |> -->
+tb |>
 
-<!--   filter(who_region == "SEA" & incidence_100k > 300) |> -->
+  filter(who_region == "SEA" & incidence_100k > 300) |>
 
-<!--   distinct(country) -->
+  distinct(country)
 
-<!-- ``` -->
+```
 
-<!-- 3. How many countries are in each who_region? Put the output in order from lowest to highest number of countries _Hint: use `n_distinct()` inside `summarize()`_ -->
+3. How many countries are in each who_region? Put the output in order from lowest to highest number of countries _Hint: use `n_distinct()` inside `summarize()`_
 
-<!-- ```{r} -->
+```{r}
 
-<!-- tb |> -->
+tb |>
 
-<!--   group_by(who_region) |> -->
+  group_by(who_region) |>
 
-<!--   summarise(n_countries = n_distinct(country)) |> -->
+  summarise(n_countries = n_distinct(country)) |>
 
-<!--   arrange(n_countries) -->
+  arrange(n_countries)
 
-<!-- ``` -->
+```
 
-<!-- 4. Recreate the `indian_subcont` variable you created above to see if the average incidence of tb per 100k differs between indian_subcont countries and other countries in the AMR who_region. -->
+4. Recreate the `indian_subcont` variable you created above to see if the average incidence of tb per 100k differs between indian_subcont countries and other countries in the AMR who_region.
 
-<!-- ```{r} -->
+```{r}
 
-<!-- tb |> -->
+tb |>
 
-<!--   mutate(indian_subcont = case_when(country %in% indian_subcont ~ "indian_subcont", -->
+  mutate(indian_subcont = case_when(country %in% indian_subcont ~ "indian_subcont",
 
-<!--                           TRUE ~ "not")) |> -->
+                          TRUE ~ "not")) |>
 
-<!--   group_by(indian_subcont) |> -->
+  group_by(indian_subcont) |>
 
-<!--   summarize(mTB = mean(incidence_100k + 1)) -->
+  summarize(mTB = mean(incidence_100k + 1))
 
-<!-- ``` -->
+```
 
-<!-- 5. Excluding missing values on `hiv_incidence_100k`, what is the correlation coefficient (hint: `cor()`) for the relationship between the tb `incidence_100k` and the `hiv_incidence_100k` for each region. Show the output with the highest correlations first -->
+5. Excluding missing values on `hiv_incidence_100k`, what is the correlation coefficient (hint: `cor()`) for the relationship between the tb `incidence_100k` and the `hiv_incidence_100k` for each region. Show the output with the highest correlations first
 
-<!-- ```{r} -->
+```{r}
 
-<!-- tb |> -->
+tb |>
 
-<!--   drop_na(hiv_incidence_100k) |> -->
+  drop_na(hiv_incidence_100k) |>
 
-<!--   group_by(who_region) |> -->
+  group_by(who_region) |>
 
-<!--   summarise(r = cor(incidence_100k, hiv_incidence_100k)) |> -->
+  summarise(r = cor(incidence_100k, hiv_incidence_100k)) |>
 
-<!--   arrange(-r) -->
+  arrange(-r)
 
-<!-- ``` -->
+```
 
 ## `skimr` Package
 
