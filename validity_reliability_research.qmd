@@ -281,20 +281,27 @@ ggdag(dag) +
 **Confounders**
 
 -   Ancestors of exposure
+
 -   Ancestors of Outcome
+
 -   But not of outcome in the path through exposure
 
 **Mediators**
 
 -   Descendant of exposure
+
 -   Ancestor of Outcome
+
 -   It lies in the causal pathway between Exposure & Outcome
 
 **Proxy Confounder**
 
 -   Lies between confounder and exposure or outcome
+
 -   Descendant of a confounder
+
 -   Ancestor of either the exposure or the outcome
+
 -   Not ancestor of both, in that case it would be confounder
 
 **Competing Exposures**
@@ -308,7 +315,9 @@ ggdag(dag) +
 **Latent Variables**
 
 -   Unobserved variables
+
 -   Latent confounding factors are represented by bidirectional arrows
+
 -   This implies bidirected edges does not mean reciprocal causation
 
 **Adjustment sets**
