@@ -137,7 +137,7 @@ Random error is unavoidable in research, even if you try to control everything p
 ### Systematic Error
 
 ::: {style="text-align:justify"}
-Occurs when the measurement system makes the same kind of mistake every time it measures something. Often, that happens because of a problem with the tool or the way the experiment or research is carried out. For example, a caliper might be miscalibrated and always show larger widths than they are. Systematic error is a **threat to validity** of the research
+Occurs when the measurement system makes the same kind of mistake every time it measures something. Often happens because of a problem with the tool or the way the experiment or research is carried out. For example, a caliper might be miscalibrated and always show larger widths than they are. Systematic error is a **threat to validity** of the research
 
 -   It occurs consistently in the same direction.
 
@@ -165,16 +165,70 @@ In research, bias can result from various factors, including the way studies are
 
 -   A process at any stage of inference tending to produce results that depart systematically from true values.
 
-"*The Idols of Tribe have their foundation in human nature itself, and in the tribe or race of men. For it is a false assertion that the sense of man is the measure of things. On the contrary, all perceptions as well of the sense as of the mind are according to the measure of the individual and not according to the measure of the universe. And the human understanding is like a false mirror, which, receiving rays irregularly, distorts and discolors the nature of things by mingling its own nature with it*."
+"The Idols of Tribe have their foundation in human nature itself, and in the tribe or race of men. For it is a false assertion that the sense of man is the measure of things. On the contrary, all perceptions as well of the sense as of the mind are according to the measure of the individual and not according to the measure of the universe. And the human understanding is like a false mirror, which, receiving rays irregularly, distorts and discolors the nature of things by mingling its own nature with it."
 
-```         
-  - Francis Bacon, Novum Organum
-```
+-   Francis Bacon, Novum Organum
 
 Bacon's words remind us that our understanding of the world is influenced by who we are and where we come from. In research, this means our personal biases can affect how we design studies, analyze data, and draw conclusions.
 :::
 
-### Different Types of Bias
+#### Major types of Bias distinguished in Research
+
+::: {style="text-align:justify"}
+**Selection Bias**
+
+Errors due to systematic differences in characteristics between those who are selected for study and those who are not.(Last; Beaglehole)
+
+When comparisons are made between groups of patients that differ in ways other than the main factors under study, that affect the outcome under study.(Fletcher)
+
+When the individuals selected for a study or the process by which they are included in the study leads to a non-representative sample. This bias can distort the results of a study because the sample does not accurately reflect the broader population that the study aims to generalize to. As a result, conclusions drawn from the study may be misleading, since the study group differs in important ways from the population under investigation.
+
+**Information Bias/ Measurement Bias**
+
+Information bias (also called measurement bias or observation bias) occurs when there is a systematic error in the measurement or collection of data, leading to inaccurate or misclassified information about the exposure, outcome, or other variables in a study. This type of bias can distort the observed relationship between the exposure and outcome, leading to incorrect conclusions.
+
+Information bias typically arises when there is a discrepancy between the true values of variables and how they are measured or recorded. It can happen at any stage of a study, whether it's during data collection, participant interviews, surveys, clinical examinations, or laboratory tests.
+:::
+
+#### Confounding Bias
+
+::: {style="text-align:justify"}
+In research, identifying true relationships between variables is essential for drawing valid conclusions. However, the process is often complicated by confounding bias, a phenomenon where an external variable---called a "confounder"---distorts or misrepresents the true relationship between the variables being studied.
+
+A confounder is a variable that influences both the independent variable (the cause) and the dependent variable (the effect), creating a false impression of a relationship. This can lead to misleading results, making it difficult to establish cause-and-effect links with certainty.
+
+Recognizing and controlling for confounding bias is critical to ensuring the validity of research findings.
+:::
+
+**A Confounder**
+
+::: {style="text-align:justify"}
+-   Is associated with both the disease and the exposure
+
+-   is unequally distributed between the groups
+
+-   Should be working independently and not as part of the proposed exposure-health outcome pathway
+:::
+
+##### Handling Confounding
+
+::: {style="text-align:justify"}
+**At the Stage of Study Design**:
+
+**Randomization**: Randomization is a technique used during study design to assign participants to different groups in a way that ensures each participant has an equal chance of being assigned to any group, minimizing the potential for confounding variables to affect the results.
+
+**Restriction**: Restriction involves limiting the study population to individuals who meet certain criteria, such as age range or disease stage, in order to reduce the potential impact of confounders by controlling for specific variables that may influence the outcome.
+
+**Matching**: Matching is a method where participants in different groups are paired based on similar characteristics (e.g., age, gender, baseline health status) to control for confounding factors, ensuring that these variables are equally distributed across the groups.
+
+**At the Stage of Analysis**
+
+**Stratification**: Stratification is a technique used during the analysis phase of a study, where the data is divided into subgroups (strata) based on a particular confounder, allowing the researcher to assess the relationship between the exposure and outcome within each stratum, thus controlling for the confounding effect.
+
+**Regression Adjustment**: Adjustment refers to statistical techniques, such as regression analysis, that are used during data analysis to control for confounders by statistically accounting for their potential influence on the relationship between the exposure and outcome variables.
+:::
+
+### Table enlisting different types of Bias
 
 ::: {style="text-align:justify"}
 ```{r,echo=FALSE}
@@ -189,50 +243,12 @@ kable(df)
 ```
 :::
 
-#### Confounding Bias
+#### Directed Acyclic Graph
 
 ::: {style="text-align:justify"}
-In research and data analysis, identifying true relationships between variables is essential for drawing valid conclusions. However, the process is often complicated by confounding bias, a phenomenon where an external variable---called a "confounder"---distorts or misrepresents the true relationship between the variables being studied.
+Directed Acyclic Graph is a graphical representation of the relationships between variables in a study, where each node represents a variable, and each directed edge (arrow) represents a causal relationship between two variables. The acyclic nature of the graph means there are no feedback loops, so the graph doesn't contain any cycles, no variable can cause itself, directly or indirectly, through a series of causal links.
 
-A confounder is a variable that influences both the independent variable (the cause) and the dependent variable (the effect), creating a false impression of a relationship. This can lead to misleading results, making it difficult to establish cause-and-effect links with certainty.
-
-Recognizing and controlling for confounding bias is critical to ensuring the validity of research findings.
-:::
-
-##### Confounder must have the following characteristics
-
-::: {style="text-align:justify"}
--   Associated with both the disease and the exposure
-
--   Unequally distributed between the groups
-
--   Should be working independently and not as part of the proposed exposure-health outcome pathway
-:::
-
-##### Handling Confounding
-
-::: {style="text-align:justify"}
-**An the Stage of Study Design**:
-
-**Randomization**: Randomization is a technique used during study design to assign participants to different groups in a way that ensures each participant has an equal chance of being assigned to any group, minimizing the potential for confounding variables to affect the results.
-
-**Restriction**: Restriction involves limiting the study population to individuals who meet certain criteria, such as age range or disease stage, in order to reduce the potential impact of confounders by controlling for specific variables that may influence the outcome.
-
-**Matching**: Matching is a method where participants in different groups are paired based on similar characteristics (e.g., age, gender, baseline health status) to control for confounding factors, ensuring that these variables are equally distributed across the groups.
-
-**At the Stage of Analysis**
-
-**Stratification**: Stratification is a technique used during the analysis phase of a study, where the data is divided into subgroups (strata) based on a particular confounder, allowing the researcher to assess the relationship between the exposure and outcome within each stratum, thus controlling for the confounding effect.
-
-**Adjustment**: Adjustment refers to statistical techniques, such as regression analysis, that are used during data analysis to control for confounders by statistically accounting for their potential influence on the relationship between the exposure and outcome variables.
-:::
-
-#### A Word on DAG
-
-::: {style="text-align:justify"}
-Analytical study begins with a conceptual framework where the relationships between all the factors and outcome are delineated in a diagrammatic form,**DAG or Directed Acyclic Graphs** serves this purpose. In a nutshell, a DAG is a graphic model that depicts a set of hypotheses about the causal process that generates a set of variables of interest.
-
-In DAG, causal Effect of X on Y given by:
+In DAG, Causal Effect of X on Y is given by:
 
 ```{r,echo=FALSE, warning=FALSE, message=FALSE}
 #Load the libraries
@@ -248,44 +264,60 @@ ggdag(dag) +
   theme_dag()
 ```
 
-##### **Few points and terms to remember in understanding DAGs**:
+**Utilities of DAG**
 
-###### **Adjustment sets**
+-   Visualize the causal relationships between variables.
 
--   Any sets of covariates that closes all the biasing paths
--   They dont open new biasing paths
--   They dont close causal path in the process
+-   Identify potential confounders and backdoor paths that could bias results.
 
-###### **Latent Variables**
+-   Guide decisions on which variables to control for in the analysis.
 
--   Unobserved variables
--   Latent confounding factors are represented by bidirectional arrows
--   This implies bidirected edges does not mean reciprocal causation
+-   Avoid over-adjustment and collider bias by clarifying the causal structure.
 
-###### **Confounders**
+-   Enhance the transparency of causal assumptions.
+
+**Few points and terms to remember in understanding DAGs**:
+
+**Confounders**
 
 -   Ancestors of exposure
 -   Ancestors of Outcome
 -   But not of outcome in the path through exposure
 
-###### **Mediator**
+**Mediators**
 
 -   Descendant of exposure
 -   Ancestor of Outcome
 -   It lies in the causal pathway between Exposure & Outcome
 
-###### **Proxy Confounder**
+**Proxy Confounder**
 
 -   Lies between confounder and exposure or outcome
 -   Descendant of a confounder
 -   Ancestor of either the exposure or the outcome
 -   Not ancestor of both, in that case it would be confounder
 
-###### **Competing Exposures**
+**Competing Exposures**
 
 -   An ancestor of the outcome
+
 -   Not related with the exposure
--   Neither a confounder, nor a proxy confounder, nor a mediator. 
+
+-   Neither a confounder, nor a proxy confounder, nor a mediator.
+
+**Latent Variables**
+
+-   Unobserved variables
+-   Latent confounding factors are represented by bidirectional arrows
+-   This implies bidirected edges does not mean reciprocal causation
+
+**Adjustment sets**
+
+-   Any sets of covariates that closes all the biasing paths
+
+-   They dont open new biasing paths
+
+-   They dont close causal path in the process
 
 An Example of DAG is presented here:
 
@@ -314,9 +346,9 @@ In the DAG depicted here:
 
 -   X is a mediator between Z and Y
 
--    W is a competing exposure
+-   W is a competing exposure
 
-This helps in identifying sources of confounding. Once identified, steps should be taken to address those anticipated biases. After the study has been completed one should again assess the possibility of biases operating. Analysis should be performed to take care of some of the biases, if possible, or the effect. Causation needs to be distinguished from mere association -- the link between two variables (often an exposure and an outcome). An observed association may in fact be due to the effects of chance (random error), bias (systematic error), confounding, reverse causality or true causality.
+This helps in identifying sources of confounding. Once identified, steps should be taken to address those anticipated biases. After the study has been completed one should again assess the possibility of biases operating. Analysis should be performed to take care of some of the biases, if possible, or the effect. Causation needs to be distinguished from mere association, the link between two variables (often an exposure and an outcome). An observed association may in fact be due to the effects of chance (random error), bias (systematic error), confounding, reverse causality or true causality.
 
 The observed presence or absence of a statistical association between an exposure and an outcome does not necessarily imply the presence or absence of a causal relationship respectively. A cause-effect relationship between exposure and disease requires inferences far beyond the data from a single study.
 :::

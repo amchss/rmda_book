@@ -128,7 +128,7 @@ flowchart TB
 First let us delve into the individual level descriptive studies.
 :::
 
-##### Case Reports
+**Case Reports**
 
 ::: {style="text-align:justify"}
 A case report is a detailed account of a specific clinical instance involving an individual patient. It serves as one of the earliest forms of medical research, emerging from the **careful observations** made by physicians and healthcare providers during their clinical practice. It serves as valuable tool for generating hypotheses, particularly in emerging health issues, as they document unique clinical presentations and associations.They provide detailed accounts of individual patient experiences, which can inform clinical practice and enhance understanding of rare or novel conditions.
@@ -150,7 +150,7 @@ Generally report a new or unique finding
 -   adverse event
 :::
 
-##### Case Series
+**Case Series**
 
 ::: {style="text-align:justify"}
 -   Experience of a group of patients with a similar diagnosis
@@ -168,7 +168,7 @@ The emergence of the Zika virus in Latin America marked a significant public hea
 A case report that first documented instance of maternal Zika virus infection associated with fetal microcephaly in Colombia, mirroring presentations previously observed in Brazil during the 2015--2016 outbreak is presented [here](https://pmc.ncbi.nlm.nih.gov/articles/PMC5470308/)
 :::
 
-##### Ecological Studies
+**Ecological Studies**
 
 ::: {style="text-align:justify"}
 -   Group as the unit of analysis
@@ -207,3 +207,29 @@ A case report that first documented instance of maternal Zika virus infection as
 
 -   Arises when associations between two variables at group level differ from associations between analogous variables measured at the individual level
 :::
+
+### Analytical Observational Study Design
+
+::: {style="text-align:justify"}
+
+An analytical observational study design is a type of research method used to investigate relationships between variables and test hypotheses. Unlike descriptive observational studies, which simply describe phenomena as they naturally occur, analytical studies aim to analyze the association or correlation between exposures (or risk factors) and outcomes (or diseases), often to uncover patterns or test causal hypotheses. However, these studies still do not involve manipulation of the study variables, which distinguishes them from experimental designs.
+:::
+#### Key Features of Analytical Observational Study Design
+::: {style="text-align:justify"}
+-   Aims to analyze relationships between variables, such as how a certain exposure (e.g., smoking, air pollution, or diet) affects the risk of an outcome (e.g., lung cancer, cardiovascular disease, or obesity).
+
+-   As with all observational study designs, there is no manipulation of the variables by the researcher. The study simply observes the natural occurrence of exposure and outcomes.
+
+-   Test specific hypotheses about associations between exposures and outcomes. These studies aim to identify whether there is a statistical relationship and how strong that relationship might be.
+
+-   While causal inference is stronger in experimental designs (like randomized controlled trials), analytical observational studies can suggest causal relationships if the study is well-designed and the findings are consistent with other evidence.
+:::
+
+#### Classification of Analytical Observational Study Design
+```{mermaid}
+flowchart TB
+  A[Analytical Observational Study] --> B(Cross Sectional Study)
+  A[Analytical Observational Study] --> C(Cohort study)
+  A[Analytical Observational Study]--> D(Case Control)
+ 
+```
