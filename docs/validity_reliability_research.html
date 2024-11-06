@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Cornerstones of Credible Research – Research Methodologies &amp; Data Analysis Using R</title>
+<title>Research Methodologies &amp; Data Analysis Using R - 3&nbsp; Quality Issues in Research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
 </style>
@@ -47,13 +47,7 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -62,10 +56,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -76,16 +68,11 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./validity_reliability_research.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quality Issues in Research</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quality Issues in Research</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
       </button>
     </div>
   </nav>
@@ -93,81 +80,96 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Research Methodologies &amp; Data Analysis Using R</a> 
     </div>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
+      <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-        </div>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">About Book</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">About Book</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./research_methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Research</span></span></a>
+  <a href="./research_methods.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./study_design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></span></a>
+  <a href="./study_design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./validity_reliability_research.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quality Issues in Research</span></span></a>
+  <a href="./validity_reliability_research.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quality Issues in Research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./digital_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Digital Data Collection using ODK</span></span></a>
+  <a href="./digital_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Digital Data Collection using ODK</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro_r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></span></a>
+  <a href="./intro_r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistical_methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Methods</span></span></a>
+  <a href="./statistical_methods.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Methods</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#validity-in-research" id="toc-validity-in-research" class="nav-link active" data-scroll-target="#validity-in-research"><span class="toc-section-number">3.1</span>  Validity in Research</a></li>
+  <li><a href="#main-types-of-validity-typically-distinguished-in-research" id="toc-main-types-of-validity-typically-distinguished-in-research" class="nav-link" data-scroll-target="#main-types-of-validity-typically-distinguished-in-research"><span class="toc-section-number">3.2</span>  Main types of validity typically distinguished in research:</a>
+  <ul class="collapse">
+  <li><a href="#measurement-validity" id="toc-measurement-validity" class="nav-link" data-scroll-target="#measurement-validity"><span class="toc-section-number">3.2.1</span>  Measurement Validity</a></li>
+  <li><a href="#conventional-paradigms-of-validity" id="toc-conventional-paradigms-of-validity" class="nav-link" data-scroll-target="#conventional-paradigms-of-validity"><span class="toc-section-number">3.2.2</span>  Conventional Paradigms of Validity</a></li>
+  <li><a href="#ecological-validity" id="toc-ecological-validity" class="nav-link" data-scroll-target="#ecological-validity"><span class="toc-section-number">3.2.3</span>  Ecological Validity</a></li>
+  </ul></li>
+  <li><a href="#reliability-in-research" id="toc-reliability-in-research" class="nav-link" data-scroll-target="#reliability-in-research"><span class="toc-section-number">3.3</span>  Reliability in Research</a>
+  <ul class="collapse">
+  <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions"><span class="toc-section-number">3.3.1</span>  Definitions</a></li>
+  <li><a href="#types-of-reliability" id="toc-types-of-reliability" class="nav-link" data-scroll-target="#types-of-reliability"><span class="toc-section-number">3.3.2</span>  Types of Reliability</a></li>
+  </ul></li>
+  <li><a href="#possible-threats-to-validity-reliability-in-research" id="toc-possible-threats-to-validity-reliability-in-research" class="nav-link" data-scroll-target="#possible-threats-to-validity-reliability-in-research"><span class="toc-section-number">3.4</span>  Possible Threats to Validity &amp; Reliability in Research</a>
+  <ul class="collapse">
+  <li><a href="#random-error" id="toc-random-error" class="nav-link" data-scroll-target="#random-error"><span class="toc-section-number">3.4.1</span>  Random Error</a></li>
+  <li><a href="#systematic-error" id="toc-systematic-error" class="nav-link" data-scroll-target="#systematic-error"><span class="toc-section-number">3.4.2</span>  Systematic Error</a></li>
+  <li><a href="#bias-in-research" id="toc-bias-in-research" class="nav-link" data-scroll-target="#bias-in-research"><span class="toc-section-number">3.4.3</span>  Bias in Research</a></li>
+  <li><a href="#table-enlisting-different-types-of-bias" id="toc-table-enlisting-different-types-of-bias" class="nav-link" data-scroll-target="#table-enlisting-different-types-of-bias"><span class="toc-section-number">3.4.4</span>  Table enlisting different types of Bias</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Cornerstones of Credible Research</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quality Issues in Research</span></h1>
 </div>
 
 
@@ -180,18 +182,341 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
-
 </header>
 
-
 <div style="text-align:justify">
-<p>Credible research is essential as it forms the foundation for informed decision-making and policy development across various fields. When research is trustworthy, it provides reliable insights that can guide practitioners, stakeholders, and the public in addressing real-world issues.</p>
-<p>Credible studies enhance our understanding of complex phenomena, foster innovation, and contribute to the advancement of knowledge. Furthermore, they build public confidence in scientific inquiry and its outcomes, ensuring that findings are not only accepted but also utilized effectively for positive change. In an era of information overload, the importance of credible research cannot be overstated, as it helps distinguish between valid evidence and misinformation.</p>
 <p>In the realm of research, <strong>Validity and Reliability</strong> serve as critical checks for ensuring its credibility. Together, these concepts form the backbone of robust research practices. In this session, we will delve into both validity and reliability in detail, exploring their definitions, significance, and the various methods used to assess them, ultimately highlighting how they contribute to the overall trustworthiness of research findings.</p>
 <p>We will understand both the concept in detail in this session.</p>
 </div>
+<section id="validity-in-research" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="validity-in-research"><span class="header-section-number">3.1</span> Validity in Research</h2>
+<div style="text-align:justify">
+<p>Validity is concerned with the integrity of the conclusions that are generated from a piece of research.</p>
+</div>
+</section>
+<section id="main-types-of-validity-typically-distinguished-in-research" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="main-types-of-validity-typically-distinguished-in-research"><span class="header-section-number">3.2</span> Main types of validity typically distinguished in research:</h2>
+<div style="text-align:justify">
+<ul>
+<li><p>Measurement Validity</p></li>
+<li><p>Internal Validity</p></li>
+<li><p>External Validity</p></li>
+<li><p>Ecological Validity</p></li>
+</ul>
+</div>
+<section id="measurement-validity" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="measurement-validity"><span class="header-section-number">3.2.1</span> Measurement Validity</h3>
+<div style="text-align:justify">
+<p>The soundness or appropriateness of a test or instrument or it could be even an indicator to measure a concept, in measuring what it is designed to measure.</p>
+</div>
+<section id="several-ways-of-establishing-measurement-validity" class="level4" data-number="3.2.1.1">
+<h4 data-number="3.2.1.1" class="anchored" data-anchor-id="several-ways-of-establishing-measurement-validity"><span class="header-section-number">3.2.1.1</span> Several Ways of Establishing Measurement Validity</h4>
+<div style="text-align:justify">
+<ul>
+<li><p><strong>Face Validity</strong>: Reflects the content of the concept in question.It can be established by consulting experts to see if the measure accurately addresses the intended concept.</p></li>
+<li><p><strong>Content Validity</strong>: Infers that the test measures all aspects contributing to the concept/variable of interest.</p></li>
+<li><p><strong>Concurrent Validity</strong>: Infers that the test produces similar results to a previously validated test.It entails relating a measure to a criterion on which cases (e.g.&nbsp;people) are known to differ and that is relevant to the concept in question.</p></li>
+<li><p><strong>Predictive Validity</strong>: Infers that the test provides a valid reflection of future performance using a similar test. Here, the researcher uses a future criterion measure, rather than a contemporary one, as in concurrent validity.</p></li>
+<li><p><strong>Construct Validity</strong>: Infers not only that the test is measuring what it is supposed to, but also that it is capable of detecting what should exist,theoretically. Therefore relates to hypothetical or intangible constructs, researcher is encouraged to deduce hypotheses from a theory that is relevant to the concept.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="conventional-paradigms-of-validity" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="conventional-paradigms-of-validity"><span class="header-section-number">3.2.2</span> Conventional Paradigms of Validity</h3>
+<div style="text-align:justify">
+<ul>
+<li><p><strong>Internal validity</strong>: The best approximation of truth or falsity of a statement implying a relationship or its absence between two variables –indicative of causation.</p></li>
+<li><p><strong>External validity</strong>: The validity with which we infer that the presumed causal relationships can be generalised to and across alternative measures of the cause and effect and across different types of persons, settings and times.</p></li>
+</ul>
+</div>
+</section>
+<section id="ecological-validity" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="ecological-validity"><span class="header-section-number">3.2.3</span> Ecological Validity</h3>
+<div style="text-align:justify">
+<p>Ecological Validity is concerned with the question of whether social scientific findings are applicable to people’s everyday, natural social settings, commonly applicable in social science research.Do the tools/instruments capture the daily life conditions, opinions, values, attitudes, and knowledge base of those studied as expressed in their natural habitat?’</p>
+</div>
+</section>
+</section>
+<section id="reliability-in-research" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="reliability-in-research"><span class="header-section-number">3.3</span> Reliability in Research</h2>
+<div style="text-align:justify">
+<p>Reliability is fundamentally concerned with issues of consistency of measures.</p>
+</div>
+<section id="definitions" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="definitions"><span class="header-section-number">3.3.1</span> Definitions</h3>
+<div style="text-align:justify">
+<ul>
+<li><p>The degree to which a test or measure produces the same scores when applied in the same circumstances - Nelson 1997</p></li>
+<li><p>The degree of stability expected when a measurement is repeated under identical conditions; degree to which the results obtained from a measurement procedure can be replicated. - Last</p></li>
+<li><p>Also known as ‘<strong>Reproducibility</strong>’ and ‘<strong>Consistency</strong>’</p></li>
+</ul>
+<p>Understanding the term,<em>stability</em></p>
+<ul>
+<li>Stability: This consideration entails asking whether a measure is stable over time, so that we can be confident that the results relating to that measure for a sample of respondents do not fluctuate.</li>
+</ul>
+</div>
+</section>
+<section id="types-of-reliability" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="types-of-reliability"><span class="header-section-number">3.3.2</span> Types of Reliability</h3>
+<div style="text-align:justify">
+<ul>
+<li><p><strong>Intra-rater reliability</strong>:The consistency of a given observer or measurement tool on more than one occasion. Used to assess the degree to which <strong>the same rater/observer</strong> give consistent estimates of the same phenomenon.</p></li>
+<li><p><strong>Inter-Rater or Inter-Observer Reliability</strong>: Used to assess the degree to which <strong>different raters/observers</strong> give consistent estimates of the same phenomenon. Inter-rater reliability is useful because human observers will not necessarily interpret answers the same way; raters may disagree as to how well certain responses or material demonstrate knowledge of the construct or skill being assessed.</p></li>
+<li><p><strong>Test-Retest Reliability</strong>: Used to assess the consistency of a measure from <strong>one time to another</strong>. Obtained by administering the same test twice over a period of time to a group of individuals. The scores from Time 1 and Time 2 can then be correlated in order to evaluate the test for stability over time.</p></li>
+<li><p><strong>Parallel-Forms Reliability</strong>: Used to assess the consistency of the results of two tests constructed in the same way from the same content domain.Obtained by administering <strong>different versions of an assessment tool</strong> (both versions must contain items that probe the same construct, skill, knowledge base, etc.) <strong>to the same group of individuals</strong>. The scores from the two versions can then be correlated in order to evaluate the consistency of results across alternate versions.</p></li>
+<li><p><strong>Internal Reliability</strong>: Used to assess the consistency of results across <strong>items within a test</strong>. The degree to which the indicators that make up a scale are consistent.In other words, whether respondents’ scores on any one indicator tend to be related to their scores on the other indicators.Used to evaluate the degree to which different test items that probe the same construct produce similar results.</p></li>
+</ul>
+<p>For a more in-depth understanding, refer to additional resources.</p>
+<ul>
+<li><a href="Heale R and Twycross A (2015) Validity and reliability in quantitative studies. Evidence-Based Nursing 18(3). Royal College of Nursing: 66–67.">Validity and Reliability in Quantitative Studies</a></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="possible-threats-to-validity-reliability-in-research" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="possible-threats-to-validity-reliability-in-research"><span class="header-section-number">3.4</span> Possible Threats to Validity &amp; Reliability in Research</h2>
+<div style="text-align:justify">
+<p>One of the key challenges researchers face in achieving valid and reliable results is the presence of random and systematic errors. These errors can skew findings, undermine the interpretation of data, and ultimately affect the generalizability of the research outcomes. Understanding the distinction between these two types of error and how they impact research quality is critical for improving both the validity and reliability of a study.</p>
+<p><strong>Random error and systematic error</strong> are the two main types of measurement error. Measurement error occurs when the measured value differs from the true value of the quantity being measured.</p>
+</div>
+<section id="random-error" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="random-error"><span class="header-section-number">3.4.1</span> Random Error</h3>
+<div style="text-align:justify">
+<p>Occurs due to <strong>chance</strong>. Even if we do everything correctly for each measurement, we’ll get slightly different results when measuring the same item multiple times. Random error is a <strong>threat to reliablity</strong> of the research.</p>
+<ul>
+<li><p>Natural variability in the measurement process.</p></li>
+<li><p>Unpredictable and occurs equally in both directions</p></li>
+<li><p>Caused by factors such as limitations in the measuring instrument, fluctuations in environmental conditions, and slight procedural variations.</p></li>
+<li><p>Less random error, more precise the data</p></li>
+</ul>
+<p>Statisticians often refer to random error as <strong>“noise”</strong> because it can interfere with the true value (or “signal”) of what you’re trying to measure.</p>
+</div>
+<section id="how-to-reduce-random-error" class="level4" data-number="3.4.1.1">
+<h4 data-number="3.4.1.1" class="anchored" data-anchor-id="how-to-reduce-random-error"><span class="header-section-number">3.4.1.1</span> How to reduce Random Error?</h4>
+<div style="text-align:justify">
+<p>Random error is unavoidable in research, even if you try to control everything perfectly. However, there are simple ways to reduce it, such as:</p>
+<ul>
+<li><p>Take repeated measurements</p></li>
+<li><p>Increase sample size</p></li>
+<li><p>Increase the precision of measuring instruments</p></li>
+<li><p>Control other variables</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="systematic-error" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="systematic-error"><span class="header-section-number">3.4.2</span> Systematic Error</h3>
+<div style="text-align:justify">
+<p>Occurs when the measurement system makes the same kind of mistake every time it measures something. Often happens because of a problem with the tool or the way the experiment or research is carried out. For example, a caliper might be miscalibrated and always show larger widths than they are. Systematic error is a <strong>threat to validity</strong> of the research</p>
+<ul>
+<li><p>It occurs consistently in the same direction.</p></li>
+<li><p>Varies in relationship with the actual value of the measurement.</p></li>
+<li><p>Persistent factor that predictably affects all measurements.</p></li>
+<li><p>Systematic errors create <strong>bias</strong> in the data.</p></li>
+</ul>
+<p>Many factors can cause systematic error, including errors in the measurement instrument calibration, a bias in the measurement process, or external factors that influence the measurement process in a consistent non-random manner.</p>
+</div>
+</section>
+<section id="bias-in-research" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="bias-in-research"><span class="header-section-number">3.4.3</span> Bias in Research</h3>
+<div style="text-align:justify">
+<p>Bias refers to a <strong>systematic tendency to favor one perspective, outcome, or group over others</strong>, leading to distortion in research, decision-making, or judgment.</p>
+<p>In research, bias can result from various factors, including the way studies are designed, how data is collected, and how results are interpreted. This can lead to inaccurate conclusions that do not reflect the true nature of the subject being studied.</p>
+</div>
+<section id="definitions-1" class="level4" data-number="3.4.3.1">
+<h4 data-number="3.4.3.1" class="anchored" data-anchor-id="definitions-1"><span class="header-section-number">3.4.3.1</span> Definitions</h4>
+<div style="text-align:justify">
+<ul>
+<li><p>Deviation of results or inferences from the truth, or processes leading to such deviation. Any trend in the collection, analysis, interpretation, publication, or review of data that can lead to conclusions that are systematically different from the truth.</p></li>
+<li><p>A process at any stage of inference tending to produce results that depart systematically from true values.</p></li>
+</ul>
+<p>“The Idols of Tribe have their foundation in human nature itself, and in the tribe or race of men. For it is a false assertion that the sense of man is the measure of things. On the contrary, all perceptions as well of the sense as of the mind are according to the measure of the individual and not according to the measure of the universe. And the human understanding is like a false mirror, which, receiving rays irregularly, distorts and discolors the nature of things by mingling its own nature with it.”</p>
+<ul>
+<li>Francis Bacon, Novum Organum</li>
+</ul>
+<p>Bacon’s words remind us that our understanding of the world is influenced by who we are and where we come from. In research, this means our personal biases can affect how we design studies, analyze data, and draw conclusions.</p>
+</div>
+</section>
+<section id="major-types-of-bias-distinguished-in-research" class="level4" data-number="3.4.3.2">
+<h4 data-number="3.4.3.2" class="anchored" data-anchor-id="major-types-of-bias-distinguished-in-research"><span class="header-section-number">3.4.3.2</span> Major types of Bias distinguished in Research</h4>
+<div style="text-align:justify">
+<p><strong>Selection Bias</strong></p>
+<p>Errors due to systematic differences in characteristics between those who are selected for study and those who are not.(Last; Beaglehole)</p>
+<p>When comparisons are made between groups of patients that differ in ways other than the main factors under study, that affect the outcome under study.(Fletcher)</p>
+<p>When the individuals selected for a study or the process by which they are included in the study leads to a non-representative sample. This bias can distort the results of a study because the sample does not accurately reflect the broader population that the study aims to generalize to. As a result, conclusions drawn from the study may be misleading, since the study group differs in important ways from the population under investigation.</p>
+<p><strong>Information Bias/ Measurement Bias</strong></p>
+<p>Information bias (also called measurement bias or observation bias) occurs when there is a systematic error in the measurement or collection of data, leading to inaccurate or misclassified information about the exposure, outcome, or other variables in a study. This type of bias can distort the observed relationship between the exposure and outcome, leading to incorrect conclusions.</p>
+<p>Information bias typically arises when there is a discrepancy between the true values of variables and how they are measured or recorded. It can happen at any stage of a study, whether it’s during data collection, participant interviews, surveys, clinical examinations, or laboratory tests.</p>
+</div>
+</section>
+<section id="confounding-bias" class="level4" data-number="3.4.3.3">
+<h4 data-number="3.4.3.3" class="anchored" data-anchor-id="confounding-bias"><span class="header-section-number">3.4.3.3</span> Confounding Bias</h4>
+<div style="text-align:justify">
+<p>In research, identifying true relationships between variables is essential for drawing valid conclusions. However, the process is often complicated by confounding bias, a phenomenon where an external variable—called a “confounder”—distorts or misrepresents the true relationship between the variables being studied.</p>
+<p>A confounder is a variable that influences both the independent variable (the cause) and the dependent variable (the effect), creating a false impression of a relationship. This can lead to misleading results, making it difficult to establish cause-and-effect links with certainty.</p>
+<p>Recognizing and controlling for confounding bias is critical to ensuring the validity of research findings.</p>
+</div>
+<p><strong>A Confounder</strong></p>
+<div style="text-align:justify">
+<ul>
+<li><p>Is associated with both the disease and the exposure</p></li>
+<li><p>is unequally distributed between the groups</p></li>
+<li><p>Should be working independently and not as part of the proposed exposure-health outcome pathway</p></li>
+</ul>
+</div>
+<section id="handling-confounding" class="level5" data-number="3.4.3.3.1">
+<h5 data-number="3.4.3.3.1" class="anchored" data-anchor-id="handling-confounding"><span class="header-section-number">3.4.3.3.1</span> Handling Confounding</h5>
+<div style="text-align:justify">
+<p><strong>At the Stage of Study Design</strong>:</p>
+<p><strong>Randomization</strong>: Randomization is a technique used during study design to assign participants to different groups in a way that ensures each participant has an equal chance of being assigned to any group, minimizing the potential for confounding variables to affect the results.</p>
+<p><strong>Restriction</strong>: Restriction involves limiting the study population to individuals who meet certain criteria, such as age range or disease stage, in order to reduce the potential impact of confounders by controlling for specific variables that may influence the outcome.</p>
+<p><strong>Matching</strong>: Matching is a method where participants in different groups are paired based on similar characteristics (e.g., age, gender, baseline health status) to control for confounding factors, ensuring that these variables are equally distributed across the groups.</p>
+<p><strong>At the Stage of Analysis</strong></p>
+<p><strong>Stratification</strong>: Stratification is a technique used during the analysis phase of a study, where the data is divided into subgroups (strata) based on a particular confounder, allowing the researcher to assess the relationship between the exposure and outcome within each stratum, thus controlling for the confounding effect.</p>
+<p><strong>Regression Adjustment</strong>: Adjustment refers to statistical techniques, such as regression analysis, that are used during data analysis to control for confounders by statistically accounting for their potential influence on the relationship between the exposure and outcome variables.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="table-enlisting-different-types-of-bias" class="level3" data-number="3.4.4">
+<h3 data-number="3.4.4" class="anchored" data-anchor-id="table-enlisting-different-types-of-bias"><span class="header-section-number">3.4.4</span> Table enlisting different types of Bias</h3>
+<div style="text-align:justify">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 85%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Types.of.Bias</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Investigator Bias</td>
+<td style="text-align: left;">Conscious or unconscious preference given to one group over another by the investigator</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Evaluator Bias</td>
+<td style="text-align: left;">Introduced when an investigator making endpoint-variable measurements favours one group over another. Common with subjective endpoints</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Performance Bias/ Hawthorne Effect</td>
+<td style="text-align: left;">Introduced when participants know their allocation to a particular group and change their response or behaviour during a particular treatment</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Selection Bias</td>
+<td style="text-align: left;">Introduced when samples (individuals or groups) are selected for data analysis without proper randomization; includes admission bias and non-response bias, in which case the sample is not representative of the population</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ascertainment/ Information Bias</td>
+<td style="text-align: left;">Errors in measurement or classification of patients, includes diagnostic bias and recall bias</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Allocation Bias</td>
+<td style="text-align: left;">Systematic differences in the allocation of participants to treatment groups and comparison groups, when the investigator knows which treatment is going to be allocated to the next eligible participant</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Confirmation Bias</td>
+<td style="text-align: left;">Information is processed in a manner consistent with someone’s belief</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Expectation Bias</td>
+<td style="text-align: left;">Introduced during publication by a personal preference for positive results over negative results when the results deviate from expected outcome</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Detection Bias</td>
+<td style="text-align: left;">Systematic errors in observation of outcomes in different groups results in detection bias when outcomes in one group are not as vigilantly sought as in the other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Attrition bias/loss-to-follow-up bias</td>
+<td style="text-align: left;">Preferential loss-to-follow-up in a particular group leads to attrition bias</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="directed-acyclic-graph" class="level4" data-number="3.4.4.1">
+<h4 data-number="3.4.4.1" class="anchored" data-anchor-id="directed-acyclic-graph"><span class="header-section-number">3.4.4.1</span> Directed Acyclic Graph</h4>
+<div style="text-align:justify">
+<p>Directed Acyclic Graph is a graphical representation of the relationships between variables in a study, where each node represents a variable, and each directed edge (arrow) represents a causal relationship between two variables. The acyclic nature of the graph means there are no feedback loops, so the graph doesn’t contain any cycles, no variable can cause itself, directly or indirectly, through a series of causal links.</p>
+<p>In DAG, Causal Effect of X on Y is given by:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="validity_reliability_research_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>Utilities of DAG</strong></p>
+<ul>
+<li><p>Visualize the causal relationships between variables.</p></li>
+<li><p>Identify potential confounders and backdoor paths that could bias results.</p></li>
+<li><p>Guide decisions on which variables to control for in the analysis.</p></li>
+<li><p>Avoid over-adjustment and collider bias by clarifying the causal structure.</p></li>
+<li><p>Enhance the transparency of causal assumptions.</p></li>
+</ul>
+<p><strong>Few points and terms to remember in understanding DAGs</strong>:</p>
+<p><strong>Confounders</strong></p>
+<ul>
+<li>Ancestors of exposure</li>
+<li>Ancestors of Outcome</li>
+<li>But not of outcome in the path through exposure</li>
+</ul>
+<p><strong>Mediators</strong></p>
+<ul>
+<li>Descendant of exposure</li>
+<li>Ancestor of Outcome</li>
+<li>It lies in the causal pathway between Exposure &amp; Outcome</li>
+</ul>
+<p><strong>Proxy Confounder</strong></p>
+<ul>
+<li>Lies between confounder and exposure or outcome</li>
+<li>Descendant of a confounder</li>
+<li>Ancestor of either the exposure or the outcome</li>
+<li>Not ancestor of both, in that case it would be confounder</li>
+</ul>
+<p><strong>Competing Exposures</strong></p>
+<ul>
+<li><p>An ancestor of the outcome</p></li>
+<li><p>Not related with the exposure</p></li>
+<li><p>Neither a confounder, nor a proxy confounder, nor a mediator.</p></li>
+</ul>
+<p><strong>Latent Variables</strong></p>
+<ul>
+<li>Unobserved variables</li>
+<li>Latent confounding factors are represented by bidirectional arrows</li>
+<li>This implies bidirected edges does not mean reciprocal causation</li>
+</ul>
+<p><strong>Adjustment sets</strong></p>
+<ul>
+<li><p>Any sets of covariates that closes all the biasing paths</p></li>
+<li><p>They dont open new biasing paths</p></li>
+<li><p>They dont close causal path in the process</p></li>
+</ul>
+<p>An Example of DAG is presented here:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="validity_reliability_research_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>In the DAG depicted here:</p>
+<ul>
+<li><p>Z is a confounder</p></li>
+<li><p>X is a mediator between Z and Y</p></li>
+<li><p>W is a competing exposure</p></li>
+</ul>
+<p>This helps in identifying sources of confounding. Once identified, steps should be taken to address those anticipated biases. After the study has been completed one should again assess the possibility of biases operating. Analysis should be performed to take care of some of the biases, if possible, or the effect. Causation needs to be distinguished from mere association, the link between two variables (often an exposure and an outcome). An observed association may in fact be due to the effects of chance (random error), bias (systematic error), confounding, reverse causality or true causality.</p>
+<p>The observed presence or absence of a statistical association between an exposure and an outcome does not necessarily imply the presence or absence of a causal relationship respectively. A cause-effect relationship between exposure and disease requires inferences far beyond the data from a single study.</p>
+</div>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -221,15 +546,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -261,50 +583,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -314,17 +597,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -336,245 +610,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -616,18 +654,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./study_design.html" class="pagination-link" aria-label="Epidemiological Study Designs">
+      <a href="./study_design.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./digital_data.html" class="pagination-link" aria-label="Digital Data Collection using ODK">
+      <a href="./digital_data.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Digital Data Collection using ODK</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 
