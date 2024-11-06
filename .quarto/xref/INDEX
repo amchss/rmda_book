@@ -1,26 +1,26 @@
 {
-  "validity_reliability_research.qmd": {
-    "validity_reliability_research.html": "ac21f488"
-  },
   "index.qmd": {
-    "index.html": "31d49800"
+    "index.html": "759f236c"
   },
   "preface.qmd": {
-    "preface.html": "1f82a7ec"
+    "preface.html": "63ba30bf"
   },
   "research_methods.qmd": {
-    "research_methods.html": "7284ddfa"
+    "research_methods.html": "792648e8"
   },
   "study_design.qmd": {
-    "study_design.html": "ace5f0ee"
+    "study_design.html": "eb1f1300"
+  },
+  "validity_reliability_research.qmd": {
+    "validity_reliability_research.html": "29bd0ee6"
   },
   "digital_data.qmd": {
-    "digital_data.html": "a1f3f1e7"
+    "digital_data.html": "3cb63d25"
   },
   "intro_r.qmd": {
-    "intro_r.html": "b74421f6"
+    "intro_r.html": "0810653d"
   },
   "statistical_methods.qmd": {
-    "statistical_methods.html": "e2ba587d"
+    "statistical_methods.html": "25f8d6d8"
   }
 }

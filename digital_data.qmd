@@ -142,11 +142,11 @@ The `choices` sheet defines the available options for questions that require sel
 
 ![Example of Choices Sheet](images/choices_sheet.png){fig-align="center"}
 
-- `list_name`: This identifies the set of choices (should match the list_name used in the survey sheet).
+-   `list_name`: This identifies the set of choices (should match the list_name used in the survey sheet).
 
-- `name`: The unique identifier for each choice.
+-   `name`: The unique identifier for each choice.
 
-- `label`: The label that will be shown to the user for each option.
+-   `label`: The label that will be shown to the user for each option.
 
 ### Settings Sheet
 
@@ -154,38 +154,55 @@ The settings sheet contains the configuration details for the form, such as the 
 
 ![Example of Settings Sheet](images/settings_sheet.png){fig-align="center"}
 
-- `form_title`: The title of the form.
+-   `form_title`: The title of the form.
 
-- `form_id`: A unique identifier for the form.
+-   `form_id`: A unique identifier for the form.
 
-- `version`: The version number of the form (helps with version control).
+-   `version`: The version number of the form (helps with version control).
+
+## Uploading the XLSForm to ODK Central
+
+Once your XLSForm is ready, you can upload it to ODK Central to make it available for data collection. Follow these steps to upload and publish your form:
+
+-   **Log in to ODK Central**: Access your ODK Central account via the web browser.
+
+-   **Navigate to Projects**: Open the project to which you want to add the form or create a new project if necessary.
+
+-   **Upload the XLSForm**: In the project dashboard, select Forms and click Upload Form. Choose your prepared XLSForm file from your computer and upload it.
+
+-   **Review and Publish**: Once uploaded, ODK Central will validate the form to ensure it is compatible. After validation, publish the form to make it accessible to data collectors.
+
+-   **Configure Access**: Create an App User and assign the form to that user. This App User will allow data collectors to connect the form with ODK Collect.
+
+After completing these steps, your form is ready to be accessed and filled out by data collectors using the ODK Collect app.
+
+To get started, download our [demo XLSForm](data/odk_example_hin_mal.xlsx), log in to ODK Central, and go to your project. In the Forms section, simply upload the XLSForm file and publish it once it’s validated. This quick exercise will help you get comfortable with the form upload process, so you’ll be ready to upload and manage your own forms with ease.
 
 
 ## Next Step {.unnumbered}
 
 ### Deepen your understanding {.unnumbered}
 
-- [XLSForm introduction](https://docs.getodk.org/xlsform/)
+-   [XLSForm introduction](https://docs.getodk.org/xlsform/)
 
-- [Question types](https://docs.getodk.org/form-question-types/)
+-   [Question types](https://docs.getodk.org/form-question-types/)
 
-- [Required questions](https://docs.getodk.org/form-logic/#requiring-responses)
+-   [Required questions](https://docs.getodk.org/form-logic/#requiring-responses)
 
-- [Constraints on user input](https://docs.getodk.org/form-logic/#constraints)
+-   [Constraints on user input](https://docs.getodk.org/form-logic/#constraints)
 
-- [Selects](https://docs.getodk.org/form-question-types/#select-widgets)
+-   [Selects](https://docs.getodk.org/form-question-types/#select-widgets)
 
-- [Relevance](https://docs.getodk.org/form-logic/#relevants)
-
+-   [Relevance](https://docs.getodk.org/form-logic/#relevants)
 
 ### Broaden your knowledge {.unnumbered}
 
-- [Groups of questions](https://docs.getodk.org/form-logic/#groups)
+-   [Groups of questions](https://docs.getodk.org/form-logic/#groups)
 
-- [Form Styling](https://docs.getodk.org/form-styling/)
+-   [Form Styling](https://docs.getodk.org/form-styling/)
 
-- [Form Language](https://docs.getodk.org/form-language/)
+-   [Form Language](https://docs.getodk.org/form-language/)
 
-- [Form Operators and Functions](https://docs.getodk.org/form-operators-functions/)
+-   [Form Operators and Functions](https://docs.getodk.org/form-operators-functions/)
 
-- [ODK Collect introduction](https://docs.getodk.org/collect-intro/)
+-   [ODK Collect introduction](https://docs.getodk.org/collect-intro/)
