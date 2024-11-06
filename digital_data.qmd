@@ -93,6 +93,7 @@ The `survey` sheet is where you define the questions that users will answer duri
 #### Key Columns in the Survey Sheet: {.unnumbered}
 
 ::: {style="text-align:justify"}
+
 These are the essential components for creating an effective data collection form:
 
 -   `type`: Defines the type of input (e.g., text, integer, select_one).
@@ -134,9 +135,12 @@ Additional Features to Enhance Your Form These features can be used to add funct
 -   `video`: Allows users to record or view videos within the form.
 
 These features provide enhanced customization options to further improve your form’s functionality and user experience. Explore them to add more advanced capabilities to your data collection process.
+
 :::
 
 ### `choices` Sheet
+
+::: {style="text-align:justify"}
 
 The `choices` sheet defines the available options for questions that require selection from multiple options (e.g., `select_one` or `select_multiple` questions).
 
@@ -148,7 +152,11 @@ The `choices` sheet defines the available options for questions that require sel
 
 -   `label`: The label that will be shown to the user for each option.
 
+:::
+
 ### Settings Sheet
+
+::: {style="text-align:justify"}
 
 The settings sheet contains the configuration details for the form, such as the form title, version, and other metadata.
 
@@ -160,7 +168,11 @@ The settings sheet contains the configuration details for the form, such as the 
 
 -   `version`: The version number of the form (helps with version control).
 
+:::
+
 ## Uploading the XLSForm to ODK Central
+
+::: {style="text-align:justify"}
 
 Once your XLSForm is ready, you can upload it to ODK Central to make it available for data collection. Follow these steps to upload and publish your form:
 
@@ -178,6 +190,7 @@ After completing these steps, your form is ready to be accessed and filled out b
 
 To get started, download our [demo XLSForm](data/odk_example_hin_mal.xlsx), log in to ODK Central, and go to your project. In the Forms section, simply upload the XLSForm file and publish it once it’s validated. This quick exercise will help you get comfortable with the form upload process, so you’ll be ready to upload and manage your own forms with ease.
 
+:::
 
 ## Next Step {.unnumbered}
 

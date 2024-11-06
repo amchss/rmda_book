@@ -119,13 +119,12 @@ pacman::p_load(tidyverse, here)
 
 # Load Data
 
-df1 <- NHANES::NHANES
+df <- read_rds(here("data", "nhanes_modified_df.rds"))
 
-df1 <- df1 |> 
+df <- df |> 
   janitor::clean_names()
 
-df <- df1 |> 
-  select(id, survey_yr, gender, age, race1, education, marital_status, hh_income, home_own, home_rooms, poverty, work, weight, height)
+
 ```
 
 ```{r}
@@ -202,7 +201,7 @@ Graphical methods are essential for summarizing and understanding the distributi
 #### Bar Chart
 
 ::: {style="text-align:justify"}
-A **bar chart** is used to represent categorical data (nominal or ordinal). Each bar represents the frequency (or count) of a category. It’s commonly used for visualizing nominal variables like gender or education level.
+A **bar chart** is used to represent categorical data (nominal or ordinal). Each bar represents the frequency (or count) of a category. It’s commonly used for visualizing nominal variables like race or education level.
 
 Example:
 
@@ -210,10 +209,10 @@ Example:
 
 # Bar chart example for a nominal variable
 
-ggplot(df, aes(x = gender)) +
+ggplot(df, aes(x = race)) +
   geom_bar() +
   labs(
-    title = "Bar Chart of Gender", 
+    title = "Bar Chart of Race", 
     x = "Gender", 
     y = "Count")
 ```
@@ -355,7 +354,7 @@ Example:
 ```{r}
 # Stacked bar chart example for two categorical variables
 
-ggplot(df, aes(x = gender, fill = race1)) +
+ggplot(df, aes(x = gender, fill = race)) +
   geom_bar(position = "stack") +
   labs(title = "Stacked Bar Chart of Gender by Race", x = "Gender", y = "Count", fill = "Race")
 ```
@@ -372,7 +371,7 @@ Example:
 # Grouped bar chart example for two categorical variables
 
 
-ggplot(df, aes(x = race1, fill = gender)) +
+ggplot(df, aes(x = race, fill = gender)) +
   geom_bar(position = "dodge") +
   labs(title = "Grouped Bar Chart of Gender by Race", x = "Gender", y = "Count", fill = "Race")
 
@@ -462,7 +461,7 @@ In this example, we'll create a scatter plot of two continuous variables and use
 ggplot(df, 
        aes(x = height, 
            y = weight, 
-           color = race1)) +
+           color = race)) +
   geom_point(size = 1, alpha = 0.5) +
   labs(title = "Scatter Plot of Height vs Weight by Race", 
        x = "Height", y = "Weight", color = "Race")
@@ -478,7 +477,7 @@ ggplot(df,
        aes(x = height, 
            y = weight)) +
   geom_point(size = 1) +
-    facet_wrap(~race1)+
+    facet_wrap(~race)+
   labs(title = "Scatter Plot of Height vs Weight by Race", 
        x = "Height", y = "Weight", color = "Race")
 
@@ -500,7 +499,7 @@ ggplot(df,
            y = weight,
            color = gender)) +
   geom_point(size = 1) +
-    facet_wrap(~race1)+
+    facet_wrap(~race)+
   labs(title = "Scatter Plot of Height vs Weight by Race and gender", 
        x = "Height", y = "Weight", color = "Gender")
 ```
@@ -575,20 +574,7 @@ Here’s a breakdown of some of the choices available to you:
 ::: {style="text-align:justify"}
 As we mentioned earlier, there are various ways to describe variables based on their types. In this section, we’ll explore how to describe different variables using R. First, we’ll look at numerical variables (both discrete and continuous), and then we’ll dive into categorical variables (nominal and ordinal).
 
-```{r}
-#| echo: false
-#| warning: false
 
-pacman::p_load(tidyverse, NHANES)
-
-df1 <- NHANES::NHANES
-
-df1 <- df1 |> 
-  janitor::clean_names()
-
-df <- df1 |> 
-  select(id, survey_yr, gender, age, race1, education, marital_status, hh_income, home_own, home_rooms, poverty, work, weight, height)
-```
 :::
 
 #### Describing a Single Numerical (Discrete / Categorical) Variable using R
@@ -639,7 +625,9 @@ To solve this, we need to tell R to ignore those missing values when performing 
 # Calculate the mean while having NA values
 
 df |> 
-  summarise(mean_height = mean(height), na.rm = TRUE)
+  summarise(
+    mean_height = mean(height, na.rm = TRUE)
+    )
 
 
 ```
@@ -837,15 +825,15 @@ We’ll continue working with the NHANES dataset to see this in action.
 ##### Frequency
 
 ::: {style="text-align:justify"}
-Frequency tells us how many times each category appears in the data. Let’s calculate the frequency for the income variable (`hh_income`).
+Frequency tells us how many times each category appears in the data. Let’s calculate the frequency for the marital status variable (`marital_status`).
 
 ```{r}
 # Calculate the frequency of each category in 'hh_income'
 
-hh_income_frequency <- df |> 
-  count(hh_income)
+marital_status_frequency <- df |> 
+  count(marital_status)
 
-hh_income_frequency
+marital_status_frequency
 
 ```
 :::
@@ -858,13 +846,13 @@ hh_income_frequency
 Next, we’ll calculate the percentage for each category, which shows the relative proportion of each category within the dataset.
 
 ```{r}
-# Calculate the percentage for each category in 'hh_income'
+# Calculate the percentage for each category in 'marital_status'
 
-hh_income_percent <- df  |> 
-  count(hh_income) |> 
+marital_status_percent <- df |> 
+  count(marital_status) |>  
   mutate(percent = (n / sum(n)) * 100)
 
-hh_income_percent
+marital_status_percent
 
 ```
 
@@ -879,12 +867,12 @@ Cumulative percent shows the running total of percentages, which can help unders
 ```{r}
 # Calculate cumulative percentage for 'hh_income'
 
-hh_income_cumulative <- df |> 
-  count(hh_income) |> 
+marital_status_cumulative <-  df |>
+  count(marital_status) |>  
   mutate(percent = n / sum(n) * 100,
          cumulative_percent = cumsum(percent))
 
-hh_income_cumulative
+marital_status_cumulative
 
 ```
 :::
@@ -904,7 +892,7 @@ pacman::p_load(gtsummary)
 
 # Create a summary table for the dataset
 summary_table <- df |> 
-  select(age, gender, race1, height) |> 
+  select(age, gender, race, height) |> 
   tbl_summary(
     statistic = list(all_continuous() ~ "{mean} ({sd})", 
                      all_categorical() ~ "{n} ({p}%)"),
@@ -948,7 +936,7 @@ Let’s use the `gender` and `race1` variables in the NHANES dataset to explore 
 
 # Cross-tabulation of 'gender' and 'race1'
 gender_race_table <- df %>%
-  count(gender, race1)
+  count(gender, race)
 
 gender_race_table
 
@@ -963,7 +951,7 @@ This table shows how the categories of gender and race1 are distributed across e
 ```{r}
 # Cross-tabulation with percentages
 gender_race_percent <- df %>%
-  count(gender, race1) %>%
+  count(gender, race) %>%
   group_by(gender) %>%
   mutate(percent = n / sum(n) * 100)
 
@@ -1039,9 +1027,9 @@ When you need to present results in a polished, publication-ready format, the gt
 
 # Create a publication-ready table for two categorical variables
 table_cat <- df %>%
-  select(gender, race1) %>%
+  select(gender, race) %>%
   tbl_summary(by = gender, 
-              label = race1 ~ "Race/Ethnicity") 
+              label = race ~ "Race/Ethnicity") 
 
 # Display the table
 table_cat
@@ -1151,30 +1139,9 @@ In this context, using the NHANES dataset, we can investigate whether the mean b
 **R Implementation**: We’ll use the `t.test()` function to conduct the one-sample t-test, specifying 120 as the value for comparison.
 
 ```{r}
-pacman::p_load(tidyverse)
-
-# Load NHANES data
-
-
-df <- NHANES::NHANES
-
-df <- df |> 
-  janitor::clean_names()
-
-df <- df |> 
-  mutate(bp_sys_post = case_when(
-    bmi > 25 ~ round(bp_sys_ave + runif(n(), -8, -1), 0),  # Generate a new random number for each row
-    TRUE ~ round(bp_sys_ave + runif(n(), -2, 2), 0)        # Same for those with bmi <= 25
-  ))
-
-
-
-# Filter to include only adults
-df <- df |> 
-  filter(age >= 18)
 
 # Conduct a one-sample t-test
-t_test_result <- t.test(df$bp_sys_ave, mu = 120, na.rm = TRUE)
+t_test_result <- t.test(df$bp_sys, mu = 120, na.rm = TRUE)
 
 # View the result
 t_test_result
@@ -1184,16 +1151,16 @@ t_test_result
 
 **Interpretation of Results:**
 
--   t-Statistic: 3.618
+-   t-Statistic: 4.0396
 
--   Degrees of Freedom: 7,204
+-   Degrees of Freedom: 5451
 
--   p-value: 0.0002981
+-   p-value: 5.427e-05
 
 
-**Conclusion**: With a p-value of 0.0003 (below 0.05), we conclude that the sample’s average blood pressure of 120.73 mmHg is statistically different from the normal BP value of 120 mmHg. However, for clinicians, it’s essential to think about what this small difference actually means for patient care.
+**Conclusion**: With a p-value of <0.0001 (below 0.05), we conclude that the sample’s average blood pressure of  120.9503 mmHg is statistically different from the normal BP value of 120 mmHg. However, for clinicians, it’s essential to think about what this small difference actually means for patient care.
 
-In this case, while there’s a statistically significant difference, the 0.73 mmHg increase from the standard value is likely too small to have clinical importance. This reminds us that even if a result is statistically significant, it’s the practical impact on patient outcomes that ultimately matters.
+In this case, while there’s a statistically significant difference, the 0.9503 mmHg increase from the standard value is likely too small to have clinical importance. This reminds us that even if a result is statistically significant, it’s the practical impact on patient outcomes that ultimately matters.
 
 :::
 
@@ -1207,13 +1174,13 @@ In addition to hypothesis testing, we also estimate a confidence interval (CI) f
 
 From our one-sample t-test results, we can compute the 95% confidence interval for the mean blood pressure:
 
-- 95% Confidence Interval for Mean BP: (120.33, 121.12)
+- 95% Confidence Interval for Mean BP: (120.4891, 121.4115)
 
-- Sample Mean: 120.73 mmHg
+- Sample Mean: 120.9503 mmHg
 
-The confidence interval indicates that we can be 95% confident that the true mean systolic blood pressure of the population lies between 120.33 mmHg and 121.12 mmHg. This information is particularly valuable in clinical practice, as it not only provides an estimate of the mean but also conveys the degree of uncertainty around that estimate.
+The confidence interval indicates that we can be 95% confident that the true mean systolic blood pressure of the population lies between 120.4891 mmHg and 121.4115 mmHg. This information is particularly valuable in clinical practice, as it not only provides an estimate of the mean but also conveys the degree of uncertainty around that estimate.
 
-While the average blood pressure of 120.73 mmHg is statistically significant, the width of the confidence interval (0.79 mmHg) suggests that there is little variability in our estimate, reinforcing the notion that this slight increase from the standard value may lack clinical importance.
+While the average blood pressure of 120.9503 mmHg is statistically significant, the width of the confidence interval suggests that there is little variability in our estimate, reinforcing the notion that this slight increase from the standard value may lack clinical importance.
 
 Ultimately, this dual approach—hypothesis testing combined with interval estimation—allows for a more comprehensive understanding of the data and its implications for patient care. 
 
@@ -1249,11 +1216,11 @@ In the t.test() function in R, the argument var.equal = TRUE specifies that we a
 
 **Interpretation of Results**
 
--   t-Statistic: -80.661
+-   t-Statistic: -69.721
 
--   Degrees of Freedom (df): 7,422
+-   Degrees of Freedom (df): 5630
 
--   p-value: \< 2.2e-16
+-   p-value: \< 0.0001
 
 
 **Conclusion:** The very low p-value (\< 0.05) indicates that we reject the null hypothesis, suggesting that there is a statistically significant difference in average height between males and females in this sample.
@@ -1267,17 +1234,18 @@ In addition to hypothesis testing, it is important to calculate the confidence i
 
 **95% Confidence Interval for the Difference in Means:**
 
-**Confidence Interval:** (-14.15, -13.48)
-This interval suggests that males are, on average, between 13.48 and 14.15 cm taller than females.
+**Confidence Interval:** (-14.23, -13.45)
+This interval suggests that males are, on average, between 13.45 and 14.23 cm taller than females.
 
 **Interpretation of the Confidence Interval:**
 
-- 95% Confidence Interval for the Difference in Means: (-14.15, -13.48)
+- 95% Confidence Interval for the Difference in Means: (-14.23, -13.45)
 
 - Sample Means: 
 
-  + Female: 162.06 cm 
-  + Male: 175.87 cm
+  + Female: 161.75 cm 
+  + Male: 175.59 cm
+  
   
 The confidence interval provides a range of values that, with 95% confidence, includes the true difference in average height between males and females. Since the entire interval is negative, this reinforces our earlier conclusion that males are significantly taller than females.
 
@@ -1312,7 +1280,7 @@ df_filtered <- df |>
 # Run a paired t-test
 t_test_result <- t.test(
   df_filtered$bp_sys_post,
-  df_filtered$bp_sys_ave,
+  df_filtered$bp_sys,
   paired = TRUE)
 
 # Display the result
@@ -1324,25 +1292,25 @@ t_test_result
 **Paired t-Test Results Interpretation**
 
 
-- t-statistic: -150.86
+- t-statistic: -132.99
 
-- Degrees of Freedom (df): 4855
+- Degrees of Freedom (df): 3683
 
 - p-value: < 2.2e-16
 
 
-The t-statistic is -155.16, indicating a significant difference in systolic blood pressure (BP) between the average pre-intervention and post-intervention measurements.The degrees of freedom is 4855, indicating a large sample size, which adds robustness to the statistical findings.
+The t-statistic is -132.99, indicating a significant difference in systolic blood pressure (BP) between the average pre-intervention and post-intervention measurements.The degrees of freedom is 3683, indicating a large sample size, which adds robustness to the statistical findings.
 
 The p-value is \< 2.2e-16, which is extremely low and suggests a statistically significant difference in systolic blood pressure before and after the intervention. Since this p-value is well below the standard threshold of 0.05, we reject the null hypothesis, indicating that there is a meaningful change in BP levels. 
 
 
 #### Paired T-Test: Confidence Interval
 
-The 95% confidence interval for the mean difference is (-4.529483, -4.413268). This interval indicates that we can be 95% confident that the true mean decrease in systolic blood pressure lies between -4.53 mmHg and -4.41 mmHg. Since the entire interval is negative, this strongly supports the conclusion that the intervention has led to a significant reduction in systolic BP.
+The 95% confidence interval for the mean difference is (-4.582318, -4.449170). This interval indicates that we can be 95% confident that the true mean decrease in systolic blood pressure lies between -4.58 mmHg and -4.45 mmHg. Since the entire interval is negative, this strongly supports the conclusion that the intervention has led to a significant reduction in systolic BP.
 
-The mean difference in systolic blood pressure is approximately -4.471376 mmHg, suggesting that, on average, individuals with a BMI greater than 25 experienced a decrease of about 4.47 mmHg in systolic BP following the intervention.
+The mean difference in systolic blood pressure is approximately -4.515744 mmHg, suggesting that, on average, individuals with a BMI greater than 25 experienced a decrease of about 4.52 mmHg in systolic BP following the intervention.
 
-The results of the paired t-test indicate that the intervention was effective, resulting in a statistically significant decrease in systolic blood pressure among individuals with a BMI greater than 25. The average decrease of 4.47 mmHg is both statistically significant and clinically relevant. 
+The results of the paired t-test indicate that the intervention was effective, resulting in a statistically significant decrease in systolic blood pressure among individuals with a BMI greater than 25. The average decrease of 4.52 mmHg is both statistically significant and clinically relevant. 
 
 :::
 
@@ -1352,6 +1320,8 @@ The results of the paired t-test indicate that the intervention was effective, r
 Now we cover the concepts of hypothesis testing and interval estimation for proportions. 
 
 #### Hypothesis Testing for a Proportion
+
+::: {style="text-align:justify"}
 
 Our research question is:
 
@@ -1377,26 +1347,38 @@ total_count <- df |>
   drop_na(diabetes) |>  
   nrow()
 
-prop.test(diabetes_count, total_count, p = 0.10)
+prop.test(diabetes_count, total_count, p = 0.10, conf.level = 0.05)
 
 
 ```
 
-Interpretation of Results
+here
 
+- `prop.test()`: Conducts a one-sample proportion test to check if the observed proportion of diabetes cases `(diabetes_count/total_count)` significantly differs from the hypothesized proportion (p).
 
+- `p = 0.10`: Specifies the null hypothesis proportion (10% in this case).
 
-With a p-value of 0.8653, which is much greater than the standard significance level of 0.05, we fail to reject the null hypothesis. This indicates that there is not enough evidence to suggest that the proportion of individuals with diabetes in the population differs from 10%.
+- `conf.level = 0.95`: Sets the confidence level for the interval estimate around the observed proportion. A 95% confidence level means we are 95% confident that the interval contains the true population proportion.
 
-In a clinical context, this suggests that the observed prevalence of diabetes in the sample is consistent with the expected prevalence, and no significant deviation is noted.
+**Interpretation of Results**
+
+With a p-value of 0.05891, which is slightly above the typical significance level of 0.05, we fail to reject the null hypothesis. This indicates that there isn’t sufficient evidence to suggest that the proportion of individuals with diabetes in the population is different from 10%.
+
+In a clinical context, this suggests that the observed prevalence of diabetes in the sample aligns closely with the expected prevalence, and no significant deviation is observed.
+
+:::
 
 #### Confidence Interval for a Proportion
 
-**Interpretation of Confidence Interval**
+::: {style="text-align:justify"}
 
-From the above result, we have the 95% confidence interval for the proportion of individuals with diabetes is approximately  (0.0927,0.1064). This interval suggests that we can be 95% confident that the true proportion of individuals with diabetes in the population lies between 9.27% and 10.64%.
+Interpretation of Confidence Interval
 
-This finding supports the conclusion from the hypothesis test that the proportion is consistent with the specified null value of 10%, providing further assurance that the prevalence of diabetes in the population is stable and aligns with previous estimates.
+The 95% confidence interval for the proportion of individuals with diabetes in the population is approximately (0.1073, 0.1080). This interval suggests that we can be 95% confident that the true proportion of individuals with diabetes lies between 10.73% and 10.80%.
+
+This finding supports the conclusion from the hypothesis test, as the confidence interval is close to the specified null value of 10%, reinforcing that the prevalence of diabetes in the population remains stable and aligns with expectations.
+
+:::
 
 
 ### Chi-Squared Test
@@ -1452,7 +1434,7 @@ chi_test
 
 **Interpretation of Chi-Squared Test Results**
 
--   Chi-Squared Statistic (X-squared): 206.12
+-   Chi-Squared Statistic (X-squared): 169
 
 -   Degrees of Freedom (df): 3
 
@@ -1480,7 +1462,7 @@ As an example, we’ll use the one-way ANOVA To determine if average systolic bl
 
 ```{r}
 # Fit the ANOVA model
-anova_model <- aov(bp_sys_ave ~ bmi_who, data = df)
+anova_model <- aov(bp_sys ~ bmi_who, data = df)
 
 # View the summary
 summary(anova_model)
@@ -1489,13 +1471,13 @@ summary(anova_model)
 
 **Interpretation of One-Way ANOVA Results**
 
--   **Degrees of Freedom (Df)**: The degrees of freedom for the BMI categories is 3, meaning there are four BMI groups. The residual degrees of freedom is 7116, accounting for the total sample size minus the number of groups.
+-   **Degrees of Freedom (Df)**: The degrees of freedom for the BMI categories is 3, meaning there are four BMI groups. The residual degrees of freedom is 5379, accounting for the total sample size minus the number of groups.
 
 -   **Sum of Squares (Sum Sq)**: This indicates the variability within each group (Residuals) and between the groups (BMI categories). A larger Sum of Squares for the BMI groups relative to the residuals suggests substantial variation in systolic blood pressure due to BMI category.
 
 -   **Mean Squares (Mean Sq)**: This is the Sum of Squares divided by the respective degrees of freedom. The larger Mean Square for BMI groups indicates a larger variability attributed to BMI categories compared to random error.
 
--   **F-value**: The F-value of 50.35 is substantial, suggesting that the variation in systolic blood pressure between the BMI categories is much greater than within each category.
+-   **F-value**: The F-value of 30.75 is substantial, suggesting that the variation in systolic blood pressure between the BMI categories is much greater than within each category.
 
 -   **p-value (\< 2e-16)**: The extremely small p-value is well below 0.05, leading us to reject the null hypothesis. This indicates that there is a statistically significant difference in systolic blood pressure among the different BMI categories in this sample.
 
