@@ -771,6 +771,7 @@ df_60_plus_white <- df |>
   filter(age >= 60 & race == "White")
 ```
 
+::: 
 
 ### `%in%`
 
