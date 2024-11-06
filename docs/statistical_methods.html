@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Statistical Methods – Research Methodologies &amp; Data Analysis Using R</title>
+<title>Research Methodologies &amp; Data Analysis Using R - 6&nbsp; Statistical Methods</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,12 +17,11 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +32,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -47,20 +46,48 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
+    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
-.hanging-indent div.csl-entry {
+.hanging div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -74,7 +101,8 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}</style>
+}
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -100,13 +128,7 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -115,42 +137,12 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -158,16 +150,11 @@ window.Quarto = {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./statistical_methods.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statistical Methods</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Methods</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
       </button>
     </div>
   </nav>
@@ -175,112 +162,109 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Research Methodologies &amp; Data Analysis Using R</a> 
     </div>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
+      <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-        </div>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">About Book</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">About Book</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./research_methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Research</span></span></a>
+  <a href="./research_methods.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./study_design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></span></a>
+  <a href="./study_design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./validity_reliability_research.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Cornerstones of Credible Research</span></span></a>
+  <a href="./validity_reliability_research.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quality Issues in Research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro_r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></span></a>
+  <a href="./digital_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Digital Data Collection using ODK</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistical_methods.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statistical Methods</span></span></a>
+  <a href="./intro_r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./statistical_methods.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Methods</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction-to-biostatistics-and-types-of-variables" id="toc-introduction-to-biostatistics-and-types-of-variables" class="nav-link active" data-scroll-target="#introduction-to-biostatistics-and-types-of-variables"><span class="header-section-number">5.1</span> Introduction to Biostatistics and Types of Variables</a>
+  <li><a href="#introduction-to-biostatistics-and-types-of-variables" id="toc-introduction-to-biostatistics-and-types-of-variables" class="nav-link active" data-scroll-target="#introduction-to-biostatistics-and-types-of-variables"><span class="toc-section-number">6.1</span>  Introduction to Biostatistics and Types of Variables</a>
   <ul class="collapse">
-  <li><a href="#biostatistics" id="toc-biostatistics" class="nav-link" data-scroll-target="#biostatistics"><span class="header-section-number">5.1.1</span> Biostatistics</a></li>
-  <li><a href="#types-of-variables" id="toc-types-of-variables" class="nav-link" data-scroll-target="#types-of-variables"><span class="header-section-number">5.1.3</span> Types of Variables</a></li>
-  <li><a href="#two-major-parts-of-statistics" id="toc-two-major-parts-of-statistics" class="nav-link" data-scroll-target="#two-major-parts-of-statistics"><span class="header-section-number">5.1.4</span> Two Major Parts of Statistics</a></li>
+  <li><a href="#biostatistics" id="toc-biostatistics" class="nav-link" data-scroll-target="#biostatistics"><span class="toc-section-number">6.1.1</span>  Biostatistics</a></li>
+  <li><a href="#types-of-variables" id="toc-types-of-variables" class="nav-link" data-scroll-target="#types-of-variables"><span class="toc-section-number">6.1.3</span>  Types of Variables</a></li>
+  <li><a href="#two-major-parts-of-statistics" id="toc-two-major-parts-of-statistics" class="nav-link" data-scroll-target="#two-major-parts-of-statistics"><span class="toc-section-number">6.1.4</span>  Two Major Parts of Statistics</a></li>
   </ul></li>
-  <li><a href="#descriptive-statistics-graphical-methods" id="toc-descriptive-statistics-graphical-methods" class="nav-link" data-scroll-target="#descriptive-statistics-graphical-methods"><span class="header-section-number">5.2</span> Descriptive Statistics: Graphical Methods</a>
+  <li><a href="#descriptive-statistics-graphical-methods" id="toc-descriptive-statistics-graphical-methods" class="nav-link" data-scroll-target="#descriptive-statistics-graphical-methods"><span class="toc-section-number">6.2</span>  Descriptive Statistics: Graphical Methods</a>
   <ul class="collapse">
-  <li><a href="#graphical-methods-for-a-single-variable" id="toc-graphical-methods-for-a-single-variable" class="nav-link" data-scroll-target="#graphical-methods-for-a-single-variable"><span class="header-section-number">5.2.1</span> Graphical Methods for a Single Variable</a></li>
-  <li><a href="#graphical-methods-for-two-variable-visualization" id="toc-graphical-methods-for-two-variable-visualization" class="nav-link" data-scroll-target="#graphical-methods-for-two-variable-visualization"><span class="header-section-number">5.2.2</span> Graphical Methods for Two Variable Visualization</a></li>
-  <li><a href="#data-visualization-using-r-introduction-to-grammar-of-graphics" id="toc-data-visualization-using-r-introduction-to-grammar-of-graphics" class="nav-link" data-scroll-target="#data-visualization-using-r-introduction-to-grammar-of-graphics"><span class="header-section-number">5.2.3</span> Data Visualization Using R: Introduction to Grammar of Graphics</a></li>
-  <li><a href="#visualising-a-single-variable-using-r" id="toc-visualising-a-single-variable-using-r" class="nav-link" data-scroll-target="#visualising-a-single-variable-using-r"><span class="header-section-number">5.2.4</span> Visualising a Single Variable using R</a></li>
-  <li><a href="#visualising-two-variables-using-r" id="toc-visualising-two-variables-using-r" class="nav-link" data-scroll-target="#visualising-two-variables-using-r"><span class="header-section-number">5.2.5</span> Visualising Two Variables using R</a></li>
-  <li><a href="#visualizing-three-variables-using-r" id="toc-visualizing-three-variables-using-r" class="nav-link" data-scroll-target="#visualizing-three-variables-using-r"><span class="header-section-number">5.2.6</span> Visualizing Three Variables using R</a></li>
-  <li><a href="#visualizing-four-variables-using-r" id="toc-visualizing-four-variables-using-r" class="nav-link" data-scroll-target="#visualizing-four-variables-using-r"><span class="header-section-number">5.2.7</span> Visualizing Four Variables using R</a></li>
+  <li><a href="#graphical-methods-for-a-single-variable" id="toc-graphical-methods-for-a-single-variable" class="nav-link" data-scroll-target="#graphical-methods-for-a-single-variable"><span class="toc-section-number">6.2.1</span>  Graphical Methods for a Single Variable</a></li>
+  <li><a href="#graphical-methods-for-two-variable-visualization" id="toc-graphical-methods-for-two-variable-visualization" class="nav-link" data-scroll-target="#graphical-methods-for-two-variable-visualization"><span class="toc-section-number">6.2.2</span>  Graphical Methods for Two Variable Visualization</a></li>
+  <li><a href="#data-visualization-using-r-introduction-to-grammar-of-graphics" id="toc-data-visualization-using-r-introduction-to-grammar-of-graphics" class="nav-link" data-scroll-target="#data-visualization-using-r-introduction-to-grammar-of-graphics"><span class="toc-section-number">6.2.3</span>  Data Visualization Using R: Introduction to Grammar of Graphics</a></li>
+  <li><a href="#visualising-a-single-variable-using-r" id="toc-visualising-a-single-variable-using-r" class="nav-link" data-scroll-target="#visualising-a-single-variable-using-r"><span class="toc-section-number">6.2.4</span>  Visualising a Single Variable using R</a></li>
+  <li><a href="#visualising-two-variables-using-r" id="toc-visualising-two-variables-using-r" class="nav-link" data-scroll-target="#visualising-two-variables-using-r"><span class="toc-section-number">6.2.5</span>  Visualising Two Variables using R</a></li>
+  <li><a href="#visualizing-three-variables-using-r" id="toc-visualizing-three-variables-using-r" class="nav-link" data-scroll-target="#visualizing-three-variables-using-r"><span class="toc-section-number">6.2.6</span>  Visualizing Three Variables using R</a></li>
+  <li><a href="#visualizing-four-variables-using-r" id="toc-visualizing-four-variables-using-r" class="nav-link" data-scroll-target="#visualizing-four-variables-using-r"><span class="toc-section-number">6.2.7</span>  Visualizing Four Variables using R</a></li>
   </ul></li>
-  <li><a href="#descriptive-statistics-numerical-methods" id="toc-descriptive-statistics-numerical-methods" class="nav-link" data-scroll-target="#descriptive-statistics-numerical-methods"><span class="header-section-number">5.3</span> Descriptive Statistics: Numerical Methods</a>
+  <li><a href="#descriptive-statistics-numerical-methods" id="toc-descriptive-statistics-numerical-methods" class="nav-link" data-scroll-target="#descriptive-statistics-numerical-methods"><span class="toc-section-number">6.3</span>  Descriptive Statistics: Numerical Methods</a>
   <ul class="collapse">
-  <li><a href="#types-of-variables-and-summary-measures" id="toc-types-of-variables-and-summary-measures" class="nav-link" data-scroll-target="#types-of-variables-and-summary-measures"><span class="header-section-number">5.3.1</span> Types of Variables and Summary Measures</a></li>
-  <li><a href="#numerical-methods-for-a-single-variable-using-r" id="toc-numerical-methods-for-a-single-variable-using-r" class="nav-link" data-scroll-target="#numerical-methods-for-a-single-variable-using-r"><span class="header-section-number">5.3.2</span> Numerical Methods for a Single Variable using R</a></li>
-  <li><a href="#numerical-methods-for-two-variables-using-r" id="toc-numerical-methods-for-two-variables-using-r" class="nav-link" data-scroll-target="#numerical-methods-for-two-variables-using-r"><span class="header-section-number">5.3.3</span> Numerical Methods for Two Variables using R</a></li>
+  <li><a href="#types-of-variables-and-summary-measures" id="toc-types-of-variables-and-summary-measures" class="nav-link" data-scroll-target="#types-of-variables-and-summary-measures"><span class="toc-section-number">6.3.1</span>  Types of Variables and Summary Measures</a></li>
+  <li><a href="#numerical-methods-for-a-single-variable-using-r" id="toc-numerical-methods-for-a-single-variable-using-r" class="nav-link" data-scroll-target="#numerical-methods-for-a-single-variable-using-r"><span class="toc-section-number">6.3.2</span>  Numerical Methods for a Single Variable using R</a></li>
+  <li><a href="#numerical-methods-for-two-variables-using-r" id="toc-numerical-methods-for-two-variables-using-r" class="nav-link" data-scroll-target="#numerical-methods-for-two-variables-using-r"><span class="toc-section-number">6.3.3</span>  Numerical Methods for Two Variables using R</a></li>
   </ul></li>
-  <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics"><span class="header-section-number">5.4</span> Inferential Statistics</a>
+  <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics"><span class="toc-section-number">6.4</span>  Inferential Statistics</a>
   <ul class="collapse">
-  <li><a href="#population-sample-and-sampling-process" id="toc-population-sample-and-sampling-process" class="nav-link" data-scroll-target="#population-sample-and-sampling-process"><span class="header-section-number">5.4.1</span> Population, Sample and Sampling Process</a></li>
-  <li><a href="#focus-areas" id="toc-focus-areas" class="nav-link" data-scroll-target="#focus-areas"><span class="header-section-number">5.4.2</span> Focus Areas</a></li>
+  <li><a href="#population-sample-and-sampling-process" id="toc-population-sample-and-sampling-process" class="nav-link" data-scroll-target="#population-sample-and-sampling-process"><span class="toc-section-number">6.4.1</span>  Population, Sample and Sampling Process</a></li>
+  <li><a href="#focus-areas" id="toc-focus-areas" class="nav-link" data-scroll-target="#focus-areas"><span class="toc-section-number">6.4.2</span>  Focus Areas</a></li>
   </ul></li>
-  <li><a href="#inferential-statistics-hypothesis-testing-and-interval-estimation" id="toc-inferential-statistics-hypothesis-testing-and-interval-estimation" class="nav-link" data-scroll-target="#inferential-statistics-hypothesis-testing-and-interval-estimation"><span class="header-section-number">5.5</span> Inferential Statistics: Hypothesis Testing and Interval Estimation</a>
+  <li><a href="#inferential-statistics-hypothesis-testing-and-interval-estimation" id="toc-inferential-statistics-hypothesis-testing-and-interval-estimation" class="nav-link" data-scroll-target="#inferential-statistics-hypothesis-testing-and-interval-estimation"><span class="toc-section-number">6.5</span>  Inferential Statistics: Hypothesis Testing and Interval Estimation</a>
   <ul class="collapse">
-  <li><a href="#hypothesis-testing-and-interval-estimation-for-a-mean" id="toc-hypothesis-testing-and-interval-estimation-for-a-mean" class="nav-link" data-scroll-target="#hypothesis-testing-and-interval-estimation-for-a-mean"><span class="header-section-number">5.5.1</span> Hypothesis Testing and Interval Estimation for a Mean</a></li>
-  <li><a href="#hypothesis-testing-and-interval-estimation-for-two-means" id="toc-hypothesis-testing-and-interval-estimation-for-two-means" class="nav-link" data-scroll-target="#hypothesis-testing-and-interval-estimation-for-two-means"><span class="header-section-number">5.5.2</span> Hypothesis Testing and Interval Estimation for Two Means</a></li>
-  <li><a href="#hypothesis-testing-and-interval-estimation-for-a-proportion" id="toc-hypothesis-testing-and-interval-estimation-for-a-proportion" class="nav-link" data-scroll-target="#hypothesis-testing-and-interval-estimation-for-a-proportion"><span class="header-section-number">5.5.3</span> Hypothesis Testing and Interval Estimation for a Proportion</a></li>
-  <li><a href="#chi-squared-test" id="toc-chi-squared-test" class="nav-link" data-scroll-target="#chi-squared-test"><span class="header-section-number">5.5.4</span> Chi-Squared Test</a></li>
-  <li><a href="#one-way-anova" id="toc-one-way-anova" class="nav-link" data-scroll-target="#one-way-anova"><span class="header-section-number">5.5.5</span> One-way ANOVA</a></li>
+  <li><a href="#hypothesis-testing-and-interval-estimation-for-a-mean" id="toc-hypothesis-testing-and-interval-estimation-for-a-mean" class="nav-link" data-scroll-target="#hypothesis-testing-and-interval-estimation-for-a-mean"><span class="toc-section-number">6.5.1</span>  Hypothesis Testing and Interval Estimation for a Mean</a></li>
+  <li><a href="#hypothesis-testing-and-interval-estimation-for-two-means" id="toc-hypothesis-testing-and-interval-estimation-for-two-means" class="nav-link" data-scroll-target="#hypothesis-testing-and-interval-estimation-for-two-means"><span class="toc-section-number">6.5.2</span>  Hypothesis Testing and Interval Estimation for Two Means</a></li>
+  <li><a href="#hypothesis-testing-and-interval-estimation-for-a-proportion" id="toc-hypothesis-testing-and-interval-estimation-for-a-proportion" class="nav-link" data-scroll-target="#hypothesis-testing-and-interval-estimation-for-a-proportion"><span class="toc-section-number">6.5.3</span>  Hypothesis Testing and Interval Estimation for a Proportion</a></li>
+  <li><a href="#chi-squared-test" id="toc-chi-squared-test" class="nav-link" data-scroll-target="#chi-squared-test"><span class="toc-section-number">6.5.4</span>  Chi-Squared Test</a></li>
+  <li><a href="#one-way-anova" id="toc-one-way-anova" class="nav-link" data-scroll-target="#one-way-anova"><span class="toc-section-number">6.5.5</span>  One-way ANOVA</a></li>
   </ul></li>
-  <li><a href="#inferential-statistics-regression-analysis" id="toc-inferential-statistics-regression-analysis" class="nav-link" data-scroll-target="#inferential-statistics-regression-analysis"><span class="header-section-number">5.6</span> Inferential Statistics: Regression Analysis</a>
+  <li><a href="#inferential-statistics-regression-analysis" id="toc-inferential-statistics-regression-analysis" class="nav-link" data-scroll-target="#inferential-statistics-regression-analysis"><span class="toc-section-number">6.6</span>  Inferential Statistics: Regression Analysis</a>
   <ul class="collapse">
-  <li><a href="#simple-linear-regression" id="toc-simple-linear-regression" class="nav-link" data-scroll-target="#simple-linear-regression"><span class="header-section-number">5.6.1</span> Simple Linear Regression</a></li>
-  <li><a href="#simple-linear-regression-using-r" id="toc-simple-linear-regression-using-r" class="nav-link" data-scroll-target="#simple-linear-regression-using-r"><span class="header-section-number">5.6.2</span> Simple Linear Regression Using R</a></li>
-  <li><a href="#multiple-linear-regression-using-r" id="toc-multiple-linear-regression-using-r" class="nav-link" data-scroll-target="#multiple-linear-regression-using-r"><span class="header-section-number">5.6.3</span> Multiple Linear Regression using R</a></li>
-  <li><a href="#logistic-regression-using-r" id="toc-logistic-regression-using-r" class="nav-link" data-scroll-target="#logistic-regression-using-r"><span class="header-section-number">5.6.4</span> Logistic Regression using R</a></li>
+  <li><a href="#simple-linear-regression" id="toc-simple-linear-regression" class="nav-link" data-scroll-target="#simple-linear-regression"><span class="toc-section-number">6.6.1</span>  Simple Linear Regression</a></li>
+  <li><a href="#simple-linear-regression-using-r" id="toc-simple-linear-regression-using-r" class="nav-link" data-scroll-target="#simple-linear-regression-using-r"><span class="toc-section-number">6.6.2</span>  Simple Linear Regression Using R</a></li>
+  <li><a href="#multiple-linear-regression-using-r" id="toc-multiple-linear-regression-using-r" class="nav-link" data-scroll-target="#multiple-linear-regression-using-r"><span class="toc-section-number">6.6.3</span>  Multiple Linear Regression using R</a></li>
+  <li><a href="#logistic-regression-using-r" id="toc-logistic-regression-using-r" class="nav-link" data-scroll-target="#logistic-regression-using-r"><span class="toc-section-number">6.6.4</span>  Logistic Regression using R</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
@@ -292,7 +276,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statistical Methods</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Methods</span></h1>
 </div>
 
 
@@ -305,9 +289,7 @@ window.Quarto = {
   </div>
   
 
-
 </header>
-
 
 <div style="text-align:justify">
 <p>Welcome to the session on Statistical Methods! The goal of this session is to help you understand the fundamental concepts of biostatistics and the different types of variables used in data analysis. By the end of this session, you will be familiar with these concepts and ready to explore the two key branches of statistics: descriptive and inferential.</p>
@@ -318,27 +300,27 @@ window.Quarto = {
 <li><p>Be able to differentiate between the two major parts of statistics: descriptive and inferential analysis</p></li>
 </ul>
 </div>
-<section id="introduction-to-biostatistics-and-types-of-variables" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="introduction-to-biostatistics-and-types-of-variables"><span class="header-section-number">5.1</span> Introduction to Biostatistics and Types of Variables</h2>
-<section id="biostatistics" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="biostatistics"><span class="header-section-number">5.1.1</span> Biostatistics</h3>
+<section id="introduction-to-biostatistics-and-types-of-variables" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="introduction-to-biostatistics-and-types-of-variables"><span class="header-section-number">6.1</span> Introduction to Biostatistics and Types of Variables</h2>
+<section id="biostatistics" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="biostatistics"><span class="header-section-number">6.1.1</span> Biostatistics</h3>
 <div style="text-align:justify">
 <p><strong>Biostatistics</strong> is the application of statistical methods to biological and medical data. It helps clinicians make informed decisions based on data collected from clinical trials, observational studies, and patient records.</p>
-<section id="variables" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="variables"><span class="header-section-number">5.1.2</span> Variables</h3>
+<section id="variables" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="variables"><span class="header-section-number">6.1.2</span> Variables</h3>
 <p>If, as we observe a characteristic, we find that it takes on different values in different persons, places, or things, we label the characteristic a variable.</p>
 <p>For example, if we are observing the characteristic’height’ in a group of people, we will notice that height varies from person to person. Therefore, height is a variable.</p>
 </section>
 </div>
 </section>
-<section id="types-of-variables" class="level3" data-number="5.1.3">
-<h3 data-number="5.1.3" class="anchored" data-anchor-id="types-of-variables"><span class="header-section-number">5.1.3</span> Types of Variables</h3>
+<section id="types-of-variables" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="types-of-variables"><span class="header-section-number">6.1.3</span> Types of Variables</h3>
 <div style="text-align:justify">
 <p>Variables are essential in data analysis and are categorized into four types:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/type_of_variable.png" class="img-fluid figure-img"></p>
-<figcaption>Types of Variables</figcaption>
+<p></p><figcaption class="figure-caption">Types of Variables</figcaption><p></p>
 </figure>
 </div>
 <ul>
@@ -349,8 +331,8 @@ window.Quarto = {
 </ul>
 </div>
 </section>
-<section id="two-major-parts-of-statistics" class="level3" data-number="5.1.4">
-<h3 data-number="5.1.4" class="anchored" data-anchor-id="two-major-parts-of-statistics"><span class="header-section-number">5.1.4</span> Two Major Parts of Statistics</h3>
+<section id="two-major-parts-of-statistics" class="level3" data-number="6.1.4">
+<h3 data-number="6.1.4" class="anchored" data-anchor-id="two-major-parts-of-statistics"><span class="header-section-number">6.1.4</span> Two Major Parts of Statistics</h3>
 <div style="text-align:justify">
 <p>Statistics is divided into two main areas:</p>
 <ol type="1">
@@ -361,14 +343,14 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="descriptive-statistics-graphical-methods" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="descriptive-statistics-graphical-methods"><span class="header-section-number">5.2</span> Descriptive Statistics: Graphical Methods</h2>
+<section id="descriptive-statistics-graphical-methods" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="descriptive-statistics-graphical-methods"><span class="header-section-number">6.2</span> Descriptive Statistics: Graphical Methods</h2>
 <div style="text-align:justify">
 <p>Graphical methods are crucial for understanding data at a glance. Depending on the number and type of variables, we use different graphical techniques. The graphical methods provided here are just some of the available methods for data visualization. There are many others that can be explored in more detail later. This is intended to be a basic introduction to help you get started.</p>
 </div>
-<section id="graphical-methods-for-a-single-variable" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="graphical-methods-for-a-single-variable"><span class="header-section-number">5.2.1</span> Graphical Methods for a Single Variable</h3>
-<table class="caption-top table">
+<section id="graphical-methods-for-a-single-variable" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="graphical-methods-for-a-single-variable"><span class="header-section-number">6.2.1</span> Graphical Methods for a Single Variable</h3>
+<table class="table">
 <colgroup>
 <col style="width: 32%">
 <col style="width: 19%">
@@ -415,9 +397,9 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
-<section id="graphical-methods-for-two-variable-visualization" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="graphical-methods-for-two-variable-visualization"><span class="header-section-number">5.2.2</span> Graphical Methods for Two Variable Visualization</h3>
-<table class="caption-top table">
+<section id="graphical-methods-for-two-variable-visualization" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="graphical-methods-for-two-variable-visualization"><span class="header-section-number">6.2.2</span> Graphical Methods for Two Variable Visualization</h3>
+<table class="table">
 <colgroup>
 <col style="width: 34%">
 <col style="width: 34%">
@@ -444,8 +426,8 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
-<section id="data-visualization-using-r-introduction-to-grammar-of-graphics" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="data-visualization-using-r-introduction-to-grammar-of-graphics"><span class="header-section-number">5.2.3</span> Data Visualization Using R: Introduction to Grammar of Graphics</h3>
+<section id="data-visualization-using-r-introduction-to-grammar-of-graphics" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="data-visualization-using-r-introduction-to-grammar-of-graphics"><span class="header-section-number">6.2.3</span> Data Visualization Using R: Introduction to Grammar of Graphics</h3>
 <div style="text-align:justify">
 <p>Data visualization in R can be effectively done using the <code>ggplot2</code> package, which is included in the popular <code>tidyverse</code> collection of R packages. <code>ggplot2</code> is based on the <strong>Grammar of Graphics</strong>, a structured approach that allows you to build plots layer by layer. This grammar provides a framework for describing and creating visualizations by combining different graphical elements. The idea is that any plot can be constructed by breaking it down into components.</p>
 <p>The visualisation using <code>ggplot2</code> package, which follows the philosophy of grammar of graphics, breaks down a plot into several components:</p>
@@ -480,11 +462,7 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Running ggplot without specifying layers</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>This will simply give you a blank plot. You then need to add layers to specify what the plot will contain.</p>
@@ -504,11 +482,7 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> weight))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>In this example, <code>height</code> is mapped to the x-axis and <code>weight</code> to the y-axis</p>
@@ -531,11 +505,7 @@ window.Quarto = {
 (`geom_point()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Here’s a breakdown of each layer in the example:</p>
@@ -550,13 +520,13 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="visualising-a-single-variable-using-r" class="level3" data-number="5.2.4">
-<h3 data-number="5.2.4" class="anchored" data-anchor-id="visualising-a-single-variable-using-r"><span class="header-section-number">5.2.4</span> Visualising a Single Variable using R</h3>
+<section id="visualising-a-single-variable-using-r" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="visualising-a-single-variable-using-r"><span class="header-section-number">6.2.4</span> Visualising a Single Variable using R</h3>
 <div style="text-align:justify">
 <p>Graphical methods are essential for summarizing and understanding the distribution of a single variable. In this section, we will explore different types of plots for visualizing one variable, based on its type (nominal, ordinal, discrete, or continuous). The key graphical methods include bar charts, boxplots, histograms, and density plots.</p>
 </div>
-<section id="bar-chart" class="level4" data-number="5.2.4.1">
-<h4 data-number="5.2.4.1" class="anchored" data-anchor-id="bar-chart"><span class="header-section-number">5.2.4.1</span> Bar Chart</h4>
+<section id="bar-chart" class="level4" data-number="6.2.4.1">
+<h4 data-number="6.2.4.1" class="anchored" data-anchor-id="bar-chart"><span class="header-section-number">6.2.4.1</span> Bar Chart</h4>
 <div style="text-align:justify">
 <p>A <strong>bar chart</strong> is used to represent categorical data (nominal or ordinal). Each bar represents the frequency (or count) of a category. It’s commonly used for visualizing nominal variables like gender or education level.</p>
 <p>Example:</p>
@@ -570,17 +540,13 @@ window.Quarto = {
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Gender"</span>, </span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 </section>
-<section id="boxplot" class="level4" data-number="5.2.4.2">
-<h4 data-number="5.2.4.2" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">5.2.4.2</span> Boxplot</h4>
+<section id="boxplot" class="level4" data-number="6.2.4.2">
+<h4 data-number="6.2.4.2" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">6.2.4.2</span> Boxplot</h4>
 <div style="text-align:justify">
 <p>A boxplot is used to represent the distribution of a continuous variable. It shows the median, quartiles, and potential outliers.</p>
 <p>Example:</p>
@@ -594,17 +560,13 @@ window.Quarto = {
 (`stat_boxplot()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 </section>
-<section id="histogram" class="level4" data-number="5.2.4.3">
-<h4 data-number="5.2.4.3" class="anchored" data-anchor-id="histogram"><span class="header-section-number">5.2.4.3</span> Histogram</h4>
+<section id="histogram" class="level4" data-number="6.2.4.3">
+<h4 data-number="6.2.4.3" class="anchored" data-anchor-id="histogram"><span class="header-section-number">6.2.4.3</span> Histogram</h4>
 <div style="text-align:justify">
 <p>A histogram is used to visualize the distribution of a continuous variable by dividing the data into bins and counting the number of observations in each bin. It’s useful for understanding the shape, spread, and central tendency of continuous variables like age or income.</p>
 <p>Example:</p>
@@ -621,11 +583,7 @@ window.Quarto = {
 (`stat_bin()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Here the x-axis represents height (a continuous variable), and the y-axis represents the frequency of observations in each height bin.</p>
@@ -644,17 +602,13 @@ window.Quarto = {
 (`stat_bin()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 </section>
-<section id="density-plot" class="level4" data-number="5.2.4.4">
-<h4 data-number="5.2.4.4" class="anchored" data-anchor-id="density-plot"><span class="header-section-number">5.2.4.4</span> Density Plot</h4>
+<section id="density-plot" class="level4" data-number="6.2.4.4">
+<h4 data-number="6.2.4.4" class="anchored" data-anchor-id="density-plot"><span class="header-section-number">6.2.4.4</span> Density Plot</h4>
 <div style="text-align:justify">
 <p>A density plot is a smoothed version of a histogram, used for continuous data. It provides an estimate of the probability distribution of a continuous variable.</p>
 <div class="cell">
@@ -671,11 +625,7 @@ window.Quarto = {
 (`stat_density()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We can represent the area under the curve using any color.</p>
@@ -694,17 +644,13 @@ window.Quarto = {
 (`stat_density()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 </section>
-<section id="combining-multiple-geometries-overlaying-histogram-and-density-plot" class="level4" data-number="5.2.4.5">
-<h4 data-number="5.2.4.5" class="anchored" data-anchor-id="combining-multiple-geometries-overlaying-histogram-and-density-plot"><span class="header-section-number">5.2.4.5</span> Combining Multiple Geometries: Overlaying Histogram and Density Plot</h4>
+<section id="combining-multiple-geometries-overlaying-histogram-and-density-plot" class="level4" data-number="6.2.4.5">
+<h4 data-number="6.2.4.5" class="anchored" data-anchor-id="combining-multiple-geometries-overlaying-histogram-and-density-plot"><span class="header-section-number">6.2.4.5</span> Combining Multiple Geometries: Overlaying Histogram and Density Plot</h4>
 <div style="text-align:justify">
 <p>One of the strengths of <code>ggplot2</code> is its ability to add multiple geometric shapes (geoms) to a single plot. For example, you can overlay a <strong>density plot</strong> on top of a <strong>histogram</strong> to visualize both the frequency distribution and the smoothed probability distribution of a continuous variable in a single canvas.</p>
 <p>Example: Histogram and Density Plot Together</p>
@@ -745,23 +691,19 @@ window.Quarto = {
 (`stat_density()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="visualising-two-variables-using-r" class="level3" data-number="5.2.5">
-<h3 data-number="5.2.5" class="anchored" data-anchor-id="visualising-two-variables-using-r"><span class="header-section-number">5.2.5</span> Visualising Two Variables using R</h3>
+<section id="visualising-two-variables-using-r" class="level3" data-number="6.2.5">
+<h3 data-number="6.2.5" class="anchored" data-anchor-id="visualising-two-variables-using-r"><span class="header-section-number">6.2.5</span> Visualising Two Variables using R</h3>
 <div style="text-align:justify">
 <p>When working with two variables, visualizing the relationship between them helps reveal patterns, associations, or differences. The appropriate plot depends on the types of variables involved (categorical, continuous, or a combination). In this section, we will explore different graphical methods for visualizing two variables: stacked bar charts, grouped bar charts, scatter plots, box plots by category, and regression lines with standard error.</p>
 </div>
-<section id="stacked-bar-chart" class="level4" data-number="5.2.5.1">
-<h4 data-number="5.2.5.1" class="anchored" data-anchor-id="stacked-bar-chart"><span class="header-section-number">5.2.5.1</span> Stacked Bar Chart</h4>
+<section id="stacked-bar-chart" class="level4" data-number="6.2.5.1">
+<h4 data-number="6.2.5.1" class="anchored" data-anchor-id="stacked-bar-chart"><span class="header-section-number">6.2.5.1</span> Stacked Bar Chart</h4>
 <div style="text-align:justify">
 <p>A <strong>stacked bar chart</strong> is used when both variables are categorical. It displays the distribution of one variable while stacking the bars based on the categories of the second variable.</p>
 <p>Example:</p>
@@ -772,17 +714,13 @@ window.Quarto = {
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"stack"</span>) <span class="sc">+</span></span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Stacked Bar Chart of Gender by Race"</span>, <span class="at">x =</span> <span class="st">"Gender"</span>, <span class="at">y =</span> <span class="st">"Count"</span>, <span class="at">fill =</span> <span class="st">"Race"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 </section>
-<section id="grouped-bar-chart" class="level4" data-number="5.2.5.2">
-<h4 data-number="5.2.5.2" class="anchored" data-anchor-id="grouped-bar-chart"><span class="header-section-number">5.2.5.2</span> Grouped Bar Chart</h4>
+<section id="grouped-bar-chart" class="level4" data-number="6.2.5.2">
+<h4 data-number="6.2.5.2" class="anchored" data-anchor-id="grouped-bar-chart"><span class="header-section-number">6.2.5.2</span> Grouped Bar Chart</h4>
 <div style="text-align:justify">
 <p>A grouped bar chart is another option for visualizing two categorical variables. Instead of stacking the bars, it places bars for each category side-by-side, allowing for a clearer comparison between categories.</p>
 <p>Example:</p>
@@ -794,17 +732,13 @@ window.Quarto = {
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grouped Bar Chart of Gender by Race"</span>, <span class="at">x =</span> <span class="st">"Gender"</span>, <span class="at">y =</span> <span class="st">"Count"</span>, <span class="at">fill =</span> <span class="st">"Race"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 </section>
-<section id="scatter-plot" class="level4" data-number="5.2.5.3">
-<h4 data-number="5.2.5.3" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">5.2.5.3</span> Scatter Plot</h4>
+<section id="scatter-plot" class="level4" data-number="6.2.5.3">
+<h4 data-number="6.2.5.3" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">6.2.5.3</span> Scatter Plot</h4>
 <div style="text-align:justify">
 <p>A scatter plot is used to visualize the relationship between two continuous variables. Each point on the plot represents an observation, and patterns like clusters, trends, or outliers can be detected.</p>
 <p>Example:</p>
@@ -819,17 +753,13 @@ window.Quarto = {
 (`geom_point()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 </section>
-<section id="box-plot-by-category" class="level4" data-number="5.2.5.4">
-<h4 data-number="5.2.5.4" class="anchored" data-anchor-id="box-plot-by-category"><span class="header-section-number">5.2.5.4</span> Box Plot by Category</h4>
+<section id="box-plot-by-category" class="level4" data-number="6.2.5.4">
+<h4 data-number="6.2.5.4" class="anchored" data-anchor-id="box-plot-by-category"><span class="header-section-number">6.2.5.4</span> Box Plot by Category</h4>
 <div style="text-align:justify">
 <p>A box plot by category is useful when comparing the distribution of a continuous variable across different categories of a categorical variable. It shows the median, quartiles, and potential outliers within each category.</p>
 <p>Example:</p>
@@ -844,17 +774,13 @@ window.Quarto = {
 (`stat_boxplot()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 </section>
-<section id="combining-multiple-geometries-scatter-plot-with-regression-line" class="level4" data-number="5.2.5.5">
-<h4 data-number="5.2.5.5" class="anchored" data-anchor-id="combining-multiple-geometries-scatter-plot-with-regression-line"><span class="header-section-number">5.2.5.5</span> Combining Multiple Geometries: Scatter Plot with Regression Line</h4>
+<section id="combining-multiple-geometries-scatter-plot-with-regression-line" class="level4" data-number="6.2.5.5">
+<h4 data-number="6.2.5.5" class="anchored" data-anchor-id="combining-multiple-geometries-scatter-plot-with-regression-line"><span class="header-section-number">6.2.5.5</span> Combining Multiple Geometries: Scatter Plot with Regression Line</h4>
 <div style="text-align:justify">
 <p>A scatter plot with a regression line helps visualize the relationship between two continuous variables. Adding a regression line shows the trend, while the standard error (SE) band around the line indicates the uncertainty in the estimate of the relationship.</p>
 <p>While regression is an inferential method (used for making predictions or understanding relationships), the purpose of this example is to demonstrate how multiple geometries can be combined when visualizing two variables.</p>
@@ -892,18 +818,14 @@ window.Quarto = {
 (`geom_point()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="visualizing-three-variables-using-r" class="level3" data-number="5.2.6">
-<h3 data-number="5.2.6" class="anchored" data-anchor-id="visualizing-three-variables-using-r"><span class="header-section-number">5.2.6</span> Visualizing Three Variables using R</h3>
+<section id="visualizing-three-variables-using-r" class="level3" data-number="6.2.6">
+<h3 data-number="6.2.6" class="anchored" data-anchor-id="visualizing-three-variables-using-r"><span class="header-section-number">6.2.6</span> Visualizing Three Variables using R</h3>
 <div style="text-align:justify">
 <p>When working with three variables, we can extend basic plots like scatter plots by adding a third variable as an aesthetic element such as color or fill. This allows us to represent more dimensions of the data in a single plot. One common approach is to use <strong>color</strong> to represent a categorical or continuous variable in a scatter plot.</p>
 <p>Example: Scatter Plot with Color for a Third Variable</p>
@@ -926,11 +848,7 @@ window.Quarto = {
 (`geom_point()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p><strong>Another Way</strong></p>
@@ -949,17 +867,13 @@ window.Quarto = {
 (`geom_point()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
 </section>
-<section id="visualizing-four-variables-using-r" class="level3" data-number="5.2.7">
-<h3 data-number="5.2.7" class="anchored" data-anchor-id="visualizing-four-variables-using-r"><span class="header-section-number">5.2.7</span> Visualizing Four Variables using R</h3>
+<section id="visualizing-four-variables-using-r" class="level3" data-number="6.2.7">
+<h3 data-number="6.2.7" class="anchored" data-anchor-id="visualizing-four-variables-using-r"><span class="header-section-number">6.2.7</span> Visualizing Four Variables using R</h3>
 <div style="text-align:justify">
 <p>To visualize four variables, we can use a combination of <strong>color</strong> (or fill) for the third variable and <strong>facet wrapping</strong> for the fourth variable. Facet wrapping creates a series of smaller plots based on the levels of a categorical variable, allowing us to compare the relationships across different subgroups.</p>
 <p>Example: Scatter Plot with Color and Facet Wrap</p>
@@ -979,42 +893,38 @@ window.Quarto = {
 (`geom_point()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="statistical_methods_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="statistical_methods_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="descriptive-statistics-numerical-methods" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="descriptive-statistics-numerical-methods"><span class="header-section-number">5.3</span> Descriptive Statistics: Numerical Methods</h2>
+<section id="descriptive-statistics-numerical-methods" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="descriptive-statistics-numerical-methods"><span class="header-section-number">6.3</span> Descriptive Statistics: Numerical Methods</h2>
 <div style="text-align:justify">
 <p>Welcome to the world of numerical descriptive methods! These techniques are your go-to tools for exploring data and understanding key concepts like distribution, central tendency, and variability. Think of them as helpful signs that guide you in figuring out how your data works.</p>
 <p>These methods can be broadly categorized into two key areas: <a href="https://www.nios.ac.in/media/documents/SecMathcour/Eng/Chapter-25.pdf">measures of central tendency</a> and <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3198538/">measures of dispersion</a>. Both are crucial for painting a comprehensive picture of your data. However, we won’t be diving too deeply into these measures in this section; you can read more about them through the provided links. Instead, let’s consider something important: the choice of summary measures depends on the type of variable you’re working with. Whether you’re dealing with categorical variables (like nominal and ordinal data) or numeric variables (which can be discrete or continuous), different summary statistics come into play.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/descriptive_stat.jpg" class="img-fluid figure-img" width="300"></p>
-<figcaption>Image by pikisuperstar on Freepik</figcaption>
+<p></p><figcaption class="figure-caption">Image by pikisuperstar on Freepik</figcaption><p></p>
 </figure>
 </div>
 </div>
 <p><br></p>
-<section id="types-of-variables-and-summary-measures" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="types-of-variables-and-summary-measures"><span class="header-section-number">5.3.1</span> Types of Variables and Summary Measures</h3>
+<section id="types-of-variables-and-summary-measures" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="types-of-variables-and-summary-measures"><span class="header-section-number">6.3.1</span> Types of Variables and Summary Measures</h3>
 <div style="text-align:justify">
 <p>So, what exactly should you use when analyzing your data? Let’s break it down!</p>
 </div>
-<section id="numerical-methods-for-a-single-variable" class="level4" data-number="5.3.1.1">
-<h4 data-number="5.3.1.1" class="anchored" data-anchor-id="numerical-methods-for-a-single-variable"><span class="header-section-number">5.3.1.1</span> Numerical Methods for a Single Variable</h4>
+<section id="numerical-methods-for-a-single-variable" class="level4" data-number="6.3.1.1">
+<h4 data-number="6.3.1.1" class="anchored" data-anchor-id="numerical-methods-for-a-single-variable"><span class="header-section-number">6.3.1.1</span> Numerical Methods for a Single Variable</h4>
 <div style="text-align:justify">
 <p>When you’re focusing on just one variable, numerical methods allow you to summarize and analyze your data through various statistical measures. For numeric variables, you can explore measures of central tendency like the mean, median, and mode. These give you a glimpse into the typical values of your dataset. But that’s not all—measures of dispersion, such as standard deviation, variance, and range, tell you how spread out your data is.</p>
 <p>And don’t forget about categorical variables! For nominal and ordinal data, you can utilize frequency, proportion, and percentage to get a clearer picture of your dataset.</p>
 <p>Here’s a handy table to summarize the types of variables and their corresponding summary measures:</p>
 </div>
-<table class="caption-top table">
+<table class="table">
 <colgroup>
 <col style="width: 41%">
 <col style="width: 58%">
@@ -1039,14 +949,14 @@ window.Quarto = {
 </table>
 <p><br></p>
 </section>
-<section id="numerical-methods-for-two-variable" class="level4" data-number="5.3.1.2">
-<h4 data-number="5.3.1.2" class="anchored" data-anchor-id="numerical-methods-for-two-variable"><span class="header-section-number">5.3.1.2</span> Numerical Methods for Two Variable</h4>
+<section id="numerical-methods-for-two-variable" class="level4" data-number="6.3.1.2">
+<h4 data-number="6.3.1.2" class="anchored" data-anchor-id="numerical-methods-for-two-variable"><span class="header-section-number">6.3.1.2</span> Numerical Methods for Two Variable</h4>
 <div style="text-align:justify">
 <p>When you’re analyzing two variables, the methods you choose will depend on the types of variables involved. If you’re working with categorical variables, like nominal and ordinal, you might find yourself comparing frequencies or proportions.</p>
 <p>But when numeric variables enter the equation, you’ve got a whole new set of tools at your disposal. Think correlation and comparing means—these methods help you uncover relationships and differences between the variables, bringing you closer to understanding the data dynamics at play.</p>
 <p>Here’s a breakdown of some of the choices available to you:</p>
 </div>
-<table class="caption-top table">
+<table class="table">
 <colgroup>
 <col style="width: 31%">
 <col style="width: 16%">
@@ -1086,18 +996,21 @@ window.Quarto = {
 <p><br></p>
 </section>
 </section>
-<section id="numerical-methods-for-a-single-variable-using-r" class="level3" data-number="5.3.2">
-<h3 data-number="5.3.2" class="anchored" data-anchor-id="numerical-methods-for-a-single-variable-using-r"><span class="header-section-number">5.3.2</span> Numerical Methods for a Single Variable using R</h3>
+<section id="numerical-methods-for-a-single-variable-using-r" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="numerical-methods-for-a-single-variable-using-r"><span class="header-section-number">6.3.2</span> Numerical Methods for a Single Variable using R</h3>
 <div style="text-align:justify">
 <p>As we mentioned earlier, there are various ways to describe variables based on their types. In this section, we’ll explore how to describe different variables using R. First, we’ll look at numerical variables (both discrete and continuous), and then we’ll dive into categorical variables (nominal and ordinal).</p>
+<div class="cell">
+
 </div>
-<section id="describing-a-single-numerical-discrete-categorical-variable-using-r" class="level4" data-number="5.3.2.1">
-<h4 data-number="5.3.2.1" class="anchored" data-anchor-id="describing-a-single-numerical-discrete-categorical-variable-using-r"><span class="header-section-number">5.3.2.1</span> Describing a Single Numerical (Discrete / Categorical) Variable using R</h4>
+</div>
+<section id="describing-a-single-numerical-discrete-categorical-variable-using-r" class="level4" data-number="6.3.2.1">
+<h4 data-number="6.3.2.1" class="anchored" data-anchor-id="describing-a-single-numerical-discrete-categorical-variable-using-r"><span class="header-section-number">6.3.2.1</span> Describing a Single Numerical (Discrete / Categorical) Variable using R</h4>
 <div style="text-align:justify">
 <p>Now, let’s explore how to describe numerical variables. We can use various measures, including mean, median, range, standard deviation, interquartile range, and percentiles.</p>
 </div>
-<section id="mean" class="level5" data-number="5.3.2.1.1">
-<h5 data-number="5.3.2.1.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">5.3.2.1.1</span> Mean</h5>
+<section id="mean" class="level5" data-number="6.3.2.1.1">
+<h5 data-number="6.3.2.1.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">6.3.2.1.1</span> Mean</h5>
 <div style="text-align:justify">
 <p>The mean is the average of all the data points.</p>
 <div class="cell">
@@ -1151,8 +1064,8 @@ window.Quarto = {
 </div>
 <p><br></p>
 </section>
-<section id="median" class="level5" data-number="5.3.2.1.2">
-<h5 data-number="5.3.2.1.2" class="anchored" data-anchor-id="median"><span class="header-section-number">5.3.2.1.2</span> Median</h5>
+<section id="median" class="level5" data-number="6.3.2.1.2">
+<h5 data-number="6.3.2.1.2" class="anchored" data-anchor-id="median"><span class="header-section-number">6.3.2.1.2</span> Median</h5>
 <div style="text-align:justify">
 <p>The median is the middle value when the data is ordered.</p>
 <div class="cell">
@@ -1178,8 +1091,8 @@ window.Quarto = {
 <p><br></p>
 </div>
 </section>
-<section id="range" class="level5" data-number="5.3.2.1.3">
-<h5 data-number="5.3.2.1.3" class="anchored" data-anchor-id="range"><span class="header-section-number">5.3.2.1.3</span> Range</h5>
+<section id="range" class="level5" data-number="6.3.2.1.3">
+<h5 data-number="6.3.2.1.3" class="anchored" data-anchor-id="range"><span class="header-section-number">6.3.2.1.3</span> Range</h5>
 <div style="text-align:justify">
 <p>The range is the difference between the maximum and minimum values.</p>
 <div class="cell">
@@ -1220,8 +1133,8 @@ window.Quarto = {
 </div>
 <p><br></p>
 </section>
-<section id="standard-deviation" class="level5" data-number="5.3.2.1.4">
-<h5 data-number="5.3.2.1.4" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">5.3.2.1.4</span> Standard Deviation</h5>
+<section id="standard-deviation" class="level5" data-number="6.3.2.1.4">
+<h5 data-number="6.3.2.1.4" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">6.3.2.1.4</span> Standard Deviation</h5>
 <div style="text-align:justify">
 <p>Standard deviation measures the amount of variation or dispersion in a variable.</p>
 <div class="cell">
@@ -1237,8 +1150,8 @@ window.Quarto = {
 </div>
 <p><br></p>
 </section>
-<section id="percentiles" class="level5" data-number="5.3.2.1.5">
-<h5 data-number="5.3.2.1.5" class="anchored" data-anchor-id="percentiles"><span class="header-section-number">5.3.2.1.5</span> Percentiles</h5>
+<section id="percentiles" class="level5" data-number="6.3.2.1.5">
+<h5 data-number="6.3.2.1.5" class="anchored" data-anchor-id="percentiles"><span class="header-section-number">6.3.2.1.5</span> Percentiles</h5>
 <div style="text-align:justify">
 <p>Percentiles indicate the relative standing of a value within the dataset.</p>
 <div class="cell">
@@ -1269,8 +1182,8 @@ window.Quarto = {
 <p><br></p>
 </div>
 </section>
-<section id="inter-quartile-range" class="level5" data-number="5.3.2.1.6">
-<h5 data-number="5.3.2.1.6" class="anchored" data-anchor-id="inter-quartile-range"><span class="header-section-number">5.3.2.1.6</span> Inter Quartile Range</h5>
+<section id="inter-quartile-range" class="level5" data-number="6.3.2.1.6">
+<h5 data-number="6.3.2.1.6" class="anchored" data-anchor-id="inter-quartile-range"><span class="header-section-number">6.3.2.1.6</span> Inter Quartile Range</h5>
 <div style="text-align:justify">
 <p>The IQR is the range between the 25th percentile (Q1) and the 75th percentile (Q3).</p>
 <div class="cell">
@@ -1304,8 +1217,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="combining-multiple-summary-measures" class="level5" data-number="5.3.2.1.7">
-<h5 data-number="5.3.2.1.7" class="anchored" data-anchor-id="combining-multiple-summary-measures"><span class="header-section-number">5.3.2.1.7</span> Combining Multiple Summary Measures</h5>
+<section id="combining-multiple-summary-measures" class="level5" data-number="6.3.2.1.7">
+<h5 data-number="6.3.2.1.7" class="anchored" data-anchor-id="combining-multiple-summary-measures"><span class="header-section-number">6.3.2.1.7</span> Combining Multiple Summary Measures</h5>
 <div style="text-align:justify">
 <p>If you want to combine multiple measures as a single outcome, it is also possible.</p>
 <div class="cell">
@@ -1329,15 +1242,15 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="describing-a-single-categorical-nominal-ordinal-variable-using-r" class="level4" data-number="5.3.2.2">
-<h4 data-number="5.3.2.2" class="anchored" data-anchor-id="describing-a-single-categorical-nominal-ordinal-variable-using-r"><span class="header-section-number">5.3.2.2</span> Describing a Single Categorical (Nominal / Ordinal) Variable using R</h4>
+<section id="describing-a-single-categorical-nominal-ordinal-variable-using-r" class="level4" data-number="6.3.2.2">
+<h4 data-number="6.3.2.2" class="anchored" data-anchor-id="describing-a-single-categorical-nominal-ordinal-variable-using-r"><span class="header-section-number">6.3.2.2</span> Describing a Single Categorical (Nominal / Ordinal) Variable using R</h4>
 <div style="text-align:justify">
 <p>Now let’s dive into categorical variables! When working with categorical data, we often summarize it using frequencies (how often each category appears), percentages (what proportion of the total each category makes up), and cumulative percentages (the running total of those percentages). Let’s explore how to do all of this in a tidy way using R.</p>
 <p>We’ll continue working with the NHANES dataset to see this in action.</p>
 <p><br></p>
 </div>
-<section id="frequency" class="level5" data-number="5.3.2.2.1">
-<h5 data-number="5.3.2.2.1" class="anchored" data-anchor-id="frequency"><span class="header-section-number">5.3.2.2.1</span> Frequency</h5>
+<section id="frequency" class="level5" data-number="6.3.2.2.1">
+<h5 data-number="6.3.2.2.1" class="anchored" data-anchor-id="frequency"><span class="header-section-number">6.3.2.2.1</span> Frequency</h5>
 <div style="text-align:justify">
 <p>Frequency tells us how many times each category appears in the data. Let’s calculate the frequency for the income variable (<code>hh_income</code>).</p>
 <div class="cell">
@@ -1369,8 +1282,8 @@ window.Quarto = {
 </div>
 <p><br></p>
 </section>
-<section id="percent" class="level5" data-number="5.3.2.2.2">
-<h5 data-number="5.3.2.2.2" class="anchored" data-anchor-id="percent"><span class="header-section-number">5.3.2.2.2</span> Percent</h5>
+<section id="percent" class="level5" data-number="6.3.2.2.2">
+<h5 data-number="6.3.2.2.2" class="anchored" data-anchor-id="percent"><span class="header-section-number">6.3.2.2.2</span> Percent</h5>
 <div style="text-align:justify">
 <p>Next, we’ll calculate the percentage for each category, which shows the relative proportion of each category within the dataset.</p>
 <div class="cell">
@@ -1403,8 +1316,8 @@ window.Quarto = {
 <p><br></p>
 </div>
 </section>
-<section id="cumulative-percent" class="level5" data-number="5.3.2.2.3">
-<h5 data-number="5.3.2.2.3" class="anchored" data-anchor-id="cumulative-percent"><span class="header-section-number">5.3.2.2.3</span> Cumulative Percent</h5>
+<section id="cumulative-percent" class="level5" data-number="6.3.2.2.3">
+<h5 data-number="6.3.2.2.3" class="anchored" data-anchor-id="cumulative-percent"><span class="header-section-number">6.3.2.2.3</span> Cumulative Percent</h5>
 <div style="text-align:justify">
 <p>Cumulative percent shows the running total of percentages, which can help understand the distribution across categories as you move through them.</p>
 <div class="cell">
@@ -1438,8 +1351,8 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="publication-ready-tables" class="level4" data-number="5.3.2.3">
-<h4 data-number="5.3.2.3" class="anchored" data-anchor-id="publication-ready-tables"><span class="header-section-number">5.3.2.3</span> Publication Ready Tables</h4>
+<section id="publication-ready-tables" class="level4" data-number="6.3.2.3">
+<h4 data-number="6.3.2.3" class="anchored" data-anchor-id="publication-ready-tables"><span class="header-section-number">6.3.2.3</span> Publication Ready Tables</h4>
 <div style="text-align:justify">
 <p>To create publication-ready tables, you can use the <code>gtsummary</code> package in R. Here’s an example of how to generate a summary table for a single variable dataset:</p>
 <div class="cell">
@@ -1461,23 +1374,24 @@ window.Quarto = {
 <span id="cb77-16"><a href="#cb77-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the table</span></span>
 <span id="cb77-17"><a href="#cb77-17" aria-hidden="true" tabindex="-1"></a>summary_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="rltxwgzdnt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rltxwgzdnt table {
+
+<div id="zycfavqkwf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zycfavqkwf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rltxwgzdnt thead, #rltxwgzdnt tbody, #rltxwgzdnt tfoot, #rltxwgzdnt tr, #rltxwgzdnt td, #rltxwgzdnt th {
+#zycfavqkwf thead, #zycfavqkwf tbody, #zycfavqkwf tfoot, #zycfavqkwf tr, #zycfavqkwf td, #zycfavqkwf th {
   border-style: none;
 }
 
-#rltxwgzdnt p {
+#zycfavqkwf p {
   margin: 0;
   padding: 0;
 }
 
-#rltxwgzdnt .gt_table {
+#zycfavqkwf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1503,12 +1417,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#rltxwgzdnt .gt_caption {
+#zycfavqkwf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rltxwgzdnt .gt_title {
+#zycfavqkwf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1520,7 +1434,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#rltxwgzdnt .gt_subtitle {
+#zycfavqkwf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1532,7 +1446,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#rltxwgzdnt .gt_heading {
+#zycfavqkwf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1544,13 +1458,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#rltxwgzdnt .gt_bottom_border {
+#zycfavqkwf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rltxwgzdnt .gt_col_headings {
+#zycfavqkwf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1565,7 +1479,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#rltxwgzdnt .gt_col_heading {
+#zycfavqkwf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1585,7 +1499,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#rltxwgzdnt .gt_column_spanner_outer {
+#zycfavqkwf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1597,15 +1511,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#rltxwgzdnt .gt_column_spanner_outer:first-child {
+#zycfavqkwf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rltxwgzdnt .gt_column_spanner_outer:last-child {
+#zycfavqkwf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rltxwgzdnt .gt_column_spanner {
+#zycfavqkwf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1617,11 +1531,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#rltxwgzdnt .gt_spanner_row {
+#zycfavqkwf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rltxwgzdnt .gt_group_heading {
+#zycfavqkwf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1647,7 +1561,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#rltxwgzdnt .gt_empty_group_heading {
+#zycfavqkwf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1662,15 +1576,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#rltxwgzdnt .gt_from_md > :first-child {
+#zycfavqkwf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rltxwgzdnt .gt_from_md > :last-child {
+#zycfavqkwf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rltxwgzdnt .gt_row {
+#zycfavqkwf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1689,7 +1603,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#rltxwgzdnt .gt_stub {
+#zycfavqkwf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1702,7 +1616,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#rltxwgzdnt .gt_stub_row_group {
+#zycfavqkwf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1716,15 +1630,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#rltxwgzdnt .gt_row_group_first td {
+#zycfavqkwf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rltxwgzdnt .gt_row_group_first th {
+#zycfavqkwf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rltxwgzdnt .gt_summary_row {
+#zycfavqkwf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1734,16 +1648,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#rltxwgzdnt .gt_first_summary_row {
+#zycfavqkwf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rltxwgzdnt .gt_first_summary_row.thick {
+#zycfavqkwf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rltxwgzdnt .gt_last_summary_row {
+#zycfavqkwf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1753,7 +1667,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#rltxwgzdnt .gt_grand_summary_row {
+#zycfavqkwf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1763,7 +1677,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#rltxwgzdnt .gt_first_grand_summary_row {
+#zycfavqkwf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1773,7 +1687,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#rltxwgzdnt .gt_last_grand_summary_row_top {
+#zycfavqkwf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1783,11 +1697,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#rltxwgzdnt .gt_striped {
+#zycfavqkwf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rltxwgzdnt .gt_table_body {
+#zycfavqkwf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1796,7 +1710,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#rltxwgzdnt .gt_footnotes {
+#zycfavqkwf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1810,7 +1724,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#rltxwgzdnt .gt_footnote {
+#zycfavqkwf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1819,7 +1733,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#rltxwgzdnt .gt_sourcenotes {
+#zycfavqkwf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1833,7 +1747,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#rltxwgzdnt .gt_sourcenote {
+#zycfavqkwf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1841,137 +1755,120 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#rltxwgzdnt .gt_left {
+#zycfavqkwf .gt_left {
   text-align: left;
 }
 
-#rltxwgzdnt .gt_center {
+#zycfavqkwf .gt_center {
   text-align: center;
 }
 
-#rltxwgzdnt .gt_right {
+#zycfavqkwf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rltxwgzdnt .gt_font_normal {
+#zycfavqkwf .gt_font_normal {
   font-weight: normal;
 }
 
-#rltxwgzdnt .gt_font_bold {
+#zycfavqkwf .gt_font_bold {
   font-weight: bold;
 }
 
-#rltxwgzdnt .gt_font_italic {
+#zycfavqkwf .gt_font_italic {
   font-style: italic;
 }
 
-#rltxwgzdnt .gt_super {
+#zycfavqkwf .gt_super {
   font-size: 65%;
 }
 
-#rltxwgzdnt .gt_footnote_marks {
+#zycfavqkwf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rltxwgzdnt .gt_asterisk {
+#zycfavqkwf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rltxwgzdnt .gt_indent_1 {
+#zycfavqkwf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rltxwgzdnt .gt_indent_2 {
+#zycfavqkwf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rltxwgzdnt .gt_indent_3 {
+#zycfavqkwf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rltxwgzdnt .gt_indent_4 {
+#zycfavqkwf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rltxwgzdnt .gt_indent_5 {
+#zycfavqkwf .gt_indent_5 {
   text-indent: 25px;
 }
+
+#zycfavqkwf .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#zycfavqkwf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
 </style>
-
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header gt_col_headings">
-<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
-<th id="<strong>N = 10,000</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 10,000</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">age</td>
-<td class="gt_row gt_center" headers="stat_0">36.74 (22.40)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">gender</td>
-<td class="gt_row gt_center" headers="stat_0"><br>
-</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;female</td>
-<td class="gt_row gt_center" headers="stat_0">5,020 (50%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;male</td>
-<td class="gt_row gt_center" headers="stat_0">4,980 (50%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">race1</td>
-<td class="gt_row gt_center" headers="stat_0"><br>
-</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Black</td>
-<td class="gt_row gt_center" headers="stat_0">1,197 (12%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic</td>
-<td class="gt_row gt_center" headers="stat_0">610 (6.1%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Mexican</td>
-<td class="gt_row gt_center" headers="stat_0">1,015 (10%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;White</td>
-<td class="gt_row gt_center" headers="stat_0">6,372 (64%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Other</td>
-<td class="gt_row gt_center" headers="stat_0">806 (8.1%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">height</td>
-<td class="gt_row gt_center" headers="stat_0">161.88 (20.19)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
-<td class="gt_row gt_center" headers="stat_0">353</td>
-</tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="odd">
-<td colspan="2" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Mean (SD); n (%)</td>
-</tr>
-</tfoot>
-
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipDaGFyYWN0ZXJpc3RpYyoq&quot;><div class='gt_from_md'><p><strong>Characteristic</strong></p>
+</div></div>"><div data-qmd-base64="KipDaGFyYWN0ZXJpc3RpYyoq"><div class="gt_from_md"><p><strong>Characteristic</strong></p>
+</div></div></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipOID0gMTAsMDAwKio=&quot;><div class='gt_from_md'><p><strong>N = 10,000</strong></p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KipOID0gMTAsMDAwKio="><div class="gt_from_md"><p><strong>N = 10,000</strong></p>
+</div></div><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="label" class="gt_row gt_left">age</td>
+<td headers="stat_0" class="gt_row gt_center">36.74 (22.40)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">gender</td>
+<td headers="stat_0" class="gt_row gt_center"><br></td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;female</td>
+<td headers="stat_0" class="gt_row gt_center">5,020 (50%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;male</td>
+<td headers="stat_0" class="gt_row gt_center">4,980 (50%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">race1</td>
+<td headers="stat_0" class="gt_row gt_center"><br></td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Black</td>
+<td headers="stat_0" class="gt_row gt_center">1,197 (12%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic</td>
+<td headers="stat_0" class="gt_row gt_center">610 (6.1%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Mexican</td>
+<td headers="stat_0" class="gt_row gt_center">1,015 (10%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;White</td>
+<td headers="stat_0" class="gt_row gt_center">6,372 (64%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Other</td>
+<td headers="stat_0" class="gt_row gt_center">806 (8.1%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">height</td>
+<td headers="stat_0" class="gt_row gt_center">161.88 (20.19)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td headers="stat_0" class="gt_row gt_center">353</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="2"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span> <div data-qmd-base64="TWVhbiAoU0QpOyBuICglKQ=="><div class="gt_from_md"><p>Mean (SD); n (%)</p>
+</div></div></td>
+    </tr>
+  </tfoot>
 </table>
-
 </div>
 </div>
 </div>
@@ -1979,8 +1876,8 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="numerical-methods-for-two-variables-using-r" class="level3" data-number="5.3.3">
-<h3 data-number="5.3.3" class="anchored" data-anchor-id="numerical-methods-for-two-variables-using-r"><span class="header-section-number">5.3.3</span> Numerical Methods for Two Variables using R</h3>
+<section id="numerical-methods-for-two-variables-using-r" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="numerical-methods-for-two-variables-using-r"><span class="header-section-number">6.3.3</span> Numerical Methods for Two Variables using R</h3>
 <div style="text-align:justify">
 <p>In this section, we’ll dive into how to describe relationships between two variables using R. Depending on the types of variables—categorical or numeric—the methods vary. We’ll cover three main scenarios:</p>
 <ul>
@@ -1989,15 +1886,15 @@ window.Quarto = {
 <li><p>One categorical and one numeric variable</p></li>
 </ul>
 </div>
-<section id="two-categorical-variables" class="level4" data-number="5.3.3.1">
-<h4 data-number="5.3.3.1" class="anchored" data-anchor-id="two-categorical-variables"><span class="header-section-number">5.3.3.1</span> Two Categorical Variables</h4>
+<section id="two-categorical-variables" class="level4" data-number="6.3.3.1">
+<h4 data-number="6.3.3.1" class="anchored" data-anchor-id="two-categorical-variables"><span class="header-section-number">6.3.3.1</span> Two Categorical Variables</h4>
 <div style="text-align:justify">
 <p>When working with two categorical variables, one of the most common ways to analyze the relationship between them is by using cross-tabulation.</p>
 <p>Cross-tabulation creates a <strong>contingency table</strong> that shows the frequency distribution for each combination of categories.</p>
 <p>Let’s use the <code>gender</code> and <code>race1</code> variables in the NHANES dataset to explore this.</p>
 </div>
-<section id="cross-tabulation" class="level5" data-number="5.3.3.1.1">
-<h5 data-number="5.3.3.1.1" class="anchored" data-anchor-id="cross-tabulation"><span class="header-section-number">5.3.3.1.1</span> Cross-Tabulation</h5>
+<section id="cross-tabulation" class="level5" data-number="6.3.3.1.1">
+<h5 data-number="6.3.3.1.1" class="anchored" data-anchor-id="cross-tabulation"><span class="header-section-number">6.3.3.1.1</span> Cross-Tabulation</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cross-tabulation of 'gender' and 'race1'</span></span>
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>gender_race_table <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
@@ -2024,8 +1921,8 @@ window.Quarto = {
 <p>This table shows how the categories of gender and race1 are distributed across each other. But to make this even more informative, let’s add percentages.</p>
 </div>
 </section>
-<section id="cross-tabulation-with-percentages" class="level5" data-number="5.3.3.1.2">
-<h5 data-number="5.3.3.1.2" class="anchored" data-anchor-id="cross-tabulation-with-percentages"><span class="header-section-number">5.3.3.1.2</span> Cross-Tabulation with Percentages</h5>
+<section id="cross-tabulation-with-percentages" class="level5" data-number="6.3.3.1.2">
+<h5 data-number="6.3.3.1.2" class="anchored" data-anchor-id="cross-tabulation-with-percentages"><span class="header-section-number">6.3.3.1.2</span> Cross-Tabulation with Percentages</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cross-tabulation with percentages</span></span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>gender_race_percent <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
@@ -2056,13 +1953,13 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="two-numeric-variables" class="level4" data-number="5.3.3.2">
-<h4 data-number="5.3.3.2" class="anchored" data-anchor-id="two-numeric-variables"><span class="header-section-number">5.3.3.2</span> Two Numeric Variables</h4>
+<section id="two-numeric-variables" class="level4" data-number="6.3.3.2">
+<h4 data-number="6.3.3.2" class="anchored" data-anchor-id="two-numeric-variables"><span class="header-section-number">6.3.3.2</span> Two Numeric Variables</h4>
 <div style="text-align:justify">
 <p>When both variables are numeric, we can correlation to explore the relationship between them.</p>
 </div>
-<section id="correlation" class="level5" data-number="5.3.3.2.1">
-<h5 data-number="5.3.3.2.1" class="anchored" data-anchor-id="correlation"><span class="header-section-number">5.3.3.2.1</span> Correlation</h5>
+<section id="correlation" class="level5" data-number="6.3.3.2.1">
+<h5 data-number="6.3.3.2.1" class="anchored" data-anchor-id="correlation"><span class="header-section-number">6.3.3.2.1</span> Correlation</h5>
 <div style="text-align:justify">
 <p>Correlation measures the strength and direction of the linear relationship between two numeric variables. The most common measure is Pearson’s correlation coefficient.</p>
 <p>Let’s calculate the correlation between <code>height</code> and <code>weight</code>.</p>
@@ -2093,8 +1990,8 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="one-categorical-and-one-numeric-variables" class="level4" data-number="5.3.3.3">
-<h4 data-number="5.3.3.3" class="anchored" data-anchor-id="one-categorical-and-one-numeric-variables"><span class="header-section-number">5.3.3.3</span> One categorical and One Numeric Variables</h4>
+<section id="one-categorical-and-one-numeric-variables" class="level4" data-number="6.3.3.3">
+<h4 data-number="6.3.3.3" class="anchored" data-anchor-id="one-categorical-and-one-numeric-variables"><span class="header-section-number">6.3.3.3</span> One categorical and One Numeric Variables</h4>
 <div style="text-align:justify">
 <p>When you have one categorical and one numeric variable, you’re often interested in comparing the distribution of the numeric variable across different categories. Group-wise summaries and box plots are common methods for this.</p>
 <p>Let’s look at the relationship between gender (categorical) and height (numeric).</p>
@@ -2119,8 +2016,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="publication-ready-tables-for-two-variables" class="level4" data-number="5.3.3.4">
-<h4 data-number="5.3.3.4" class="anchored" data-anchor-id="publication-ready-tables-for-two-variables"><span class="header-section-number">5.3.3.4</span> Publication Ready Tables for Two Variables</h4>
+<section id="publication-ready-tables-for-two-variables" class="level4" data-number="6.3.3.4">
+<h4 data-number="6.3.3.4" class="anchored" data-anchor-id="publication-ready-tables-for-two-variables"><span class="header-section-number">6.3.3.4</span> Publication Ready Tables for Two Variables</h4>
 <div style="text-align:justify">
 <p>When you need to present results in a polished, publication-ready format, the gtsummary package in R is an excellent tool. It allows you to easily create clean, professional tables summarizing relationships between two variables. Below is an example of how you can use gtsummary to generate a table for a two-variable analysis, showcasing how your results can be made ready for publication.</p>
 <div class="cell">
@@ -2133,23 +2030,24 @@ window.Quarto = {
 <span id="cb88-7"><a href="#cb88-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the table</span></span>
 <span id="cb88-8"><a href="#cb88-8" aria-hidden="true" tabindex="-1"></a>table_cat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="ffjlpspqev" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ffjlpspqev table {
+
+<div id="duikljtftk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#duikljtftk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ffjlpspqev thead, #ffjlpspqev tbody, #ffjlpspqev tfoot, #ffjlpspqev tr, #ffjlpspqev td, #ffjlpspqev th {
+#duikljtftk thead, #duikljtftk tbody, #duikljtftk tfoot, #duikljtftk tr, #duikljtftk td, #duikljtftk th {
   border-style: none;
 }
 
-#ffjlpspqev p {
+#duikljtftk p {
   margin: 0;
   padding: 0;
 }
 
-#ffjlpspqev .gt_table {
+#duikljtftk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2175,12 +2073,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#ffjlpspqev .gt_caption {
+#duikljtftk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ffjlpspqev .gt_title {
+#duikljtftk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2192,7 +2090,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#ffjlpspqev .gt_subtitle {
+#duikljtftk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2204,7 +2102,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#ffjlpspqev .gt_heading {
+#duikljtftk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2216,13 +2114,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#ffjlpspqev .gt_bottom_border {
+#duikljtftk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ffjlpspqev .gt_col_headings {
+#duikljtftk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2237,7 +2135,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#ffjlpspqev .gt_col_heading {
+#duikljtftk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2257,7 +2155,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#ffjlpspqev .gt_column_spanner_outer {
+#duikljtftk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2269,15 +2167,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#ffjlpspqev .gt_column_spanner_outer:first-child {
+#duikljtftk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ffjlpspqev .gt_column_spanner_outer:last-child {
+#duikljtftk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ffjlpspqev .gt_column_spanner {
+#duikljtftk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2289,11 +2187,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#ffjlpspqev .gt_spanner_row {
+#duikljtftk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ffjlpspqev .gt_group_heading {
+#duikljtftk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2319,7 +2217,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#ffjlpspqev .gt_empty_group_heading {
+#duikljtftk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2334,15 +2232,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#ffjlpspqev .gt_from_md > :first-child {
+#duikljtftk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ffjlpspqev .gt_from_md > :last-child {
+#duikljtftk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ffjlpspqev .gt_row {
+#duikljtftk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2361,7 +2259,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#ffjlpspqev .gt_stub {
+#duikljtftk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2374,7 +2272,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#ffjlpspqev .gt_stub_row_group {
+#duikljtftk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2388,15 +2286,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#ffjlpspqev .gt_row_group_first td {
+#duikljtftk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ffjlpspqev .gt_row_group_first th {
+#duikljtftk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ffjlpspqev .gt_summary_row {
+#duikljtftk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2406,16 +2304,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#ffjlpspqev .gt_first_summary_row {
+#duikljtftk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ffjlpspqev .gt_first_summary_row.thick {
+#duikljtftk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ffjlpspqev .gt_last_summary_row {
+#duikljtftk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2425,7 +2323,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#ffjlpspqev .gt_grand_summary_row {
+#duikljtftk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2435,7 +2333,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#ffjlpspqev .gt_first_grand_summary_row {
+#duikljtftk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2445,7 +2343,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#ffjlpspqev .gt_last_grand_summary_row_top {
+#duikljtftk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2455,11 +2353,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#ffjlpspqev .gt_striped {
+#duikljtftk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ffjlpspqev .gt_table_body {
+#duikljtftk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2468,7 +2366,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#ffjlpspqev .gt_footnotes {
+#duikljtftk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2482,7 +2380,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#ffjlpspqev .gt_footnote {
+#duikljtftk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2491,7 +2389,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#ffjlpspqev .gt_sourcenotes {
+#duikljtftk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2505,7 +2403,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#ffjlpspqev .gt_sourcenote {
+#duikljtftk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2513,125 +2411,121 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#ffjlpspqev .gt_left {
+#duikljtftk .gt_left {
   text-align: left;
 }
 
-#ffjlpspqev .gt_center {
+#duikljtftk .gt_center {
   text-align: center;
 }
 
-#ffjlpspqev .gt_right {
+#duikljtftk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ffjlpspqev .gt_font_normal {
+#duikljtftk .gt_font_normal {
   font-weight: normal;
 }
 
-#ffjlpspqev .gt_font_bold {
+#duikljtftk .gt_font_bold {
   font-weight: bold;
 }
 
-#ffjlpspqev .gt_font_italic {
+#duikljtftk .gt_font_italic {
   font-style: italic;
 }
 
-#ffjlpspqev .gt_super {
+#duikljtftk .gt_super {
   font-size: 65%;
 }
 
-#ffjlpspqev .gt_footnote_marks {
+#duikljtftk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ffjlpspqev .gt_asterisk {
+#duikljtftk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ffjlpspqev .gt_indent_1 {
+#duikljtftk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ffjlpspqev .gt_indent_2 {
+#duikljtftk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ffjlpspqev .gt_indent_3 {
+#duikljtftk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ffjlpspqev .gt_indent_4 {
+#duikljtftk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ffjlpspqev .gt_indent_5 {
+#duikljtftk .gt_indent_5 {
   text-indent: 25px;
 }
+
+#duikljtftk .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#duikljtftk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
 </style>
-
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header gt_col_headings">
-<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
-<th id="<strong>female</strong><br />
-N = 5,020<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>female</strong><br>
-N = 5,020<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<strong>male</strong><br />
-N = 4,980<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>male</strong><br>
-N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">Race/Ethnicity</td>
-<td class="gt_row gt_center" headers="stat_1"><br>
-</td>
-<td class="gt_row gt_center" headers="stat_2"><br>
-</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Black</td>
-<td class="gt_row gt_center" headers="stat_1">614 (12%)</td>
-<td class="gt_row gt_center" headers="stat_2">583 (12%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic</td>
-<td class="gt_row gt_center" headers="stat_1">320 (6.4%)</td>
-<td class="gt_row gt_center" headers="stat_2">290 (5.8%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Mexican</td>
-<td class="gt_row gt_center" headers="stat_1">452 (9.0%)</td>
-<td class="gt_row gt_center" headers="stat_2">563 (11%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;White</td>
-<td class="gt_row gt_center" headers="stat_1">3,221 (64%)</td>
-<td class="gt_row gt_center" headers="stat_2">3,151 (63%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Other</td>
-<td class="gt_row gt_center" headers="stat_1">413 (8.2%)</td>
-<td class="gt_row gt_center" headers="stat_2">393 (7.9%)</td>
-</tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="odd">
-<td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> n (%)</td>
-</tr>
-</tfoot>
-
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipDaGFyYWN0ZXJpc3RpYyoq&quot;><div class='gt_from_md'><p><strong>Characteristic</strong></p>
+</div></div>"><div data-qmd-base64="KipDaGFyYWN0ZXJpc3RpYyoq"><div class="gt_from_md"><p><strong>Characteristic</strong></p>
+</div></div></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipmZW1hbGUqKiAgCk4gPSA1LDAyMA==&quot;><div class='gt_from_md'><p><strong>female</strong><br />
+N = 5,020</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KipmZW1hbGUqKiAgCk4gPSA1LDAyMA=="><div class="gt_from_md"><p><strong>female</strong><br>
+N = 5,020</p>
+</div></div><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KiptYWxlKiogIApOID0gNCw5ODA=&quot;><div class='gt_from_md'><p><strong>male</strong><br />
+N = 4,980</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KiptYWxlKiogIApOID0gNCw5ODA="><div class="gt_from_md"><p><strong>male</strong><br>
+N = 4,980</p>
+</div></div><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="label" class="gt_row gt_left">Race/Ethnicity</td>
+<td headers="stat_1" class="gt_row gt_center"><br></td>
+<td headers="stat_2" class="gt_row gt_center"><br></td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Black</td>
+<td headers="stat_1" class="gt_row gt_center">614 (12%)</td>
+<td headers="stat_2" class="gt_row gt_center">583 (12%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic</td>
+<td headers="stat_1" class="gt_row gt_center">320 (6.4%)</td>
+<td headers="stat_2" class="gt_row gt_center">290 (5.8%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Mexican</td>
+<td headers="stat_1" class="gt_row gt_center">452 (9.0%)</td>
+<td headers="stat_2" class="gt_row gt_center">563 (11%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;White</td>
+<td headers="stat_1" class="gt_row gt_center">3,221 (64%)</td>
+<td headers="stat_2" class="gt_row gt_center">3,151 (63%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Other</td>
+<td headers="stat_1" class="gt_row gt_center">413 (8.2%)</td>
+<td headers="stat_2" class="gt_row gt_center">393 (7.9%)</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="3"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span> <div data-qmd-base64="biAoJSk="><div class="gt_from_md"><p>n (%)</p>
+</div></div></td>
+    </tr>
+  </tfoot>
 </table>
-
 </div>
 </div>
 </div>
@@ -2648,23 +2542,24 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
 <span id="cb89-9"><a href="#cb89-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the table</span></span>
 <span id="cb89-10"><a href="#cb89-10" aria-hidden="true" tabindex="-1"></a>table_cat_num</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="idgmczbufr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#idgmczbufr table {
+
+<div id="jhadglbcoz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jhadglbcoz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#idgmczbufr thead, #idgmczbufr tbody, #idgmczbufr tfoot, #idgmczbufr tr, #idgmczbufr td, #idgmczbufr th {
+#jhadglbcoz thead, #jhadglbcoz tbody, #jhadglbcoz tfoot, #jhadglbcoz tr, #jhadglbcoz td, #jhadglbcoz th {
   border-style: none;
 }
 
-#idgmczbufr p {
+#jhadglbcoz p {
   margin: 0;
   padding: 0;
 }
 
-#idgmczbufr .gt_table {
+#jhadglbcoz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2690,12 +2585,12 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-left-color: #D3D3D3;
 }
 
-#idgmczbufr .gt_caption {
+#jhadglbcoz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#idgmczbufr .gt_title {
+#jhadglbcoz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2707,7 +2602,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-bottom-width: 0;
 }
 
-#idgmczbufr .gt_subtitle {
+#jhadglbcoz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2719,7 +2614,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-top-width: 0;
 }
 
-#idgmczbufr .gt_heading {
+#jhadglbcoz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2731,13 +2626,13 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-right-color: #D3D3D3;
 }
 
-#idgmczbufr .gt_bottom_border {
+#jhadglbcoz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#idgmczbufr .gt_col_headings {
+#jhadglbcoz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2752,7 +2647,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-right-color: #D3D3D3;
 }
 
-#idgmczbufr .gt_col_heading {
+#jhadglbcoz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2772,7 +2667,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   overflow-x: hidden;
 }
 
-#idgmczbufr .gt_column_spanner_outer {
+#jhadglbcoz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2784,15 +2679,15 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 4px;
 }
 
-#idgmczbufr .gt_column_spanner_outer:first-child {
+#jhadglbcoz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#idgmczbufr .gt_column_spanner_outer:last-child {
+#jhadglbcoz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#idgmczbufr .gt_column_spanner {
+#jhadglbcoz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2804,11 +2699,11 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   width: 100%;
 }
 
-#idgmczbufr .gt_spanner_row {
+#jhadglbcoz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#idgmczbufr .gt_group_heading {
+#jhadglbcoz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2834,7 +2729,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   text-align: left;
 }
 
-#idgmczbufr .gt_empty_group_heading {
+#jhadglbcoz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2849,15 +2744,15 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   vertical-align: middle;
 }
 
-#idgmczbufr .gt_from_md > :first-child {
+#jhadglbcoz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#idgmczbufr .gt_from_md > :last-child {
+#jhadglbcoz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#idgmczbufr .gt_row {
+#jhadglbcoz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2876,7 +2771,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   overflow-x: hidden;
 }
 
-#idgmczbufr .gt_stub {
+#jhadglbcoz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2889,7 +2784,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#idgmczbufr .gt_stub_row_group {
+#jhadglbcoz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2903,15 +2798,15 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   vertical-align: top;
 }
 
-#idgmczbufr .gt_row_group_first td {
+#jhadglbcoz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#idgmczbufr .gt_row_group_first th {
+#jhadglbcoz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#idgmczbufr .gt_summary_row {
+#jhadglbcoz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2921,16 +2816,16 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#idgmczbufr .gt_first_summary_row {
+#jhadglbcoz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#idgmczbufr .gt_first_summary_row.thick {
+#jhadglbcoz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#idgmczbufr .gt_last_summary_row {
+#jhadglbcoz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2940,7 +2835,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-bottom-color: #D3D3D3;
 }
 
-#idgmczbufr .gt_grand_summary_row {
+#jhadglbcoz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2950,7 +2845,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#idgmczbufr .gt_first_grand_summary_row {
+#jhadglbcoz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2960,7 +2855,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-top-color: #D3D3D3;
 }
 
-#idgmczbufr .gt_last_grand_summary_row_top {
+#jhadglbcoz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2970,11 +2865,11 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-bottom-color: #D3D3D3;
 }
 
-#idgmczbufr .gt_striped {
+#jhadglbcoz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#idgmczbufr .gt_table_body {
+#jhadglbcoz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2983,7 +2878,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-bottom-color: #D3D3D3;
 }
 
-#idgmczbufr .gt_footnotes {
+#jhadglbcoz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2997,7 +2892,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-right-color: #D3D3D3;
 }
 
-#idgmczbufr .gt_footnote {
+#jhadglbcoz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3006,7 +2901,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#idgmczbufr .gt_sourcenotes {
+#jhadglbcoz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3020,7 +2915,7 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-right-color: #D3D3D3;
 }
 
-#idgmczbufr .gt_sourcenote {
+#jhadglbcoz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3028,98 +2923,106 @@ N = 4,980<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#idgmczbufr .gt_left {
+#jhadglbcoz .gt_left {
   text-align: left;
 }
 
-#idgmczbufr .gt_center {
+#jhadglbcoz .gt_center {
   text-align: center;
 }
 
-#idgmczbufr .gt_right {
+#jhadglbcoz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#idgmczbufr .gt_font_normal {
+#jhadglbcoz .gt_font_normal {
   font-weight: normal;
 }
 
-#idgmczbufr .gt_font_bold {
+#jhadglbcoz .gt_font_bold {
   font-weight: bold;
 }
 
-#idgmczbufr .gt_font_italic {
+#jhadglbcoz .gt_font_italic {
   font-style: italic;
 }
 
-#idgmczbufr .gt_super {
+#jhadglbcoz .gt_super {
   font-size: 65%;
 }
 
-#idgmczbufr .gt_footnote_marks {
+#jhadglbcoz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#idgmczbufr .gt_asterisk {
+#jhadglbcoz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#idgmczbufr .gt_indent_1 {
+#jhadglbcoz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#idgmczbufr .gt_indent_2 {
+#jhadglbcoz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#idgmczbufr .gt_indent_3 {
+#jhadglbcoz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#idgmczbufr .gt_indent_4 {
+#jhadglbcoz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#idgmczbufr .gt_indent_5 {
+#jhadglbcoz .gt_indent_5 {
   text-indent: 25px;
 }
+
+#jhadglbcoz .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#jhadglbcoz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
 </style>
-
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header gt_col_headings">
-<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
-<th id="<strong>female</strong><br />
-N = 4,847<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>female</strong><br>
-N = 4,847<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<strong>male</strong><br />
-N = 4,800<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>male</strong><br>
-N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">Height</td>
-<td class="gt_row gt_center" headers="stat_1">161 (154, 166)</td>
-<td class="gt_row gt_center" headers="stat_2">174 (166, 179)</td>
-</tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="even">
-<td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Median (Q1, Q3)</td>
-</tr>
-</tfoot>
-
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipDaGFyYWN0ZXJpc3RpYyoq&quot;><div class='gt_from_md'><p><strong>Characteristic</strong></p>
+</div></div>"><div data-qmd-base64="KipDaGFyYWN0ZXJpc3RpYyoq"><div class="gt_from_md"><p><strong>Characteristic</strong></p>
+</div></div></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipmZW1hbGUqKiAgCk4gPSA0LDg0Nw==&quot;><div class='gt_from_md'><p><strong>female</strong><br />
+N = 4,847</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KipmZW1hbGUqKiAgCk4gPSA0LDg0Nw=="><div class="gt_from_md"><p><strong>female</strong><br>
+N = 4,847</p>
+</div></div><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KiptYWxlKiogIApOID0gNCw4MDA=&quot;><div class='gt_from_md'><p><strong>male</strong><br />
+N = 4,800</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KiptYWxlKiogIApOID0gNCw4MDA="><div class="gt_from_md"><p><strong>male</strong><br>
+N = 4,800</p>
+</div></div><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="label" class="gt_row gt_left">Height</td>
+<td headers="stat_1" class="gt_row gt_center">161 (154, 166)</td>
+<td headers="stat_2" class="gt_row gt_center">174 (166, 179)</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="3"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span> <div data-qmd-base64="TWVkaWFuIChRMSwgUTMp"><div class="gt_from_md"><p>Median (Q1, Q3)</p>
+</div></div></td>
+    </tr>
+  </tfoot>
 </table>
-
 </div>
 </div>
 </div>
@@ -3136,23 +3039,24 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
 <span id="cb90-9"><a href="#cb90-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the table</span></span>
 <span id="cb90-10"><a href="#cb90-10" aria-hidden="true" tabindex="-1"></a>table_cat_num</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="qztgpkhccu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qztgpkhccu table {
+
+<div id="ljgmnaekur" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ljgmnaekur table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qztgpkhccu thead, #qztgpkhccu tbody, #qztgpkhccu tfoot, #qztgpkhccu tr, #qztgpkhccu td, #qztgpkhccu th {
+#ljgmnaekur thead, #ljgmnaekur tbody, #ljgmnaekur tfoot, #ljgmnaekur tr, #ljgmnaekur td, #ljgmnaekur th {
   border-style: none;
 }
 
-#qztgpkhccu p {
+#ljgmnaekur p {
   margin: 0;
   padding: 0;
 }
 
-#qztgpkhccu .gt_table {
+#ljgmnaekur .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3178,12 +3082,12 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-left-color: #D3D3D3;
 }
 
-#qztgpkhccu .gt_caption {
+#ljgmnaekur .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qztgpkhccu .gt_title {
+#ljgmnaekur .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3195,7 +3099,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-bottom-width: 0;
 }
 
-#qztgpkhccu .gt_subtitle {
+#ljgmnaekur .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3207,7 +3111,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-top-width: 0;
 }
 
-#qztgpkhccu .gt_heading {
+#ljgmnaekur .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3219,13 +3123,13 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-right-color: #D3D3D3;
 }
 
-#qztgpkhccu .gt_bottom_border {
+#ljgmnaekur .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qztgpkhccu .gt_col_headings {
+#ljgmnaekur .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3240,7 +3144,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-right-color: #D3D3D3;
 }
 
-#qztgpkhccu .gt_col_heading {
+#ljgmnaekur .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3260,7 +3164,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   overflow-x: hidden;
 }
 
-#qztgpkhccu .gt_column_spanner_outer {
+#ljgmnaekur .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3272,15 +3176,15 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 4px;
 }
 
-#qztgpkhccu .gt_column_spanner_outer:first-child {
+#ljgmnaekur .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qztgpkhccu .gt_column_spanner_outer:last-child {
+#ljgmnaekur .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qztgpkhccu .gt_column_spanner {
+#ljgmnaekur .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3292,11 +3196,11 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   width: 100%;
 }
 
-#qztgpkhccu .gt_spanner_row {
+#ljgmnaekur .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qztgpkhccu .gt_group_heading {
+#ljgmnaekur .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3322,7 +3226,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   text-align: left;
 }
 
-#qztgpkhccu .gt_empty_group_heading {
+#ljgmnaekur .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3337,15 +3241,15 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   vertical-align: middle;
 }
 
-#qztgpkhccu .gt_from_md > :first-child {
+#ljgmnaekur .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qztgpkhccu .gt_from_md > :last-child {
+#ljgmnaekur .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qztgpkhccu .gt_row {
+#ljgmnaekur .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3364,7 +3268,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   overflow-x: hidden;
 }
 
-#qztgpkhccu .gt_stub {
+#ljgmnaekur .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3377,7 +3281,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#qztgpkhccu .gt_stub_row_group {
+#ljgmnaekur .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3391,15 +3295,15 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   vertical-align: top;
 }
 
-#qztgpkhccu .gt_row_group_first td {
+#ljgmnaekur .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qztgpkhccu .gt_row_group_first th {
+#ljgmnaekur .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qztgpkhccu .gt_summary_row {
+#ljgmnaekur .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3409,16 +3313,16 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#qztgpkhccu .gt_first_summary_row {
+#ljgmnaekur .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qztgpkhccu .gt_first_summary_row.thick {
+#ljgmnaekur .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qztgpkhccu .gt_last_summary_row {
+#ljgmnaekur .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3428,7 +3332,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-bottom-color: #D3D3D3;
 }
 
-#qztgpkhccu .gt_grand_summary_row {
+#ljgmnaekur .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3438,7 +3342,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#qztgpkhccu .gt_first_grand_summary_row {
+#ljgmnaekur .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3448,7 +3352,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-top-color: #D3D3D3;
 }
 
-#qztgpkhccu .gt_last_grand_summary_row_top {
+#ljgmnaekur .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3458,11 +3362,11 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-bottom-color: #D3D3D3;
 }
 
-#qztgpkhccu .gt_striped {
+#ljgmnaekur .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qztgpkhccu .gt_table_body {
+#ljgmnaekur .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3471,7 +3375,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-bottom-color: #D3D3D3;
 }
 
-#qztgpkhccu .gt_footnotes {
+#ljgmnaekur .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3485,7 +3389,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-right-color: #D3D3D3;
 }
 
-#qztgpkhccu .gt_footnote {
+#ljgmnaekur .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3494,7 +3398,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#qztgpkhccu .gt_sourcenotes {
+#ljgmnaekur .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3508,7 +3412,7 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   border-right-color: #D3D3D3;
 }
 
-#qztgpkhccu .gt_sourcenote {
+#ljgmnaekur .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3516,98 +3420,106 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
   padding-right: 5px;
 }
 
-#qztgpkhccu .gt_left {
+#ljgmnaekur .gt_left {
   text-align: left;
 }
 
-#qztgpkhccu .gt_center {
+#ljgmnaekur .gt_center {
   text-align: center;
 }
 
-#qztgpkhccu .gt_right {
+#ljgmnaekur .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qztgpkhccu .gt_font_normal {
+#ljgmnaekur .gt_font_normal {
   font-weight: normal;
 }
 
-#qztgpkhccu .gt_font_bold {
+#ljgmnaekur .gt_font_bold {
   font-weight: bold;
 }
 
-#qztgpkhccu .gt_font_italic {
+#ljgmnaekur .gt_font_italic {
   font-style: italic;
 }
 
-#qztgpkhccu .gt_super {
+#ljgmnaekur .gt_super {
   font-size: 65%;
 }
 
-#qztgpkhccu .gt_footnote_marks {
+#ljgmnaekur .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qztgpkhccu .gt_asterisk {
+#ljgmnaekur .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qztgpkhccu .gt_indent_1 {
+#ljgmnaekur .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qztgpkhccu .gt_indent_2 {
+#ljgmnaekur .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qztgpkhccu .gt_indent_3 {
+#ljgmnaekur .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qztgpkhccu .gt_indent_4 {
+#ljgmnaekur .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qztgpkhccu .gt_indent_5 {
+#ljgmnaekur .gt_indent_5 {
   text-indent: 25px;
 }
+
+#ljgmnaekur .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ljgmnaekur div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
 </style>
-
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header gt_col_headings">
-<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
-<th id="<strong>female</strong><br />
-N = 4,847<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>female</strong><br>
-N = 4,847<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<strong>male</strong><br />
-N = 4,800<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>male</strong><br>
-N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">height</td>
-<td class="gt_row gt_center" headers="stat_1">157 (17)</td>
-<td class="gt_row gt_center" headers="stat_2">167 (22)</td>
-</tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="even">
-<td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Mean (SD)</td>
-</tr>
-</tfoot>
-
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipDaGFyYWN0ZXJpc3RpYyoq&quot;><div class='gt_from_md'><p><strong>Characteristic</strong></p>
+</div></div>"><div data-qmd-base64="KipDaGFyYWN0ZXJpc3RpYyoq"><div class="gt_from_md"><p><strong>Characteristic</strong></p>
+</div></div></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipmZW1hbGUqKiAgCk4gPSA0LDg0Nw==&quot;><div class='gt_from_md'><p><strong>female</strong><br />
+N = 4,847</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KipmZW1hbGUqKiAgCk4gPSA0LDg0Nw=="><div class="gt_from_md"><p><strong>female</strong><br>
+N = 4,847</p>
+</div></div><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KiptYWxlKiogIApOID0gNCw4MDA=&quot;><div class='gt_from_md'><p><strong>male</strong><br />
+N = 4,800</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KiptYWxlKiogIApOID0gNCw4MDA="><div class="gt_from_md"><p><strong>male</strong><br>
+N = 4,800</p>
+</div></div><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="label" class="gt_row gt_left">height</td>
+<td headers="stat_1" class="gt_row gt_center">157 (17)</td>
+<td headers="stat_2" class="gt_row gt_center">167 (22)</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="3"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span> <div data-qmd-base64="TWVhbiAoU0Qp"><div class="gt_from_md"><p>Mean (SD)</p>
+</div></div></td>
+    </tr>
+  </tfoot>
 </table>
-
 </div>
 </div>
 </div>
@@ -3615,13 +3527,13 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
 </section>
 </section>
 </section>
-<section id="inferential-statistics" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="inferential-statistics"><span class="header-section-number">5.4</span> Inferential Statistics</h2>
+<section id="inferential-statistics" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="inferential-statistics"><span class="header-section-number">6.4</span> Inferential Statistics</h2>
 <div style="text-align:justify">
 <p>Inferential statistics is a branch of statistics that allows us to make conclusions about a population based on a sample of data drawn from that population. Unlike descriptive statistics, which focuses on summarizing and describing data, inferential statistics enables researchers to draw conclusions, make predictions, and test hypotheses, making it a crucial tool in various fields, including healthcare, public health, social sciences, and business.</p>
 </div>
-<section id="population-sample-and-sampling-process" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="population-sample-and-sampling-process"><span class="header-section-number">5.4.1</span> Population, Sample and Sampling Process</h3>
+<section id="population-sample-and-sampling-process" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="population-sample-and-sampling-process"><span class="header-section-number">6.4.1</span> Population, Sample and Sampling Process</h3>
 <div style="text-align:justify">
 <p>Inferential statistics operates on the fundamental idea that we can infer characteristics of a population from a carefully selected sample. Since studying an entire population is often impractical or impossible due to time, cost, or accessibility constraints, researchers rely on samples. The goal is to use the sample data to draw conclusions or make estimates about the larger population.</p>
 <ul>
@@ -3633,12 +3545,12 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/pop_sample.png" class="img-fluid figure-img"></p>
-<figcaption>Image modified from <a href="https://pressbooks.bccampus.ca/jibcresearchmethods/chapter/7-2-population-versus-samples/">“Research Methods for the Social Sciences: An Introduction</a>” (2020) by Valerie Sheppard.</figcaption>
+<p></p><figcaption class="figure-caption">Image modified from <a href="https://pressbooks.bccampus.ca/jibcresearchmethods/chapter/7-2-population-versus-samples/">“Research Methods for the Social Sciences: An Introduction</a>” (2020) by Valerie Sheppard.</figcaption><p></p>
 </figure>
 </div>
 </section>
-<section id="focus-areas" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="focus-areas"><span class="header-section-number">5.4.2</span> Focus Areas</h3>
+<section id="focus-areas" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="focus-areas"><span class="header-section-number">6.4.2</span> Focus Areas</h3>
 <div style="text-align:justify">
 <p>In following chapters, we are focusing on three key areas of inferential statistics:</p>
 <ul>
@@ -3650,8 +3562,8 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
 </div>
 </section>
 </section>
-<section id="inferential-statistics-hypothesis-testing-and-interval-estimation" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="inferential-statistics-hypothesis-testing-and-interval-estimation"><span class="header-section-number">5.5</span> Inferential Statistics: Hypothesis Testing and Interval Estimation</h2>
+<section id="inferential-statistics-hypothesis-testing-and-interval-estimation" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="inferential-statistics-hypothesis-testing-and-interval-estimation"><span class="header-section-number">6.5</span> Inferential Statistics: Hypothesis Testing and Interval Estimation</h2>
 <div style="text-align:justify">
 <p>In inferential statistics, hypothesis testing and interval estimation are core methods used to make conclusions about a population from sample data. While hypothesis testing determines if there is enough evidence to reject a null hypothesis, interval estimation provides a range of values (confidence intervals) likely to contain the true population parameter. Together, these tools form the basis of statistical inference.</p>
 <p>In this chapter, we explore hypothesis testing and interval estimation for various scenarios using R, including means, proportions, and categorical variables. We focus on practical implementation and provide references for more in-depth theoretical understanding. For a more in-depth understanding, refer to additional resources.</p>
@@ -3661,10 +3573,10 @@ N = 4,800<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
 <li><p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5723800/pdf/jtd-09-10-4125.pdf">Using the confidence interval confidently</a>: The paper discusses the application and significance of confidence intervals (CIs) in biomedical research, particularly for estimating population parameters based on sample data. It outlines the process of calculating CIs, noting that the margin of error depends on sample variability, sample size, and confidence level. The authors highlight how CIs provide more meaningful insights than p-values alone by offering an estimated range for effect size, which is crucial for assessing clinical relevance. <span class="citation" data-cites="hazra2017">(<a href="#ref-hazra2017" role="doc-biblioref">Hazra 2017</a>)</span></p></li>
 </ul>
 </div>
-<section id="hypothesis-testing-and-interval-estimation-for-a-mean" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="hypothesis-testing-and-interval-estimation-for-a-mean"><span class="header-section-number">5.5.1</span> Hypothesis Testing and Interval Estimation for a Mean</h3>
-<section id="one-sample-t-test-hypothesis-testing" class="level4" data-number="5.5.1.1">
-<h4 data-number="5.5.1.1" class="anchored" data-anchor-id="one-sample-t-test-hypothesis-testing"><span class="header-section-number">5.5.1.1</span> One-Sample T-Test: Hypothesis Testing</h4>
+<section id="hypothesis-testing-and-interval-estimation-for-a-mean" class="level3" data-number="6.5.1">
+<h3 data-number="6.5.1" class="anchored" data-anchor-id="hypothesis-testing-and-interval-estimation-for-a-mean"><span class="header-section-number">6.5.1</span> Hypothesis Testing and Interval Estimation for a Mean</h3>
+<section id="one-sample-t-test-hypothesis-testing" class="level4" data-number="6.5.1.1">
+<h4 data-number="6.5.1.1" class="anchored" data-anchor-id="one-sample-t-test-hypothesis-testing"><span class="header-section-number">6.5.1.1</span> One-Sample T-Test: Hypothesis Testing</h4>
 <div style="text-align:justify">
 <p>The one-sample t-test is a statistical method that compares the mean of a sample to a known reference value—usually a population mean—to assess if there is a significant difference.</p>
 <p>In this context, using the NHANES dataset, we can investigate whether the mean blood pressure (BP) of a sample of adults differs significantly from the standard “normal” BP value, which is often considered to be around 120 mmHg for systolic pressure.</p>
@@ -3724,8 +3636,8 @@ mean of x
 <p>In this case, while there’s a statistically significant difference, the 0.73 mmHg increase from the standard value is likely too small to have clinical importance. This reminds us that even if a result is statistically significant, it’s the practical impact on patient outcomes that ultimately matters.</p>
 </div>
 </section>
-<section id="one-sample-t-test-interval-estimation" class="level4" data-number="5.5.1.2">
-<h4 data-number="5.5.1.2" class="anchored" data-anchor-id="one-sample-t-test-interval-estimation"><span class="header-section-number">5.5.1.2</span> One-Sample T-Test: Interval Estimation</h4>
+<section id="one-sample-t-test-interval-estimation" class="level4" data-number="6.5.1.2">
+<h4 data-number="6.5.1.2" class="anchored" data-anchor-id="one-sample-t-test-interval-estimation"><span class="header-section-number">6.5.1.2</span> One-Sample T-Test: Interval Estimation</h4>
 <div style="text-align:justify">
 <p>In addition to hypothesis testing, we also estimate a confidence interval (CI) for the mean systolic blood pressure of the sample. The confidence interval provides a range of values that likely contains the true mean systolic blood pressure of the population.</p>
 <p><strong>95% Confidence Interval Calculation:</strong></p>
@@ -3740,10 +3652,10 @@ mean of x
 </div>
 </section>
 </section>
-<section id="hypothesis-testing-and-interval-estimation-for-two-means" class="level3" data-number="5.5.2">
-<h3 data-number="5.5.2" class="anchored" data-anchor-id="hypothesis-testing-and-interval-estimation-for-two-means"><span class="header-section-number">5.5.2</span> Hypothesis Testing and Interval Estimation for Two Means</h3>
-<section id="two-sample-t-test-hypothesis-testing" class="level4" data-number="5.5.2.1">
-<h4 data-number="5.5.2.1" class="anchored" data-anchor-id="two-sample-t-test-hypothesis-testing"><span class="header-section-number">5.5.2.1</span> Two-Sample T-Test: Hypothesis Testing</h4>
+<section id="hypothesis-testing-and-interval-estimation-for-two-means" class="level3" data-number="6.5.2">
+<h3 data-number="6.5.2" class="anchored" data-anchor-id="hypothesis-testing-and-interval-estimation-for-two-means"><span class="header-section-number">6.5.2</span> Hypothesis Testing and Interval Estimation for Two Means</h3>
+<section id="two-sample-t-test-hypothesis-testing" class="level4" data-number="6.5.2.1">
+<h4 data-number="6.5.2.1" class="anchored" data-anchor-id="two-sample-t-test-hypothesis-testing"><span class="header-section-number">6.5.2.1</span> Two-Sample T-Test: Hypothesis Testing</h4>
 <div style="text-align:justify">
 <p>The two-sample t-test is a statistical method used to compare the means of two independent groups. In this context, we will examine whether there is a significant difference in height between males and females using the NHANES dataset.</p>
 <p><strong>Hypotheses:</strong></p>
@@ -3780,8 +3692,8 @@ mean in group female   mean in group male
 <p><strong>Conclusion:</strong> The very low p-value (&lt; 0.05) indicates that we reject the null hypothesis, suggesting that there is a statistically significant difference in average height between males and females in this sample.</p>
 </div>
 </section>
-<section id="two-sample-t-test-confidence-interval" class="level4" data-number="5.5.2.2">
-<h4 data-number="5.5.2.2" class="anchored" data-anchor-id="two-sample-t-test-confidence-interval"><span class="header-section-number">5.5.2.2</span> Two-Sample T-Test: Confidence Interval</h4>
+<section id="two-sample-t-test-confidence-interval" class="level4" data-number="6.5.2.2">
+<h4 data-number="6.5.2.2" class="anchored" data-anchor-id="two-sample-t-test-confidence-interval"><span class="header-section-number">6.5.2.2</span> Two-Sample T-Test: Confidence Interval</h4>
 <div style="text-align:justify">
 <p>In addition to hypothesis testing, it is important to calculate the confidence interval for the difference in means to provide further context regarding the effect size.</p>
 <p><strong>95% Confidence Interval for the Difference in Means:</strong></p>
@@ -3798,8 +3710,8 @@ mean in group female   mean in group male
 <p>The confidence interval provides a range of values that, with 95% confidence, includes the true difference in average height between males and females. Since the entire interval is negative, this reinforces our earlier conclusion that males are significantly taller than females.</p>
 </div>
 </section>
-<section id="paired-t-test-hypothesis-testing" class="level4" data-number="5.5.2.3">
-<h4 data-number="5.5.2.3" class="anchored" data-anchor-id="paired-t-test-hypothesis-testing"><span class="header-section-number">5.5.2.3</span> Paired T-Test: Hypothesis Testing</h4>
+<section id="paired-t-test-hypothesis-testing" class="level4" data-number="6.5.2.3">
+<h4 data-number="6.5.2.3" class="anchored" data-anchor-id="paired-t-test-hypothesis-testing"><span class="header-section-number">6.5.2.3</span> Paired T-Test: Hypothesis Testing</h4>
 <div style="text-align:justify">
 <p>The paired t-test is a statistical method used to compare two related samples, measuring the same group at two different times.</p>
 <p>For example, to examine the effect of an intervention, a paired t-test can be used to compare blood pressure (BP) measurements taken pre- and post-intervention among individuals with a BMI greater than 25.</p>
@@ -3827,13 +3739,13 @@ mean in group female   mean in group male
     Paired t-test
 
 data:  df_filtered$bp_sys_post and df_filtered$bp_sys_ave
-t = -152.38, df = 4855, p-value &lt; 2.2e-16
+t = -151.02, df = 4855, p-value &lt; 2.2e-16
 alternative hypothesis: true mean difference is not equal to 0
 95 percent confidence interval:
- -4.564779 -4.448812
+ -4.537139 -4.420851
 sample estimates:
 mean difference 
-      -4.506796 </code></pre>
+      -4.478995 </code></pre>
 </div>
 </div>
 <p><strong>Paired t-Test Results Interpretation</strong></p>
@@ -3844,8 +3756,8 @@ mean difference
 </ul>
 <p>The t-statistic is -155.16, indicating a significant difference in systolic blood pressure (BP) between the average pre-intervention and post-intervention measurements.The degrees of freedom is 4855, indicating a large sample size, which adds robustness to the statistical findings.</p>
 <p>The p-value is &lt; 2.2e-16, which is extremely low and suggests a statistically significant difference in systolic blood pressure before and after the intervention. Since this p-value is well below the standard threshold of 0.05, we reject the null hypothesis, indicating that there is a meaningful change in BP levels.</p>
-<section id="paired-t-test-confidence-interval" class="level4" data-number="5.5.2.4">
-<h4 data-number="5.5.2.4" class="anchored" data-anchor-id="paired-t-test-confidence-interval"><span class="header-section-number">5.5.2.4</span> Paired T-Test: Confidence Interval</h4>
+<section id="paired-t-test-confidence-interval" class="level4" data-number="6.5.2.4">
+<h4 data-number="6.5.2.4" class="anchored" data-anchor-id="paired-t-test-confidence-interval"><span class="header-section-number">6.5.2.4</span> Paired T-Test: Confidence Interval</h4>
 <p>The 95% confidence interval for the mean difference is (-4.529483, -4.413268). This interval indicates that we can be 95% confident that the true mean decrease in systolic blood pressure lies between -4.53 mmHg and -4.41 mmHg. Since the entire interval is negative, this strongly supports the conclusion that the intervention has led to a significant reduction in systolic BP.</p>
 <p>The mean difference in systolic blood pressure is approximately -4.471376 mmHg, suggesting that, on average, individuals with a BMI greater than 25 experienced a decrease of about 4.47 mmHg in systolic BP following the intervention.</p>
 <p>The results of the paired t-test indicate that the intervention was effective, resulting in a statistically significant decrease in systolic blood pressure among individuals with a BMI greater than 25. The average decrease of 4.47 mmHg is both statistically significant and clinically relevant.</p>
@@ -3853,11 +3765,11 @@ mean difference
 </div>
 </section>
 </section>
-<section id="hypothesis-testing-and-interval-estimation-for-a-proportion" class="level3" data-number="5.5.3">
-<h3 data-number="5.5.3" class="anchored" data-anchor-id="hypothesis-testing-and-interval-estimation-for-a-proportion"><span class="header-section-number">5.5.3</span> Hypothesis Testing and Interval Estimation for a Proportion</h3>
+<section id="hypothesis-testing-and-interval-estimation-for-a-proportion" class="level3" data-number="6.5.3">
+<h3 data-number="6.5.3" class="anchored" data-anchor-id="hypothesis-testing-and-interval-estimation-for-a-proportion"><span class="header-section-number">6.5.3</span> Hypothesis Testing and Interval Estimation for a Proportion</h3>
 <p>Now we cover the concepts of hypothesis testing and interval estimation for proportions.</p>
-<section id="hypothesis-testing-for-a-proportion" class="level4" data-number="5.5.3.1">
-<h4 data-number="5.5.3.1" class="anchored" data-anchor-id="hypothesis-testing-for-a-proportion"><span class="header-section-number">5.5.3.1</span> Hypothesis Testing for a Proportion</h4>
+<section id="hypothesis-testing-for-a-proportion" class="level4" data-number="6.5.3.1">
+<h4 data-number="6.5.3.1" class="anchored" data-anchor-id="hypothesis-testing-for-a-proportion"><span class="header-section-number">6.5.3.1</span> Hypothesis Testing for a Proportion</h4>
 <p>Our research question is:</p>
 <p><em>Is the prevalence of diabetes in the adult population equal to 10%?</em></p>
 <p><strong>Hypotheses:</strong></p>
@@ -3893,15 +3805,15 @@ sample estimates:
 <p>With a p-value of 0.8653, which is much greater than the standard significance level of 0.05, we fail to reject the null hypothesis. This indicates that there is not enough evidence to suggest that the proportion of individuals with diabetes in the population differs from 10%.</p>
 <p>In a clinical context, this suggests that the observed prevalence of diabetes in the sample is consistent with the expected prevalence, and no significant deviation is noted.</p>
 </section>
-<section id="confidence-interval-for-a-proportion" class="level4" data-number="5.5.3.2">
-<h4 data-number="5.5.3.2" class="anchored" data-anchor-id="confidence-interval-for-a-proportion"><span class="header-section-number">5.5.3.2</span> Confidence Interval for a Proportion</h4>
+<section id="confidence-interval-for-a-proportion" class="level4" data-number="6.5.3.2">
+<h4 data-number="6.5.3.2" class="anchored" data-anchor-id="confidence-interval-for-a-proportion"><span class="header-section-number">6.5.3.2</span> Confidence Interval for a Proportion</h4>
 <p><strong>Interpretation of Confidence Interval</strong></p>
 <p>From the above result, we have the 95% confidence interval for the proportion of individuals with diabetes is approximately (0.0927,0.1064). This interval suggests that we can be 95% confident that the true proportion of individuals with diabetes in the population lies between 9.27% and 10.64%.</p>
 <p>This finding supports the conclusion from the hypothesis test that the proportion is consistent with the specified null value of 10%, providing further assurance that the prevalence of diabetes in the population is stable and aligns with previous estimates.</p>
 </section>
 </section>
-<section id="chi-squared-test" class="level3" data-number="5.5.4">
-<h3 data-number="5.5.4" class="anchored" data-anchor-id="chi-squared-test"><span class="header-section-number">5.5.4</span> Chi-Squared Test</h3>
+<section id="chi-squared-test" class="level3" data-number="6.5.4">
+<h3 data-number="6.5.4" class="anchored" data-anchor-id="chi-squared-test"><span class="header-section-number">6.5.4</span> Chi-Squared Test</h3>
 <div style="text-align:justify">
 <p>The chi-squared test is a statistical method used to determine if there is a significant association between two categorical variables. By comparing the observed frequency distribution of categories with the expected distribution (assuming no association), the test evaluates whether the variables are independent of each other or if there is an association. This test is particularly useful in analyzing relationships in large datasets with categorical data, like survey responses or patient characteristics.</p>
 <p>As an example, we’ll use the chi-squared test to examine whether there is an association between BMI category and diabetes status among adults in our dataset.</p>
@@ -3955,8 +3867,8 @@ X-squared = 206.12, df = 3, p-value &lt; 2.2e-16</code></pre>
 <p>For binary outcomes like diabetes status, logistic regression would be a suitable approach. It would allow us to model the probability of diabetes as a function of BMI categories while providing insights into how each category impacts the likelihood of diabetes, as reflected by odds ratios. This approach also enables adjustments for potential confounders, offering a more comprehensive understanding of the relationship.</p>
 </div>
 </section>
-<section id="one-way-anova" class="level3" data-number="5.5.5">
-<h3 data-number="5.5.5" class="anchored" data-anchor-id="one-way-anova"><span class="header-section-number">5.5.5</span> One-way ANOVA</h3>
+<section id="one-way-anova" class="level3" data-number="6.5.5">
+<h3 data-number="6.5.5" class="anchored" data-anchor-id="one-way-anova"><span class="header-section-number">6.5.5</span> One-way ANOVA</h3>
 <div style="text-align:justify">
 <p>One-way ANOVA (Analysis of Variance) is used to compare the means of more than two groups to determine if at least one group mean differs significantly from the others. This method is suitable when we have a categorical independent variable (factor) with multiple levels and a continuous dependent variable. For example, we could use one-way ANOVA to test if the average blood pressure differs across BMI categories.</p>
 <p>As an example, we’ll use the one-way ANOVA To determine if average systolic blood pressure varies across BMI categories.</p>
@@ -3990,8 +3902,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 </div>
 </section>
 </section>
-<section id="inferential-statistics-regression-analysis" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="inferential-statistics-regression-analysis"><span class="header-section-number">5.6</span> Inferential Statistics: Regression Analysis</h2>
+<section id="inferential-statistics-regression-analysis" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="inferential-statistics-regression-analysis"><span class="header-section-number">6.6</span> Inferential Statistics: Regression Analysis</h2>
 <div style="text-align:justify">
 <p>Regression analysis is a powerful statistical method used to examine the relationship between two or more variables. The goal of regression is to understand how the dependent variable (also called the outcome or response variable) changes when one or more independent variables (also known as predictors or explanatory variables) are varied This method is widely used in various fields such as economics, healthcare, social sciences, and engineering to make predictions, identify trends, and uncover relationships between variables.</p>
 <p>There are various types of regression, each suited to different types of data and research questions. Some common types include:</p>
@@ -4003,13 +3915,13 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 </ul>
 <p>In this session, we will focus on two important types of regression: linear regression and logistic regression, and demonstrate how to perform them in R.</p>
 </div>
-<section id="simple-linear-regression" class="level3" data-number="5.6.1">
-<h3 data-number="5.6.1" class="anchored" data-anchor-id="simple-linear-regression"><span class="header-section-number">5.6.1</span> Simple Linear Regression</h3>
+<section id="simple-linear-regression" class="level3" data-number="6.6.1">
+<h3 data-number="6.6.1" class="anchored" data-anchor-id="simple-linear-regression"><span class="header-section-number">6.6.1</span> Simple Linear Regression</h3>
 <div style="text-align:justify">
 <p>Simple Linear regression (SLR) is one of the most widely used statistical methods for modeling the relationship between a dependent variable and one independent variable. However, to ensure the model’s accuracy and validity, several assumptions must be met.</p>
 </div>
-<section id="assumptions-of-simple-linear-regression" class="level4" data-number="5.6.1.1">
-<h4 data-number="5.6.1.1" class="anchored" data-anchor-id="assumptions-of-simple-linear-regression"><span class="header-section-number">5.6.1.1</span> Assumptions of Simple Linear Regression</h4>
+<section id="assumptions-of-simple-linear-regression" class="level4" data-number="6.6.1.1">
+<h4 data-number="6.6.1.1" class="anchored" data-anchor-id="assumptions-of-simple-linear-regression"><span class="header-section-number">6.6.1.1</span> Assumptions of Simple Linear Regression</h4>
 <div style="text-align:justify">
 <p>The acronym <strong>LINE</strong> helps us remember the key assumptions needed for making inferences and predictions with models based on linear least squares regression (LLSR).</p>
 <p>In the case of simple linear regression with a single predictor <span class="math inline">\(X\)</span>, the assumptions are as follows:</p>
@@ -4023,7 +3935,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/linear_regression.png" class="img-fluid figure-img"></p>
-<figcaption>Assumptions for linear least squares regression (LLSR) <a href="https://bookdown.org/roback/bookdown-BeyondMLR/ch-MLRreview.html#assumptions-for-linear-least-squares-regression">(Roback and Legler, 2021)</a></figcaption>
+<p></p><figcaption class="figure-caption">Assumptions for linear least squares regression (LLSR) <a href="https://bookdown.org/roback/bookdown-BeyondMLR/ch-MLRreview.html#assumptions-for-linear-least-squares-regression">(Roback and Legler, 2021)</a></figcaption><p></p>
 </figure>
 </div>
 <ul>
@@ -4034,8 +3946,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 </ul>
 </div>
 </section>
-<section id="the-simple-linear-regression-model" class="level4" data-number="5.6.1.2">
-<h4 data-number="5.6.1.2" class="anchored" data-anchor-id="the-simple-linear-regression-model"><span class="header-section-number">5.6.1.2</span> The Simple Linear Regression Model</h4>
+<section id="the-simple-linear-regression-model" class="level4" data-number="6.6.1.2">
+<h4 data-number="6.6.1.2" class="anchored" data-anchor-id="the-simple-linear-regression-model"><span class="header-section-number">6.6.1.2</span> The Simple Linear Regression Model</h4>
 <div style="text-align:justify">
 <p>In SLR, the goal is to model the relationship between a dependent variable (response) and an independent variable (predictor). The model predicts the dependent variable based on the independent variable, helping us understand how changes in one variable impact the other.</p>
 <p>The general form of a simple linear regression model is:</p>
@@ -4050,8 +3962,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 </ul>
 </div>
 </section>
-<section id="interpreting-the-model" class="level4" data-number="5.6.1.3">
-<h4 data-number="5.6.1.3" class="anchored" data-anchor-id="interpreting-the-model"><span class="header-section-number">5.6.1.3</span> Interpreting the Model</h4>
+<section id="interpreting-the-model" class="level4" data-number="6.6.1.3">
+<h4 data-number="6.6.1.3" class="anchored" data-anchor-id="interpreting-the-model"><span class="header-section-number">6.6.1.3</span> Interpreting the Model</h4>
 <div style="text-align:justify">
 <ul>
 <li><p><strong>Intercept (</strong><span class="math inline">\(\beta_0\)</span>): The intercept tells us the expected value of the dependent variable when the independent variable is zero. However, in some cases, like the relationship between height and weight, interpreting the intercept might not make practical sense (e.g., predicting weight when height is zero).</p></li>
@@ -4061,13 +3973,13 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 </div>
 </section>
 </section>
-<section id="simple-linear-regression-using-r" class="level3" data-number="5.6.2">
-<h3 data-number="5.6.2" class="anchored" data-anchor-id="simple-linear-regression-using-r"><span class="header-section-number">5.6.2</span> Simple Linear Regression Using R</h3>
+<section id="simple-linear-regression-using-r" class="level3" data-number="6.6.2">
+<h3 data-number="6.6.2" class="anchored" data-anchor-id="simple-linear-regression-using-r"><span class="header-section-number">6.6.2</span> Simple Linear Regression Using R</h3>
 <div style="text-align:justify">
 <p>If the assumptions of simple linear regression are met, we can proceed with fitting the model to the data. In this section, we will explore how to perform simple linear regression using R. This method allows us to examine the relationship between a dependent variable (response) and an independent variable (predictor) and make predictions based on the data.</p>
 </div>
-<section id="simple-linear-regression-with-a-numeric-independent-variable" class="level4" data-number="5.6.2.1">
-<h4 data-number="5.6.2.1" class="anchored" data-anchor-id="simple-linear-regression-with-a-numeric-independent-variable"><span class="header-section-number">5.6.2.1</span> Simple Linear Regression with a Numeric Independent Variable</h4>
+<section id="simple-linear-regression-with-a-numeric-independent-variable" class="level4" data-number="6.6.2.1">
+<h4 data-number="6.6.2.1" class="anchored" data-anchor-id="simple-linear-regression-with-a-numeric-independent-variable"><span class="header-section-number">6.6.2.1</span> Simple Linear Regression with a Numeric Independent Variable</h4>
 <div style="text-align:justify">
 <p>When dealing with a numeric independent variable, simple linear regression helps us understand how changes in the independent variable affect the dependent variable. In R, we can easily fit and evaluate this relationship using the lm() function.</p>
 <p>Here’s an example of performing simple linear regression when the independent variable is numeric:</p>
@@ -4185,8 +4097,8 @@ F-statistic:  1882 on 1 and 7412 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>The interpretation shows that height has a positive and significant relationship with weight, but the relatively low <span class="math inline">\(R^2\)</span> value suggests that other factors besides height influence weight.</p>
 </div>
 </section>
-<section id="simple-linear-regression-with-a-categorical-independent-variable" class="level4" data-number="5.6.2.2">
-<h4 data-number="5.6.2.2" class="anchored" data-anchor-id="simple-linear-regression-with-a-categorical-independent-variable"><span class="header-section-number">5.6.2.2</span> Simple Linear Regression with a Categorical Independent Variable</h4>
+<section id="simple-linear-regression-with-a-categorical-independent-variable" class="level4" data-number="6.6.2.2">
+<h4 data-number="6.6.2.2" class="anchored" data-anchor-id="simple-linear-regression-with-a-categorical-independent-variable"><span class="header-section-number">6.6.2.2</span> Simple Linear Regression with a Categorical Independent Variable</h4>
 <p>When dealing with a categorical independent variable, simple linear regression can be used to analyze how the different categories influence the dependent variable. In this case, we’ll explore the relationship between height and race in adults using the NHANES dataset.</p>
 <p><strong>Research Question</strong></p>
 <p>Is there an association between race and weight in adult individuals from the NHANES dataset?</p>
@@ -4263,8 +4175,8 @@ F-statistic: 47.55 on 4 and 7415 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </section>
 </section>
-<section id="multiple-linear-regression-using-r" class="level3" data-number="5.6.3">
-<h3 data-number="5.6.3" class="anchored" data-anchor-id="multiple-linear-regression-using-r"><span class="header-section-number">5.6.3</span> Multiple Linear Regression using R</h3>
+<section id="multiple-linear-regression-using-r" class="level3" data-number="6.6.3">
+<h3 data-number="6.6.3" class="anchored" data-anchor-id="multiple-linear-regression-using-r"><span class="header-section-number">6.6.3</span> Multiple Linear Regression using R</h3>
 <div style="text-align:justify">
 <p>Multiple linear regression expands on simple linear regression by incorporating multiple independent variables (predictors) to predict the outcome variable (dependent variable). This approach allows us to analyze how each predictor contributes to the outcome, while controlling for other variables.</p>
 <p>The general form of a multiple linear regression model with k predictors,</p>
@@ -4274,7 +4186,7 @@ F-statistic: 47.55 on 4 and 7415 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li><p><span class="math inline">\(Y\)</span>: Dependent variable</p></li>
 <li><p><span class="math inline">\(X_1, X_2,...,X_k\)</span>: Independent variables (predictors)</p></li>
 <li><p>$ _0$: Intercept (the expected value of <span class="math inline">\(Y\)</span> when all <span class="math inline">\(X\)</span> variables are zero)</p></li>
-<li><p><span class="math inline">\(,  \beta_1,  \beta_2, ...,  \beta_k\)</span>: Coefficients for each independent variable, indicating the expected change in <span class="math inline">\(Y\)</span> for a one-unit change in that variable, holding other variables constant.</p></li>
+<li><p><span class="math inline">\(, \beta_1, \beta_2, ..., \beta_k\)</span>: Coefficients for each independent variable, indicating the expected change in <span class="math inline">\(Y\)</span> for a one-unit change in that variable, holding other variables constant.</p></li>
 <li><p><span class="math inline">\(\epsilon\)</span>: Error term (the difference between the observed and predicted values)</p></li>
 </ul>
 <p><strong>Research Question</strong></p>
@@ -4341,8 +4253,8 @@ F-statistic:   414 on 5 and 7408 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>In addition, we observe that the coefficient for the Hispanic category is not statistically significant (p = 0.199), suggesting that, for this model, being Hispanic does not have a statistically significant impact on weight compared to the reference category (White) when controlling for height. This lack of significance indicates that the model does not provide evidence of a meaningful difference in weight between White and Hispanic individuals at the same height within this dataset.</p>
 </div>
 </section>
-<section id="logistic-regression-using-r" class="level3" data-number="5.6.4">
-<h3 data-number="5.6.4" class="anchored" data-anchor-id="logistic-regression-using-r"><span class="header-section-number">5.6.4</span> Logistic Regression using R</h3>
+<section id="logistic-regression-using-r" class="level3" data-number="6.6.4">
+<h3 data-number="6.6.4" class="anchored" data-anchor-id="logistic-regression-using-r"><span class="header-section-number">6.6.4</span> Logistic Regression using R</h3>
 <div style="text-align:justify">
 <p>In this book, we’re providing a basic introduction to performing logistic regression using R, without diving deeply into the underlying concepts. For readers interested in a more detailed exploration of logistic regression, please refer to <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8710907/pdf/fmch-2021-001290.pdf">(Harris, 2021)</a>.</p>
 <p>In the following example, we aim to address the following research question:</p>
@@ -4436,14 +4348,14 @@ Number of Fisher Scoring iterations: 6</code></pre>
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-banerjee2009" class="csl-entry" role="listitem">
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-banerjee2009" class="csl-entry" role="doc-biblioentry">
 Banerjee, Amitav, Ub Chitnis, Sl Jadhav, Js Bhawalkar, and S Chaudhury. 2009. <span>“Hypothesis Testing, Type I and Type II Errors.”</span> <em>Industrial Psychiatry Journal</em> 18 (2): 127. <a href="https://doi.org/10.4103/0972-6748.62274">https://doi.org/10.4103/0972-6748.62274</a>.
 </div>
-<div id="ref-hazra2017" class="csl-entry" role="listitem">
+<div id="ref-hazra2017" class="csl-entry" role="doc-biblioentry">
 Hazra, Avijit. 2017. <span>“Using the Confidence Interval Confidently.”</span> <em>Journal of Thoracic Disease</em> 9 (10): 4124–29. <a href="https://doi.org/10.21037/jtd.2017.09.14">https://doi.org/10.21037/jtd.2017.09.14</a>.
 </div>
-<div id="ref-walker2019" class="csl-entry" role="listitem">
+<div id="ref-walker2019" class="csl-entry" role="doc-biblioentry">
 Walker, J. 2019. <span>“Hypothesis Tests.”</span> <em>BJA Education</em> 19 (7): 227–31. <a href="https://doi.org/10.1016/j.bjae.2019.03.006">https://doi.org/10.1016/j.bjae.2019.03.006</a>.
 </div>
 </div>
@@ -4477,15 +4389,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -4517,50 +4426,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -4570,17 +4440,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -4592,245 +4453,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -4872,15 +4497,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro_r.html" class="pagination-link" aria-label="Introduction to R and RStudio">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></span>
+      <a href="./intro_r.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 
