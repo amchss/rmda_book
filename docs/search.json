@@ -380,5 +380,15 @@
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Quality Issues in Research</span>"
     ]
+  },
+  {
+    "objectID": "digital_data.html#uploading-the-xlsform-to-odk-central",
+    "href": "digital_data.html#uploading-the-xlsform-to-odk-central",
+    "title": "4  Digital Data Collection using ODK",
+    "section": "4.5 Uploading the XLSForm to ODK Central",
+    "text": "4.5 Uploading the XLSForm to ODK Central\nOnce your XLSForm is ready, you can upload it to ODK Central to make it available for data collection. Follow these steps to upload and publish your form:\n\nLog in to ODK Central: Access your ODK Central account via the web browser.\nNavigate to Projects: Open the project to which you want to add the form or create a new project if necessary.\nUpload the XLSForm: In the project dashboard, select Forms and click Upload Form. Choose your prepared XLSForm file from your computer and upload it.\nReview and Publish: Once uploaded, ODK Central will validate the form to ensure it is compatible. After validation, publish the form to make it accessible to data collectors.\nConfigure Access: Create an App User and assign the form to that user. This App User will allow data collectors to connect the form with ODK Collect.\n\nAfter completing these steps, your form is ready to be accessed and filled out by data collectors using the ODK Collect app.\nTo get started, download our demo XLSForm, log in to ODK Central, and go to your project. In the Forms section, simply upload the XLSForm file and publish it once it’s validated. This quick exercise will help you get comfortable with the form upload process, so you’ll be ready to upload and manage your own forms with ease.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Digital Data Collection using ODK</span>"
+    ]
   }
 ]
