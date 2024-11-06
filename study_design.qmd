@@ -1,40 +1,32 @@
-
 # Epidemiological Study Designs
 
 ::: {style="text-align:justify"}
-
 The goal of this session is to introduce different study designs used in epidemiology, understand their strengths and limitations and thereby equip us to choose appropriate designs for various research questions.
-
 :::
 
 ## What is a 'Study Design' ?
 
 ::: {style="text-align:justify"}
-
 -   A framework, or a set of methods and procedures used to collect and analyze data on variables specified in a particular research problem.
 
 -   A strategy, a direction to follow, in order that your objective is achieved or the question you ask is answered.
 
 -   A specific plan or protocol for conducting the study, which allows the investigator to translate the conceptual hypothesis into an operational one.
-
 :::
 
 ## What determine the type of Study Design?
 
 ::: {style="text-align:justify"}
-
 -   The nature of question
 
 -   The goal of research
 
 -   The availability of resources
-
 :::
 
-## Study designs are broadly categorised into two
+## Study designs: Broad categorisation
 
 ::: {style="text-align:justify"}
-
 -   Observational Study Design
 
 -   Experimental Study Design
@@ -51,5 +43,167 @@ kable(df, caption = "To Differentiate Observational & Experimental Study Design"
 
 
 ```
+:::
 
+## Observational Study Design
+
+::: {style="text-align:justify"}
+An observational study is a type of research design where researchers observe and analyze subjects without manipulating any variables. This approach allows for the examination of real-world conditions and associations between exposures (such as risk factors or interventions) and outcomes (like diseases or behaviors) in a natural setting.
+:::
+
+![](images/observe-01.jpeg){fig-align="center"}
+
+### Types of Observational Study Design
+
+::: {style="text-align:justify"}
+Broadly observational study designs are categorised as two:
+
+-   Descriptive Study Designs
+-   Analytical Study Designs
+:::
+
+### Differentiate Descriptive & Analytical study design
+
+::: {style="text-align:justify"}
+The above links will take you to each of the study design and its characteristics, while to have a quick differentiation of the two, here is a table summarising the key points.
+
+```{r,echo=FALSE}
+library(kableExtra)
+df <- data.frame("Descriptive Study" = c("Describes phenomena as they exist", "Describes occurrence of outcome", "Deals with 'who', 'what','when', 'where'","Generates hypothesis", "No comparison group"),
+"Analytical Study" = c("Understands phenomena", "Measures association between exposure & outcome", "Deals with 'why' and 'how'","Tests hypothesis","Presence of comparison group"))
+
+kable(df, caption = "To Differentiate Descriptive & Analytical Study Design")
+```
+:::
+
+### Classification of Desciptive & Analytical study design
+
+::: {style="text-align:justify"}
+Each of the above mentioned study designs are further sub-classified as shown in the figure below:
+
+```{mermaid}
+flowchart LR
+  A[Observational Study] --> B(Descriptive Study)
+  A[Observational Study] --> C(Analytical Study)
+  B --> D(Case Reports)
+  B --> E(Case Series)
+  B --> F(Ecological Studies)
+  C --> G(Cross Sectional)
+  C --> H(Case Control)
+  C --> I[Cohort study]
+```
+:::
+
+### Descriptive Observational Study Design
+
+::: {style="text-align:justify"}
+Descriptive study design is a research methodology that aims to provide a detailed account of a population, phenomenon, or event. Unlike experimental designs, which seek to establish causal relationships through manipulation of variables, descriptive studies focus on painting a comprehensive picture of the characteristics and conditions as they exist in real life.
+:::
+
+#### The Primary Goal of Descriptive Studies
+
+::: {style="text-align:justify"}
+To describe the characteristics of a population or phenomenon. This includes gathering information about demographics, behaviors, attitudes, or conditions without influencing or altering them.
+:::
+
+#### Limitations of Descriptive Studies
+
+::: {style="text-align:justify"}
+While descriptive studies provide essential insights, they do not establish causal relationships. They are limited by the absence of manipulation of variables, which means that findings must be interpreted with caution.
+:::
+
+#### Classification of Descriptive Study Design
+
+::: {style="text-align:justify"}
+```{mermaid}
+flowchart TB
+  A[Descriptive Study] --> B(Individual Level)
+  A[Descriptive Study] --> C(Population Level)
+  B --> D(Case Reports)
+  B --> E(Case Series)
+  C --> F(Ecological Studies)
+ 
+```
+
+First let us delve into the individual level descriptive studies.
+:::
+
+##### Case Reports
+
+::: {style="text-align:justify"}
+A case report is a detailed account of a specific clinical instance involving an individual patient. It serves as one of the earliest forms of medical research, emerging from the **careful observations** made by physicians and healthcare providers during their clinical practice. It serves as valuable tool for generating hypotheses, particularly in emerging health issues, as they document unique clinical presentations and associations.They provide detailed accounts of individual patient experiences, which can inform clinical practice and enhance understanding of rare or novel conditions.
+
+-   Simplest study design
+
+-   Hypothesis generating tool
+
+-   Detailed presentation of a single case, new or unfamiliar diseases, rare manifestations
+
+Generally report a new or unique finding
+
+-   previous undescribed disease
+
+-   unexpected link between diseases
+
+-   unexpected new therapeutic effect
+
+-   adverse event
+:::
+
+##### Case Series
+
+::: {style="text-align:justify"}
+-   Experience of a group of patients with a similar diagnosis
+
+-   Cases may be identified from a single source or from multiple sources
+
+-   Generally report on new/unique condition
+
+-   May be only realistic design for rare disorders
+
+-   Suffers from the absence of a comparison group
+
+The emergence of the Zika virus in Latin America marked a significant public health concern, particularly due to its association with serious fetal anomalies, including microcephaly. Case reports and case series played a crucial role in elucidating the relationship between Zika virus infection and adverse pregnancy outcomes, significantly enhancing our understanding of this public health crisis.
+
+A case report that first documented instance of maternal Zika virus infection associated with fetal microcephaly in Colombia, mirroring presentations previously observed in Brazil during the 2015--2016 outbreak is presented [here](https://pmc.ncbi.nlm.nih.gov/articles/PMC5470308/)
+:::
+
+##### Ecological Studies
+
+::: {style="text-align:justify"}
+-   Group as the unit of analysis
+
+-   No individual-level information
+
+-   Relate whether populations with high rates of disease also have high frequency of the suspected exposure
+
+-   Comparison of groups than individuals
+
+**Why do Ecological study?**
+
+-   Low cost and convenience
+
+-   Some measurements cannot be made on individuals S
+
+-   implicity of analyses and presentation
+
+-   Helpful in generating new hypothesis
+
+**Key Issues with Ecological studies**
+
+-   Explores correlation between aggregate exposure and outcome
+
+-   Unit of analysis: Group or clusters
+
+-   Prone to ecological fallacy
+
+-   Missing data
+
+-   Cannot adjust to confounding
+
+**Ecological Fallacy**
+
+-   Drawing inference at an individual level based on a group level data
+
+-   Arises when associations between two variables at group level differ from associations between analogous variables measured at the individual level
 :::

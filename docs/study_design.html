@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Epidemiological Study Designs – Research Methodologies &amp; Data Analysis Using R</title>
+<title>2&nbsp; Epidemiological Study Designs – Research Methodologies &amp; Data Analysis Using R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./observational_study_design.html" rel="next">
-<link href="./steps_in_research.html" rel="prev">
+<link href="./validity_reliability_research.html" rel="next">
+<link href="./research_methods.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,6 +68,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -81,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./study_design.html">Epidemiological Study Designs</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./study_design.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -118,198 +121,42 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./research_methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Research</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./understanding_research.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Research: Etymology &amp; Definition</span></span></a>
+  <a href="./research_methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Research</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./philosophical_underpinning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Philosophical Underpinnings of Research</span></span></a>
+  <a href="./study_design.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./types_of_research.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Types of Research</span></span></a>
+  <a href="./validity_reliability_research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Cornerstones of Credible Research</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./steps_in_research.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Research as a Process</span></span></a>
+  <a href="./digital_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Digital Data Collection using ODK</span></span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./study_design.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Epidemiological Study Designs</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./observational_study_design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Observational Study Design</span></span></a>
+  <a href="./intro_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./descriptive_observational_design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Observational Study Design: Descriptive</span></span></a>
+  <a href="./statistical_methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Methods</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./analytical_observational_design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Observational Study Design: Analytical</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./experimental_study_design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Experimental Study Design</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./validity_reliability_research.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Cornerstones of Credible Research</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./valid_reliable.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Validity in Research</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reliable_valid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reliability in Research</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./bias_in_research.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Bias in Research</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./ethics_in_research.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ethics in Research</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./understanding_ethics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Ethics: Origin</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./intro_r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to R and RStudio</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./install_r_rstudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Getting Comfortable with R and RStudio</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./fundamentals_dplyr_v2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Fundamentals of Working with Data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exploring_data_v2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Exploring Data with R</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./statistical_methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistical Methods</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./descriptive_statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./graph_descriptive_statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Descriptive Statistics: Graphical Methods</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./num_descriptive_statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Descriptive Statistics: Numerical Methods</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./inferential_statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Inferential Statistics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./hypothesis_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Inferential Statistics: Hypothesis Testing and Interval Estimation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./regression_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Inferential Statistics: Regression Analysis</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -320,9 +167,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-a-study-design" id="toc-what-is-a-study-design" class="nav-link active" data-scroll-target="#what-is-a-study-design">What is a ‘Study Design’ ?</a></li>
-  <li><a href="#what-determine-the-type-of-study-design" id="toc-what-determine-the-type-of-study-design" class="nav-link" data-scroll-target="#what-determine-the-type-of-study-design">What determine the type of Study Design?</a></li>
-  <li><a href="#study-designs-are-broadly-categorised-into-two" id="toc-study-designs-are-broadly-categorised-into-two" class="nav-link" data-scroll-target="#study-designs-are-broadly-categorised-into-two">Study designs are broadly categorised into two</a></li>
+  <li><a href="#what-is-a-study-design" id="toc-what-is-a-study-design" class="nav-link active" data-scroll-target="#what-is-a-study-design"><span class="header-section-number">2.1</span> What is a ‘Study Design’ ?</a></li>
+  <li><a href="#what-determine-the-type-of-study-design" id="toc-what-determine-the-type-of-study-design" class="nav-link" data-scroll-target="#what-determine-the-type-of-study-design"><span class="header-section-number">2.2</span> What determine the type of Study Design?</a></li>
+  <li><a href="#study-designs-broad-categorisation" id="toc-study-designs-broad-categorisation" class="nav-link" data-scroll-target="#study-designs-broad-categorisation"><span class="header-section-number">2.3</span> Study designs: Broad categorisation</a></li>
+  <li><a href="#observational-study-design" id="toc-observational-study-design" class="nav-link" data-scroll-target="#observational-study-design"><span class="header-section-number">2.4</span> Observational Study Design</a>
+  <ul class="collapse">
+  <li><a href="#types-of-observational-study-design" id="toc-types-of-observational-study-design" class="nav-link" data-scroll-target="#types-of-observational-study-design"><span class="header-section-number">2.4.1</span> Types of Observational Study Design</a></li>
+  <li><a href="#differentiate-descriptive-analytical-study-design" id="toc-differentiate-descriptive-analytical-study-design" class="nav-link" data-scroll-target="#differentiate-descriptive-analytical-study-design"><span class="header-section-number">2.4.2</span> Differentiate Descriptive &amp; Analytical study design</a></li>
+  <li><a href="#classification-of-desciptive-analytical-study-design" id="toc-classification-of-desciptive-analytical-study-design" class="nav-link" data-scroll-target="#classification-of-desciptive-analytical-study-design"><span class="header-section-number">2.4.3</span> Classification of Desciptive &amp; Analytical study design</a></li>
+  <li><a href="#descriptive-observational-study-design" id="toc-descriptive-observational-study-design" class="nav-link" data-scroll-target="#descriptive-observational-study-design"><span class="header-section-number">2.4.4</span> Descriptive Observational Study Design</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -331,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Epidemiological Study Designs</h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></h1>
 </div>
 
 
@@ -351,8 +205,8 @@ ul.task-list li input[type="checkbox"] {
 <div style="text-align:justify">
 <p>The goal of this session is to introduce different study designs used in epidemiology, understand their strengths and limitations and thereby equip us to choose appropriate designs for various research questions.</p>
 </div>
-<section id="what-is-a-study-design" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-a-study-design">What is a ‘Study Design’ ?</h2>
+<section id="what-is-a-study-design" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="what-is-a-study-design"><span class="header-section-number">2.1</span> What is a ‘Study Design’ ?</h2>
 <div style="text-align:justify">
 <ul>
 <li><p>A framework, or a set of methods and procedures used to collect and analyze data on variables specified in a particular research problem.</p></li>
@@ -361,8 +215,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 </section>
-<section id="what-determine-the-type-of-study-design" class="level2">
-<h2 class="anchored" data-anchor-id="what-determine-the-type-of-study-design">What determine the type of Study Design?</h2>
+<section id="what-determine-the-type-of-study-design" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="what-determine-the-type-of-study-design"><span class="header-section-number">2.2</span> What determine the type of Study Design?</h2>
 <div style="text-align:justify">
 <ul>
 <li><p>The nature of question</p></li>
@@ -371,8 +225,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 </section>
-<section id="study-designs-are-broadly-categorised-into-two" class="level2">
-<h2 class="anchored" data-anchor-id="study-designs-are-broadly-categorised-into-two">Study designs are broadly categorised into two</h2>
+<section id="study-designs-broad-categorisation" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="study-designs-broad-categorisation"><span class="header-section-number">2.3</span> Study designs: Broad categorisation</h2>
 <div style="text-align:justify">
 <ul>
 <li><p>Observational Study Design</p></li>
@@ -421,8 +275,205 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+</section>
+<section id="observational-study-design" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="observational-study-design"><span class="header-section-number">2.4</span> Observational Study Design</h2>
+<div style="text-align:justify">
+<p>An observational study is a type of research design where researchers observe and analyze subjects without manipulating any variables. This approach allows for the examination of real-world conditions and associations between exposures (such as risk factors or interventions) and outcomes (like diseases or behaviors) in a natural setting.</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/observe-01.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<section id="types-of-observational-study-design" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="types-of-observational-study-design"><span class="header-section-number">2.4.1</span> Types of Observational Study Design</h3>
+<div style="text-align:justify">
+<p>Broadly observational study designs are categorised as two:</p>
+<ul>
+<li>Descriptive Study Designs</li>
+<li>Analytical Study Designs</li>
+</ul>
+</div>
+</section>
+<section id="differentiate-descriptive-analytical-study-design" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="differentiate-descriptive-analytical-study-design"><span class="header-section-number">2.4.2</span> Differentiate Descriptive &amp; Analytical study design</h3>
+<div style="text-align:justify">
+<p>The above links will take you to each of the study design and its characteristics, while to have a quick differentiation of the two, here is a table summarising the key points.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>To Differentiate Descriptive &amp; Analytical Study Design</caption>
+<colgroup>
+<col style="width: 46%">
+<col style="width: 53%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Descriptive.Study</th>
+<th style="text-align: left;">Analytical.Study</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Describes phenomena as they exist</td>
+<td style="text-align: left;">Understands phenomena</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Describes occurrence of outcome</td>
+<td style="text-align: left;">Measures association between exposure &amp; outcome</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Deals with ‘who’, ‘what’,‘when’, ‘where’</td>
+<td style="text-align: left;">Deals with ‘why’ and ‘how’</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Generates hypothesis</td>
+<td style="text-align: left;">Tests hypothesis</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">No comparison group</td>
+<td style="text-align: left;">Presence of comparison group</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="classification-of-desciptive-analytical-study-design" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="classification-of-desciptive-analytical-study-design"><span class="header-section-number">2.4.3</span> Classification of Desciptive &amp; Analytical study design</h3>
+<div style="text-align:justify">
+<p>Each of the above mentioned study designs are further sub-classified as shown in the figure below:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A[Observational Study] --&gt; B(Descriptive Study)
+  A[Observational Study] --&gt; C(Analytical Study)
+  B --&gt; D(Case Reports)
+  B --&gt; E(Case Series)
+  B --&gt; F(Ecological Studies)
+  C --&gt; G(Cross Sectional)
+  C --&gt; H(Case Control)
+  C --&gt; I[Cohort study]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="descriptive-observational-study-design" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="descriptive-observational-study-design"><span class="header-section-number">2.4.4</span> Descriptive Observational Study Design</h3>
+<div style="text-align:justify">
+<p>Descriptive study design is a research methodology that aims to provide a detailed account of a population, phenomenon, or event. Unlike experimental designs, which seek to establish causal relationships through manipulation of variables, descriptive studies focus on painting a comprehensive picture of the characteristics and conditions as they exist in real life.</p>
+</div>
+<section id="the-primary-goal-of-descriptive-studies" class="level4" data-number="2.4.4.1">
+<h4 data-number="2.4.4.1" class="anchored" data-anchor-id="the-primary-goal-of-descriptive-studies"><span class="header-section-number">2.4.4.1</span> The Primary Goal of Descriptive Studies</h4>
+<div style="text-align:justify">
+<p>To describe the characteristics of a population or phenomenon. This includes gathering information about demographics, behaviors, attitudes, or conditions without influencing or altering them.</p>
+</div>
+</section>
+<section id="limitations-of-descriptive-studies" class="level4" data-number="2.4.4.2">
+<h4 data-number="2.4.4.2" class="anchored" data-anchor-id="limitations-of-descriptive-studies"><span class="header-section-number">2.4.4.2</span> Limitations of Descriptive Studies</h4>
+<div style="text-align:justify">
+<p>While descriptive studies provide essential insights, they do not establish causal relationships. They are limited by the absence of manipulation of variables, which means that findings must be interpreted with caution.</p>
+</div>
+</section>
+<section id="classification-of-descriptive-study-design" class="level4" data-number="2.4.4.3">
+<h4 data-number="2.4.4.3" class="anchored" data-anchor-id="classification-of-descriptive-study-design"><span class="header-section-number">2.4.4.3</span> Classification of Descriptive Study Design</h4>
+<div style="text-align:justify">
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+  A[Descriptive Study] --&gt; B(Individual Level)
+  A[Descriptive Study] --&gt; C(Population Level)
+  B --&gt; D(Case Reports)
+  B --&gt; E(Case Series)
+  C --&gt; F(Ecological Studies)
+ 
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>First let us delve into the individual level descriptive studies.</p>
+</div>
+<section id="case-reports" class="level5" data-number="2.4.4.3.1">
+<h5 data-number="2.4.4.3.1" class="anchored" data-anchor-id="case-reports"><span class="header-section-number">2.4.4.3.1</span> Case Reports</h5>
+<div style="text-align:justify">
+<p>A case report is a detailed account of a specific clinical instance involving an individual patient. It serves as one of the earliest forms of medical research, emerging from the <strong>careful observations</strong> made by physicians and healthcare providers during their clinical practice. It serves as valuable tool for generating hypotheses, particularly in emerging health issues, as they document unique clinical presentations and associations.They provide detailed accounts of individual patient experiences, which can inform clinical practice and enhance understanding of rare or novel conditions.</p>
+<ul>
+<li><p>Simplest study design</p></li>
+<li><p>Hypothesis generating tool</p></li>
+<li><p>Detailed presentation of a single case, new or unfamiliar diseases, rare manifestations</p></li>
+</ul>
+<p>Generally report a new or unique finding</p>
+<ul>
+<li><p>previous undescribed disease</p></li>
+<li><p>unexpected link between diseases</p></li>
+<li><p>unexpected new therapeutic effect</p></li>
+<li><p>adverse event</p></li>
+</ul>
+</div>
+</section>
+<section id="case-series" class="level5" data-number="2.4.4.3.2">
+<h5 data-number="2.4.4.3.2" class="anchored" data-anchor-id="case-series"><span class="header-section-number">2.4.4.3.2</span> Case Series</h5>
+<div style="text-align:justify">
+<ul>
+<li><p>Experience of a group of patients with a similar diagnosis</p></li>
+<li><p>Cases may be identified from a single source or from multiple sources</p></li>
+<li><p>Generally report on new/unique condition</p></li>
+<li><p>May be only realistic design for rare disorders</p></li>
+<li><p>Suffers from the absence of a comparison group</p></li>
+</ul>
+<p>The emergence of the Zika virus in Latin America marked a significant public health concern, particularly due to its association with serious fetal anomalies, including microcephaly. Case reports and case series played a crucial role in elucidating the relationship between Zika virus infection and adverse pregnancy outcomes, significantly enhancing our understanding of this public health crisis.</p>
+<p>A case report that first documented instance of maternal Zika virus infection associated with fetal microcephaly in Colombia, mirroring presentations previously observed in Brazil during the 2015–2016 outbreak is presented <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5470308/">here</a></p>
+</div>
+</section>
+<section id="ecological-studies" class="level5" data-number="2.4.4.3.3">
+<h5 data-number="2.4.4.3.3" class="anchored" data-anchor-id="ecological-studies"><span class="header-section-number">2.4.4.3.3</span> Ecological Studies</h5>
+<div style="text-align:justify">
+<ul>
+<li><p>Group as the unit of analysis</p></li>
+<li><p>No individual-level information</p></li>
+<li><p>Relate whether populations with high rates of disease also have high frequency of the suspected exposure</p></li>
+<li><p>Comparison of groups than individuals</p></li>
+</ul>
+<p><strong>Why do Ecological study?</strong></p>
+<ul>
+<li><p>Low cost and convenience</p></li>
+<li><p>Some measurements cannot be made on individuals S</p></li>
+<li><p>implicity of analyses and presentation</p></li>
+<li><p>Helpful in generating new hypothesis</p></li>
+</ul>
+<p><strong>Key Issues with Ecological studies</strong></p>
+<ul>
+<li><p>Explores correlation between aggregate exposure and outcome</p></li>
+<li><p>Unit of analysis: Group or clusters</p></li>
+<li><p>Prone to ecological fallacy</p></li>
+<li><p>Missing data</p></li>
+<li><p>Cannot adjust to confounding</p></li>
+</ul>
+<p><strong>Ecological Fallacy</strong></p>
+<ul>
+<li><p>Drawing inference at an individual level based on a group level data</p></li>
+<li><p>Arises when associations between two variables at group level differ from associations between analogous variables measured at the individual level</p></li>
+</ul>
+</div>
 
 
+</section>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -848,13 +899,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./steps_in_research.html" class="pagination-link" aria-label="Research as a Process">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Research as a Process</span></span>
+      <a href="./research_methods.html" class="pagination-link" aria-label="Introduction to Research">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Research</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./observational_study_design.html" class="pagination-link" aria-label="Observational Study Design">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Observational Study Design</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./validity_reliability_research.html" class="pagination-link" aria-label="Cornerstones of Credible Research">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Cornerstones of Credible Research</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -10,39 +10,12 @@ book:
   chapters:
   - index.qmd
   - preface.qmd
-  - part: research_methods.qmd
-    chapters:
-      - understanding_research.qmd
-      - philosophical_underpinning.qmd
-      - types_of_research.qmd
-      - steps_in_research.qmd
-  - part: study_design.qmd
-    chapters:
-      - observational_study_design.qmd
-      - descriptive_observational_design.qmd
-      - analytical_observational_design.qmd
-      - experimental_study_design.qmd
-  - part: validity_reliability_research.qmd
-    chapters:
-      - valid_reliable.qmd
-      - reliable_valid.qmd
-      - bias_in_research.qmd
-  - part: ethics_in_research.qmd
-    chapters:
-      - understanding_ethics.qmd
-  - part: intro_r.qmd
-    chapters:
-      - install_r_rstudio.qmd
-      - fundamentals_dplyr_v2.qmd
-      - exploring_data_v2.qmd
-  - part: statistical_methods.qmd
-    chapters:
-      - descriptive_statistics.qmd
-      - graph_descriptive_statistics.qmd
-      - num_descriptive_statistics.qmd
-      - inferential_statistics.qmd
-      - hypothesis_testing.qmd
-      - regression_analysis.qmd
+  - research_methods.qmd
+  - study_design.qmd
+  - validity_reliability_research.qmd
+  - digital_data.qmd
+  - intro_r.qmd
+  - statistical_methods.qmd
 
 bibliography: references.bib
 
