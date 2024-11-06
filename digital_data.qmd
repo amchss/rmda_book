@@ -147,3 +147,45 @@ The `choices` sheet defines the available options for questions that require sel
 - `name`: The unique identifier for each choice.
 
 - `label`: The label that will be shown to the user for each option.
+
+### Settings Sheet
+
+The settings sheet contains the configuration details for the form, such as the form title, version, and other metadata.
+
+![Example of Settings Sheet](images/settings_sheet.png){fig-align="center"}
+
+- `form_title`: The title of the form.
+
+- `form_id`: A unique identifier for the form.
+
+- `version`: The version number of the form (helps with version control).
+
+
+## Next Step {.unnumbered}
+
+### Deepen your understanding {.unnumbered}
+
+- [XLSForm introduction](https://docs.getodk.org/xlsform/)
+
+- [Question types](https://docs.getodk.org/form-question-types/)
+
+- [Required questions](https://docs.getodk.org/form-logic/#requiring-responses)
+
+- [Constraints on user input](https://docs.getodk.org/form-logic/#constraints)
+
+- [Selects](https://docs.getodk.org/form-question-types/#select-widgets)
+
+- [Relevance](https://docs.getodk.org/form-logic/#relevants)
+
+
+### Broaden your knowledge {.unnumbered}
+
+- [Groups of questions](https://docs.getodk.org/form-logic/#groups)
+
+- [Form Styling](https://docs.getodk.org/form-styling/)
+
+- [Form Language](https://docs.getodk.org/form-language/)
+
+- [Form Operators and Functions](https://docs.getodk.org/form-operators-functions/)
+
+- [ODK Collect introduction](https://docs.getodk.org/collect-intro/)
