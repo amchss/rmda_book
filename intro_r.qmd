@@ -1054,8 +1054,9 @@ We'll say:
 df |>
   mutate(income_cat = case_when(
     income_hh <= 30000 ~ "low",
-    income_hh > 2043237 & income_hh <= 11379155 ~ "medium",
-    TRUE ~ "high"))
+    income_hh > 30000 & income_hh <= 70000 ~ "medium",
+    income_hh > 70000 ~ "high",
+    TRUE ~ NA)) 
 
 ```
 
