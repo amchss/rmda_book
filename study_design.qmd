@@ -227,9 +227,13 @@ An analytical observational study design is a type of research method used to in
 
 #### Classification of Analytical Observational Study Design
 ```{mermaid}
-flowchart TB
+flowchart LR
   A[Analytical Observational Study] --> B(Cross Sectional Study)
   A[Analytical Observational Study] --> C(Cohort study)
   A[Analytical Observational Study]--> D(Case Control)
  
 ```
+
+#### Cross Sectional Study Design
+
+

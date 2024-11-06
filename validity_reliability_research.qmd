@@ -73,7 +73,7 @@ Reliability is fundamentally concerned with issues of consistency of measures.
 
 -   Also known as '**Reproducibility**' and '**Consistency**'
 
-Understanding the term,*stability*
+Understanding the term, *stability*
 
 -   Stability: This consideration entails asking whether a measure is stable over time, so that we can be confident that the results relating to that measure for a sample of respondents do not fluctuate.
 :::
@@ -90,6 +90,11 @@ Understanding the term,*stability*
 -   **Parallel-Forms Reliability**: Used to assess the consistency of the results of two tests constructed in the same way from the same content domain.Obtained by administering **different versions of an assessment tool** (both versions must contain items that probe the same construct, skill, knowledge base, etc.) **to the same group of individuals**. The scores from the two versions can then be correlated in order to evaluate the consistency of results across alternate versions.
 
 -   **Internal Reliability**: Used to assess the consistency of results across **items within a test**. The degree to which the indicators that make up a scale are consistent.In other words, whether respondents' scores on any one indicator tend to be related to their scores on the other indicators.Used to evaluate the degree to which different test items that probe the same construct produce similar results.
+:::
+
+![](images/vali_reli.png)
+
+::: {style="text-align:justify"}
 
 For a more in-depth understanding, refer to additional resources.
 
@@ -103,6 +108,8 @@ One of the key challenges researchers face in achieving valid and reliable resul
 
 **Random error and systematic error** are the two main types of measurement error. Measurement error occurs when the measured value differs from the true value of the quantity being measured.
 :::
+
+![](images/error.png){fig-align="center"}
 
 ### Random Error
 
