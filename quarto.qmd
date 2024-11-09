@@ -1,0 +1,141 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Communicating Research with Quarto
+
+## Introduction
+
+Quarto provides a unified authoring framework for data science, combining your code, its results, and your prose. Quarto documents are fully reproducible and support dozens of output formats, like PDFs, Word files, presentations, and more.
+
+![](images/quarto_hex.png){fig-align="center" width="100"}
+
+Quarto files are designed to be used in three ways:
+
+1.  For communicating to decision-makers, who want to focus on the conclusions, not the code behind the analysis.
+2.  For collaborating with other data scientists (including future you!), who are interested in both your conclusions, and how you reached them (i.e. the code).
+3.  As an environment in which to do data science, as a modern-day lab notebook where you can capture not only what you did, but also what you were thinking.
+
+Quarto is a command line interface tool, not an R package. This means that help is, by-and-large, not available through ?. Instead, as you work through this chapter, and use Quarto in the future, you should refer to the Quarto documentation (https://quarto.org/).
+
+![](images/quarto_1.png){fig-align="center" width="400"}
+
+*Note*
+
+*Quarto documents are fully reproducible and support dozens of output formats, like PDFs, Word files, slideshows, and more.*
+
+*Need some help?*
+
+-   Download Quarto: *https://quarto.org/docs/get-started/*
+
+-   Quarto Guide: *https://quarto.org/docs/guide/*
+
+-   Markdown Reference Sheet: *Help \> Markdown Quick Reference*
+
+You'll need the Quarto Command Line Interface but it is automatically done by RStudio for you.
+
+Let us create one from RStudio now.
+
+To create a new Quarto document (`.qmd`), select *File -\> New File -\> Quarto Document* in RStudio, then choose the file type you want to create. For now we will focus on a `.html` Document, which can be easily converted to other file types later.
+
+Go ahead and give a title.
+
+The newly created `.qmd` file comes with basic instructions, let us go through it now.
+
+It contains three important types of content:
+
+-   An (optional) YAML header surrounded by `---`
+-   Chunks of R code surrounded by ```` ``` ````
+-   Text mixed with formatting like `##` headings and simple text.
+
+*YAML stands for yet another markup language or YAML ain't markup language (a recursive acronym), which emphasizes that YAML is for data, not documents.*
+
+In any case, it holds the metadata of the document and can be really helpful.
+
+## How does Quarto work?
+
+When you render a Quarto document, first knitr executes all of the code chunks and creates a new markdown (`.md`) document, which includes the code and its output. The markdown file generated is then processed by pandoc, which creates the finished format. The Render button encapsulates these actions and executes them in the right order for you.
+
+![](images/quarto_2.png){fig-align="center" width="400"}
+
+## Some Basics of the Markdown syntax
+
+Learn more about Markdown from the Guide: https://quarto.org/docs/authoring/markdown-basics.html
+
+\bigskip
+
+When you open an `.qmd`, you get a notebook interface where code and output are interleaved. You can run each code chunk by clicking the Run icon (it looks like a play button at the top of the chunk), or by pressing `Ctrl + Shift + Enter`.
+
+\bigskip
+
+RStudio executes the code and displays the results inline with the code by default. However, you can change it to display in the console instead by clicking on the gear icon and changing the *Chunk Output in Console* option.
+
+![Basic Markdown Syntax and its output](images/basics_markdown_syntax.png){fig-align="center" width="400"}
+
+![](images/qmd_output_options.png){fig-align="center" width="160"}
+
+You can *render* the entire document with a single click of a button.
+
+Go ahead and give it a try. RStudio might prompt you to save the document first, save it in your working directory by giving it a suitable title.
+
+You should now see some output like this:
+
+![HTML output of the QMD file](images/default_qmd_output.png){fig-align="center" width="350"}
+
+## Code Chunks
+
+The knitr package extends the basic markdown syntax to include chunks of executable R code.
+
+When you render the report, knitr will run the code and add the results to the output file. You can have the output display just the code, just the results, or both.
+
+To embed a chunk of R code into your report, surround the code with two lines that each contain three back ticks. After the first set of backticks, include {r}, which alerts knitr that you have included a chunk of R code. The result will look like this:
+
+![R Code Chunk](images/rchunk1.JPG){fig-align="center" width="300"}
+
+To omit the results from your final report (and not run the code) add the argument `eval = FALSE` inside the brackets and after `r`. This will place a copy of your code into the report.
+
+![R Code Chunk with \`eval\` set to FALSE](images/rchunk2.JPG){fig-align="center" width="300"}
+
+To omit the code from the final report (while including the results) add the argument `echo = FALSE`. This is very handy for adding plots to a report, since you usually do not want to see the code that generates the plot.
+
+![R Code Chunk with \`echo\` set to FALSE](images/rchunk3.JPG){fig-align="center" width="300"}
+
+Read more about R Code Chunks at <https://rmarkdown.rstudio.com/articles_intro.html>. You can also change this from the gear icon on the right of the code chunk
+
+### Inline R Code
+
+You can also evaluate R expressions inline by enclosing the expression within a single back-tick qualified with `r`.
+
+`knitr` will replace the inline code with its result in your final document (inline code is always replaced by its result). The result will appear as if it were part of the original text. For example, the snippet above will appear like this:
+
+![Inline R code in RMarkdown documents](images/inline.JPG){fig-align="center" width="300"}
+
+![HTML output of the QMD file](images/default_qmd_output_1.png){fig-align="center" width="400"}
+
+Now let us try building our own `.qmd` document and add our own analysis. Let us use a NHANES dataset for this purpose. So go ahead and delete everything below the YAML header.
+
+
+
+## Quarto Example
+
+Download the following `qmd` [file](\data\quarto_exercise.qmd) and render it on your own computer to see how the quarto document works.
+
+
+
+
+## Conclusion
+
+
+* Quarto is awesome.
+    * The ratio of markup to content is excellent.
+    * For exploratory analyses, blog posts, and interactive documents
+    * For journal articles, though knowledge on \LaTeX will  be helpful.
+
+* The RStudio team have made the whole process very user friendly.
+    * RStudio provides useful short cut keys for compiling to HTML, and running code chunks.
+    * These shortcut keys are presented in a clear way.
+    * Code completion on R code chunk options is really helpful. See also [chunk options documentation on the knitr website](http://yihui.name/knitr/options).
+
+
+

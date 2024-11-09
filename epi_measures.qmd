@@ -1,0 +1,515 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Epidemiological Measures
+
+## Intoduction
+
+::: {style="text-align:justify"}
+Epidemiology is broadly defined as the study of the occurrence and distribution of health-related states or events within specific populations, as well as the determinants influencing these states. A core goal of epidemiology is to apply this knowledge to prevent and control health issues, improving population well-being.
+
+In previous chapters, we introduced foundational data analysis methods, including calculating the frequency and percentages of categorical variables and assessing the center and dispersion of numerical variables. These techniques provided insights into the overall structure of our data. However, epidemiology involves more targeted measures designed to quantify health-related events and explore relationships between these events and potential risk factors.
+
+This chapter focuses on two essential aspects of epidemiological analysis: **measures of disease occurrence** and **measures of association**. Measures of disease occurrence help us quantify the frequency and burden of diseases within a population, while measures of association allow us to identify connections between potential risk factors and health outcomes. Together, these metrics form the foundation for understanding the distribution and determinants of health conditions and play a crucial role in guiding public health actions and informing clinical decision-making.
+
+It’s important to note that epidemiology often emphasizes categorical outcomes, such as disease presence or absence (e.g., diabetes status), though numerical outcomes like blood sugar levels are also valuable. The tools and techniques presented in this chapter are tailored toward working with categorical data due to the frequent need to assess metrics like incidence, prevalence, and risk.
+
+Throughout this chapter, we will introduce these epidemiological measures and demonstrate how to calculate them in R, providing a practical, hands-on approach to understanding the occurrence and association of health-related events within a population.
+:::
+
+## Measures of Disease Occurance
+
+::: {style="text-align:justify"}
+
+In epidemiology, understanding disease occurrence is fundamental to assessing health outcomes in populations. Three key measures—Risk, Incidence Rate, and Prevalence—offer distinct insights into the frequency and impact of health conditions within a group. Each measure is used based on specific research questions and population characteristics:
+
+:::
+
+### Risk (Incidence Proportion)
+
+::: {style="text-align:justify"}
+
+Risk, or incidence proportion, quantifies the probability that an initially disease-free individual will develop a disease over a specified time period. It is commonly used in studies with defined time frames and stable populations.
+
+:::
+
+### Incidence Rate
+
+::: {style="text-align:justify"}
+
+Incidence rate, often referred to as the person-time incidence rate, accounts for variations in follow-up time by measuring the rate at which new cases of a disease occur in a population per unit of person-time. This measure adjusts for dynamic populations where individuals may join or leave during the study.
+
+:::
+
+### Prevalence
+
+::: {style="text-align:justify"}
+
+Prevalence assesses the proportion of individuals within a population who have a specific disease at a particular point (point prevalence) or over a period (period prevalence). Unlike incidence, prevalence includes both new and pre-existing cases, offering a snapshot of the disease burden.
+
+For a more in-depth discussion of these epidemiological measures, please refer to the recommended paper [(KJ Jager et al., 2007)](https://www.kidney-international.org/action/showPdf?pii=S0085-2538%2815%2952672-0) on understanding and applying disease occurrence metrics. This resource provides a thorough explanation of the definitions, and applications for each measure in various research contexts.
+
+:::
+
+## Measures of Disease Occurance using R
+
+In epidemiology, understanding how frequently a disease occurs within a population is fundamental to assessing the burden of the disease, identifying risk factors, and implementing preventive measures. This session will cover the key measures used to quantify disease occurrence, using practical examples and R code to illustrate each concept. The focus will be on practical implementation, similar to the approach used in [R for Epidemiology](https://www.r4epi.com/) by Brad Cannell, ensuring that you can easily apply these techniques in real-world research settings.
+
+
+**Study Description**
+
+This study followed 10 participants over a period of 13 months, with monthly follow-up visits. The main goal was to track the progression of their health status, specifically looking at four possible states:
+
+1. **Pre-follow-up**: Before the participant was at risk (baseline state).
+
+2. **At Risk:** The participant was healthy but at risk of developing the disease.
+
+3. **Diseased:** The participant had developed the disease during the follow-up period.
+
+4. **Deceased:** The participant had passed away.
+
+Here's a description of each participant in the study:
+
+**1. Participant 1:**
+
+- Already had the disease before the study started.
+
+**Participant 2:**
+
+- Healthy at the start.
+
+- At risk for 2 months, then developed the disease in the third month.
+
+- Passed away in the sixth month.
+
+**Participant 3:**
+
+- Healthy at the start.
+
+- At risk for 4 months, then developed the disease in the fifth month.
+
+- Stayed diseased for the rest of the study period.
+
+
+**Participant 4:**
+
+- Healthy at the start.
+
+- At risk for 5 months, then developed the disease in the sixth month.
+
+- Remained diseased until the end of the study.
+
+**Participant 5:**
+
+- Healthy at the start.
+
+- At risk for 7 months, then developed the disease in the eighth month.
+
+- Stayed diseased for the rest of the study.
+
+**Participant 6:**
+
+- Healthy at the start.
+
+- At risk for 8 months, then developed the disease in the ninth month.
+
+- Passed away shortly after in the eleventh month.
+
+**Participant 7:**
+
+- Healthy at the start.
+
+- At risk for 9 months and never developed the disease.
+
+- Passed away in the tenth month.
+
+**Participant 8:**
+
+- Healthy at the start.
+
+- At risk for 5 months and never developed the disease.
+
+- Passed away in the sixth month.
+
+**Participant 9:**
+
+- Healthy at the start.
+
+- At risk for the entire study and never developed the disease or passed away.
+
+**Participant 10:**
+
+- Similar to Participant 9:
+
+- Healthy at the start.
+
+- At risk for the entire study without developing the disease or passing away.
+
+```{r}
+#| echo: false
+#| warning: false
+
+pacman::p_load(tidyverse)
+# Simulate data for 10 hypothetical people
+# From Lash TL, VanderWeel TJ, Haneuse S, Rothman KJ. Modern Epidemiology. fourth. Wolters Kluwer; 2021.
+people <- 1:10
+months <- -1:12
+pop_10 <- expand_grid(person = people, month = months)
+rows_per_person <- length(months)
+
+# Count from the beginning of each month.
+# So, person 2 is pre-follow-up at the beginning of time 1 (month -01), at risk 
+# at the beginning of time 2 (month 00), at risk at the beginning of time 3 
+# (month 01), diseased at the beginning of time 4 (month 02), etc.
+p01 <- rep("Diseased", rows_per_person)
+p02 <- c(rep("Pre-follow-up", 1), rep("At Risk", 2), rep("Diseased", 3), rep("Deceased", 8))
+p03 <- c(rep("Pre-follow-up", 1), rep("At Risk", 4), rep("Diseased", 9), rep("Deceased", 0))
+p04 <- c(rep("Pre-follow-up", 1), rep("At Risk", 5), rep("Diseased", 8), rep("Deceased", 0))
+p05 <- c(rep("Pre-follow-up", 1), rep("At Risk", 7), rep("Diseased", 6), rep("Deceased", 0))
+p06 <- c(rep("Pre-follow-up", 1), rep("At Risk", 8), rep("Diseased", 3), rep("Deceased", 2))
+p07 <- c(rep("Pre-follow-up", 1), rep("At Risk", 9), rep("Diseased", 0), rep("Deceased", 4))
+p08 <- c(rep("Pre-follow-up", 1), rep("At Risk", 5), rep("Diseased", 0), rep("Deceased", 8))
+p09 <- c(rep("Pre-follow-up", 1), rep("At Risk", 13), rep("Diseased", 0), rep("Deceased", 0))
+p10 <- c(rep("Pre-follow-up", 1), rep("At Risk", 13), rep("Diseased", 0), rep("Deceased", 0))
+status <- c(p01, p02, p03, p04, p05, p06, p07, p08, p09, p10)
+
+# Add status to pop_10
+pop_10$status <- status
+
+# Create factor versions of person and status
+pop_10 <- pop_10 |> 
+  mutate(
+    person_f = factor(person, labels = c(paste0(0, 1:9), "10")),
+    status_f = factor(status, levels = c("Pre-follow-up", "At Risk", "Diseased", "Deceased"))
+  )
+
+# Add coordinates for line segments in the plot
+pop_10_wide <- pop_10 |> 
+  group_by(person_f, status_f) |> 
+  mutate(
+    x    = min(month),
+    xend = max(month)
+  ) |> 
+  ungroup() |> 
+  # Keep distinct values only
+  distinct(person, status, .keep_all = TRUE) |> 
+  # Make the line ends touch
+  group_by(person) |> 
+  mutate(
+    xend_adjusted = lead(x),
+    xend_adjusted = if_else(is.na(xend_adjusted), xend, xend_adjusted)
+  ) |> 
+  relocate(xend_adjusted, .after = xend) |> 
+  ungroup()
+
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Create the figure
+ggplot(pop_10_wide) +
+  geom_segment(aes(x = x, xend = xend_adjusted, y = 1, yend = 1, color = status_f), size = 5) +
+  # Show all months
+  scale_x_continuous("Month Follow-up", breaks = -1:12) +
+  facet_wrap(vars(person_f), nrow = 10, strip.position = "left") +
+  # Add a line marking the start of follow up
+  geom_vline(xintercept = 0, color = "blue") +
+  # Add vertical lines to mark the start of each month
+  geom_vline(xintercept = 1:12, color = "#f9f9f9") +
+  # Change fill colors
+  scale_color_manual("Status", values = c("gray", "orange", "red", "black", "#4682B4")) +
+  # Change y-axis label
+  ylab("Person") +
+  theme(
+    # Remove gray background
+    panel.background = element_blank(),
+    # Remove the "p" from the x axis
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    # Move legend
+    legend.position = "bottom",
+    # Change the color and style of the "months" axis 
+    axis.line.x = element_line(
+      color = "blue", arrow = grid::arrow(length = unit(0.1, "inches"), type = "closed")
+    ),
+    # Rotate the facet label to the right
+    strip.text.y.left = element_text(angle = 0)
+  ) +
+  labs(title = "Graphical Representation of the Diseases Status of Participants in each Month")
+```
+
+### Calculating Prevalence with R
+
+In this example, we conducted a cross-sectional study at the 3-month mark to determine the prevalence of the disease among the 10 participants. Prevalence measures the proportion of individuals in the population who have the disease at a specific point in time. It helps us understand how widespread the disease is within the study population.
+
+**Step 1: Filter Data for the Third Month**
+
+Using the R code below, we first filter the data to include only records from the third month.
+
+```{r}
+# Load necessary packages
+pacman::p_load(tidyverse)
+
+# Filter data for the third month
+month3 <- pop_10 |> 
+  filter(month == 3)
+
+```
+
+**Step 2: Calculate Disease Prevalence**
+
+Next, we count the number of participants in each health status category and compute the prevalence of the disease. 
+
+```{r}
+# Count status categories and calculate prevalence
+prevalence <- month3 |> 
+  count(status) |> 
+  mutate(prevalence = n / sum(n))
+
+
+prevalence
+```
+
+Interpretation: The table output shows the proportion of participants in each status category (e.g., "At Risk," "Diseased," "Deceased") at the third month. The prevalence of the disease is the proportion of participants classified as "Diseased".
+
+For this example, the prevalence of the disease in the third month is  `r month3 |> count(status) |> mutate(prevalence = n / sum(n)) |> filter(status == "Diseased") |> pull(prevalence)`  (or 20%), meaning that 2 out of the 10 participants were diseased at the time of the survey.
+
+
+**Step 3: Calculating the 95% Confidence Interval**
+
+Since the sample size is small (n = 10), we also want to calculate a 95% confidence interval for the estimated prevalence. This helps us understand the precision of our estimate. In R, we use the prop.test() function, which performs a test for proportions and provides the confidence interval.
+
+```{r}
+# Calculate the 95% confidence interval for prevalence
+
+prop_test <- prop.test(x = 2, n = 10)
+
+prop_test$conf.int
+
+```
+
+**Interpretation of the Confidence Interval**
+
+The 95% confidence interval for the disease prevalence is (0.035, 0.558). This interval suggests that the true prevalence of the disease in the population lies somewhere between 3.5% and 55.8%. The interval is quite wide due to the small sample size, indicating a higher level of uncertainty in our estimate.
+
+### Calculating Incidence Proportion with R
+
+The Incidence Proportion (also known as Risk or Cumulative Incidence) measures the proportion of individuals who develop a disease during a specified time period. 
+ 
+Applying this to Our Example
+
+In your dataset:
+
+- We need to count the participants who developed the disease during the follow-up period.
+
+- We exclude participants who already had the disease before the follow-up (like Participant 1) because they were not initially at risk.
+
+**Step 1: Determine the Number of Participants at Risk**
+
+First, we identify participants who were classified as "At Risk" at the start of the study (month 0). We exclude individuals who were already diseased (e.g., Participant 1).
+
+```{r}
+# Load necessary package
+pacman::p_load(tidyverse)
+
+# Find the number of participants at risk at the start of the study
+pop_at_risk <- pop_10 |> 
+  filter(month == 0 & status == "At Risk") |> 
+  count(status) |> 
+  pull(n)
+
+pop_at_risk
+
+```
+
+There were 9 participants initially at risk, as we excluded the participant who was already diseased at the start of the study.
+
+**Step 2: Count the Number of New Cases of Disease**
+
+Next, we need to find out how many participants developed the disease during the follow-up period. We exclude the individual who was already diseased at the beginning.
+
+```{r}
+# Exclude the participant who was already diseased at the start
+inci_pop <- pop_10 |> 
+  filter(person != 1)
+
+# Count the number of new cases of disease
+incidence_number <- inci_pop |> 
+  select(person, status) |> 
+  filter(status == "Diseased") |> 
+  distinct() |> 
+  count(status) |> 
+  pull(n)
+
+incidence_number
+
+```
+
+A total of 5 participants developed the disease during the follow-up period.
+
+**Step 3: Calculate the Incidence Proportion**
+
+```{r}
+incidence_number / pop_at_risk
+```
+
+The incidence proportion is 0.556, or 55.6%. This indicates that approximately 55.6% of the at-risk participants developed the disease during the follow-up period.
+
+
+
+**Step 4: Calculate the 95% Confidence Interval**
+
+To assess the precision of our estimate, we calculate a 95% confidence interval for the incidence proportion using the prop.test() function in R
+
+
+
+```{r}
+#| warning: false
+
+prop_test <- (prop.test(incidence_number, pop_at_risk))
+
+prop_test$conf.int
+```
+
+The 95% confidence interval for the incidence proportion is (22.7%, 84.7%). This wide interval reflects the uncertainty due to the small sample size. It suggests that the true incidence proportion in the population could be as low as 22.7% or as high as 84.7%.
+
+### Calculating Incidence Rate with R
+
+The Incidence Rate is another measure of disease occurrence that accounts for the varying amount of time each participant contributes to the study. Instead of simply dividing by the total number of at-risk participants, we use the person-time contributed by each individual as the denominator. This approach is particularly useful when participants have different follow-up times, such as when someone drops out of the study early.
+
+**Step 1: Calculating Person-Time**
+
+To calculate the incidence rate, we first need to determine the person-time contributed by each participant. Person-time is measured in person-months or person-years, depending on the study duration.
+
+In our example, we need to:
+
+- Exclude participants who were already diseased at the start (e.g., Participant 1).
+
+- Exclude follow-up time after the study period (e.g., after month 12).
+
+- Count only the time when the participants were at risk (status = "At Risk").
+
+```{r}
+person_month <- pop_10 |> 
+  filter(!(person == 1 | month %in% c(-1, 12))) |> 
+  mutate(person_month = 1) |> 
+  filter(status == "At Risk") |> 
+  group_by(person) |> 
+  summarise(person_month = sum(person_month))
+
+person_month
+```
+
+This table shows the total person-months contributed by each participant while they were at risk. For example, if a participant was at risk for 5 months, their contribution to the person-time would be 5 person-months.
+
+**Step 2: Calculate Total Person-Time**
+
+Next, we sum up the person-months across all participants to get the total person-time and convert it to person-years.
+
+```{r}
+# Calculate total person-time in months and convert to years
+
+total_person_months <- person_month |> 
+  pull(person_month) |> 
+  sum()
+
+total_person_years <- total_person_months / 12
+
+total_person_months
+total_person_years
+
+```
+
+The total follow-up time contributed by all participants is 64 person-months, which is equivalent to 5.33 person-years.
+
+**Step 3: Calculate the Incidence Rate**
+
+With the total person-time and the number of new cases (incidence number) from earlier steps, we can now calculate the incidence rate.
+
+- Incidence Rate per Month: This measures the rate of new cases per person-month of follow-up.
+
+- Incidence Rate per Year: This measures the rate of new cases per person-year of follow-up.
+
+```{r}
+# Calculate incidence rates
+incidence_per_month <- incidence_number / total_person_months
+
+incidence_per_year <- incidence_number / total_person_years
+
+# Calculate the incidence rate per 100 person-months
+incidence_rate_100_person_months <- incidence_per_month * 100
+
+incidence_per_month
+
+incidence_rate_100_person_months
+
+incidence_per_year
+
+```
+
+**Interpretation**
+
+- The incidence rate per month is 0.078, meaning there are about 7.8 new cases per 100 person-months of follow-up.
+
+- The incidence rate per year is 0.938, indicating that there are about 0.94 new cases per person-year of follow-up.
+
+
+We are not discussing how to calculate the confidence interval for the incidence rate in this section, as it requires a deeper understanding.
+
+## Odds: A Quick Overview
+
+Odds is an important concept in epidemiology, commonly used in the calculation of measures like odds ratios to assess the strength of associations between exposures and disease, although it is not directly classified as a measure of disease occurrence.
+
+Before we move on to discussing measures of association, it is essential to first understand the concept of odds, as it forms the foundation for some of the most commonly used statistical methods in epidemiological research, including the calculation of odds ratios and other association measures.
+
+### What is Odds?
+
+In simple terms, odds expresses the likelihood of an event occurring relative to the likelihood of it not occurring. It is a ratio of the probability of the event happening to the probability of the event not happening. Mathematically, odds can be calculated as:
+
+$$\text{Odds} = \frac{P(\text{event})}{1 - P(\text{event})}$$
+
+In simple terms, odds is the ratio of the number of times an event happens to the number of times it does not happen.
+
+Mathematically, this can be written as:
+
+$$\text{Odds} = \frac{\text{Number of Events}}{\text{Number of Non-Events}}$$
+
+
+For example, if 5 people develop a disease (event) and 95 people do not (non-event), the odds of the disease occurring are:
+
+$$\text{Odds} = \frac{5}{95}$$
+
+
+### Prevalence Odds (Optional Reading)
+
+Prevalence odds is used to describe the odds of having a disease at a particular point in time, typically in a cross-sectional study. It compares the odds of having the disease to the odds of not having it.
+
+The formula for prevalence odds is:
+
+$$\text{Prevalence Odds} = \frac{\text{Prevalence}}{\text{1 - Prevalence}}$$
+
+In our earlier example
+
+```{r}
+prevalence
+```
+
+```{r}
+prevalence <- prevalence |> 
+  filter(status == "Diseased") |> 
+  pull(prevalence)
+```
+
+Prevalence odds is
+
+```{r}
+prevalence_odds <- 0.2 /  (1 - 0.2)
+
+prevalence_odds
+```
+

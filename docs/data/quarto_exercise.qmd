@@ -1,0 +1,146 @@
+---
+title: "Analysis of Low Birth Weight Dataset"
+format: html
+editor: source
+editor_options: 
+  chunk_output_type: console
+embed-resources: true
+---
+
+## Abstract
+
+Low birth weight (LBW), a critical indicator of neonatal health, remains a persistent global health challenge. Identifying factors contributing to LBW is essential for targeted interventions and improving maternal and child health outcomes. In this study, we employ logistic regression analysis using the well-documented [Hosmer-Lemeshow dataset](https://search.r-project.org/CRAN/refmans/COUNT/html/lbw.html) to predict the likelihood of LBW, focusing on maternal characteristics and behaviors such as smoking status and age. The findings provide insights into the key predictors of LBW, demonstrating the utility of predictive models in public health contexts.
+
+## Introduction
+
+Low birth weight, defined as a birth weight of less than 2500 grams, is associated with increased risks of infant morbidity and mortality, developmental issues, and chronic diseases later in life. Numerous studies have explored the determinants of LBW, highlighting maternal factors such as age, socioeconomic status, prenatal care, and smoking behavior.
+
+The Hosmer-Lemeshow dataset, which has been extensively used to demonstrate logistic regression techniques, provides a valuable resource for exploring LBW. This dataset contains records of 189 infants and includes information on maternal characteristics like age, smoking status, and parity, allowing for the development of predictive models. Logistic regression, a powerful tool for binary outcome prediction, is applied here to determine the factors most significantly associated with LBW.
+
+## Methods
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+# Load libraries for data manipulation and summary statistics
+
+pacman::p_load(tidyverse, report, gtsummary, gt, broom, broom.helpers)
+
+
+# Step 2: Load Data
+
+df <- MASS::birthwt
+
+# Step 3: Data Wrangling
+
+df <- df |> 
+  mutate(
+    # Recode 'low' (birth weight status) variable
+    low = factor(low, levels = c(0, 1), labels = c("Normal", "Low Birth Weight")),
+    
+    # Recode 'race' (mother's race) variable
+    race = factor(race, levels = c(1, 2, 3), labels = c("White", "Black", "Other")),
+    
+    # Recode 'smoke' (smoking status) variable
+    smoke = factor(smoke, levels = c(0, 1), labels = c("Non Smoker", "Smoker")),
+    
+    # Recode 'ptl' (number of premature labors) variable
+    ptl = factor(ptl, levels = c(0, 1, 2, 3), labels = c("0", "1", "2", "3+")),
+    
+    # Recode 'ht' (hypertension status) variable
+    ht = factor(ht, levels = c(0, 1), labels = c("No Hypertension", "Hypertension")),
+    
+    # Recode 'ui' (presence of uterine irritability) variable
+    ui = factor(ui, levels = c(0, 1), labels = c("No", "Yes")),
+    
+    # Recode 'ftv' (number of physician visits during the first trimester) variable
+    ftv = factor(ftv, levels = c(0, 1, 2, 3), labels = c("0", "1", "2", "3+"))
+  )
+
+```
+
+The dataset consists of 189 observations with the following variables:
+
+-   **Low (outcome)**: Binary indicator of low birth weight (1 if LBW, 0 otherwise).
+
+-   **Age**: Age of the mother in years.
+
+-   **Lwt**: Weight of the mother at the last menstrual period.
+
+-   **Race**: Categorical variable indicating race (White, Black, Other).
+
+-   **Smoke**: Binary variable indicating smoking status during pregnancy.
+
+-   **Ptl**: Number of premature labors.
+
+-   **Ht**: History of hypertension (1 if present, 0 otherwise).
+
+-   **Ui**: Presence of uterine irritability (1 if present, 0 otherwise).
+
+-   **Ftv**: Number of physician visits during the first trimester.
+
+## Results
+
+-   The mean birth weight of a child is `{r} mean(df$bwt)`.
+
+-   The rounded birth weight of a child is `{r} round(mean(df$bwt), 0)`.
+
+Figure 1 illustrates the boxplot of mother's weight in relation to low birth weight.
+
+```{r}
+#| echo: false
+
+df |> 
+  ggplot(aes(x = low, y = lwt)) +
+  geom_boxplot() +
+  theme_minimal() +
+  labs(
+    title = "Figure 1: Boxplot of Low birth Weight and Mother's Weight",
+    x = "Low birth Weight",
+    y = "Mother's Weight"
+  )
+
+```
+
+Figure 2 presents a bar chart depicting the counts of mothers categorized by smoking status in relation to low birth weight.
+
+```{r}
+#| echo: false
+
+
+df |> 
+  ggplot(aes(x = low, fill = smoke)) +  
+  geom_bar(position = "dodge") +  # Bar chart with dodge for separate bars
+  theme_minimal() +  # Minimal theme for clean look
+  labs(
+    title = "Figure 2: Bar Chart of Low Birth Weight and Mother's Smoking Status",
+    x = "Low Birth Weight",
+    y = "Count",
+    fill = "Mother's Smoking Status"
+  )
+```
+
+### Linear Regression
+
+```{r}
+#| warning: false
+
+model <- lm(bwt ~ lwt + smoke , data = df)
+
+model
+
+
+report(model)
+```
+
+## Discussion
+
+The strong association between smoking and LBW corroborates findings from numerous epidemiological studies. Smoking during pregnancy is known to reduce the oxygen supply to the fetus, impairing growth and leading to lower birth weights[@kataoka2018]. The inverse relationship between maternal weight and LBW is also well-documented, with underweight mothers often having inadequate nutritional stores to support fetal growth [@rumrich2020].
+
+This study underscores the importance of targeting maternal smoking cessation programs to reduce LBW prevalence. Additionally, weight gain monitoring during pregnancy can provide early signals of potential risks, enabling healthcare providers to intervene appropriately.
+
+One limitation of the study is the dataset's relatively small size, which may reduce the power to detect smaller associations. Future research could benefit from larger datasets, more detailed socio-economic variables, and longitudinal data to track pregnancy outcomes over time.
+
+**Conclusion:** Logistic regression analysis of the Hosmer-Lemeshow dataset reveals that maternal smoking and weight are key predictors of LBW. Public health initiatives focused on reducing smoking during pregnancy and promoting maternal health through nutrition and prenatal care are essential for reducing LBW and improving neonatal outcomes.

@@ -22,5 +22,11 @@
   },
   "statistical_methods.qmd": {
     "statistical_methods.html": "25f8d6d8"
+  },
+  "epi_measures.qmd": {
+    "epi_measures.html": "276c1073"
+  },
+  "quarto.qmd": {
+    "quarto.html": "cc879ba5"
   }
 }
