@@ -119,7 +119,7 @@ Now let us try building our own `.qmd` document and add our own analysis. Let us
 
 ## Quarto Example
 
-Download the following `qmd` [file](\data\quarto_exercise.qmd) and render it on your own computer to see how the quarto document works.
+Download the following `qmd` [file](https://drive.google.com/file/d/1e9X-QVBCrOCAjD62eWlX2L_nqouZ2e5Z/view?usp=drive_link) and render it on your own computer to see how the quarto document works.
 
 
 
