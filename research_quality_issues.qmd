@@ -878,6 +878,8 @@ All data can be stored in one place, making it easier for researchers to manage 
 
 ### Data Cleaning and Preparation
 
+::: {style="text-align:justify",.columns}
+
 -   `Missing Data`: Handle missing data appropriately, either through imputation or by excluding incomplete records, depending on the nature and extent of the missing data.
 
 -   `Outlier Detection`: Identify and assess outliers for validity. Decide whether they should be included or excluded based on their legitimacy.
@@ -888,7 +890,11 @@ All data can be stored in one place, making it easier for researchers to manage 
 
 -   `Data Dredging`: Occurs when analysts manipulate the dataset by removing or altering data points to fit a desired outcome.
 
+:::
+
 ### Exploratory Data Analysis (EDA)
+
+::: {style="text-align:justify",.columns}
 
 -   `Visualizations`: Use graphs (e.g., histograms, box plots) to explore data distributions, trends, and correlations. Visual checks can often reveal anomalies or issues that require attention.
 
@@ -902,7 +908,11 @@ All data can be stored in one place, making it easier for researchers to manage 
 
 -   EDA helps in identifying and correcting outliers, misclassifications, or other random errors before deeper analysis.
 
+:::
+
 ### Modeling and Statistical Analysis
+
+::: {style="text-align:justify",.columns}
 
 -   `Multiple Testing Adjustments`: When conducting multiple statistical tests, use corrections (e.g., Bonferroni or False Discovery Rate) to adjust for the increased likelihood of Type I errors (false positives).
 
@@ -914,7 +924,11 @@ All data can be stored in one place, making it easier for researchers to manage 
 
 -   `Overfitting`: Avoid creating overly complex models that fit the data too closely and may not generalize well to new datasets. Use techniques like cross-validation or regularization to prevent this.
 
+:::
+
 ### Interpretation and Reporting
+
+::: {style="text-align:justify",.columns}
 
 -   `Transparent Reporting`: Clearly report all methods, assumptions, and limitations of your analysis. This includes specifying the analytical tools and model choices used.
 
@@ -922,10 +936,15 @@ All data can be stored in one place, making it easier for researchers to manage 
 
 -   `Confidence Intervals`: Provide confidence intervals for estimates to reflect the uncertainty in your results.
 
+:::
+
 ### R for Data Analysis
+
+::: {style="text-align:justify",.columns}
 
 Using open source statistical programming language like R, can significantly increase the quality of research by automating data analysis and ensuring consistent application of methods. R's scripting capabilities allow researchers to document every step of the analysis, making it **reproducible and transparent**. Through built-in functions for data cleaning, statistical modeling, and visualization, R helps identify potential issues such as outliers or violations of assumptions early on. Additionally, R enables researchers to apply rigorous quality control measures, like cross-validation and multiple testing corrections, which ensure more robust and reliable results in research.
 
 In the following sessions, we will explore in detail how R enhances the quality of research by enabling rigorous analysis, ensuring reproducibility, and minimizing errors through automated workflows. R provides a comprehensive set of tools for data cleaning, statistical modeling, visualization, and quality control, which collectively support robust and transparent research practices. We'll delve into how R facilitates reproducible research, allowing analyses to be easily shared, validated, and updated.
 
 Join us as we explore the power of R in creating high-quality, reliable, and reproducible research outcomes.
+:::

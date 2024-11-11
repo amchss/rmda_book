@@ -148,11 +148,15 @@ kable(df, caption = "Differentiate Quantitative & Qualitative Research Methodolo
 
 ## Research as a Process
 
+::: {style="text-align:justify",.columns}
+
 This session delves into the multifaceted nature of research, highlighting it not merely as a task, but as a **dynamic process that evolves with each step** taken. From the initial spark of curiosity that prompts inquiry to the rigorous analysis that leads to insights, research is a blend of creativity and critical thinking.
 
 As we navigate this chapter, we will explore the stages of research or the steps involved in the research process, from identifying a problem and conducting a literature review, to designing methodologies, gathering data, and interpreting results. Each phase is not just a box to tick, but an opportunity for learning and adaptation. By understanding research as a process, we can appreciate the challenges and triumphs that shape our findings and contribute to the broader landscape of knowledge.
 
 Without further ado let us enlist the steps involved in research process.
+
+:::
 
 ### Steps in Research Process
 
