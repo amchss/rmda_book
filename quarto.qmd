@@ -1,0 +1,328 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Research Communication with Quarto and R
+
+## Introduction to Quarto
+
+::: {style="text-align:justify"}
+Quarto provides a unified authoring framework for data science, combining your code, its results, and your prose. Quarto documents are fully reproducible and support dozens of output formats, like PDFs, Word files, presentations, and more.
+
+![](images/quarto_hex.png){fig-align="center" width="100"}
+
+Quarto files are designed to be used in three ways:
+
+1.  For communicating to decision-makers, who want to focus on the conclusions, not the code behind the analysis.
+2.  For collaborating with other data scientists (including future you!), who are interested in both your conclusions, and how you reached them (i.e. the code).
+3.  As an environment in which to do data science, as a modern-day lab notebook where you can capture not only what you did, but also what you were thinking.
+
+Quarto is a command line interface tool, not an R package. This means that help is, by-and-large, not available through ?. Instead, as you work through this chapter, and use Quarto in the future, you should refer to the Quarto documentation (https://quarto.org/).
+
+![](images/quarto_1.png){fig-align="center" width="400"}
+
+*Note*
+
+*Quarto documents are fully reproducible and support dozens of output formats, like PDFs, Word files, slideshows, and more.*
+
+*Need some help?*
+
+-   Download Quarto: *https://quarto.org/docs/get-started/*
+
+-   Quarto Guide: *https://quarto.org/docs/guide/*
+
+-   Markdown Reference Sheet: *Help \> Markdown Quick Reference*
+
+You'll need the Quarto Command Line Interface but it is automatically done by RStudio for you.
+
+Let us create one from RStudio now.
+
+To create a new Quarto document (`.qmd`), select *File -\> New File -\> Quarto Document* in RStudio, then choose the file type you want to create. For now we will focus on a `.html` Document, which can be easily converted to other file types later.
+
+Go ahead and give a title.
+
+The newly created `.qmd` file comes with basic instructions, let us go through it now.
+
+It contains three important types of content:
+
+-   An (optional) YAML header surrounded by `---`
+-   Chunks of R code surrounded by ```` ``` ````
+-   Text mixed with formatting like `##` headings and simple text.
+
+*YAML stands for yet another markup language or YAML ain't markup language (a recursive acronym), which emphasizes that YAML is for data, not documents.*
+
+In any case, it holds the metadata of the document and can be really helpful.
+
+:::
+
+### How does Quarto work?
+
+::: {style="text-align:justify"}
+
+When you render a Quarto document, first knitr executes all of the code chunks and creates a new markdown (`.md`) document, which includes the code and its output. The markdown file generated is then processed by pandoc, which creates the finished format. The Render button encapsulates these actions and executes them in the right order for you.
+
+![](images/quarto_2.png){fig-align="center" width="400"}
+
+:::
+
+### Some Basics of the Markdown syntax
+
+::: {style="text-align:justify"}
+
+Learn more about Markdown from the Guide: https://quarto.org/docs/authoring/markdown-basics.html
+
+\bigskip
+
+When you open an `.qmd`, you get a notebook interface where code and output are interleaved. You can run each code chunk by clicking the Run icon (it looks like a play button at the top of the chunk), or by pressing `Ctrl + Shift + Enter`.
+
+\bigskip
+
+RStudio executes the code and displays the results inline with the code by default. However, you can change it to display in the console instead by clicking on the gear icon and changing the *Chunk Output in Console* option.
+
+![Basic Markdown Syntax and its output](images/basics_markdown_syntax.png){fig-align="center" width="400"}
+
+![](images/qmd_output_options.png){fig-align="center" width="160"}
+
+You can *render* the entire document with a single click of a button.
+
+Go ahead and give it a try. RStudio might prompt you to save the document first, save it in your working directory by giving it a suitable title.
+
+You should now see some output like this:
+
+![HTML output of the QMD file](images/default_qmd_output.png){fig-align="center" width="350"}
+:::
+
+
+### Code Chunks
+
+::: {style="text-align:justify"}
+
+The knitr package extends the basic markdown syntax to include chunks of executable R code.
+
+When you render the report, knitr will run the code and add the results to the output file. You can have the output display just the code, just the results, or both.
+
+To embed a chunk of R code into your report, surround the code with two lines that each contain three back ticks. After the first set of backticks, include {r}, which alerts knitr that you have included a chunk of R code. The result will look like this:
+
+![R Code Chunk](images/rchunk1.JPG){fig-align="center" width="300"}
+
+To omit the results from your final report (and not run the code) add the argument `eval = FALSE` inside the brackets and after `r`. This will place a copy of your code into the report.
+
+![R Code Chunk with \`eval\` set to FALSE](images/rchunk2.JPG){fig-align="center" width="300"}
+
+To omit the code from the final report (while including the results) add the argument `echo = FALSE`. This is very handy for adding plots to a report, since you usually do not want to see the code that generates the plot.
+
+![R Code Chunk with \`echo\` set to FALSE](images/rchunk3.JPG){fig-align="center" width="300"}
+
+Read more about R Code Chunks at <https://rmarkdown.rstudio.com/articles_intro.html>. You can also change this from the gear icon on the right of the code chunk
+
+:::
+
+### Inline R Code
+
+::: {style="text-align:justify"}
+
+You can also evaluate R expressions inline by enclosing the expression within a single back-tick qualified with `r`.
+
+`knitr` will replace the inline code with its result in your final document (inline code is always replaced by its result). The result will appear as if it were part of the original text. For example, the snippet above will appear like this:
+
+![Inline R code in RMarkdown documents](images/inline.JPG){fig-align="center" width="300"}
+
+![HTML output of the QMD file](images/default_qmd_output_1.png){fig-align="center" width="400"}
+
+Now let us try building our own `.qmd` document and add our own analysis. Let us use a NHANES dataset for this purpose. So go ahead and delete everything below the YAML header.
+
+:::
+
+### Quarto Example
+
+::: {style="text-align:justify"}
+
+Download the following `qmd` [file](https://drive.google.com/file/d/1e9X-QVBCrOCAjD62eWlX2L_nqouZ2e5Z/view?usp=drive_link) and render it on your own computer to see how the quarto document works.
+
+:::
+
+## Creating Publication-Ready Tables with `gtsummary`
+
+::: {style="text-align:justify"}
+
+In this section, we will explore the `gtsummary` package, a powerful tool for creating summary tables and presenting regression model outputs in a publication-ready format. `gtsummary` integrates well with Quarto and R, making it a great choice for communicating research results.
+
+:::
+
+###  Basic Summary Table 
+
+::: {style="text-align:justify"}
+
+First install and load necessary packages (`gtsummary` and `gt`) and the data.
+
+```{r}
+# Load Packages
+#install.packages(pacman)
+#install.packages(gtsummary)
+#install.packages(gt)
+
+pacman::p_load(tidyverse, here, gtsummary)
+
+# Load Data
+
+df <- read_rds(here("data", "nhanes_modified_df.rds"))
+
+df <- df |> 
+  janitor::clean_names()
+
+
+```
+
+To create a basic summary table for the entire dataset, use:
+
+```{r}
+# Create a basic summary table for all variables
+
+df |> 
+  tbl_summary()
+
+```
+
+This function automatically identifies variable types (continuous or categorical) and provides default summary statistics.
+
+:::
+
+### Selecting Specific Variables for Summary
+
+::: {style="text-align:justify"}
+
+You can specify the variables you want to include in the summary table:
+
+```{r}
+df |> 
+  tbl_summary(
+    include = c(gender, age, race, height, weight)
+  )
+```
+
+:::
+
+### Customizing Summary Statistics
+
+::: {style="text-align:justify"}
+
+You can specify the type of statistic displayed for continuous and categorical variables. 
+
+For example, for all continuous variables, display the Mean (Standard Deviation) instead of the Median ($Q_1$, $Q_3$), and show percentage only for all categorical variables.
+
+```{r}
+df |> 
+  drop_na(height, weight) |> 
+  tbl_summary(
+    include = c(gender, age, race, height, weight),
+    statistic = list(all_continuous() ~ "{mean}({sd})",
+                     all_categorical() ~ "{p}%")
+                     )
+```
+
+
+If you want to customize display for only certain  variables, you can specify them individually:
+
+```{r}
+df |> 
+  drop_na(weight, height) |> 
+  tbl_summary(
+    include = c(gender, age, race, height, weight),
+    statistic = list(
+      weight ~ "{mean}({sd})",
+      race ~ "{p}%"
+    )
+  )
+```
+
+:::
+
+###  Renaming Variable Labels
+
+::: {style="text-align:justify"}
+
+It’s often useful to provide more descriptive labels for your variables:
+
+```{r}
+df |> 
+  drop_na(age, race, height, weight, bp_sys) |> 
+  tbl_summary(
+    include = c(age, race, height, weight, bp_sys),
+    label = list(
+      age ~ "Age",
+      race ~ "Race",
+      height ~ "Height",
+      weight ~ "Weight",
+      bp_sys ~ "Systolic Blood Pressure"
+    )
+  )
+```
+
+Here, the `label` argument customizes how variable names appear in the table.
+
+:::
+
+### Stratified Summary Table by a Categorical Variable
+
+::: {style="text-align:justify"}
+
+To compare summary statistics across different groups, you can stratify the table by a categorical variable (e.g., diabetes status):
+
+```{r}
+df |> 
+  drop_na(age, race, height, weight, bp_sys, diabetes) |> 
+  tbl_summary(
+        by = diabetes,
+    include = c(age, race, height, weight, bp_sys, bmi),
+    label = list(
+      age ~ "Age",
+      race ~ "Race",
+      height ~ "Height",
+      weight ~ "Weight",
+      bp_sys ~ "Systolic Blood Pressure",
+      bmi ~ "Body Mass Index"
+    )
+  )
+```
+
+:::
+
+### Creating a Regression Model Table
+
+::: {style="text-align:justify"}
+
+The `gtsummary` package also supports regression models. Let’s fit a simple linear regression model and present it in a publication-ready format:
+
+```{r}
+# Fit a simple linear regression model
+model <- lm(bp_sys ~ age + bmi_who, data = df)
+
+# Create a regression summary table
+model |> 
+  tbl_regression(
+    label = list(
+      age ~ "Age",
+      bmi_who ~ "Body Mass Index (WHO Categories)"
+    )
+  )
+
+```
+
+This function provides a clean summary of the regression coefficients, making it easy to interpret the model results.
+
+:::
+
+## Conclusion
+
+::: {style="text-align:justify"}
+
+Quarto offers a powerful tool for reproducible research by seamlessly integrating code, analysis, and narrative into a single document. It is ideal for a variety of use cases, ranging from exploratory data analysis to professional reports and journal articles, supporting multiple output formats such as HTML, PDF, Word, and more, enhancing accessibility and communication. 
+
+For data scientists and researchers, Quarto’s clean syntax and markdown features make writing and collaboration straightforward, while the interactive execution of R code allows for easy iteration and refinement of analyses. RStudio's integration with Quarto streamlines the workflow, making it intuitive for both beginners and experienced users. 
+
+Quarto also offers enhanced flexibility and customization through its YAML configuration and markdown formatting, allowing users to tailor documents to meet specific reporting needs. Specialized outputs such as regression tables can be seamlessly integrated using packages like `gtsummary`, and `gt`, producing polished, publication-ready tables. Additionally, Quarto ensures all code and outputs are embedded within the document, making it easy to share and reproduce analyses, fostering transparency and credibility. 
+
+As a modern-day lab notebook, Quarto enables researchers to record not only results but also the thought process behind each analysis. Ultimately, Quarto empowers researchers to present their findings in a clear and effective way while maintaining reproducibility and flexibility throughout their workflow.
+
+:::

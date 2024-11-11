@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; Epidemiological Measures – Research Methodologies &amp; Data Analysis Using R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./quarto.html" rel="next">
+<link href="./statistical_methods.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./epi_measures.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Epidemiological Measures</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Research Methodologies &amp; Data Analysis Using R</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About Book</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./research_methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Research</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./study_design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./validity_reliability_research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quality Issues in Research</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./digital_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Digital Data Collection using ODK</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./statistical_methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Methods</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./epi_measures.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Epidemiological Measures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Research Communication with Quarto and R</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#intoduction" id="toc-intoduction" class="nav-link active" data-scroll-target="#intoduction"><span class="header-section-number">7.1</span> Intoduction</a></li>
+  <li><a href="#measures-of-disease-occurance" id="toc-measures-of-disease-occurance" class="nav-link" data-scroll-target="#measures-of-disease-occurance"><span class="header-section-number">7.2</span> Measures of Disease Occurance</a>
+  <ul class="collapse">
+  <li><a href="#risk-incidence-proportion" id="toc-risk-incidence-proportion" class="nav-link" data-scroll-target="#risk-incidence-proportion"><span class="header-section-number">7.2.1</span> Risk (Incidence Proportion)</a></li>
+  <li><a href="#incidence-rate" id="toc-incidence-rate" class="nav-link" data-scroll-target="#incidence-rate"><span class="header-section-number">7.2.2</span> Incidence Rate</a></li>
+  <li><a href="#prevalence" id="toc-prevalence" class="nav-link" data-scroll-target="#prevalence"><span class="header-section-number">7.2.3</span> Prevalence</a></li>
+  </ul></li>
+  <li><a href="#measures-of-disease-occurance-using-r" id="toc-measures-of-disease-occurance-using-r" class="nav-link" data-scroll-target="#measures-of-disease-occurance-using-r"><span class="header-section-number">7.3</span> Measures of Disease Occurance using R</a>
+  <ul class="collapse">
+  <li><a href="#calculating-incidence-proportion-with-r" id="toc-calculating-incidence-proportion-with-r" class="nav-link" data-scroll-target="#calculating-incidence-proportion-with-r"><span class="header-section-number">7.3.1</span> Calculating Incidence Proportion with R</a></li>
+  <li><a href="#calculating-incidence-rate-with-r" id="toc-calculating-incidence-rate-with-r" class="nav-link" data-scroll-target="#calculating-incidence-rate-with-r"><span class="header-section-number">7.3.2</span> Calculating Incidence Rate with R</a></li>
+  <li><a href="#calculating-prevalence-with-r" id="toc-calculating-prevalence-with-r" class="nav-link" data-scroll-target="#calculating-prevalence-with-r"><span class="header-section-number">7.3.3</span> Calculating Prevalence with R</a></li>
+  </ul></li>
+  <li><a href="#odds-a-quick-overview" id="toc-odds-a-quick-overview" class="nav-link" data-scroll-target="#odds-a-quick-overview"><span class="header-section-number">7.4</span> Odds: A Quick Overview</a>
+  <ul class="collapse">
+  <li><a href="#what-is-odds" id="toc-what-is-odds" class="nav-link" data-scroll-target="#what-is-odds"><span class="header-section-number">7.4.1</span> What is Odds?</a></li>
+  <li><a href="#prevalence-odds-optional-reading" id="toc-prevalence-odds-optional-reading" class="nav-link" data-scroll-target="#prevalence-odds-optional-reading"><span class="header-section-number">7.4.2</span> Prevalence Odds (Optional Reading)</a></li>
+  </ul></li>
+  <li><a href="#measures-of-association-in-epidemiology-using-r" id="toc-measures-of-association-in-epidemiology-using-r" class="nav-link" data-scroll-target="#measures-of-association-in-epidemiology-using-r"><span class="header-section-number">7.5</span> Measures of Association in Epidemiology using R</a>
+  <ul class="collapse">
+  <li><a href="#calculating-measures-of-association-using-r" id="toc-calculating-measures-of-association-using-r" class="nav-link" data-scroll-target="#calculating-measures-of-association-using-r"><span class="header-section-number">7.5.1</span> Calculating measures of association using R</a></li>
+  </ul></li>
+  <li><a href="#receiver-operating-characteristic-roc-curve" id="toc-receiver-operating-characteristic-roc-curve" class="nav-link" data-scroll-target="#receiver-operating-characteristic-roc-curve"><span class="header-section-number">7.6</span> Receiver Operating Characteristic (ROC) curve</a>
+  <ul class="collapse">
+  <li><a href="#roc-using-r" id="toc-roc-using-r" class="nav-link" data-scroll-target="#roc-using-r"><span class="header-section-number">7.6.1</span> ROC using R</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Epidemiological Measures</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="intoduction" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="intoduction"><span class="header-section-number">7.1</span> Intoduction</h2>
+<div style="text-align:justify">
+<p>Epidemiology is broadly defined as the study of the occurrence and distribution of health-related states or events within specific populations, as well as the determinants influencing these states. A core goal of epidemiology is to apply this knowledge to prevent and control health issues, improving population well-being.</p>
+<p>In previous chapters, we introduced foundational data analysis methods, including calculating the frequency and percentages of categorical variables and assessing the center and dispersion of numerical variables. These techniques provided insights into the overall structure of our data. However, epidemiology involves more targeted measures designed to quantify health-related events and explore relationships between these events and potential risk factors.</p>
+<p>This chapter focuses on two essential aspects of epidemiological analysis: <strong>measures of disease occurrence</strong> and <strong>measures of association</strong>. Measures of disease occurrence help us quantify the frequency and burden of diseases within a population, while measures of association allow us to identify connections between potential risk factors and health outcomes. Together, these metrics form the foundation for understanding the distribution and determinants of health conditions and play a crucial role in guiding public health actions and informing clinical decision-making.</p>
+<p>It’s important to note that epidemiology often emphasizes categorical outcomes, such as disease presence or absence (e.g., diabetes status), though numerical outcomes like blood sugar levels are also valuable. The tools and techniques presented in this chapter are tailored toward working with categorical data due to the frequent need to assess metrics like incidence, prevalence, and risk.</p>
+<p>Throughout this chapter, we will introduce these epidemiological measures and demonstrate how to calculate them in R, providing a practical, hands-on approach to understanding the occurrence and association of health-related events within a population.</p>
+</div>
+</section>
+<section id="measures-of-disease-occurance" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="measures-of-disease-occurance"><span class="header-section-number">7.2</span> Measures of Disease Occurance</h2>
+<div style="text-align:justify">
+<p>In epidemiology, understanding disease occurrence is fundamental to assessing health outcomes in populations. Three key measures—Risk, Incidence Rate, and Prevalence—offer distinct insights into the frequency and impact of health conditions within a group. Each measure is used based on specific research questions and population characteristics:</p>
+</div>
+<section id="risk-incidence-proportion" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="risk-incidence-proportion"><span class="header-section-number">7.2.1</span> Risk (Incidence Proportion)</h3>
+<div style="text-align:justify">
+<p>Risk, or incidence proportion, quantifies the probability that an initially disease-free individual will develop a disease over a specified time period. It is commonly used in studies with defined time frames and stable populations.</p>
+</div>
+</section>
+<section id="incidence-rate" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="incidence-rate"><span class="header-section-number">7.2.2</span> Incidence Rate</h3>
+<div style="text-align:justify">
+<p>Incidence rate, often referred to as the person-time incidence rate, accounts for variations in follow-up time by measuring the rate at which new cases of a disease occur in a population per unit of person-time. This measure adjusts for dynamic populations where individuals may join or leave during the study.</p>
+</div>
+</section>
+<section id="prevalence" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="prevalence"><span class="header-section-number">7.2.3</span> Prevalence</h3>
+<div style="text-align:justify">
+<p>Prevalence assesses the proportion of individuals within a population who have a specific disease at a particular point (point prevalence) or over a period (period prevalence). Unlike incidence, prevalence includes both new and pre-existing cases, offering a snapshot of the disease burden.</p>
+<p>For a more in-depth discussion of these epidemiological measures, please refer to the recommended paper <a href="https://www.kidney-international.org/action/showPdf?pii=S0085-2538%2815%2952672-0">(KJ Jager et al., 2007)</a> on understanding and applying disease occurrence metrics. This resource provides a thorough explanation of the definitions, and applications for each measure in various research contexts.</p>
+</div>
+</section>
+</section>
+<section id="measures-of-disease-occurance-using-r" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="measures-of-disease-occurance-using-r"><span class="header-section-number">7.3</span> Measures of Disease Occurance using R</h2>
+<p>In epidemiology, understanding how frequently a disease occurs within a population is fundamental to assessing the burden of the disease, identifying risk factors, and implementing preventive measures. This session will cover the key measures used to quantify disease occurrence, using practical examples and R code to illustrate each concept. The focus will be on practical implementation, similar to the approach used in <a href="https://www.r4epi.com/">R for Epidemiology</a> by Brad Cannell, ensuring that you can easily apply these techniques in real-world research settings.</p>
+<p><strong>Study Description</strong></p>
+<p>This study followed 10 participants over a period of 13 months, with monthly follow-up visits. The main goal was to track the progression of their health status, specifically looking at four possible states:</p>
+<ol type="1">
+<li><p><strong>Pre-follow-up</strong>: Before the participant was at risk (baseline state).</p></li>
+<li><p><strong>At Risk:</strong> The participant was healthy but at risk of developing the disease.</p></li>
+<li><p><strong>Diseased:</strong> The participant had developed the disease during the follow-up period.</p></li>
+<li><p><strong>Deceased:</strong> The participant had passed away.</p></li>
+</ol>
+<p>Here’s a description of each participant in the study:</p>
+<p><strong>1. Participant 1:</strong></p>
+<ul>
+<li>Already had the disease before the study started.</li>
+</ul>
+<p><strong>Participant 2:</strong></p>
+<ul>
+<li><p>Healthy at the start.</p></li>
+<li><p>At risk for 2 months, then developed the disease in the third month.</p></li>
+<li><p>Passed away in the sixth month.</p></li>
+</ul>
+<p><strong>Participant 3:</strong></p>
+<ul>
+<li><p>Healthy at the start.</p></li>
+<li><p>At risk for 4 months, then developed the disease in the fifth month.</p></li>
+<li><p>Stayed diseased for the rest of the study period.</p></li>
+</ul>
+<p><strong>Participant 4:</strong></p>
+<ul>
+<li><p>Healthy at the start.</p></li>
+<li><p>At risk for 5 months, then developed the disease in the sixth month.</p></li>
+<li><p>Remained diseased until the end of the study.</p></li>
+</ul>
+<p><strong>Participant 5:</strong></p>
+<ul>
+<li><p>Healthy at the start.</p></li>
+<li><p>At risk for 7 months, then developed the disease in the eighth month.</p></li>
+<li><p>Stayed diseased for the rest of the study.</p></li>
+</ul>
+<p><strong>Participant 6:</strong></p>
+<ul>
+<li><p>Healthy at the start.</p></li>
+<li><p>At risk for 8 months, then developed the disease in the ninth month.</p></li>
+<li><p>Passed away shortly after in the eleventh month.</p></li>
+</ul>
+<p><strong>Participant 7:</strong></p>
+<ul>
+<li><p>Healthy at the start.</p></li>
+<li><p>At risk for 9 months and never developed the disease.</p></li>
+<li><p>Passed away in the tenth month.</p></li>
+</ul>
+<p><strong>Participant 8:</strong></p>
+<ul>
+<li><p>Healthy at the start.</p></li>
+<li><p>At risk for 5 months and never developed the disease.</p></li>
+<li><p>Passed away in the sixth month.</p></li>
+</ul>
+<p><strong>Participant 9:</strong></p>
+<ul>
+<li><p>Healthy at the start.</p></li>
+<li><p>At risk for the entire study and never developed the disease or passed away.</p></li>
+</ul>
+<p><strong>Participant 10:</strong></p>
+<ul>
+<li><p>Similar to Participant 9:</p></li>
+<li><p>Healthy at the start.</p></li>
+<li><p>At risk for the entire study without developing the disease or passing away.</p></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="epi_measures_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="calculating-incidence-proportion-with-r" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="calculating-incidence-proportion-with-r"><span class="header-section-number">7.3.1</span> Calculating Incidence Proportion with R</h3>
+<div style="text-align:justify">
+<p>The Incidence Proportion (also known as Risk or Cumulative Incidence) measures the proportion of individuals who develop a disease during a specified time period.</p>
+<p>Applying this to Our Example</p>
+<p>In your dataset:</p>
+<ul>
+<li><p>We need to count the participants who developed the disease during the follow-up period.</p></li>
+<li><p>We exclude participants who already had the disease before the follow-up (like Participant 1) because they were not initially at risk.</p></li>
+</ul>
+<p><strong>Step 1: Determine the Number of Participants at Risk</strong></p>
+<p>First, we identify participants who were classified as “At Risk” at the start of the study (month 0). We exclude individuals who were already diseased (e.g., Participant 1).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary package</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the number of participants at risk at the start of the study</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>pop_at_risk <span class="ot">&lt;-</span> pop_10 <span class="sc">|&gt;</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(month <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> status <span class="sc">==</span> <span class="st">"At Risk"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(status) <span class="sc">|&gt;</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(n)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>pop_at_risk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9</code></pre>
+</div>
+</div>
+<p>There were 9 participants initially at risk, as we excluded the participant who was already diseased at the start of the study.</p>
+<p><strong>Step 2: Count the Number of New Cases of Disease</strong></p>
+<p>Next, we need to find out how many participants developed the disease during the follow-up period. We exclude the individual who was already diseased at the beginning.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exclude the participant who was already diseased at the start</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>inci_pop <span class="ot">&lt;-</span> pop_10 <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(person <span class="sc">!=</span> <span class="dv">1</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the number of new cases of disease</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>incidence_number <span class="ot">&lt;-</span> inci_pop <span class="sc">|&gt;</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(person, status) <span class="sc">|&gt;</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(status <span class="sc">==</span> <span class="st">"Diseased"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(status) <span class="sc">|&gt;</span> </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(n)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>incidence_number</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+<p>A total of 5 participants developed the disease during the follow-up period.</p>
+<p><strong>Step 3: Calculate the Incidence Proportion</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>incidence_number <span class="sc">/</span> pop_at_risk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5555556</code></pre>
+</div>
+</div>
+<p>The incidence proportion is 0.556, or 55.6%. This indicates that approximately 55.6% of the at-risk participants developed the disease during the follow-up period.</p>
+<p><strong>Step 4: Calculate the 95% Confidence Interval</strong></p>
+<p>To assess the precision of our estimate, we calculate a 95% confidence interval for the incidence proportion using the prop.test() function in R</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>prop_test <span class="ot">&lt;-</span> (<span class="fu">prop.test</span>(incidence_number, pop_at_risk))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>prop_test<span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2265292 0.8465694
+attr(,"conf.level")
+[1] 0.95</code></pre>
+</div>
+</div>
+<p>The 95% confidence interval for the incidence proportion is (22.7%, 84.7%). This wide interval reflects the uncertainty due to the small sample size. It suggests that the true incidence proportion in the population could be as low as 22.7% or as high as 84.7%.</p>
+</div>
+</section>
+<section id="calculating-incidence-rate-with-r" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="calculating-incidence-rate-with-r"><span class="header-section-number">7.3.2</span> Calculating Incidence Rate with R</h3>
+<div style="text-align:justify">
+<p>The Incidence Rate is another measure of disease occurrence that accounts for the varying amount of time each participant contributes to the study. Instead of simply dividing by the total number of at-risk participants, we use the person-time contributed by each individual as the denominator. This approach is particularly useful when participants have different follow-up times, such as when someone drops out of the study early.</p>
+<p><strong>Step 1: Calculating Person-Time</strong></p>
+<p>To calculate the incidence rate, we first need to determine the person-time contributed by each participant. Person-time is measured in person-months or person-years, depending on the study duration.</p>
+<p>In our example, we need to:</p>
+<ul>
+<li><p>Exclude participants who were already diseased at the start (e.g., Participant 1).</p></li>
+<li><p>Exclude follow-up time after the study period (e.g., after month 12).</p></li>
+<li><p>Count only the time when the participants were at risk (status = “At Risk”).</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>person_month <span class="ot">&lt;-</span> pop_10 <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(person <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> month <span class="sc">%in%</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">12</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">person_month =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(status <span class="sc">==</span> <span class="st">"At Risk"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(person) <span class="sc">|&gt;</span> </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">person_month =</span> <span class="fu">sum</span>(person_month))</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>person_month</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 2
+  person person_month
+   &lt;int&gt;        &lt;dbl&gt;
+1      2            2
+2      3            4
+3      4            5
+4      5            7
+5      6            8
+6      7            9
+7      8            5
+8      9           12
+9     10           12</code></pre>
+</div>
+</div>
+<p>This table shows the total person-months contributed by each participant while they were at risk. For example, if a participant was at risk for 5 months, their contribution to the person-time would be 5 person-months.</p>
+<p><strong>Step 2: Calculate Total Person-Time</strong></p>
+<p>Next, we sum up the person-months across all participants to get the total person-time and convert it to person-years.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate total person-time in months and convert to years</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>total_person_months <span class="ot">&lt;-</span> person_month <span class="sc">|&gt;</span> </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(person_month) <span class="sc">|&gt;</span> </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>()</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>total_person_years <span class="ot">&lt;-</span> total_person_months <span class="sc">/</span> <span class="dv">12</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>total_person_months</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 64</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>total_person_years</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.333333</code></pre>
+</div>
+</div>
+<p>The total follow-up time contributed by all participants is 64 person-months, which is equivalent to 5.33 person-years.</p>
+<p><strong>Step 3: Calculate the Incidence Rate</strong></p>
+<p>With the total person-time and the number of new cases (incidence number) from earlier steps, we can now calculate the incidence rate.</p>
+<ul>
+<li><p>Incidence Rate per Month: This measures the rate of new cases per person-month of follow-up.</p></li>
+<li><p>Incidence Rate per Year: This measures the rate of new cases per person-year of follow-up.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate incidence rates</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>incidence_per_month <span class="ot">&lt;-</span> incidence_number <span class="sc">/</span> total_person_months</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>incidence_per_year <span class="ot">&lt;-</span> incidence_number <span class="sc">/</span> total_person_years</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the incidence rate per 100 person-months</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>incidence_rate_100_person_months <span class="ot">&lt;-</span> incidence_per_month <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>incidence_per_month</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.078125</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>incidence_rate_100_person_months</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7.8125</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>incidence_per_year</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9375</code></pre>
+</div>
+</div>
+<p><strong>Interpretation</strong></p>
+<ul>
+<li><p>The incidence rate per month is 0.078, meaning there are about 7.8 new cases per 100 person-months of follow-up.</p></li>
+<li><p>The incidence rate per year is 0.938, indicating that there are about 0.94 new cases per person-year of follow-up.</p></li>
+</ul>
+<p>We are not discussing how to calculate the confidence interval for the incidence rate in this section, as it requires a deeper understanding.</p>
+</div>
+</section>
+<section id="calculating-prevalence-with-r" class="level3" data-number="7.3.3">
+<h3 data-number="7.3.3" class="anchored" data-anchor-id="calculating-prevalence-with-r"><span class="header-section-number">7.3.3</span> Calculating Prevalence with R</h3>
+<div style="text-align:justify">
+<p>In this example, we conducted a cross-sectional study at the 3-month mark to determine the prevalence of the disease among the 10 participants. Prevalence measures the proportion of individuals in the population who have the disease at a specific point in time. It helps us understand how widespread the disease is within the study population.</p>
+<p><strong>Step 1: Filter Data for the Third Month</strong></p>
+<p>Using the R code below, we first filter the data to include only records from the third month.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary packages</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter data for the third month</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>month3 <span class="ot">&lt;-</span> pop_10 <span class="sc">|&gt;</span> </span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(month <span class="sc">==</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Step 2: Calculate Disease Prevalence</strong></p>
+<p>Next, we count the number of participants in each health status category and compute the prevalence of the disease.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count status categories and calculate prevalence</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>prevalence <span class="ot">&lt;-</span> month3 <span class="sc">|&gt;</span> </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(status) <span class="sc">|&gt;</span> </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prevalence =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>prevalence</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  status       n prevalence
+  &lt;chr&gt;    &lt;int&gt;      &lt;dbl&gt;
+1 At Risk      8        0.8
+2 Diseased     2        0.2</code></pre>
+</div>
+</div>
+<p>Interpretation: The table output shows the proportion of participants in each status category (e.g., “At Risk,” “Diseased,” “Deceased”) at the third month. The prevalence of the disease is the proportion of participants classified as “Diseased”.</p>
+<p>For this example, the prevalence of the disease in the third month is 0.2 (or 20%), meaning that 2 out of the 10 participants were diseased at the time of the survey.</p>
+<p><strong>Step 3: Calculating the 95% Confidence Interval</strong></p>
+<p>Since the sample size is small (n = 10), we also want to calculate a 95% confidence interval for the estimated prevalence. This helps us understand the precision of our estimate. In R, we use the prop.test() function, which performs a test for proportions and provides the confidence interval.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the 95% confidence interval for prevalence</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>prop_test <span class="ot">&lt;-</span> <span class="fu">prop.test</span>(<span class="at">x =</span> <span class="dv">2</span>, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>prop_test<span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.03542694 0.55781858
+attr(,"conf.level")
+[1] 0.95</code></pre>
+</div>
+</div>
+<p><strong>Interpretation of the Confidence Interval</strong></p>
+<p>The 95% confidence interval for the disease prevalence is (0.035, 0.558). This interval suggests that the true prevalence of the disease in the population lies somewhere between 3.5% and 55.8%. The interval is quite wide due to the small sample size, indicating a higher level of uncertainty in our estimate.</p>
+</div>
+</section>
+</section>
+<section id="odds-a-quick-overview" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="odds-a-quick-overview"><span class="header-section-number">7.4</span> Odds: A Quick Overview</h2>
+<div style="text-align:justify">
+<p>Odds is an important concept in epidemiology, commonly used in the calculation of measures like odds ratios to assess the strength of associations between exposures and disease, although it is not directly classified as a measure of disease occurrence.</p>
+<p>Before we move on to discussing measures of association, it is essential to first understand the concept of odds, as it forms the foundation for some of the most commonly used statistical methods in epidemiological research, including the calculation of odds ratios and other association measures.</p>
+</div>
+<section id="what-is-odds" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="what-is-odds"><span class="header-section-number">7.4.1</span> What is Odds?</h3>
+<div style="text-align:justify">
+<p>In simple terms, odds expresses the likelihood of an event occurring relative to the likelihood of it not occurring. It is a ratio of the probability of the event happening to the probability of the event not happening. Mathematically, odds can be calculated as:</p>
+<p><span class="math display">\[\text{Odds} = \frac{P(\text{event})}{1 - P(\text{event})}\]</span></p>
+<p>In simple terms, odds is the ratio of the number of times an event happens to the number of times it does not happen.</p>
+<p>Mathematically, this can be written as:</p>
+<p><span class="math display">\[\text{Odds} = \frac{\text{Number of Events}}{\text{Number of Non-Events}}\]</span></p>
+<p>For example, if 5 people develop a disease (event) and 95 people do not (non-event), the odds of the disease occurring are:</p>
+<p><span class="math display">\[\text{Odds} = \frac{5}{95}\]</span></p>
+</div>
+</section>
+<section id="prevalence-odds-optional-reading" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="prevalence-odds-optional-reading"><span class="header-section-number">7.4.2</span> Prevalence Odds (Optional Reading)</h3>
+<div style="text-align:justify">
+<p>Prevalence odds is used to describe the odds of having a disease at a particular point in time, typically in a cross-sectional study. It compares the odds of having the disease to the odds of not having it.</p>
+<p>The formula for prevalence odds is:</p>
+<p><span class="math display">\[\text{Prevalence Odds} = \frac{\text{Prevalence}}{\text{1 - Prevalence}}\]</span></p>
+<p>In our earlier example</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>prevalence</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  status       n prevalence
+  &lt;chr&gt;    &lt;int&gt;      &lt;dbl&gt;
+1 At Risk      8        0.8
+2 Diseased     2        0.2</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>prevalence <span class="ot">&lt;-</span> prevalence <span class="sc">|&gt;</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(status <span class="sc">==</span> <span class="st">"Diseased"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(prevalence)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Prevalence odds is</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>prevalence_odds <span class="ot">&lt;-</span> <span class="fl">0.2</span> <span class="sc">/</span>  (<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.2</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>prevalence_odds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.25</code></pre>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="measures-of-association-in-epidemiology-using-r" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="measures-of-association-in-epidemiology-using-r"><span class="header-section-number">7.5</span> Measures of Association in Epidemiology using R</h2>
+<div style="text-align:justify">
+<p>A fundamental task in epidemiology is to measure the strength of associations between risk factors—often termed exposures—and health outcomes. The term “exposure” broadly refers to any variable whose association with an outcome is under investigation. In practice, when studying these associations, we often compare conditions within a population of interest. For example, we might examine whether the prevalence of diabetes varies by state of residence. In this context, diabetes would be the outcome, while state of residence would serve as the exposure. Individuals experiencing the exposure are typically referred to as the exposed group, or simply the exposed. This framework helps clarify the roles of different variables as we seek to understand their relationship to health outcomes.</p>
+<p>For a deeper understanding of measures of association, refer to this vignnete by <a href="https://cran.r-project.org/web/packages/epiR/vignettes/epiR_measures_of_association.html">Mark Stevenson, 2024</a>.</p>
+</div>
+<section id="calculating-measures-of-association-using-r" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="calculating-measures-of-association-using-r"><span class="header-section-number">7.5.1</span> Calculating measures of association using R</h3>
+<div style="text-align:justify">
+<p>We are using <code>epir</code> package for this session.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install and Load epir package</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(epiR, tidyverse, here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="direct-entry-of-2-by-2-table-contingency-table-cell-frequencies" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="direct-entry-of-2-by-2-table-contingency-table-cell-frequencies"><strong>Direct entry of 2 by 2 table contingency table cell frequencies</strong></h4>
+<p>Firstly, a 2 × 2 table can be created by listing the contingency table cell frequencies in vector format. Take the following example.</p>
+<p>The following table is the outcome of a cross sectional study.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Outcome-Positive</th>
+<th>Outcome-Negative</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Exposed</strong></td>
+<td>13</td>
+<td>2163</td>
+<td>2176</td>
+</tr>
+<tr class="even">
+<td><strong>Unexposed</strong></td>
+<td>5</td>
+<td>3349</td>
+<td>3354</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td>18</td>
+<td>5512</td>
+<td>5530</td>
+</tr>
+</tbody>
+</table>
+<p>We could create a 2 by 2 table for this data in R</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">13</span>, <span class="dv">2163</span>, <span class="dv">5</span>, <span class="dv">3349</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># View the data in the usual 2 by 2 table format:</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(dat, </span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">nrow =</span> <span class="dv">2</span>, </span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2]
+[1,]   13 2163
+[2,]    5 3349</code></pre>
+</div>
+</div>
+<p>To calculate the outcome prevalence ratio, odds ratio, attributable prevalence in the exposed, attributable fraction in the exposed, attributable prevalence in the population, and attributable fraction in the population, use the function <code>epi.2by2</code>. It’s important to note that we refer to these as the prevalence risk ratio and prevalence odds ratio, rather than the incidence risk ratio and incidence odds ratio, because we are working with data from a cross-sectional study, where disease frequency is measured as prevalence rather than incidence.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">epi.2by2</span>(<span class="at">dat =</span> dat, </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="st">"cross.sectional"</span>, </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">units =</span> <span class="dv">100</span>, </span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">conf.level =</span> <span class="fl">0.95</span>, </span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">outcome =</span> <span class="st">"as.columns"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Outcome +    Outcome -      Total               Prev risk *
+Exposed +           13         2163       2176       0.60 (0.32 to 1.02)
+Exposed -            5         3349       3354       0.15 (0.05 to 0.35)
+Total               18         5512       5530       0.33 (0.19 to 0.51)
+
+Point estimates and 95% CIs:
+-------------------------------------------------------------------
+Prev risk ratio                                4.01 (1.43, 11.23)
+Prev odds ratio                                4.03 (1.43, 11.31)
+Attrib prev in the exposed *                   0.45 (0.10, 0.80)
+Attrib fraction in the exposed (%)            75.05 (30.11, 91.09)
+Attrib prev in the population *                0.18 (-0.02, 0.38)
+Attrib fraction in the population (%)         54.20 (3.61, 78.24)
+-------------------------------------------------------------------
+Uncorrected chi2 test that OR = 1: chi2(1) = 8.177 Pr&gt;chi2 = 0.004
+Fisher exact test that OR = 1: Pr&gt;chi2 = 0.006
+ Wald confidence limits
+ CI: confidence interval
+ * Outcomes per 100 population units </code></pre>
+</div>
+</div>
+<p>The code provided uses the epi.2by2 function to calculate various measures of association and effect for cross-sectional data. Here’s a breakdown of each argument:</p>
+<ul>
+<li><p><code>dat</code>: This is the data input, which can be a vector of length four, a table, or a grouped data frame (from the dplyr package). It should contain the individual cell frequencies for the 2x2 table.</p></li>
+<li><p><code>method</code>: Specifies the study design used for the data. In this case, “<code>cross.sectional</code>” indicates that the analysis is based on cross-sectional study data. Other options include “<code>cohort.count</code>”, “<code>cohort.time</code>”, and “<code>case.control</code>”, which would be used for cohort studies or case-control studies, respectively. The function will compute the appropriate measures of association and effect based on this specification.</p></li>
+<li><p><code>conf.level</code>: This specifies the confidence level for the confidence intervals in the output. The value should be between 0 and 1, where 0.95 corresponds to a 95% confidence interval.</p></li>
+<li><p><code>units</code>: This is a multiplier for the prevalence and incidence estimates (risk or rate). It is used to adjust the magnitude of the output estimates, typically for scaling purposes, like reporting in per 100 or per 1000 individuals.</p></li>
+<li><p><code>outcome</code>: A character string that defines how the outcome variable is represented in the contingency table. The options are:</p>
+<ul>
+<li>“<code>as.columns</code>”: The outcome variable is placed in the columns of the table.</li>
+<li>“<code>as.rows</code>”: The outcome variable is placed in the rows of the table.</li>
+</ul></li>
+</ul>
+<p>Need a hand to get the correct wording to explain each of the listed measures of association and measures of effect? Set interpret = TRUE in epi.2by2:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">epi.2by2</span>(<span class="at">dat =</span> dat, </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="st">"cross.sectional"</span>, </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">units =</span> <span class="dv">100</span>, </span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">conf.level =</span> <span class="fl">0.95</span>, </span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">outcome =</span> <span class="st">"as.columns"</span>, </span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">interpret =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Outcome +    Outcome -      Total               Prev risk *
+Exposed +           13         2163       2176       0.60 (0.32 to 1.02)
+Exposed -            5         3349       3354       0.15 (0.05 to 0.35)
+Total               18         5512       5530       0.33 (0.19 to 0.51)
+
+Point estimates and 95% CIs:
+-------------------------------------------------------------------
+Prev risk ratio                                4.01 (1.43, 11.23)
+Prev odds ratio                                4.03 (1.43, 11.31)
+Attrib prev in the exposed *                   0.45 (0.10, 0.80)
+Attrib fraction in the exposed (%)            75.05 (30.11, 91.09)
+Attrib prev in the population *                0.18 (-0.02, 0.38)
+Attrib fraction in the population (%)         54.20 (3.61, 78.24)
+-------------------------------------------------------------------
+Uncorrected chi2 test that OR = 1: chi2(1) = 8.177 Pr&gt;chi2 = 0.004
+Fisher exact test that OR = 1: Pr&gt;chi2 = 0.006
+ Wald confidence limits
+ CI: confidence interval
+ * Outcomes per 100 population units 
+
+ Measures of association strength:
+ The outcome prevalence risk among the exposed was 4.01 (95% CI 1.43 to 11.23) times the outcome prevalence among the unexposed: exposure increased outcome prevalence risk among the exposed. 
+ 
+ The outcome prevalence odds among the exposed was 4.03 (95% CI 1.43 to 11.31) times the outcome prevalence odds among the unexposed: exposure increased outcome prevalence odds among the exposed. 
+
+ Measures of effect in the exposed:
+ Exposure changed the outcome prevalence risk in the exposed by 0.45 (95% CI 0.1 to 0.8) per 100 population units. 75.2% of outcomes in the exposed were attributable to exposure (95% CI 25.7% to 93.1%). 
+
+ Number needed to treat for benefit (NNTB) and harm (NNTH):
+ Exposure increased the outcome incidence risk in the exposed. The number needed to treat (i.e., expose) to increase the outcome frequency by one was 223 (95% CI 125 to 1008). 
+
+ Measures of effect in the population:
+ Exposure changed the outcome prevalence risk in the population by 0.18 (95% CI -0.02 to 0.38) per 100 population units. 54.3% of outcomes in the population were attributable to exposure (95% CI 32.5% to 75%). </code></pre>
+</div>
+</div>
+</section>
+<section id="data-frame-with-one-row-per-observation" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="data-frame-with-one-row-per-observation"><strong>Data frame with one row per observation</strong></h4>
+<p>In epidemiological studies, particularly those investigating birth outcomes, it’s common to have data structured in a way that each row represents a unique observation. In the case of the low birth weight dataset, this structure would typically contain one row per individual (or birth), with variables representing various factors, such as birth weight, maternal characteristics, and other risk factors that could affect birth outcomes.</p>
+<p>To find the measures of association from a dataset, we are using the low birth weight dataset as an example.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"low_birth_weight.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>creating 2 by 2 table</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">table</span>(df<span class="sc">$</span>low, df<span class="sc">$</span>smoke)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  
+                   Non-Smoker Smoker
+  Low Birth Weight         29     30
+  Normal                   86     44</code></pre>
+</div>
+</div>
+<p>Here we can see that the outcome is in rows.</p>
+<p>Now compute the odds ratio (we are assuming this is a cohort study) for smoking and delivery of a low birth weight baby:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">epi.2by2</span>(<span class="at">dat =</span> dat, </span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">method =</span> <span class="st">"cohort.count"</span>,</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">conf.level =</span> <span class="fl">0.95</span>,</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">units =</span> <span class="dv">100</span>, </span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">interpret =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">outcome =</span> <span class="st">"as.rows"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Exposed +    Exposed -      Total
+Outcome +           29           30         59
+Outcome -           86           44        130
+Total              115           74        189
+
+Point estimates and 95% CIs:
+-------------------------------------------------------------------
+Inc risk ratio                                 0.62 (0.41, 0.95)
+Inc odds ratio                                 0.49 (0.26, 0.93)
+Attrib risk in the exposed *                   -15.32 (-29.04, -1.61)
+Attrib fraction in the exposed (%)            -60.76 (-144.33, -5.78)
+Attrib risk in the population *                -9.32 (-22.31, 3.67)
+Attrib fraction in the population (%)         -29.87 (-59.98, -5.42)
+-------------------------------------------------------------------
+Uncorrected chi2 test that OR = 1: chi2(1) = 4.924 Pr&gt;chi2 = 0.026
+Fisher exact test that OR = 1: Pr&gt;chi2 = 0.036
+ Wald confidence limits
+ CI: confidence interval
+ * Outcomes per 100 population units </code></pre>
+</div>
+</div>
+<p>You could try <code>interpret = TRUE</code> to get the interpretation of these results.</p>
+</section>
+</div>
+</section>
+</section>
+<section id="receiver-operating-characteristic-roc-curve" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="receiver-operating-characteristic-roc-curve"><span class="header-section-number">7.6</span> Receiver Operating Characteristic (ROC) curve</h2>
+<div style="text-align:justify">
+<p>Evaluating diagnostic tests is crucial in modern medicine for both confirming the presence of a disease and ruling it out in healthy individuals. For tests with a simple positive/negative result, measures like sensitivity and specificity are commonly used to assess accuracy. However, when test results are reported on an ordinal or continuous scale (e.g., from “definitely normal” to “definitely abnormal”), sensitivity and specificity vary across different thresholds. The ROC (Receiver Operating Characteristic) curve is a plot of sensitivity against 1-specificity across these thresholds, and the Area Under the Curve (AUC) provides a summary measure of the test’s accuracy. The ROC curve helps in identifying the optimal cutoff values and comparing different diagnostic tests. It is widely applied in clinical research, particularly for assessing biomarkers and imaging tests, and plays an important role in predicting adverse outcomes based on patient risk profiles.</p>
+<p>For a foundational understanding of ROC curves, refer to the paper “<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3755824/pdf/cjim-4-627.pdf">Receiver Operating Characteristic (ROC) Curve Analysis for Medical Diagnostic Test Evaluation</a>” by Hajian-Tilaki K, et al., 2013. This resource provides a comprehensive overview of the concepts involved.</p>
+</div>
+<section id="roc-using-r" class="level3" data-number="7.6.1">
+<h3 data-number="7.6.1" class="anchored" data-anchor-id="roc-using-r"><span class="header-section-number">7.6.1</span> ROC using R</h3>
+<div style="text-align:justify">
+<p>In this session, we will demonstrate how to create ROC curves using the <code>plotROC</code> package in R. As a first step install and load <code>plotROC</code> and <code>shiny</code> package in R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install and load necessary packages</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(plotROC, tidyverse, here, shiny)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"roc_demo_df.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="my-first-roc-curve" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="my-first-roc-curve"><strong>My First ROC Curve</strong></h4>
+<p>We could follow the framework of ggplot using <code>plotROC</code> package. The demo dataset consists of four columns and represents data related to diagnostic testing, where different biomarkers are used to distinguish between diseased and healthy subjects. Below is a description of each variable:</p>
+<ol type="1">
+<li><code>disease_status_numeric</code>: This variable is a numeric representation of the disease status. It contains binary values:</li>
+</ol>
+<ul>
+<li>1: Represents subjects who are ill (diseased).</li>
+<li>0: Represents subjects who are healthy.</li>
+</ul>
+<ol start="2" type="1">
+<li><code>disease_status_str</code>: This variable is a string (character) representation of the disease status. It contains two categories:</li>
+</ol>
+<ul>
+<li>“Ill”: Indicates the subject is diseased.</li>
+<li>“Healthy”: Indicates the subject is not diseased.</li>
+</ul>
+<ol start="3" type="1">
+<li><code>biomarker</code>: This variable indicates the type of biomarker being evaluated. It has two unique values:</li>
+</ol>
+<ul>
+<li>“biomarker1”: Refers to the first biomarker under analysis.</li>
+<li>“biomarker2”: Refers to the second biomarker under analysis.</li>
+</ul>
+<ol start="4" type="1">
+<li><code>value</code>: This column contains the numeric measurements of the biomarkers for each subject. These values are continuous and reflect the level or concentration of the biomarker in the sample.</li>
+</ol>
+<p>For creating ROC curve for the first biomarker, first filter out the data for biomarker1.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>biomarker1 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(biomarker <span class="sc">==</span> <span class="st">"biomarker1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now create your first ROC curve</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>basicplot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> biomarker1,</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">d =</span> disease_status_numeric,</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">m =</span> value)) <span class="sc">+</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_roc</span>()</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>basicplot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="epi_measures_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In this example, we use the <code>ggplot()</code> function from the <code>ggplot2</code> package to define the plot’s aesthetics, and then add an ROC curve layer using the <code>geom_roc()</code> function from the <code>plotROC</code> package. The <code>aes()</code> function specifies the aesthetics for the ROC curve:</p>
+<ul>
+<li><p><code>d</code>: Represents the disease status of the subjects (in this case, disease_status_numeric), where 0 typically indicates healthy (disease-free) and 1 indicates ill (diseased).</p></li>
+<li><p><code>m</code>: Represents the biomarker measurement (value), which serves as the marker for predicting disease status.</p></li>
+</ul>
+<p>The <code>geom_roc()</code> function creates the ROC curve layer. It internally relies on stat_roc for the computation of the empirical ROC curve based on the provided disease status (d) and marker (m) values.</p>
+<p><strong>Note</strong></p>
+<p>If the disease status is not coded as 0 and 1, stat_roc will assume the lowest value represents the disease-free status, and a warning may be issued.</p>
+<p>The disease status aesthetic can be specified as a string or factor, but with a warning.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> biomarker1,</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">d =</span> disease_status_str,</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">m =</span> value)) <span class="sc">+</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_roc</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in verify_d(data$d): D not labeled 0/1, assuming Healthy = 0 and Ill =
+1!</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="epi_measures_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The <code>geom_roc</code> layer includes the ROC curve line combined with points and labels to display the values of the biomarker at the different cutpoints. It accepts the argument <code>n.cuts</code> to define the number of cutpoints to display along the curve. Labels can be suppressed by using <code>n.cuts = 0</code> or <code>labels = FALSE</code>. The size of the labels and the number of significant digits can be adjusted with <code>labelsize</code> and <code>labelround</code>, respectively.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">ggplot</span>(<span class="at">data =</span> biomarker1,</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">d =</span> disease_status_numeric,</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">m =</span> value)) <span class="sc">+</span> </span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_roc</span>(<span class="at">n.cuts =</span> <span class="dv">5</span>, </span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">labelsize =</span> <span class="dv">5</span>, </span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">labelround =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="epi_measures_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>try <code>style_roc</code> as the next layer</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">ggplot</span>(<span class="at">data =</span> biomarker1,</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">d =</span> disease_status_numeric,</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">m =</span> value)) <span class="sc">+</span> </span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_roc</span>(<span class="at">n.cuts =</span> <span class="dv">5</span>, </span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">labelsize =</span> <span class="dv">5</span>, </span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">labelround =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">style_roc</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="epi_measures_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>If you want to change the X axis name, then</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">ggplot</span>(<span class="at">data =</span> biomarker1,</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">d =</span> disease_status_numeric,</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">m =</span> value)) <span class="sc">+</span> </span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_roc</span>(<span class="at">n.cuts =</span> <span class="dv">5</span>, </span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">labelsize =</span> <span class="dv">5</span>, </span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">labelround =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">style_roc</span>(<span class="at">xlab =</span> <span class="st">"1 - Specificity"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="epi_measures_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="confidence-regions-and-the-rocci-geom" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="confidence-regions-and-the-rocci-geom"><strong>Confidence regions and the Rocci Geom</strong></h4>
+<p>It is common to compute confidence regions for points on the ROC curve using the Clopper and Pearson (1934) exact method. This is implemented in the stat_rocci and displayed as a <code>geom_rocci</code> layer.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>basicplot <span class="sc">+</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rocci</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="epi_measures_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="multiple-roc-curves" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="multiple-roc-curves"><strong>Multiple ROC curves</strong></h4>
+<p>When comparing multiple biomarkers within the same plot, we can use the color aesthetic within aes() to differentiate the ROC curves for each biomarker. This allows us to visualize and compare the diagnostic performance of multiple biomarkers simultaneously. In the example below, the color argument is set to the biomarker variable, so each ROC curve is colored according to the biomarker type:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">ggplot</span>(<span class="at">data =</span> df,</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">d =</span> disease_status_numeric,</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">m =</span> value,</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> biomarker)) <span class="sc">+</span> </span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_roc</span>() <span class="sc">+</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">style_roc</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="epi_measures_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="area-under-the-curve-auc-tables" class="level4" data-number="7.6.1.1">
+<h4 data-number="7.6.1.1" class="anchored" data-anchor-id="area-under-the-curve-auc-tables"><span class="header-section-number">7.6.1.1</span> **Area Under the Curve (AUC) tables</h4>
+<p>We could calculate AUC using the same package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>bybiomarker <span class="ot">&lt;-</span>  <span class="fu">ggplot</span>(<span class="at">data =</span> df,</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">d =</span> disease_status_numeric,</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">m =</span> value,</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">group =</span> biomarker)) <span class="sc">+</span> </span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_roc</span>() <span class="sc">+</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>biomarker)</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>function (x, y, ...) 
+UseMethod("plot")
+&lt;bytecode: 0x000002cbf2851a78&gt;
+&lt;environment: namespace:base&gt;</code></pre>
+</div>
+</div>
+<p>To find AUC</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_auc</span>(bybiomarker)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  PANEL  biomarker group      AUC
+1     1 biomarker1    -1 0.833985
+2     2 biomarker2    -1 0.679599</code></pre>
+</div>
+</div>
+<p>To learn more about how to use the plotROC package effectively, I recommend exploring the package’s <a href="https://cran.r-project.org/web/packages/plotROC/vignettes/examples.html">vignette</a>. It provides a comprehensive guide on creating and customizing ROC plots in R, including advanced features like plotting multiple ROC curves, customizing aesthetics, and calculating AUC.</p>
+</section>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./statistical_methods.html" class="pagination-link" aria-label="Statistical Methods">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Methods</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./quarto.html" class="pagination-link" aria-label="Research Communication with Quarto and R">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Research Communication with Quarto and R</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

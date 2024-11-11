@@ -1,0 +1,190 @@
+low,age,lwt,race,smoke,ptl,ht,ui,ftv,bwt
+Normal,19,182,Black,Non-Smoker,None,No Hypertension,Uterine Irritability,None,2523
+Normal,33,155,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,Three or More,2551
+Normal,20,105,White,Smoker,None,No Hypertension,No Uterine Irritability,One,2557
+Normal,21,108,White,Smoker,None,No Hypertension,Uterine Irritability,Two,2594
+Normal,18,107,White,Smoker,None,No Hypertension,Uterine Irritability,None,2600
+Normal,21,124,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,2622
+Normal,22,118,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,2637
+Normal,17,103,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,2637
+Normal,29,123,White,Smoker,None,No Hypertension,No Uterine Irritability,One,2663
+Normal,26,113,White,Smoker,None,No Hypertension,No Uterine Irritability,None,2665
+Normal,19,95,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,2722
+Normal,19,150,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,2733
+Normal,22,95,Other,Non-Smoker,None,Hypertension,No Uterine Irritability,None,2751
+Normal,30,107,Other,Non-Smoker,One,No Hypertension,Uterine Irritability,Two,2750
+Normal,18,100,White,Smoker,None,No Hypertension,No Uterine Irritability,None,2769
+Normal,18,100,White,Smoker,None,No Hypertension,No Uterine Irritability,None,2769
+Normal,15,98,Black,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,2778
+Normal,25,118,White,Smoker,None,No Hypertension,No Uterine Irritability,Three or More,2782
+Normal,20,120,Other,Non-Smoker,None,No Hypertension,Uterine Irritability,None,2807
+Normal,28,120,White,Smoker,None,No Hypertension,No Uterine Irritability,One,2821
+Normal,32,121,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,Two,2835
+Normal,31,100,White,Non-Smoker,None,No Hypertension,Uterine Irritability,Three or More,2835
+Normal,36,202,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,2836
+Normal,28,120,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,2863
+Normal,25,120,Other,Non-Smoker,None,No Hypertension,Uterine Irritability,Two,2877
+Normal,28,167,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,2877
+Normal,17,122,White,Smoker,None,No Hypertension,No Uterine Irritability,None,2906
+Normal,29,150,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,Two,2920
+Normal,26,168,Black,Smoker,None,No Hypertension,No Uterine Irritability,None,2920
+Normal,17,113,Black,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,2920
+Normal,17,113,Black,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,2920
+Normal,24,90,White,Smoker,One,No Hypertension,No Uterine Irritability,One,2948
+Normal,35,121,Black,Smoker,One,No Hypertension,No Uterine Irritability,One,2948
+Normal,25,155,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,2977
+Normal,25,125,Black,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,2977
+Normal,29,140,White,Smoker,None,No Hypertension,No Uterine Irritability,Two,2977
+Normal,19,138,White,Smoker,None,No Hypertension,No Uterine Irritability,Two,2977
+Normal,27,124,White,Smoker,None,No Hypertension,No Uterine Irritability,None,2922
+Normal,31,215,White,Smoker,None,No Hypertension,No Uterine Irritability,Two,3005
+Normal,33,109,White,Smoker,None,No Hypertension,No Uterine Irritability,One,3033
+Normal,21,185,Black,Smoker,None,No Hypertension,No Uterine Irritability,Two,3042
+Normal,19,189,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,Two,3062
+Normal,23,130,Black,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,3062
+Normal,21,160,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3062
+Normal,18,90,White,Smoker,None,No Hypertension,Uterine Irritability,None,3062
+Normal,18,90,White,Smoker,None,No Hypertension,Uterine Irritability,None,3062
+Normal,32,132,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,Three or More,3080
+Normal,19,132,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3090
+Normal,24,115,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,Two,3090
+Normal,22,85,Other,Smoker,None,No Hypertension,No Uterine Irritability,None,3090
+Normal,22,120,White,Non-Smoker,None,Hypertension,No Uterine Irritability,One,3100
+Normal,23,128,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3104
+Normal,22,130,White,Smoker,None,No Hypertension,No Uterine Irritability,None,3132
+Normal,30,95,White,Smoker,None,No Hypertension,No Uterine Irritability,Two,3147
+Normal,19,115,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3175
+Normal,16,110,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3175
+Normal,21,110,Other,Smoker,None,No Hypertension,Uterine Irritability,None,3203
+Normal,30,153,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3203
+Normal,20,103,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3203
+Normal,17,119,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3225
+Normal,17,119,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3225
+Normal,23,119,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,Two,3232
+Normal,24,110,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3232
+Normal,28,140,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3234
+Normal,26,133,Other,Smoker,Two,No Hypertension,No Uterine Irritability,None,3260
+Normal,20,169,Other,Non-Smoker,One,No Hypertension,Uterine Irritability,One,3274
+Normal,24,115,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,Two,3274
+Normal,28,250,Other,Smoker,None,No Hypertension,No Uterine Irritability,Three or More,3303
+Normal,20,141,White,Non-Smoker,Two,No Hypertension,Uterine Irritability,One,3317
+Normal,22,158,Black,Non-Smoker,One,No Hypertension,No Uterine Irritability,Two,3317
+Normal,22,112,White,Smoker,Two,No Hypertension,No Uterine Irritability,None,3317
+Normal,31,150,Other,Smoker,None,No Hypertension,No Uterine Irritability,Two,3321
+Normal,23,115,Other,Smoker,None,No Hypertension,No Uterine Irritability,One,3331
+Normal,16,112,Black,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3374
+Normal,16,135,White,Smoker,None,No Hypertension,No Uterine Irritability,None,3374
+Normal,18,229,Black,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3402
+Normal,25,140,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,3416
+Normal,32,134,White,Smoker,One,No Hypertension,No Uterine Irritability,Three or More,3430
+Normal,20,121,Black,Smoker,None,No Hypertension,No Uterine Irritability,None,3444
+Normal,23,190,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3459
+Normal,22,131,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,3460
+Normal,32,170,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3473
+Normal,30,110,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3544
+Normal,20,127,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3487
+Normal,23,123,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3544
+Normal,17,120,Other,Smoker,None,No Hypertension,No Uterine Irritability,None,3572
+Normal,19,105,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3572
+Normal,23,130,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3586
+Normal,36,175,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3600
+Normal,22,125,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,3614
+Normal,24,133,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3614
+Normal,21,134,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,Two,3629
+Normal,19,235,White,Smoker,None,Hypertension,No Uterine Irritability,None,3629
+Normal,25,95,White,Smoker,Three or More,No Hypertension,Uterine Irritability,None,3637
+Normal,16,135,White,Smoker,None,No Hypertension,No Uterine Irritability,None,3643
+Normal,29,135,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,3651
+Normal,29,154,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,3651
+Normal,19,147,White,Smoker,None,No Hypertension,No Uterine Irritability,None,3651
+Normal,19,147,White,Smoker,None,No Hypertension,No Uterine Irritability,None,3651
+Normal,30,137,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,3699
+Normal,24,110,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,3728
+Normal,19,184,White,Smoker,None,Hypertension,No Uterine Irritability,None,3756
+Normal,24,110,Other,Non-Smoker,One,No Hypertension,No Uterine Irritability,None,3770
+Normal,23,110,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,3770
+Normal,20,120,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3770
+Normal,25,241,Black,Non-Smoker,None,Hypertension,No Uterine Irritability,None,3790
+Normal,30,112,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,3799
+Normal,22,169,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3827
+Normal,18,120,White,Smoker,None,No Hypertension,No Uterine Irritability,Two,3856
+Normal,16,170,Black,Non-Smoker,None,No Hypertension,No Uterine Irritability,Three or More,3860
+Normal,32,186,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,Two,3860
+Normal,18,120,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,3884
+Normal,29,130,White,Smoker,None,No Hypertension,No Uterine Irritability,Two,3884
+Normal,33,117,White,Non-Smoker,None,No Hypertension,Uterine Irritability,One,3912
+Normal,20,170,White,Smoker,None,No Hypertension,No Uterine Irritability,None,3940
+Normal,28,134,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,3941
+Normal,14,135,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3941
+Normal,28,130,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,3969
+Normal,25,120,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,Two,3983
+Normal,16,95,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,3997
+Normal,20,158,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,3997
+Normal,26,160,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,4054
+Normal,21,115,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,4054
+Normal,22,129,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,4111
+Normal,25,130,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,Two,4153
+Normal,31,120,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,Two,4167
+Normal,35,170,White,Non-Smoker,One,No Hypertension,No Uterine Irritability,One,4174
+Normal,19,120,White,Smoker,None,No Hypertension,No Uterine Irritability,None,4238
+Normal,24,116,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,4593
+Normal,45,123,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,4990
+Low Birth Weight,28,120,Other,Smoker,One,No Hypertension,Uterine Irritability,None,709
+Low Birth Weight,29,130,White,Non-Smoker,None,No Hypertension,Uterine Irritability,Two,1021
+Low Birth Weight,34,187,Black,Smoker,None,Hypertension,No Uterine Irritability,None,1135
+Low Birth Weight,25,105,Other,Non-Smoker,One,Hypertension,No Uterine Irritability,None,1330
+Low Birth Weight,25,85,Other,Non-Smoker,None,No Hypertension,Uterine Irritability,None,1474
+Low Birth Weight,27,150,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,1588
+Low Birth Weight,23,97,Other,Non-Smoker,None,No Hypertension,Uterine Irritability,One,1588
+Low Birth Weight,24,128,Black,Non-Smoker,One,No Hypertension,No Uterine Irritability,One,1701
+Low Birth Weight,24,132,Other,Non-Smoker,None,Hypertension,No Uterine Irritability,None,1729
+Low Birth Weight,21,165,White,Smoker,None,Hypertension,No Uterine Irritability,One,1790
+Low Birth Weight,32,105,White,Smoker,None,No Hypertension,No Uterine Irritability,None,1818
+Low Birth Weight,19,91,White,Smoker,Two,No Hypertension,Uterine Irritability,None,1885
+Low Birth Weight,25,115,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,1893
+Low Birth Weight,16,130,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,One,1899
+Low Birth Weight,25,92,White,Smoker,None,No Hypertension,No Uterine Irritability,None,1928
+Low Birth Weight,20,150,White,Smoker,None,No Hypertension,No Uterine Irritability,Two,1928
+Low Birth Weight,21,200,Black,Non-Smoker,None,No Hypertension,Uterine Irritability,Two,1928
+Low Birth Weight,24,155,White,Smoker,One,No Hypertension,No Uterine Irritability,None,1936
+Low Birth Weight,21,103,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,1970
+Low Birth Weight,20,125,Other,Non-Smoker,None,No Hypertension,Uterine Irritability,None,2055
+Low Birth Weight,25,89,Other,Non-Smoker,Two,No Hypertension,No Uterine Irritability,One,2055
+Low Birth Weight,19,102,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,Two,2082
+Low Birth Weight,19,112,White,Smoker,None,No Hypertension,Uterine Irritability,None,2084
+Low Birth Weight,26,117,White,Smoker,One,No Hypertension,No Uterine Irritability,None,2084
+Low Birth Weight,24,138,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,2100
+Low Birth Weight,17,130,Other,Smoker,One,No Hypertension,Uterine Irritability,None,2125
+Low Birth Weight,20,120,Black,Smoker,None,No Hypertension,No Uterine Irritability,Three or More,2126
+Low Birth Weight,22,130,White,Smoker,One,No Hypertension,Uterine Irritability,One,2187
+Low Birth Weight,27,130,Black,Non-Smoker,None,No Hypertension,Uterine Irritability,None,2187
+Low Birth Weight,20,80,Other,Smoker,None,No Hypertension,Uterine Irritability,None,2211
+Low Birth Weight,17,110,White,Smoker,None,No Hypertension,No Uterine Irritability,None,2225
+Low Birth Weight,25,105,Other,Non-Smoker,One,No Hypertension,No Uterine Irritability,One,2240
+Low Birth Weight,20,109,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,2240
+Low Birth Weight,18,148,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,2282
+Low Birth Weight,18,110,Black,Smoker,One,No Hypertension,No Uterine Irritability,None,2296
+Low Birth Weight,20,121,White,Smoker,One,No Hypertension,Uterine Irritability,None,2296
+Low Birth Weight,21,100,Other,Non-Smoker,One,No Hypertension,No Uterine Irritability,Three or More,2301
+Low Birth Weight,26,96,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,2325
+Low Birth Weight,31,102,White,Smoker,One,No Hypertension,No Uterine Irritability,One,2353
+Low Birth Weight,15,110,White,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,2353
+Low Birth Weight,23,187,Black,Smoker,None,No Hypertension,No Uterine Irritability,One,2367
+Low Birth Weight,20,122,Black,Smoker,None,No Hypertension,No Uterine Irritability,None,2381
+Low Birth Weight,24,105,Black,Smoker,None,No Hypertension,No Uterine Irritability,None,2381
+Low Birth Weight,15,115,Other,Non-Smoker,None,No Hypertension,Uterine Irritability,None,2381
+Low Birth Weight,23,120,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,None,2410
+Low Birth Weight,30,142,White,Smoker,One,No Hypertension,No Uterine Irritability,None,2410
+Low Birth Weight,22,130,White,Smoker,None,No Hypertension,No Uterine Irritability,One,2410
+Low Birth Weight,17,120,White,Smoker,None,No Hypertension,No Uterine Irritability,Three or More,2414
+Low Birth Weight,23,110,White,Smoker,One,No Hypertension,No Uterine Irritability,None,2424
+Low Birth Weight,17,120,Black,Non-Smoker,None,No Hypertension,No Uterine Irritability,Two,2438
+Low Birth Weight,26,154,Other,Non-Smoker,One,Hypertension,No Uterine Irritability,One,2442
+Low Birth Weight,20,105,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,Three or More,2450
+Low Birth Weight,26,190,White,Smoker,None,No Hypertension,No Uterine Irritability,None,2466
+Low Birth Weight,14,101,Other,Smoker,One,No Hypertension,No Uterine Irritability,None,2466
+Low Birth Weight,28,95,White,Smoker,None,No Hypertension,No Uterine Irritability,Two,2466
+Low Birth Weight,14,100,Other,Non-Smoker,None,No Hypertension,No Uterine Irritability,Two,2495
+Low Birth Weight,23,94,Other,Smoker,None,No Hypertension,No Uterine Irritability,None,2495
+Low Birth Weight,17,142,Black,Non-Smoker,None,Hypertension,No Uterine Irritability,None,2495
+Low Birth Weight,21,130,White,Smoker,None,Hypertension,No Uterine Irritability,Three or More,2495

@@ -1,29 +1,32 @@
 {
   "index.qmd": {
-    "index.html": "759f236c"
+    "index.html": "b2c4555d"
   },
   "preface.qmd": {
-    "preface.html": "63ba30bf"
+    "preface.html": "854a0c79"
   },
   "research_methods.qmd": {
-    "research_methods.html": "792648e8"
+    "research_methods.html": "94159643"
   },
   "study_design.qmd": {
-    "study_design.html": "eb1f1300"
+    "study_design.html": "32471f22"
   },
   "validity_reliability_research.qmd": {
-    "validity_reliability_research.html": "29bd0ee6"
+    "validity_reliability_research.html": "2fc37524"
   },
   "digital_data.qmd": {
-    "digital_data.html": "3cb63d25"
+    "digital_data.html": "692db87d"
   },
   "intro_r.qmd": {
-    "intro_r.html": "0810653d"
+    "intro_r.html": "9265e47a"
   },
   "statistical_methods.qmd": {
-    "statistical_methods.html": "25f8d6d8"
+    "statistical_methods.html": "2ea16ec0"
   },
-  "research_quality_issues.qmd": {
-    "research_quality_issues.html": "301021ca"
+  "epi_measures.qmd": {
+    "epi_measures.html": "24c875b4"
+  },
+  "quarto.qmd": {
+    "quarto.html": "aef102d6"
   }
 }

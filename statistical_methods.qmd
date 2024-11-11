@@ -310,8 +310,6 @@ Example: Histogram and Density Plot Together
 # Combining histogram and density plot
 
 
-library(ggplot2)
-
 ggplot(df, aes(x = height)) +
   # Histogram with density scaling
   geom_histogram(
@@ -626,7 +624,6 @@ df |>
   summarise(
     mean_height = mean(height, na.rm = TRUE)
     )
-
 
 ```
 
@@ -1140,7 +1137,6 @@ t_test_result <- t.test(df$bp_sys, mu = 120, na.rm = TRUE)
 
 # View the result
 t_test_result
-
 
 ```
 
