@@ -1,1 +1,130 @@
 # About Book {.unnumbered}
+
+::: {style="text-align:justify"}
+
+Welcome to our book!
+
+This book serves as the official companion to the Research Methodology and Data Analysis workshop, crafted and maintained by the Public Health Data Science Lab at the Achutha Menon Centre for Health Science Studies, Sree Chitra Tirunal Institute for Medical Sciences and Technology, Trivandrum. We are excited to support your learning journey through this workshop, where knowledge meets practical application. The workshop is held at IQRAA Hospital, Calicut, from 14th to 16th November 2024.
+
+We welcome you to dive into the material and make the most of this learning experience!
+
+:::
+
+
+# About Us {.unnumbered}
+
+::: {style="text-align:justify"}
+
+We acknowledge the contributions of **Dr Arun Mitra Peddireddy** and **Dr Gurpreet Singh**, who developed the concepts and design of these RIntro workshop series for health professionals in 2021 at SCTIMST with **Prof. Biju Soman**. Since then, we have conducted over ten training programs, incrementally modifying the content and design. The philosophy of this workshop series is hand-holding and collaboration so that more health professionals can come into data science and reproducible research using the open philosophy. The profiles of the current resource persons for the workshop are given on the following pages. 
+
+:::
+
+{{< pagebreak >}}
+
+::: {layout="[ 60, 40 ]"}
+::: {#first-column}
+### Dr Biju Soman, MBBS, MD, DPH, MSc, DLSHTM {.unnumbered}
+:::
+
+::: {#second-column}
+![](images/biju.png){width="100"}
+:::
+:::
+
+::: {style="text-align:justify"}
+
+Dr. Biju Soman is the Professor and Head of Achutha Menon Centre for Health Science Studies, Sree Chitra Tirunal Institute for Medical Sciences and Technology (SCTIMST), Trivandrum, Kerala. Dr. Soman had completed his MBBS in 1992, DPH in 1996 and M.D. (Community Medicine) in 1999 from Government Medical College Trivandrum (University of Kerala) and his MSc (Control of Infectious Diseases) in 2011 from the University of London and DLSHTM in 2012 from the London School of Hygiene and Tropical Medicine (U.K.). He has undergone advanced training in health informatics from Oslo University (Norway), Teaching Methodology from Boston School of Public Health (USA), Multilevel Modelling from Bielefeld University (Germany), and Advances in Geographic Information Systems (GIS) from National Remote Sensing Centre (Hyderabad). Dr. Soman teaches Public Health Technologies, Infectious Disease Epidemiology, and Database Management in Epidemiology modules at AMCHSS as part of the PhD and MPH curriculum. He has contributed chapters to a few books and has many peer-reviewed publications. Some of his professional involvements at SCTIMST include Chairperson, Board of Studies (Health Sciences); Member, Standing Academic Committee; Executive Member, Health Action by People (NGO); Member, Research Advisory Committee, Centre for Environment Development, Trivandrum; and Executive Member, Centre for Advancement of Global Health (NGO). He also heads the Regional Technical Resource Centre (RTRC) of the Health Technology Assessment India (HTAIn) at SCTIMST. His current research and teaching are around data science in public health, including public health informatics, geospatial analysis, telemedicine, health technology assessment, and infectious disease epidemiology. He endorses open data initiative, FOSS resources, and reproducible research initiatives.
+
+-   URL: www.sctimst.ac.in/people/bijusoman
+-   Email: [bijusoman\@sctimst.ac.in](mailto:bijusoman@sctimst.ac.in){.email}, [bijusoman\@gmail.com](mailto:bijusoman@gmail.com){.email}
+-   Linkedin: https://www.linkedin.com/in/drbijusoman
+
+:::
+
+{{< pagebreak >}}
+
+::: {layout="[ 60, 40 ]"}
+::: {#first-column}
+### Dr. I.P. Yadav, MBBS, MS in General Surgery, MPhil in Clinical Epidemiology {.unnumbered}
+:::
+
+::: {#second-column}
+![](images/ip_yadhev.jpg){width="100"}
+:::
+:::
+
+::: {style="text-align:justify"}
+
+Dr. I.P. Yadav is an Additional Professor in the Department of Surgery at Government Medical College, Kollam. He holds an MS in General Surgery, a Global Fellowship in Palliative Medicine, a Certificate Course in Biostatistics, and an MPhil in Clinical Epidemiology. He has undergone more than 150 courses and workshops related to research, biostatistics, data science, machine learning, research software, and scientific computing languages. He has extensive experience analyzing datasets and is actively involved in conducting research-related training and training in palliative care, in addition to his surgical career. He holds various positions on ethics committees and is the Nodal Officer of the Model Palliative Care Division at Government Medical College, Kollam. His current research is related to palliative care.
+
+:::
+
+{{< pagebreak >}}
+
+::: {layout="[ 60, 40 ]"}
+<div>
+
+### Arun Jose, BSc, MSc {.unnumbered}
+
+</div>
+
+<div>
+
+![](images/arun.jpg){width="88"}
+
+</div>
+:::
+
+::: {style="text-align:justify"}
+
+Arun Jose is a researcher currently immersed in the pursuit of a Ph.D. in Health Sciences at the Achutha Menon Centre for Health Science Studies, SCTIMST, Trivandrum. With a profound academic foundation, he holds a Master of Science degree in Demography and Biostatistics from the University of Kerala.
+
+His current focus lies in the domain of projecting population dynamics at granular levels, employing diverse modeling techniques to unravel insights crucial for informed decision-making.
+
+:::
+
+-   Email: [arunjose\@sctimst.ac.in](mailto:arunjose@sctimst.ac.in){.email}
+-   Linkedin: https://www.linkedin.com/in/arun-jose-20808a183/
+
+{{< pagebreak >}}
+
+::: {layout="[ 60, 40 ]"}
+::: {#first-column}
+### Dr Rehna C Mohamed, BDS, MPH {.unnumbered}
+:::
+
+::: {#second-column}
+![](images/rehna.png){width="100"}
+
+:::
+:::
+
+::: {style="text-align:justify"}
+
+Dr. Rehna C Mohamed is the Jr Health Economist at the Health Technology Assessment, Regional Resource Centre, at Achutha Menon Centre for Health Science Studies, SCTIMST. She holds a Bachelor of Dental Surgery (BDS) degree from Government Dental College, Kozhikode, and a Master of Public Health (MPH) from Amrita Institute of Medical Sciences and Research Centre. Her current research area focuses on understanding equity in general and in Health Technology Assessment (HTA) in particular. She has previously worked as Scientist- B, at the HTA Regional Resource Hub, NIRRCH, Mumbai, contributing to research and policy recommendations. Additionally, she has experience working with the Centre for Health Research and Innovation, a PATH affiliate, as a Latent TB Infection Coordinator, in Ernakulam district where she coordinated efforts in researching on latent TB infections.
+
+:::
+
+-   Email: [drrehnacmohamed\@gmail.com](mailto:drrehnacmohamed@gmail.com){.email}
+
+-   Linkedin:  www.linkedin.com/in/dr-rehna-mohamed-b6793615b
+
+
+### How to cite this document {.unnumbered}
+
+::: {style="text-align:justify"}
+
+A Comprehensive Workshop on Research Methodology and Data Analysis Using R: A Hands-on Training for Health Professionals. First Edition. Achutha Menon Center for Health Science Studies, Sree Chitra Tirunal Institute for Medical Sciences and Technology, Trivandrum. November 2024
+
+:::
+
+
+### Disclaimer {.unnumbered}
+
+::: {style="text-align:justify"}
+
+Copyright © 2024 by the authors
+
+All rights reserved. No part of this publication may be reproduced in any form by any electronic or mechanical means (including photocopying, recording or information storage and retrieval) without permission in writing from the individual authors. Some of the artwork and illustrations used in this document were taken from the work of Allison Horst (https://github.com/allisonhorst/stats-illustrations), and the authors do not claim ownership of these.
+
+:::

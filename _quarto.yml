@@ -9,7 +9,6 @@ book:
   page-navigation: true
   chapters:
   - index.qmd
-  - preface.qmd
   - research_methods.qmd
   - research_quality_issues.qmd
   - study_design.qmd
