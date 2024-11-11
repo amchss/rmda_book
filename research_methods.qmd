@@ -18,8 +18,7 @@ This verb is composed of the Old French prefix "re-" meaning "again" and "cerchi
 
 ### Defining Research
 
-:::: {style="text-align:justify",.columns}
-
+::: {style="text-align:justify",.columns}
 Research may be defined as the creation of new knowledge and/or the use of existing knowledge in a new and creative way so as to generate new concepts, methodologies and understandings. This could include synthesis and analysis of previous research to the extent that it leads to new and creative outcomes.
 
 ![](images/research_library.jpg){fig-align="center" width="300"}
@@ -195,17 +194,10 @@ The final step is reporting the research findings. This includes writing a detai
 
 ::: {style="text-align:justify"}
 Research is inherently iterative. The insights gained from interpretation can lead to new questions, hypotheses, or areas of interest. As researchers analyze their findings, they often uncover complexities that warrant further investigation, prompting a return to earlier stages of the research process.
+:::
 
-```{mermaid}
-flowchart TB
-  A[Identifying the Research Problem] --> B(Reveiwing the Literature)
-  B--> C(Formulating a Research Question or Hypothesis)
-  C --> D(Research Design)
-  D --> E(Data Collection)
-  E --> F(Data Analysis & Hypothesis Testing)
-  F --> G(Interpretation, Generalisation & Reporting)
-  G --> A
-```
+![](images/research_process.png){fig-align="center"}
 
+::: {style="text-align:justify"}
 Recognizing research as a cyclical process emphasizes that each study is part of a larger continuum of knowledge. Each cycle contributes to a deeper understanding of complex issues, fostering innovation and discovery. This perspective encourages researchers to embrace uncertainty and view each finding not as a conclusion, but as a stepping stone to new questions and explorations.
 :::

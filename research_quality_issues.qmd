@@ -34,6 +34,7 @@ Here's a breakdown of each criterion:
 `Relevant`: The research question should be relevant to the field of study and, ideally, to real-world issues. It should address a problem or gap that is of significant importance to the scientific community, policymakers, practitioners, or the general public. A relevant research question has the potential to contribute to the advancement of knowledge and influence practice, policy, or further research in meaningful ways.
 :::
 
+
 ## The Role of the Literature Review in Research
 
 ::: {style="text-align:justify"}
