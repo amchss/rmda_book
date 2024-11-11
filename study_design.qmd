@@ -155,7 +155,7 @@ A case report that first documented instance of maternal Zika virus infection as
 
 Case series have played a crucial role in understanding the relationship between **thalidomide and phocomelia** (a congenital deformity involving shortened limbs). By documenting multiple cases of thalidomide exposure during pregnancy, case series provided valuable insights into the patterns and severity of birth defects caused by the drug, particularly its teratogenic effects. These case series helped establish the timing of exposure, identifying the specific window of vulnerability during fetal development, which was typically in the first trimester. Furthermore, case series allowed clinicians to track the long-term outcomes in children affected by thalidomide, contributing to a deeper understanding of potential delayed effects and the overall impact on health. This real-world data was instrumental in refining regulatory policies and ensuring that thalidomide was tightly controlled, preventing similar tragedies in the future.
 
-An example for a case series is given here. [Coronectomy of mandibular wisdom teeth: A case serieshere](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8666538/)
+An example for a case series is given here. [Coronectomy of mandibular wisdom teeth: A case series](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8666538/)
 :::
 
 **Ecological Studies**
@@ -304,6 +304,8 @@ The odds ratio (OR) is a common statistical measure used to quantify this associ
 
 ##### Advantages & Limitations of Case Control Study
 
+::: {style="text-align:justify"}
+
 **Advantages of Case Control Study**:
 
 -   `Easy to conduct`: Case-control studies are relatively simple to design and implement, especially compared to other study types like cohort studies or randomized controlled trials.
@@ -326,7 +328,11 @@ The odds ratio (OR) is a common statistical measure used to quantify this associ
 
 An example for a case control study is given here.[Effectiveness of seasonal malaria chemoprevention (SMC) treatments when SMC is implemented at scale: Case--control studies in 5 countries](https://pmc.ncbi.nlm.nih.gov/articles/PMC8457484/)
 
+:::
+
 #### Cohort Study Design
+
+::: {style="text-align:justify"}
 
 A `cohort` refers to a group of people who share some common characteristics or experiences, often studied over time to observe how those factors affect outcomes, such as health or behavior. Here's a breakdown of the meaning and types of cohorts:
 
@@ -336,7 +342,11 @@ A `cohort` refers to a group of people who share some common characteristics or 
 
 A cohort study is an observational study design used to compare individuals who have a specific risk factor or exposure with those who do not. The main goal is to examine the difference in the incidence (or risk) of a particular disease or outcome over time between these two groups.
 
+:::
+
 ##### Key Features of a Cohort Study:
+
+::: {style="text-align:justify"}
 
 **Observational Design**:
 
@@ -370,17 +380,29 @@ Example: A cohort study could examine a group of people who smoke (exposed group
 
 To read more about Observational Study Design, please follow the link[Observational research methods. Research design II: cohort, cross sectional, and case-control studies](https://pmc.ncbi.nlm.nih.gov/articles/PMC1726024/)
 
+:::
+
 ### Alternative Observational Designs: Case-Cohort, Case-Crossover, and Nested Case-Control
 
 #### Case-Cohort Study
 
+::: {style="text-align:justify"}
+
 A type of cohort study where the cases (individuals who develop the outcome of interest) are compared to a sub-cohort (a representative sample of the larger cohort), rather than to the entire cohort. The sub-cohort is selected at the start of the study and includes both cases and non-cases, but only the non-cases are randomly selected.
+
+:::
 
 #### Case-Crossover Study
 
+::: {style="text-align:justify"}
+
 A study design used primarily for studying the triggers of acute events or conditions, such as heart attacks, strokes, or asthma attacks. In this design, individuals act as their own control. The exposure of interest is compared during the period immediately preceding the event (the "case period") with exposure during other time periods (the "control period").
 
+:::
+
 #### Nested Case-Control Study (or Nested Case-Cohort Study)
+
+::: {style="text-align:justify"}
 
 A nested case-control study (often referred to as a nested case-cohort study in some contexts) is a type of case-control study that is embedded within an existing cohort study. In this design, cases of the disease or outcome are identified from the larger cohort, and controls are selected from individuals who are still disease-free at the time the cases develop. The controls are matched on certain characteristics (e.g., age, sex), but they are randomly selected from the cohort at the time the case occurs.
 
@@ -393,13 +415,21 @@ df <- data.frame ("Study Design" = c("Case Cohort", "Case Cross Over", "Nested C
 kable(df, caption = "Comparison of Alternative Observational Study Designs")
 ```
 
+:::
+
 ## Experimental Study Design
+
+::: {style="text-align:justify"}
 
 An experimental study design is a research approach used to investigate causal relationships between variables. In this design, the researcher manipulates one or more independent variables to observe the effect on a dependent variable, while controlling for other factors.
 
 ![](images/experiment.jpg){fig-align="center" width="250"}
 
+:::
+
 ### Key Concepts in Experimental Design
+
+::: {style="text-align:justify"}
 
 **Manipulation of One or More Independent Variables**
 
@@ -453,9 +483,15 @@ In experimental research, it is essential to control for extraneous variables, o
 
 Example: In a study examining the effect of a new exercise program on weight loss, extraneous variables like diet, baseline activity level, and sleep patterns could affect weight loss outcomes. The researcher could control for these variables by either matching participants on key characteristics (e.g., body mass index, age) or by ensuring that all participants follow the same diet and sleep schedule throughout the experiment.
 
+:::
+
 ### Types of Experimental Study Design
 
+::: {style="text-align:justify"}
+:::
 #### Randomized Trial vs. Non-Randomized Trial
+
+::: {style="text-align:justify"}
 
 **Randomized Trial**
 
@@ -477,7 +513,11 @@ In a non-randomized trial, participants are not randomly assigned to treatment g
 
 -   Greater risk of bias due to the absence of randomization, which can affect the internal validity of the study.
 
+:::
+
 #### Parallel Trial vs. Cross-Over Trial
+
+::: {style="text-align:justify"}
 
 **Parallel Trial**
 
@@ -514,7 +554,11 @@ Participants switch between treatments after a washout period.
 
 -May be affected by carryover effects, where the effects of the first treatment influence the response to the second treatment.
 
+:::
+
 #### Individual Trial vs. Community Trial
+
+::: {style="text-align:justify"}
 
 **Individual Trial**
 
@@ -544,7 +588,11 @@ More complex to analyze due to the clustering of participants within groups, and
 
 Example: A public health intervention testing the effect of a smoking cessation program in different schools or neighborhoods, where each community is randomly assigned to receive the intervention or not.
 
+:::
+
 #### Superiority Trial vs. Inferiority Trial vs. Equivalence Trial
+
+::: {style="text-align:justify"}
 
 **Superiority Trial**
 
@@ -558,7 +606,11 @@ An inferiority trial seeks to show that a new treatment is not worse than the st
 
 An equivalence trial aims to demonstrate that two treatments have equivalent effects, meaning their outcomes are within a specified margin of each other. This is often used when there's a need to prove that a new treatment is as effective as an existing one, but not necessarily better.
 
+:::
+
 #### Explanatory Trial vs. Pragmatic Trial
+
+::: {style="text-align:justify"}
 
 **Explanatory Trial**
 
@@ -574,7 +626,11 @@ Choosing the appropriate trial design depends on:
 -   The intervention being tested
 -   The goals of the study.
 
+:::
+
 ## Systematic Literature Review (SLR)
+
+::: {style="text-align:justify"}
 
 A systematic literature review (SLR) is a structured and methodical approach to identifying, selecting, evaluating, and synthesizing research evidence on a particular topic or research question. The goal is to gather all relevant studies, critically appraise them for quality, and summarize the findings in a transparent, reproducible, and unbiased manner.
 
@@ -610,7 +666,11 @@ Pittway (2008) identifies seven key principles behind systematic literature revi
 
 `Coverage`: The review includes a broad range of studies, ensuring that it captures all relevant evidence and provides a complete overview of the research topic.
 
+:::
+
 ## Meta-Analysis
+
+::: {style="text-align:justify"}
 
 A meta-analysis is a statistical technique that is often included within a systematic review to quantitatively synthesize the results of multiple studies. The goal of meta-analysis is to combine the effect sizes or outcomes from individual studies to provide a more precise estimate of the overall effect, enhancing statistical power and generalizability.
 
@@ -630,7 +690,11 @@ A meta-analysis is a statistical technique that is often included within a syste
 
 A rigorous, structured process for identifying, selecting, and critically appraising research to answer a clearly formulated question. It follows a predefined protocol, ensuring comprehensive and transparent methods for searching, selecting, and synthesizing relevant literature. The process is designed to be replicable, allowing other researchers to reproduce the review and verify findings.
 
+:::
+
 ## Evidence Pyramid
+
+::: {style="text-align:justify"}
 
 The Evidence Pyramid is a hierarchical representation of the quality and strength of different types of research evidence. The pyramid visually organizes evidence according to the type of study and the level of reliability of the findings, with higher levels representing higher-quality, more reliable evidence. The structure reflects the increasing rigor of study designs as you move up the pyramid.
 
@@ -671,3 +735,5 @@ At the top of the pyramid are systematic reviews and meta-analyses, which synthe
 `Higher levels represent stronger evidence`: As you move up the pyramid, studies typically become more rigorous, with greater control of confounding factors and bias, leading to more reliable conclusions.
 
 `Lower levels are easier and quicker to conduct but are more prone to bias`: Studies lower on the pyramid, such as case reports or cross-sectional studies, are often quicker and less expensive to conduct but have limitations in terms of internal validity and generalizability.
+
+:::

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Research Methodology and Quality Assurance – Research Methodologies &amp; Data Analysis Using R</title>
+<title>Research Methodologies &amp; Data Analysis Using R - 2&nbsp; Research Methodology and Quality Assurance</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
 </style>
@@ -47,13 +47,7 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -62,10 +56,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -76,16 +68,11 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./research_quality_issues.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Research Methodology and Quality Assurance</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Research Methodology and Quality Assurance</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
       </button>
     </div>
   </nav>
@@ -93,120 +80,111 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Research Methodologies &amp; Data Analysis Using R</a> 
     </div>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
+      <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-        </div>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">About Book</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">About Book</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./research_methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Research</span></span></a>
+  <a href="./research_methods.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./research_quality_issues.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Research Methodology and Quality Assurance</span></span></a>
+  <a href="./research_quality_issues.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Research Methodology and Quality Assurance</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./study_design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></span></a>
+  <a href="./study_design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./digital_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Digital Data Collection using ODK</span></span></a>
+  <a href="./digital_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Digital Data Collection using ODK</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro_r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></span></a>
+  <a href="./intro_r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistical_methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Methods</span></span></a>
+  <a href="./statistical_methods.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Methods</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./epi_measures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Epidemiological Measures</span></span></a>
+  <a href="./epi_measures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Epidemiological Measures</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Research Communication with Quarto and R</span></span></a>
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Research Communication with Quarto and R</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#defining-the-research-problem-and-hypothesis" id="toc-defining-the-research-problem-and-hypothesis" class="nav-link active" data-scroll-target="#defining-the-research-problem-and-hypothesis"><span class="header-section-number">2.1</span> Defining the Research Problem and Hypothesis</a>
+  <li><a href="#defining-the-research-problem-and-hypothesis" id="toc-defining-the-research-problem-and-hypothesis" class="nav-link active" data-scroll-target="#defining-the-research-problem-and-hypothesis"><span class="toc-section-number">2.1</span>  Defining the Research Problem and Hypothesis</a>
   <ul class="collapse">
-  <li><a href="#what-is-a-research-question" id="toc-what-is-a-research-question" class="nav-link" data-scroll-target="#what-is-a-research-question"><span class="header-section-number">2.1.1</span> What is a Research Question?</a></li>
+  <li><a href="#what-is-a-research-question" id="toc-what-is-a-research-question" class="nav-link" data-scroll-target="#what-is-a-research-question"><span class="toc-section-number">2.1.1</span>  What is a Research Question?</a></li>
   </ul></li>
-  <li><a href="#the-role-of-the-literature-review-in-research" id="toc-the-role-of-the-literature-review-in-research" class="nav-link" data-scroll-target="#the-role-of-the-literature-review-in-research"><span class="header-section-number">2.2</span> The Role of the Literature Review in Research</a>
+  <li><a href="#a-research-question" id="toc-a-research-question" class="nav-link" data-scroll-target="#a-research-question"><span class="toc-section-number">2.2</span>  A Research Question:</a></li>
+  <li><a href="#pico-framework" id="toc-pico-framework" class="nav-link" data-scroll-target="#pico-framework"><span class="toc-section-number">2.3</span>  PICO Framework</a></li>
+  <li><a href="#the-role-of-the-literature-review-in-research" id="toc-the-role-of-the-literature-review-in-research" class="nav-link" data-scroll-target="#the-role-of-the-literature-review-in-research"><span class="toc-section-number">2.4</span>  The Role of the Literature Review in Research</a>
   <ul class="collapse">
-  <li><a href="#practical-steps-to-perform-a-detailed-literature-review" id="toc-practical-steps-to-perform-a-detailed-literature-review" class="nav-link" data-scroll-target="#practical-steps-to-perform-a-detailed-literature-review"><span class="header-section-number">2.2.1</span> Practical Steps to Perform a Detailed Literature Review:</a></li>
-  <li><a href="#use-of-bibliographic-softwares-in-literature-review" id="toc-use-of-bibliographic-softwares-in-literature-review" class="nav-link" data-scroll-target="#use-of-bibliographic-softwares-in-literature-review"><span class="header-section-number">2.2.2</span> Use of Bibliographic Softwares in Literature Review</a></li>
+  <li><a href="#practical-steps-to-perform-a-detailed-literature-review" id="toc-practical-steps-to-perform-a-detailed-literature-review" class="nav-link" data-scroll-target="#practical-steps-to-perform-a-detailed-literature-review"><span class="toc-section-number">2.4.1</span>  Practical Steps to Perform a Detailed Literature Review:</a></li>
+  <li><a href="#use-of-bibliographic-softwares-in-literature-review" id="toc-use-of-bibliographic-softwares-in-literature-review" class="nav-link" data-scroll-target="#use-of-bibliographic-softwares-in-literature-review"><span class="toc-section-number">2.4.2</span>  Use of Bibliographic Softwares in Literature Review</a></li>
   </ul></li>
-  <li><a href="#research-design-importance-and-quality-assurance" id="toc-research-design-importance-and-quality-assurance" class="nav-link" data-scroll-target="#research-design-importance-and-quality-assurance"><span class="header-section-number">2.3</span> Research Design: Importance and Quality Assurance</a>
+  <li><a href="#research-design-importance-and-quality-assurance" id="toc-research-design-importance-and-quality-assurance" class="nav-link" data-scroll-target="#research-design-importance-and-quality-assurance"><span class="toc-section-number">2.5</span>  Research Design: Importance and Quality Assurance</a>
   <ul class="collapse">
-  <li><a href="#why-is-choosing-the-right-research-design-important" id="toc-why-is-choosing-the-right-research-design-important" class="nav-link" data-scroll-target="#why-is-choosing-the-right-research-design-important"><span class="header-section-number">2.3.1</span> Why is Choosing the Right Research Design Important?</a></li>
-  <li><a href="#systematic-error" id="toc-systematic-error" class="nav-link" data-scroll-target="#systematic-error"><span class="header-section-number">2.3.2</span> Systematic Error</a></li>
-  <li><a href="#bias-in-research" id="toc-bias-in-research" class="nav-link" data-scroll-target="#bias-in-research"><span class="header-section-number">2.3.3</span> Bias in Research</a></li>
-  <li><a href="#table-enlisting-different-types-of-bias" id="toc-table-enlisting-different-types-of-bias" class="nav-link" data-scroll-target="#table-enlisting-different-types-of-bias"><span class="header-section-number">2.3.4</span> Table enlisting different types of Bias</a></li>
-  <li><a href="#quality-assurance-in-the-stage-of-tool-preparation" id="toc-quality-assurance-in-the-stage-of-tool-preparation" class="nav-link" data-scroll-target="#quality-assurance-in-the-stage-of-tool-preparation"><span class="header-section-number">2.3.5</span> Quality Assurance in the Stage of Tool Preparation</a></li>
+  <li><a href="#why-is-choosing-the-right-research-design-important" id="toc-why-is-choosing-the-right-research-design-important" class="nav-link" data-scroll-target="#why-is-choosing-the-right-research-design-important"><span class="toc-section-number">2.5.1</span>  Why is Choosing the Right Research Design Important?</a></li>
+  <li><a href="#systematic-error" id="toc-systematic-error" class="nav-link" data-scroll-target="#systematic-error"><span class="toc-section-number">2.5.2</span>  Systematic Error</a></li>
+  <li><a href="#bias-in-research" id="toc-bias-in-research" class="nav-link" data-scroll-target="#bias-in-research"><span class="toc-section-number">2.5.3</span>  Bias in Research</a></li>
+  <li><a href="#table-enlisting-different-types-of-bias" id="toc-table-enlisting-different-types-of-bias" class="nav-link" data-scroll-target="#table-enlisting-different-types-of-bias"><span class="toc-section-number">2.5.4</span>  Table enlisting different types of Bias</a></li>
+  <li><a href="#quality-assurance-in-the-stage-of-tool-preparation" id="toc-quality-assurance-in-the-stage-of-tool-preparation" class="nav-link" data-scroll-target="#quality-assurance-in-the-stage-of-tool-preparation"><span class="toc-section-number">2.5.5</span>  Quality Assurance in the Stage of Tool Preparation</a></li>
   </ul></li>
-  <li><a href="#sampling-design-data-collection" id="toc-sampling-design-data-collection" class="nav-link" data-scroll-target="#sampling-design-data-collection"><span class="header-section-number">2.4</span> Sampling Design &amp; Data Collection</a>
+  <li><a href="#sampling-design-data-collection" id="toc-sampling-design-data-collection" class="nav-link" data-scroll-target="#sampling-design-data-collection"><span class="toc-section-number">2.6</span>  Sampling Design &amp; Data Collection</a>
   <ul class="collapse">
-  <li><a href="#sampling-design" id="toc-sampling-design" class="nav-link" data-scroll-target="#sampling-design"><span class="header-section-number">2.4.1</span> Sampling Design</a></li>
-  <li><a href="#data-collection-methods" id="toc-data-collection-methods" class="nav-link" data-scroll-target="#data-collection-methods"><span class="header-section-number">2.4.2</span> Data Collection Methods</a></li>
-  <li><a href="#online-data-collection-techniques-in-the-research-process" id="toc-online-data-collection-techniques-in-the-research-process" class="nav-link" data-scroll-target="#online-data-collection-techniques-in-the-research-process"><span class="header-section-number">2.4.3</span> Online Data Collection Techniques in the Research Process</a></li>
+  <li><a href="#sampling-design" id="toc-sampling-design" class="nav-link" data-scroll-target="#sampling-design"><span class="toc-section-number">2.6.1</span>  Sampling Design</a></li>
+  <li><a href="#data-collection-methods" id="toc-data-collection-methods" class="nav-link" data-scroll-target="#data-collection-methods"><span class="toc-section-number">2.6.2</span>  Data Collection Methods</a></li>
+  <li><a href="#online-data-collection-techniques-in-the-research-process" id="toc-online-data-collection-techniques-in-the-research-process" class="nav-link" data-scroll-target="#online-data-collection-techniques-in-the-research-process"><span class="toc-section-number">2.6.3</span>  Online Data Collection Techniques in the Research Process</a></li>
   </ul></li>
-  <li><a href="#digital-data-collection-platforms" id="toc-digital-data-collection-platforms" class="nav-link" data-scroll-target="#digital-data-collection-platforms"><span class="header-section-number">2.5</span> Digital Data Collection Platforms</a></li>
-  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis"><span class="header-section-number">2.6</span> Data Analysis</a>
+  <li><a href="#digital-data-collection-platforms" id="toc-digital-data-collection-platforms" class="nav-link" data-scroll-target="#digital-data-collection-platforms"><span class="toc-section-number">2.7</span>  Digital Data Collection Platforms</a></li>
+  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis"><span class="toc-section-number">2.8</span>  Data Analysis</a>
   <ul class="collapse">
-  <li><a href="#data-cleaning-and-preparation" id="toc-data-cleaning-and-preparation" class="nav-link" data-scroll-target="#data-cleaning-and-preparation"><span class="header-section-number">2.6.1</span> Data Cleaning and Preparation</a></li>
-  <li><a href="#exploratory-data-analysis-eda" id="toc-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#exploratory-data-analysis-eda"><span class="header-section-number">2.6.2</span> Exploratory Data Analysis (EDA)</a></li>
-  <li><a href="#modeling-and-statistical-analysis" id="toc-modeling-and-statistical-analysis" class="nav-link" data-scroll-target="#modeling-and-statistical-analysis"><span class="header-section-number">2.6.3</span> Modeling and Statistical Analysis</a></li>
-  <li><a href="#interpretation-and-reporting" id="toc-interpretation-and-reporting" class="nav-link" data-scroll-target="#interpretation-and-reporting"><span class="header-section-number">2.6.4</span> Interpretation and Reporting</a></li>
-  <li><a href="#r-for-data-analysis" id="toc-r-for-data-analysis" class="nav-link" data-scroll-target="#r-for-data-analysis"><span class="header-section-number">2.6.5</span> R for Data Analysis</a></li>
+  <li><a href="#data-cleaning-and-preparation" id="toc-data-cleaning-and-preparation" class="nav-link" data-scroll-target="#data-cleaning-and-preparation"><span class="toc-section-number">2.8.1</span>  Data Cleaning and Preparation</a></li>
+  <li><a href="#exploratory-data-analysis-eda" id="toc-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#exploratory-data-analysis-eda"><span class="toc-section-number">2.8.2</span>  Exploratory Data Analysis (EDA)</a></li>
+  <li><a href="#modeling-and-statistical-analysis" id="toc-modeling-and-statistical-analysis" class="nav-link" data-scroll-target="#modeling-and-statistical-analysis"><span class="toc-section-number">2.8.3</span>  Modeling and Statistical Analysis</a></li>
+  <li><a href="#interpretation-and-reporting" id="toc-interpretation-and-reporting" class="nav-link" data-scroll-target="#interpretation-and-reporting"><span class="toc-section-number">2.8.4</span>  Interpretation and Reporting</a></li>
+  <li><a href="#r-for-data-analysis" id="toc-r-for-data-analysis" class="nav-link" data-scroll-target="#r-for-data-analysis"><span class="toc-section-number">2.8.5</span>  R for Data Analysis</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -216,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Research Methodology and Quality Assurance</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Research Methodology and Quality Assurance</span></h1>
 </div>
 
 
@@ -229,9 +207,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
-
 </header>
-
 
 <div style="text-align:justify">
 <p>In the previous chapter, we mentioned the fundamental steps involved in the research process. As discussed, research is not a linear activity but a dynamic, iterative process where each stage informs the next. The research journey often involves going back and refining earlier steps, based on insights gained during the process.</p>
@@ -256,25 +232,83 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="the-role-of-the-literature-review-in-research" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="the-role-of-the-literature-review-in-research"><span class="header-section-number">2.2</span> The Role of the Literature Review in Research</h2>
+<section id="a-research-question" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="a-research-question"><span class="header-section-number">2.2</span> A Research Question:</h2>
+<div style="text-align:justify">
+<p><strong>Resolves Uncertainty</strong></p>
+<p>A well-crafted research question aims to resolve or manage uncertainty within a specific context. In many domains, uncertainty can be a major barrier to effective decision-making, leading to suboptimal outcomes, poor predictions, or risky behaviors. A research question that resolves uncertainty seeks to understand the sources of uncertainty and find methods to reduce it, or at least manage it more effectively.</p>
+<p><strong>Details Problem Statement</strong></p>
+<p>The problem statement is an explanation of why the research question matters. It defines the core problem that the research is addressing and frames the need for resolving uncertainty. A good problem statement helps clarify the broader implications of the issue at hand, offering both the context of the uncertainty and why it must be addressed.</p>
+<p><strong>Narrows Down and Adds Focus</strong></p>
+<p>A research question must be focused and specific to ensure it is manageable and can lead to actionable insights. When resolving uncertainty, the question should narrow down the type of uncertainty, the domain of application, and the methods to be used in the study. This narrowing of focus allows the researcher to define the scope of the problem and determine what can realistically be achieved.</p>
+<p><strong>Sets Context and Provides Description</strong></p>
+<p>The context describes the environment or situation in which the problem exists. It highlights the broader issues around the research question and helps the researcher define the boundaries of the study. Setting context involves explaining why this uncertainty matters and identifying the specific challenges involved.</p>
+<p>By addressing each of these four elements, a research question becomes clear, actionable, and grounded in the real-world need to resolve uncertainty in a specific context.</p>
+</div>
+</section>
+<section id="pico-framework" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="pico-framework"><span class="header-section-number">2.3</span> PICO Framework</h2>
+<div style="text-align:justify">
+<p><strong>Population (P)</strong></p>
+<p>The population refers to the group of individuals or subjects who are the focus of the research question. This could involve specific demographics (e.g., age, gender, ethnicity), medical conditions, or particular characteristics that are relevant to the research study.</p>
+<p><code>Targeting the Right Group</code>: Defining the population ensures the research is focused on the group for which the intervention, treatment, or phenomenon under investigation is relevant.</p>
+<p><code>Increases Relevance</code>: By specifying the population, the research question can address the needs or issues of a specific group of people, making the findings more applicable and useful.</p>
+<p><code>Clarifies Scope</code>: It helps narrow down who the study is relevant to, preventing the research from becoming too broad or overly general.</p>
+<p>Example: In a study about treatment for asthma, the population might be “children aged 5-12 with moderate asthma.”</p>
+<p><strong>Intervention (I)</strong></p>
+<p>The intervention refers to the treatment, procedure, or exposure that is being tested or implemented to address the issue or condition in the population. This could be a drug, therapy, lifestyle change, diagnostic test, or preventive measure.</p>
+<p><code>Defines the Focus</code>: The intervention is the key variable of interest in the study. Specifying it clearly helps identify what the study aims to investigate.</p>
+<p><code>Guides Research Design</code>: Knowing the intervention helps determine the methodology (e.g., clinical trial, observational study, cohort study), data collection methods, and analysis approach.</p>
+<p><code>Establishes a Standard</code>: The intervention helps frame what is being tested against existing practices or other alternatives.</p>
+<p>Example: For the same asthma study, the intervention might be “inhaled corticosteroid treatment.”</p>
+<p><strong>Comparison (C)</strong></p>
+<p>The comparison component refers to the baseline or control group to which the intervention is being compared. This could be a placebo, standard treatment, or no treatment at all. Not every research question needs a comparison, but it is particularly important in experimental or clinical trials.</p>
+<p><code>Clarifies Effectiveness</code>: The comparison allows the research to evaluate the effectiveness of the intervention in comparison to other alternatives or no treatment.</p>
+<p><code>Validates Results</code>: Without a comparison group, it would be difficult to attribute observed outcomes specifically to the intervention rather than other factors.</p>
+<p><code>Strengthens Evidence</code>: Including a comparison group increases the internal validity of the study and provides more robust evidence for or against the effectiveness of the intervention.</p>
+<p>Example: In the asthma study, the comparison might be “placebo treatment” or “standard asthma inhaler therapy.”</p>
+<p><strong>Outcome (O)</strong></p>
+<p>The outcome refers to the result or effect that is being measured to determine whether the intervention was effective. Outcomes could include health outcomes (e.g., symptom reduction, recovery time), behavioral outcomes (e.g., adherence to treatment), or diagnostic outcomes (e.g., accuracy of a test).</p>
+<p><code>Measures Effectiveness</code>: Outcomes specify what will be measured to determine if the intervention achieves its goal. They define the success criteria for the study.</p>
+<p><code>Ensures Relevance</code>: Clearly defining outcomes ensures the research question is tied to practical, real-world goals, such as improving patient health, reducing costs, or increasing quality of life.</p>
+<p><code>Guides Data Collection</code>: Understanding what outcome will be measured helps in designing data collection methods, tools, and measurements (e.g., surveys, biomarkers, clinical exams).</p>
+<p>Example: In the asthma study, the outcome might be “reduction in asthma attacks” or “improvement in lung function as measured by FEV1 (forced expiratory volume in 1 second).”</p>
+<p>Example of a PICO-Based Research Question:</p>
+<p>Research Question: “In children aged 5-12 with moderate asthma (P), does inhaled corticosteroid treatment (I) compared to placebo treatment (C) reduce asthma attacks (O)?”</p>
+<p>The PICO framework is a vital tool in research question formulation because it provides clarity, specificity, and structure. It helps researchers narrow down their focus, design appropriate methodologies, and ensure that their research is directly addressing a meaningful and answerable problem. PICO ultimately improves the quality of research, ensuring that the results are relevant, reliable, and actionable, particularly in healthcare and clinical settings where decisions have significant consequences.</p>
+<p>There are several other frameworks in addition to PICO that are commonly used to structure research questions, especially in healthcare and social science research. These frameworks serve similar purposes. Some of the most frequently used alternatives to PICO include PECO, PIT, PICOT, and others, each with specific applications depending on the type of research being conducted.</p>
+<ul>
+<li><p>PECO (Population, Exposure, Comparison, Outcome) The PECO framework is commonly used in observational or epidemiological studies, particularly those involving <strong>Exposures</strong>.</p></li>
+<li><p>PICOT (Population, Intervention, Comparison, Outcome, Time) The PICOT framework is a slightly extended version of the PICO framework, adding a <strong>Time</strong> component.</p></li>
+<li><p>PIT (Population, Intervention, Test) The PIT framework is used in Diagnostic Accuracy Tests</p></li>
+<li><p>Setting, Perspective, Intervention or Phenomenon of Interest, Comparison, Evaluation (SPICE) in Qualitative synthesis</p></li>
+<li><p>CoCoPop (Factor, disease, symptom or health <strong>Co</strong>ndition of interest, the epidemiological indicator used to measure its frequency (prevalence, incidence), the <strong>Pop</strong>ulation or groups at risk as well as the <strong>Co</strong>ntext/location and time period where relevant)</p></li>
+</ul>
+<p><strong>For better understanding, follow the links below</strong></p>
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9128998/">How to Ask the Right Question and Find the Right Answer: Clinical Research for Transplant Nephrologists</a></p>
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6322175/">Formulation of Research Question – Stepwise Approach</a></p>
+<p><a href="https://nie.gov.in/icmr_sph/Online-courses.html">NIE-ICMR. BASIC COURSE IN BIOMEDICAL RESEARCH</a></p>
+</div>
+</section>
+<section id="the-role-of-the-literature-review-in-research" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="the-role-of-the-literature-review-in-research"><span class="header-section-number">2.4</span> The Role of the Literature Review in Research</h2>
 <div style="text-align:justify">
 <p>After formulating a preliminary research question, the next critical step in the research process is conducting a detailed literature review. The purpose of the literature review is not only to summarize existing knowledge but also to refine and strengthen the research question by ensuring it aligns with key criteria that enhance the quality and impact of the research.</p>
 <p>At the outset, the literature review helps the researcher define and narrow the research problem by identifying the key issues, controversies, and gaps in the existing literature. This process ensures that the question being posed is not only aligned with current knowledge but also addresses areas where further investigation is needed. The ongoing nature of the literature review is crucial, as it allows the researcher to stay updated on the latest findings, theories, and methods, which may influence or reshape the direction of the research question over time.</p>
 <p>A literature review is not a one-time task; rather, it is a dynamic process that evolves throughout the course of the research.</p>
 </div>
-<section id="practical-steps-to-perform-a-detailed-literature-review" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="practical-steps-to-perform-a-detailed-literature-review"><span class="header-section-number">2.2.1</span> Practical Steps to Perform a Detailed Literature Review:</h3>
+<section id="practical-steps-to-perform-a-detailed-literature-review" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="practical-steps-to-perform-a-detailed-literature-review"><span class="header-section-number">2.4.1</span> Practical Steps to Perform a Detailed Literature Review:</h3>
 <div style="text-align:justify">
 
 </div>
-<section id="identify-key-databases-and-resources" class="level4" data-number="2.2.1.1">
-<h4 data-number="2.2.1.1" class="anchored" data-anchor-id="identify-key-databases-and-resources"><span class="header-section-number">2.2.1.1</span> <strong>Identify Key Databases and Resources</strong>:</h4>
+<section id="identify-key-databases-and-resources" class="level4" data-number="2.4.1.1">
+<h4 data-number="2.4.1.1" class="anchored" data-anchor-id="identify-key-databases-and-resources"><span class="header-section-number">2.4.1.1</span> <strong>Identify Key Databases and Resources</strong>:</h4>
 <div style="text-align:justify">
 <p>Use academic databases and library resources to gather relevant articles, books, and reports.To ensure a comprehensive and efficient literature search, it is essential to identify the key academic databases and resources that are most relevant to your research topic.</p>
 <p>Academic databases are digital platforms that allow you to access a wide range of scholarly materials, including journal articles, books, conference papers, and reports. These databases organize and index resources from various disciplines, making them indispensable tools for researchers.</p>
 <p><strong>Key Research Databases: Scope, Focus, and Strengths</strong></p>
-<table class="caption-top table">
+<table class="table">
 <thead>
 <tr class="header">
 <th>Database</th>
@@ -328,8 +362,8 @@ ul.task-list li input[type="checkbox"] {
 <p>These databases provide different types of academic resources tailored to specific research needs, from clinical research to humanities, economics, and global citation analysis. Depending on the nature of your research, you may need to use a combination of these resources.By strategically selecting and utilizing multiple databases, you ensure that you are capturing the most relevant and high-quality sources of information.</p>
 </div>
 </section>
-<section id="define-keywords" class="level4" data-number="2.2.1.2">
-<h4 data-number="2.2.1.2" class="anchored" data-anchor-id="define-keywords"><span class="header-section-number">2.2.1.2</span> <strong>Define Keywords</strong>:</h4>
+<section id="define-keywords" class="level4" data-number="2.4.1.2">
+<h4 data-number="2.4.1.2" class="anchored" data-anchor-id="define-keywords"><span class="header-section-number">2.4.1.2</span> <strong>Define Keywords</strong>:</h4>
 <div style="text-align:justify">
 <p>Start by defining the keywords related to your research question. Include synonyms and related terms to ensure a comprehensive search.</p>
 <p>Defining keywords is a critical first step in conducting a thorough literature search. Keywords are the specific terms that capture the core concepts of your research question. By carefully selecting the right keywords, you ensure that your search is both focused and comprehensive.</p>
@@ -342,14 +376,14 @@ ul.task-list li input[type="checkbox"] {
 <p>By including a broad set of relevant terms, your search will be more likely to uncover all pertinent studies, including those that might use different language or focus on slightly different aspects of the topic. Keep in mind that using the right mix of specific and general keywords will enhance the efficiency of your literature search and improve the quality of your review.</p>
 </div>
 </section>
-<section id="review-systematically" class="level4" data-number="2.2.1.3">
-<h4 data-number="2.2.1.3" class="anchored" data-anchor-id="review-systematically"><span class="header-section-number">2.2.1.3</span> <strong>Review Systematically</strong>:</h4>
+<section id="review-systematically" class="level4" data-number="2.4.1.3">
+<h4 data-number="2.4.1.3" class="anchored" data-anchor-id="review-systematically"><span class="header-section-number">2.4.1.3</span> <strong>Review Systematically</strong>:</h4>
 <div style="text-align:justify">
 <p>Organize your search results into categories, such as theoretical frameworks, methodologies, key findings, and gaps in research.</p>
 </div>
 </section>
-<section id="analyze-gaps-and-trends" class="level4" data-number="2.2.1.4">
-<h4 data-number="2.2.1.4" class="anchored" data-anchor-id="analyze-gaps-and-trends"><span class="header-section-number">2.2.1.4</span> <strong>Analyze Gaps and Trends</strong>:</h4>
+<section id="analyze-gaps-and-trends" class="level4" data-number="2.4.1.4">
+<h4 data-number="2.4.1.4" class="anchored" data-anchor-id="analyze-gaps-and-trends"><span class="header-section-number">2.4.1.4</span> <strong>Analyze Gaps and Trends</strong>:</h4>
 <div style="text-align:justify">
 <p>Identify where there is consensus in the literature and where there are disagreements or areas of uncertainty. Look for patterns, unanswered questions, and areas where further research is needed.</p>
 <p>When reviewing the literature, certain patterns may emerge that suggest areas for future research. These include unanswered questions, contradictory results, or findings that raise more questions than answers.</p>
@@ -363,8 +397,8 @@ ul.task-list li input[type="checkbox"] {
 <p><code>Long-Term vs. Short-Term Outcomes</code>: Many studies may focus on short-term results but fail to measure long-term effects of interventions or treatments, highlighting the need for longitudinal studies.</p>
 </div>
 </section>
-<section id="evaluate-the-quality-of-studies" class="level4" data-number="2.2.1.5">
-<h4 data-number="2.2.1.5" class="anchored" data-anchor-id="evaluate-the-quality-of-studies"><span class="header-section-number">2.2.1.5</span> <strong>Evaluate the Quality of Studies</strong>:</h4>
+<section id="evaluate-the-quality-of-studies" class="level4" data-number="2.4.1.5">
+<h4 data-number="2.4.1.5" class="anchored" data-anchor-id="evaluate-the-quality-of-studies"><span class="header-section-number">2.4.1.5</span> <strong>Evaluate the Quality of Studies</strong>:</h4>
 <div style="text-align:justify">
 <p>Assess the quality and relevance of the studies you find. Pay attention to sample sizes, study design, and the robustness of methodologies.</p>
 <p>One can use established tools to assess the quality of individual studies systematically.</p>
@@ -386,16 +420,16 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 </section>
-<section id="synthesize-findings" class="level4" data-number="2.2.1.6">
-<h4 data-number="2.2.1.6" class="anchored" data-anchor-id="synthesize-findings"><span class="header-section-number">2.2.1.6</span> <strong>Synthesize Findings</strong>:</h4>
+<section id="synthesize-findings" class="level4" data-number="2.4.1.6">
+<h4 data-number="2.4.1.6" class="anchored" data-anchor-id="synthesize-findings"><span class="header-section-number">2.4.1.6</span> <strong>Synthesize Findings</strong>:</h4>
 <div style="text-align:justify">
 <p>Summarize key findings and insights in a way that identifies gaps and establishes the foundation for your research question.</p>
 <p>Summarizing the key findings and insights from the literature helps to build a clear understanding of the current state of knowledge. By identifying gaps and contradictions in the research, you can articulate a research question that addresses these gaps and contributes to advancing knowledge in your field. This process not only justifies the need for your study but also ensures that your research will fill a critical gap in the literature, making a meaningful impact.</p>
 </div>
 </section>
 </section>
-<section id="use-of-bibliographic-softwares-in-literature-review" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="use-of-bibliographic-softwares-in-literature-review"><span class="header-section-number">2.2.2</span> Use of Bibliographic Softwares in Literature Review</h3>
+<section id="use-of-bibliographic-softwares-in-literature-review" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="use-of-bibliographic-softwares-in-literature-review"><span class="header-section-number">2.4.2</span> Use of Bibliographic Softwares in Literature Review</h3>
 <div style="text-align:justify">
 <p>Once you’ve gathered your references, bibliographic softwares like <code>Zotero</code>, <code>Endnote</code>, <code>Mendeley</code> can help you <strong>organize them into categories or groups</strong> that make sense for your research. For example, you can categorize articles by themes, methodologies, or findings related to your research question.</p>
 <p>During your review, you will likely need to <strong>annotate</strong> articles, take notes, and <strong>highlight</strong> key sections or quotes. Bibliographic software allows you to store these annotations and notes within the software itself.Zotero enables note-taking on individual references and allows you to attach PDFs with annotations.</p>
@@ -406,7 +440,7 @@ ul.task-list li input[type="checkbox"] {
 <p>In this workshop, you will be introduced to one powerful and user-friendly citation manager that helps researchers organize, manage, and cite their sources efficiently, <code>Zotero</code> . It allows you to collect and store references from a wide range of sources, including books, journal articles, and websites, all in one place. It also integrates seamlessly with word processors like Microsoft Word and Google Docs to help you easily insert citations and generate bibliographies in multiple citation styles (APA, MLA, Chicago, etc.).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/zotero_png.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/zotero_png.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 <p><strong>Benefits of Using Bibliographic Software</strong></p>
@@ -420,13 +454,13 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="research-design-importance-and-quality-assurance" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="research-design-importance-and-quality-assurance"><span class="header-section-number">2.3</span> Research Design: Importance and Quality Assurance</h2>
+<section id="research-design-importance-and-quality-assurance" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="research-design-importance-and-quality-assurance"><span class="header-section-number">2.5</span> Research Design: Importance and Quality Assurance</h2>
 <div style="text-align:justify">
 <p>After synthesizing the existing literature and identifying gaps, the next crucial step in your research journey is to decide on the research design. The research design serves as the blueprint for how your study will be structured, executed, and analyzed. It is the foundation upon which the reliability, validity, and generalizability of your findings rest.</p>
 </div>
-<section id="why-is-choosing-the-right-research-design-important" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="why-is-choosing-the-right-research-design-important"><span class="header-section-number">2.3.1</span> Why is Choosing the Right Research Design Important?</h3>
+<section id="why-is-choosing-the-right-research-design-important" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="why-is-choosing-the-right-research-design-important"><span class="header-section-number">2.5.1</span> Why is Choosing the Right Research Design Important?</h3>
 <div style="text-align:justify">
 <p>The research design determines the methodology you will use to investigate your research question. A well-chosen study design ensures that you can effectively address the objectives of your research, minimize bias, and obtain valid, reproducible results.</p>
 <ul>
@@ -455,8 +489,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Let us understand more about bias in the following section on Systematic Error.</p>
 </div>
 </section>
-<section id="systematic-error" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="systematic-error"><span class="header-section-number">2.3.2</span> Systematic Error</h3>
+<section id="systematic-error" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="systematic-error"><span class="header-section-number">2.5.2</span> Systematic Error</h3>
 <div style="text-align:justify">
 <p>Occurs when the measurement system makes the same kind of mistake every time it measures something. Often happens because of a problem with the tool or the way the experiment or research is carried out. For example, a caliper might be miscalibrated and always show larger widths than they are. Systematic error is a <strong>threat to validity</strong> of the research</p>
 <ul>
@@ -468,14 +502,14 @@ ul.task-list li input[type="checkbox"] {
 <p>Many factors can cause systematic error, including errors in the measurement instrument calibration, a bias in the measurement process, or external factors that influence the measurement process in a consistent non-random manner.</p>
 </div>
 </section>
-<section id="bias-in-research" class="level3" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" data-anchor-id="bias-in-research"><span class="header-section-number">2.3.3</span> Bias in Research</h3>
+<section id="bias-in-research" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="bias-in-research"><span class="header-section-number">2.5.3</span> Bias in Research</h3>
 <div style="text-align:justify">
 <p>Bias refers to a <strong>systematic tendency to favor one perspective, outcome, or group over others</strong>, leading to distortion in research, decision-making, or judgment.</p>
 <p>In research, bias can result from various factors, including the way studies are designed, how data is collected, and how results are interpreted. This can lead to inaccurate conclusions that do not reflect the true nature of the subject being studied.</p>
 </div>
-<section id="definitions" class="level4" data-number="2.3.3.1">
-<h4 data-number="2.3.3.1" class="anchored" data-anchor-id="definitions"><span class="header-section-number">2.3.3.1</span> Definitions</h4>
+<section id="definitions" class="level4" data-number="2.5.3.1">
+<h4 data-number="2.5.3.1" class="anchored" data-anchor-id="definitions"><span class="header-section-number">2.5.3.1</span> Definitions</h4>
 <div style="text-align:justify">
 <ul>
 <li><p>Deviation of results or inferences from the truth, or processes leading to such deviation. Any trend in the collection, analysis, interpretation, publication, or review of data that can lead to conclusions that are systematically different from the truth.</p></li>
@@ -488,8 +522,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Bacon’s words remind us that our understanding of the world is influenced by who we are and where we come from. In research, this means our personal biases can affect how we design studies, analyze data, and draw conclusions.</p>
 </div>
 </section>
-<section id="major-types-of-bias-distinguished-in-research" class="level4" data-number="2.3.3.2">
-<h4 data-number="2.3.3.2" class="anchored" data-anchor-id="major-types-of-bias-distinguished-in-research"><span class="header-section-number">2.3.3.2</span> Major types of Bias distinguished in Research</h4>
+<section id="major-types-of-bias-distinguished-in-research" class="level4" data-number="2.5.3.2">
+<h4 data-number="2.5.3.2" class="anchored" data-anchor-id="major-types-of-bias-distinguished-in-research"><span class="header-section-number">2.5.3.2</span> Major types of Bias distinguished in Research</h4>
 <div style="text-align:justify">
 <p><strong>Selection Bias</strong></p>
 <p>Errors due to systematic differences in characteristics between those who are selected for study and those who are not.(Last; Beaglehole)</p>
@@ -525,12 +559,12 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="table-enlisting-different-types-of-bias" class="level3" data-number="2.3.4">
-<h3 data-number="2.3.4" class="anchored" data-anchor-id="table-enlisting-different-types-of-bias"><span class="header-section-number">2.3.4</span> Table enlisting different types of Bias</h3>
+<section id="table-enlisting-different-types-of-bias" class="level3" data-number="2.5.4">
+<h3 data-number="2.5.4" class="anchored" data-anchor-id="table-enlisting-different-types-of-bias"><span class="header-section-number">2.5.4</span> Table enlisting different types of Bias</h3>
 <div style="text-align:justify">
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <colgroup>
 <col style="width: 14%">
 <col style="width: 85%">
@@ -587,19 +621,15 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<section id="directed-acyclic-graph" class="level4" data-number="2.3.4.1">
-<h4 data-number="2.3.4.1" class="anchored" data-anchor-id="directed-acyclic-graph"><span class="header-section-number">2.3.4.1</span> Directed Acyclic Graph</h4>
+<section id="directed-acyclic-graph" class="level4" data-number="2.5.4.1">
+<h4 data-number="2.5.4.1" class="anchored" data-anchor-id="directed-acyclic-graph"><span class="header-section-number">2.5.4.1</span> Directed Acyclic Graph</h4>
 <div style="text-align:justify">
 <p>Directed Acyclic Graph, <code>DAG</code> is a graphical representation of the relationships between variables in a study, where each node represents a variable, and each directed edge (arrow) represents a causal relationship between two variables. The acyclic nature of the graph means there are no feedback loops, so the graph doesn’t contain any cycles, no variable can cause itself, directly or indirectly, through a series of causal links.</p>
 <p>DAGs are used to visually represent relationships between variables or components in a system, making it easier to understand and manage potential sources of confounding and errors.</p>
 <p>In DAG, <code>Causal Effect of X on Y</code> is given by:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="research_quality_issues_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="research_quality_issues_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p><strong>DAG Terminologies to Know</strong></p>
@@ -613,11 +643,7 @@ ul.task-list li input[type="checkbox"] {
 <p>In the figure below, Z <code>confounds</code> the relationship between X and Y</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="research_quality_issues_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="research_quality_issues_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p><code>Collider</code></p>
@@ -626,11 +652,7 @@ ul.task-list li input[type="checkbox"] {
 <p>In the figure below, Z is a <code>collider</code> between X and Y</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="research_quality_issues_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="research_quality_issues_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p><code>Mediator</code></p>
@@ -639,11 +661,7 @@ ul.task-list li input[type="checkbox"] {
 <p>In the figure below, M <code>mediates</code> the relationship between X and Y</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="research_quality_issues_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="research_quality_issues_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p><code>Parent and Child Nodes</code>:</p>
@@ -655,7 +673,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/dag.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/dag.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 <div style="text-align:justify">
@@ -670,30 +688,26 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>An Example of <code>DAG</code> is presented here</strong>:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="research_quality_issues_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="research_quality_issues_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="quality-assurance-in-the-stage-of-tool-preparation" class="level3" data-number="2.3.5">
-<h3 data-number="2.3.5" class="anchored" data-anchor-id="quality-assurance-in-the-stage-of-tool-preparation"><span class="header-section-number">2.3.5</span> Quality Assurance in the Stage of Tool Preparation</h3>
+<section id="quality-assurance-in-the-stage-of-tool-preparation" class="level3" data-number="2.5.5">
+<h3 data-number="2.5.5" class="anchored" data-anchor-id="quality-assurance-in-the-stage-of-tool-preparation"><span class="header-section-number">2.5.5</span> Quality Assurance in the Stage of Tool Preparation</h3>
 <div style="text-align:justify">
 <p>Once the research question is formulated, literature review carried out, and research design established, the next critical step is to decide on the variables to measure in your study. Identifying these variables is essential because they directly relate to the research question and guide the data collection process.</p>
 <p>However, it’s not enough to simply choose the variables — ensuring that the measurement of these variables is valid is paramount to the integrity and reliability of your study.</p>
 </div>
-<section id="why-is-measurement-validity-crucial" class="level4" data-number="2.3.5.1">
-<h4 data-number="2.3.5.1" class="anchored" data-anchor-id="why-is-measurement-validity-crucial"><span class="header-section-number">2.3.5.1</span> Why is Measurement Validity Crucial?</h4>
+<section id="why-is-measurement-validity-crucial" class="level4" data-number="2.5.5.1">
+<h4 data-number="2.5.5.1" class="anchored" data-anchor-id="why-is-measurement-validity-crucial"><span class="header-section-number">2.5.5.1</span> Why is Measurement Validity Crucial?</h4>
 <div style="text-align:justify">
 <p>Measurement validity refers to the degree to which the tool or instrument you use accurately measures the variables you intend to assess. If a measurement tool is invalid, the results you obtain could be inaccurate or misleading, potentially leading to incorrect conclusions about the relationships between variables. Valid measurements ensure that your study is truly capturing what you aim to measure, providing reliable data that can support meaningful interpretations and conclusions.</p>
 </div>
 </section>
-<section id="types-of-measurement-validity" class="level4" data-number="2.3.5.2">
-<h4 data-number="2.3.5.2" class="anchored" data-anchor-id="types-of-measurement-validity"><span class="header-section-number">2.3.5.2</span> Types of Measurement Validity</h4>
+<section id="types-of-measurement-validity" class="level4" data-number="2.5.5.2">
+<h4 data-number="2.5.5.2" class="anchored" data-anchor-id="types-of-measurement-validity"><span class="header-section-number">2.5.5.2</span> Types of Measurement Validity</h4>
 <div style="text-align:justify">
 <p>There are several types of measurement validity that are critical to consider when designing your research tools</p>
 <p><code>Content Validity</code>: This refers to the extent to which the measurement tool covers the entire range of the concept or variable it is meant to measure.</p>
@@ -718,8 +732,8 @@ ul.task-list li input[type="checkbox"] {
 <p>A valid measurement tool is a cornerstone of a sound research design, ensuring that your study’s findings are credible and that you can draw meaningful conclusions to answer your research question.</p>
 </div>
 </section>
-<section id="ensuring-reliability-in-the-stage-of-study-tool-preparation" class="level4" data-number="2.3.5.3">
-<h4 data-number="2.3.5.3" class="anchored" data-anchor-id="ensuring-reliability-in-the-stage-of-study-tool-preparation"><span class="header-section-number">2.3.5.3</span> Ensuring Reliability in the Stage of Study Tool Preparation</h4>
+<section id="ensuring-reliability-in-the-stage-of-study-tool-preparation" class="level4" data-number="2.5.5.3">
+<h4 data-number="2.5.5.3" class="anchored" data-anchor-id="ensuring-reliability-in-the-stage-of-study-tool-preparation"><span class="header-section-number">2.5.5.3</span> Ensuring Reliability in the Stage of Study Tool Preparation</h4>
 <div style="text-align:justify">
 <p>When preparing a study tool, ensuring reliability is essential to guarantee that your measurements are consistent, stable, and trustworthy across time and different contexts. In research, reliability refers to the degree to which a tool consistently measures a construct, free from <strong>random errors</strong>, and provides reproducible results. Without reliability, even a valid tool will not produce dependable findings.</p>
 </div>
@@ -793,10 +807,10 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 </section>
-<section id="sampling-design-data-collection" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="sampling-design-data-collection"><span class="header-section-number">2.4</span> Sampling Design &amp; Data Collection</h2>
-<section id="sampling-design" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="sampling-design"><span class="header-section-number">2.4.1</span> Sampling Design</h3>
+<section id="sampling-design-data-collection" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="sampling-design-data-collection"><span class="header-section-number">2.6</span> Sampling Design &amp; Data Collection</h2>
+<section id="sampling-design" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="sampling-design"><span class="header-section-number">2.6.1</span> Sampling Design</h3>
 <div style="text-align:justify">
 <p>Sampling design refers to the process of selecting a subset (sample) from a larger population for the purpose of making inferences or conclusions about the whole population. A well-thought-out sampling design is crucial to ensure that the sample accurately represents the population and that the study results are valid.</p>
 <p><strong>Key Types of Sampling Designs:</strong></p>
@@ -808,6 +822,7 @@ ul.task-list li input[type="checkbox"] {
 <p><code>Systematic Random Sampling</code>: A sample is selected by choosing every nth individual from a list of the population.</p>
 <p><code>Stratified Random Sampling</code>: The population is divided into subgroups (strata) based on a specific characteristic, and samples are randomly selected from each subgroup.</p>
 <p><code>Cluster Sampling</code>: The population is divided into clusters (groups), and entire clusters are randomly selected for study, often used when the population is spread over a large geographic area.</p>
+<p>Cluster sampling is an effective and cost-efficient sampling method when dealing with large, geographically dispersed populations. However, it comes with a sampling effect that can reduce the precision of the results. The intra-cluster correlation (the similarity within clusters) and the design effect (the increased sampling error) are key factors to consider. By understanding and managing these effects through strategies like increasing the number of clusters or using random sampling within clusters, researchers can improve the accuracy and reliability of their findings.</p>
 <ul>
 <li><strong>Non-Probability Sampling</strong>:</li>
 </ul>
@@ -821,8 +836,8 @@ ul.task-list li input[type="checkbox"] {
 <p><code>Sampling Frame</code>: The list or method used to identify and select participants should be comprehensive and accurate, ensuring that no important subgroup is excluded.</p>
 </div>
 </section>
-<section id="data-collection-methods" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="data-collection-methods"><span class="header-section-number">2.4.2</span> Data Collection Methods</h3>
+<section id="data-collection-methods" class="level3" data-number="2.6.2">
+<h3 data-number="2.6.2" class="anchored" data-anchor-id="data-collection-methods"><span class="header-section-number">2.6.2</span> Data Collection Methods</h3>
 <div style="text-align:justify">
 <p>Data collection is the systematic process of gathering and measuring information from a variety of sources to answer research questions or test hypotheses. The choice of data collection methods depends on the research design, objectives, and available resources.</p>
 <p><strong>Common Data Collection Methods</strong>:</p>
@@ -834,8 +849,8 @@ ul.task-list li input[type="checkbox"] {
 <p><code>Secondary Data Analysis</code>: Using existing data from previous studies, reports, or databases, instead of primary data collection, to answer research questions.</p>
 </div>
 </section>
-<section id="online-data-collection-techniques-in-the-research-process" class="level3" data-number="2.4.3">
-<h3 data-number="2.4.3" class="anchored" data-anchor-id="online-data-collection-techniques-in-the-research-process"><span class="header-section-number">2.4.3</span> Online Data Collection Techniques in the Research Process</h3>
+<section id="online-data-collection-techniques-in-the-research-process" class="level3" data-number="2.6.3">
+<h3 data-number="2.6.3" class="anchored" data-anchor-id="online-data-collection-techniques-in-the-research-process"><span class="header-section-number">2.6.3</span> Online Data Collection Techniques in the Research Process</h3>
 <div style="text-align:justify">
 <p>Online data collection techniques have become increasingly integral to modern research. These methods leverage digital platforms and tools to gather data from participants, often offering advantages in terms of cost, efficiency, reach and the ability to gather high-quality, reliable data. With online tools, data is captured in real time, reducing the time spent on data entry and allowing researchers to begin analysis more quickly. Online data collection offers greater convenience for participants, which can improve response rates and data quality.</p>
 <p><strong>Accuracy and Reduced Human Error</strong></p>
@@ -843,8 +858,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="digital-data-collection-platforms" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="digital-data-collection-platforms"><span class="header-section-number">2.5</span> Digital Data Collection Platforms</h2>
+<section id="digital-data-collection-platforms" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="digital-data-collection-platforms"><span class="header-section-number">2.7</span> Digital Data Collection Platforms</h2>
 <div style="text-align:justify">
 <p>In today’s research landscape, online data collection has become a pivotal method for gathering data from diverse populations. Various platforms allow researchers to collect survey responses, interview data, and field observations efficiently. These platforms offer features such as automated data entry, real-time responses, and easy data management.</p>
 <p><strong>Few most commonly used online data collection tools, with their links for further exploration is provided here.</strong></p>
@@ -860,10 +875,10 @@ ul.task-list li input[type="checkbox"] {
 <p>All data can be stored in one place, making it easier for researchers to manage and retrieve responses. Online platforms often include encryption and other security features to protect the confidentiality and integrity of sensitive data.</p>
 </div>
 </section>
-<section id="data-analysis" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="data-analysis"><span class="header-section-number">2.6</span> Data Analysis</h2>
-<section id="data-cleaning-and-preparation" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="data-cleaning-and-preparation"><span class="header-section-number">2.6.1</span> Data Cleaning and Preparation</h3>
+<section id="data-analysis" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="data-analysis"><span class="header-section-number">2.8</span> Data Analysis</h2>
+<section id="data-cleaning-and-preparation" class="level3" data-number="2.8.1">
+<h3 data-number="2.8.1" class="anchored" data-anchor-id="data-cleaning-and-preparation"><span class="header-section-number">2.8.1</span> Data Cleaning and Preparation</h3>
 <ul>
 <li><p><code>Missing Data</code>: Handle missing data appropriately, either through imputation or by excluding incomplete records, depending on the nature and extent of the missing data.</p></li>
 <li><p><code>Outlier Detection</code>: Identify and assess outliers for validity. Decide whether they should be included or excluded based on their legitimacy.</p></li>
@@ -874,8 +889,8 @@ ul.task-list li input[type="checkbox"] {
 <li><code>Data Dredging</code>: Occurs when analysts manipulate the dataset by removing or altering data points to fit a desired outcome.</li>
 </ul>
 </section>
-<section id="exploratory-data-analysis-eda" class="level3" data-number="2.6.2">
-<h3 data-number="2.6.2" class="anchored" data-anchor-id="exploratory-data-analysis-eda"><span class="header-section-number">2.6.2</span> Exploratory Data Analysis (EDA)</h3>
+<section id="exploratory-data-analysis-eda" class="level3" data-number="2.8.2">
+<h3 data-number="2.8.2" class="anchored" data-anchor-id="exploratory-data-analysis-eda"><span class="header-section-number">2.8.2</span> Exploratory Data Analysis (EDA)</h3>
 <ul>
 <li><code>Visualizations</code>: Use graphs (e.g., histograms, box plots) to explore data distributions, trends, and correlations. Visual checks can often reveal anomalies or issues that require attention.</li>
 </ul>
@@ -887,8 +902,8 @@ ul.task-list li input[type="checkbox"] {
 <li>EDA helps in identifying and correcting outliers, misclassifications, or other random errors before deeper analysis.</li>
 </ul>
 </section>
-<section id="modeling-and-statistical-analysis" class="level3" data-number="2.6.3">
-<h3 data-number="2.6.3" class="anchored" data-anchor-id="modeling-and-statistical-analysis"><span class="header-section-number">2.6.3</span> Modeling and Statistical Analysis</h3>
+<section id="modeling-and-statistical-analysis" class="level3" data-number="2.8.3">
+<h3 data-number="2.8.3" class="anchored" data-anchor-id="modeling-and-statistical-analysis"><span class="header-section-number">2.8.3</span> Modeling and Statistical Analysis</h3>
 <ul>
 <li><p><code>Multiple Testing Adjustments</code>: When conducting multiple statistical tests, use corrections (e.g., Bonferroni or False Discovery Rate) to adjust for the increased likelihood of Type I errors (false positives).</p></li>
 <li><p><code>Robust Statistical Methods</code>: Use robust models and statistical techniques that account for potential biases, such as mixed-effects models, regression with robust standard errors, etc.</p></li>
@@ -899,16 +914,16 @@ ul.task-list li input[type="checkbox"] {
 <li><p><code>Overfitting</code>: Avoid creating overly complex models that fit the data too closely and may not generalize well to new datasets. Use techniques like cross-validation or regularization to prevent this.</p></li>
 </ul>
 </section>
-<section id="interpretation-and-reporting" class="level3" data-number="2.6.4">
-<h3 data-number="2.6.4" class="anchored" data-anchor-id="interpretation-and-reporting"><span class="header-section-number">2.6.4</span> Interpretation and Reporting</h3>
+<section id="interpretation-and-reporting" class="level3" data-number="2.8.4">
+<h3 data-number="2.8.4" class="anchored" data-anchor-id="interpretation-and-reporting"><span class="header-section-number">2.8.4</span> Interpretation and Reporting</h3>
 <ul>
 <li><p><code>Transparent Reporting</code>: Clearly report all methods, assumptions, and limitations of your analysis. This includes specifying the analytical tools and model choices used.</p></li>
 <li><p><code>Effect Size Reporting</code>: Report effect sizes (e.g., Cohen’s d, R-squared) in addition to p-values, to provide a fuller understanding of the magnitude of any effects.</p></li>
 <li><p><code>Confidence Intervals</code>: Provide confidence intervals for estimates to reflect the uncertainty in your results.</p></li>
 </ul>
 </section>
-<section id="r-for-data-analysis" class="level3" data-number="2.6.5">
-<h3 data-number="2.6.5" class="anchored" data-anchor-id="r-for-data-analysis"><span class="header-section-number">2.6.5</span> R for Data Analysis</h3>
+<section id="r-for-data-analysis" class="level3" data-number="2.8.5">
+<h3 data-number="2.8.5" class="anchored" data-anchor-id="r-for-data-analysis"><span class="header-section-number">2.8.5</span> R for Data Analysis</h3>
 <p>Using open source statistical programming language like R, can significantly increase the quality of research by automating data analysis and ensuring consistent application of methods. R’s scripting capabilities allow researchers to document every step of the analysis, making it <strong>reproducible and transparent</strong>. Through built-in functions for data cleaning, statistical modeling, and visualization, R helps identify potential issues such as outliers or violations of assumptions early on. Additionally, R enables researchers to apply rigorous quality control measures, like cross-validation and multiple testing corrections, which ensure more robust and reliable results in research.</p>
 <p>In the following sessions, we will explore in detail how R enhances the quality of research by enabling rigorous analysis, ensuring reproducibility, and minimizing errors through automated workflows. R provides a comprehensive set of tools for data cleaning, statistical modeling, visualization, and quality control, which collectively support robust and transparent research practices. We’ll delve into how R facilitates reproducible research, allowing analyses to be easily shared, validated, and updated.</p>
 <p>Join us as we explore the power of R in creating high-quality, reliable, and reproducible research outcomes.</p>
@@ -945,15 +960,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -985,50 +997,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1038,17 +1011,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1060,245 +1024,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1340,18 +1068,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./research_methods.html" class="pagination-link" aria-label="Introduction to Research">
+      <a href="./research_methods.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Research</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./study_design.html" class="pagination-link" aria-label="Epidemiological Study Designs">
+      <a href="./study_design.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 
