@@ -195,6 +195,7 @@ pop_10_wide <- pop_10 |>
   relocate(xend_adjusted, .after = xend) |> 
   ungroup()
 
+
 ```
 
 ```{r}
@@ -257,6 +258,12 @@ First, we identify participants who were classified as "At Risk" at the start of
 # Load necessary package
 pacman::p_load(tidyverse)
 
+pop_10 <- read_rds(
+                   here::here("data",
+                  "inci_prev_demo_df.rds"))
+```
+
+```{r}
 # Find the number of participants at risk at the start of the study
 pop_at_risk <- pop_10 |> 
   filter(month == 0 & status == "At Risk") |> 
@@ -538,6 +545,9 @@ For a deeper understanding of measures of association, refer to this vignnete by
 We are using `epir` package for this session.
 
 ```{r}
+#| warning: false
+#| message: false
+
 # Install and Load epir package
 
 pacman::p_load(epiR, tidyverse, here)
@@ -559,6 +569,8 @@ The following table is the outcome of a cross sectional study.
 We could create a 2 by 2 table for this data in R
 
 ```{r}
+#| warning: false
+#| message: false
 
 dat <- c(13, 2163, 5, 3349)
 
@@ -573,6 +585,10 @@ matrix(dat,
 To calculate the outcome prevalence ratio, odds ratio, attributable prevalence in the exposed, attributable fraction in the exposed, attributable prevalence in the population, and attributable fraction in the population, use the function `epi.2by2`. It’s important to note that we refer to these as the prevalence risk ratio and prevalence odds ratio, rather than the incidence risk ratio and incidence odds ratio, because we are working with data from a cross-sectional study, where disease frequency is measured as prevalence rather than incidence.
 
 ```{r}
+#| warning: false
+#| message: false
+
+
 epi.2by2(dat = dat, 
          method = "cross.sectional", 
          units = 100, 
@@ -674,7 +690,15 @@ df <- read_rds(here("data", "roc_demo_df.rds"))
 
 #### **My First ROC Curve** {.unnumbered}
 
-We could follow the framework of ggplot using `plotROC` package. The demo dataset consists of four columns and represents data related to diagnostic testing, where different biomarkers are used to distinguish between diseased and healthy subjects. Below is a description of each variable:
+We could follow the framework of ggplot using `plotROC` package. The demo dataset consists of four columns and represents data related to diagnostic testing, where different biomarkers are used to distinguish between diseased and healthy subjects. Below is the first 5 observation of the data set and a description of each variable:
+
+```{r}
+#| echo: false
+
+df |> 
+  slice(1:5)
+```
+
 
 1. `disease_status_numeric`: This variable is a numeric representation of the disease status. It contains binary values:
   + 1: Represents subjects who are ill (diseased).
@@ -765,7 +789,8 @@ If you want to change the X axis name, then
   geom_roc(n.cuts = 5, 
            labelsize = 5, 
            labelround = 2) +
-  style_roc(xlab = "1 - Specificity")
+  labs(x = "1 - Specificity",
+       y = "Sensitivity")
 ```
 
 
@@ -806,7 +831,7 @@ bybiomarker <-  ggplot(data = df,
   geom_roc() +
   facet_wrap(~biomarker)
 
-plot
+bybiomarker
 ```
 
 To find AUC

@@ -288,6 +288,28 @@ df |>
 
 :::
 
+### Creating a Contingency Table with p-value
+
+::: {style="text-align:justify"}
+
+In this section, we use the gtsummary package to create a contingency table for a categorical variable (bmi_who) stratified by the diabetes status. Additionally, we include a p-value to test the association between these two variables. Here is the code:
+
+```{r}
+df |> 
+  drop_na(bmi_who, diabetes) |> 
+  tbl_summary(
+        by = diabetes,
+    include = c(bmi_who),
+    label = list(
+      bmi_who ~ "Body Mass Index (WHO Categorisation)"
+    )
+  ) |> 
+  add_p()
+```
+
+:::
+
+
 ### Creating a Regression Model Table
 
 ::: {style="text-align:justify"}

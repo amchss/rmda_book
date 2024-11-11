@@ -188,7 +188,7 @@ Once your XLSForm is ready, you can upload it to ODK Central to make it availabl
 
 After completing these steps, your form is ready to be accessed and filled out by data collectors using the ODK Collect app.
 
-To get started, download our [demo XLSForm](data/odk_example_hin_mal.xlsx), log in to ODK Central, and go to your project. In the Forms section, simply upload the XLSForm file and publish it once it’s validated. This quick exercise will help you get comfortable with the form upload process, so you’ll be ready to upload and manage your own forms with ease.
+To get started, download our [demo XLSForm](data/odk_example_hin_mal_demo.xlsx), log in to ODK Central, and go to your project. In the Forms section, simply upload the XLSForm file and publish it once it’s validated. This quick exercise will help you get comfortable with the form upload process, so you’ll be ready to upload and manage your own forms with ease.
 
 :::
 
