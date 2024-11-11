@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Research Methodologies &amp; Data Analysis Using R - 3&nbsp; Quality Issues in Research</title>
+<title>Research Methodologies &amp; Data Analysis Using R - 4&nbsp; Quality Issues in Research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quality Issues in Research</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quality Issues in Research</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -110,27 +110,32 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./study_design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></a>
+  <a href="./research_quality_issues.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Research Methods &amp; Quality Assurance</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./validity_reliability_research.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quality Issues in Research</span></a>
+  <a href="./study_design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./digital_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Digital Data Collection using ODK</span></a>
+  <a href="./validity_reliability_research.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quality Issues in Research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro_r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></a>
+  <a href="./digital_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Digital Data Collection using ODK</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistical_methods.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Methods</span></a>
+  <a href="./intro_r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./statistical_methods.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistical Methods</span></a>
   </div>
 </li>
     </ul>
@@ -142,24 +147,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#validity-in-research" id="toc-validity-in-research" class="nav-link active" data-scroll-target="#validity-in-research"><span class="toc-section-number">3.1</span>  Validity in Research</a></li>
-  <li><a href="#main-types-of-validity-typically-distinguished-in-research" id="toc-main-types-of-validity-typically-distinguished-in-research" class="nav-link" data-scroll-target="#main-types-of-validity-typically-distinguished-in-research"><span class="toc-section-number">3.2</span>  Main types of validity typically distinguished in research:</a>
+  <li><a href="#validity-in-research" id="toc-validity-in-research" class="nav-link active" data-scroll-target="#validity-in-research"><span class="toc-section-number">4.1</span>  Validity in Research</a></li>
+  <li><a href="#main-types-of-validity-typically-distinguished-in-research" id="toc-main-types-of-validity-typically-distinguished-in-research" class="nav-link" data-scroll-target="#main-types-of-validity-typically-distinguished-in-research"><span class="toc-section-number">4.2</span>  Main types of validity typically distinguished in research:</a>
   <ul class="collapse">
-  <li><a href="#measurement-validity" id="toc-measurement-validity" class="nav-link" data-scroll-target="#measurement-validity"><span class="toc-section-number">3.2.1</span>  Measurement Validity</a></li>
-  <li><a href="#conventional-paradigms-of-validity" id="toc-conventional-paradigms-of-validity" class="nav-link" data-scroll-target="#conventional-paradigms-of-validity"><span class="toc-section-number">3.2.2</span>  Conventional Paradigms of Validity</a></li>
-  <li><a href="#ecological-validity" id="toc-ecological-validity" class="nav-link" data-scroll-target="#ecological-validity"><span class="toc-section-number">3.2.3</span>  Ecological Validity</a></li>
+  <li><a href="#measurement-validity" id="toc-measurement-validity" class="nav-link" data-scroll-target="#measurement-validity"><span class="toc-section-number">4.2.1</span>  Measurement Validity</a></li>
+  <li><a href="#conventional-paradigms-of-validity" id="toc-conventional-paradigms-of-validity" class="nav-link" data-scroll-target="#conventional-paradigms-of-validity"><span class="toc-section-number">4.2.2</span>  Conventional Paradigms of Validity</a></li>
+  <li><a href="#ecological-validity" id="toc-ecological-validity" class="nav-link" data-scroll-target="#ecological-validity"><span class="toc-section-number">4.2.3</span>  Ecological Validity</a></li>
   </ul></li>
-  <li><a href="#reliability-in-research" id="toc-reliability-in-research" class="nav-link" data-scroll-target="#reliability-in-research"><span class="toc-section-number">3.3</span>  Reliability in Research</a>
+  <li><a href="#reliability-in-research" id="toc-reliability-in-research" class="nav-link" data-scroll-target="#reliability-in-research"><span class="toc-section-number">4.3</span>  Reliability in Research</a>
   <ul class="collapse">
-  <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions"><span class="toc-section-number">3.3.1</span>  Definitions</a></li>
-  <li><a href="#types-of-reliability" id="toc-types-of-reliability" class="nav-link" data-scroll-target="#types-of-reliability"><span class="toc-section-number">3.3.2</span>  Types of Reliability</a></li>
+  <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions"><span class="toc-section-number">4.3.1</span>  Definitions</a></li>
+  <li><a href="#types-of-reliability" id="toc-types-of-reliability" class="nav-link" data-scroll-target="#types-of-reliability"><span class="toc-section-number">4.3.2</span>  Types of Reliability</a></li>
   </ul></li>
-  <li><a href="#possible-threats-to-validity-reliability-in-research" id="toc-possible-threats-to-validity-reliability-in-research" class="nav-link" data-scroll-target="#possible-threats-to-validity-reliability-in-research"><span class="toc-section-number">3.4</span>  Possible Threats to Validity &amp; Reliability in Research</a>
+  <li><a href="#possible-threats-to-validity-reliability-in-research" id="toc-possible-threats-to-validity-reliability-in-research" class="nav-link" data-scroll-target="#possible-threats-to-validity-reliability-in-research"><span class="toc-section-number">4.4</span>  Possible Threats to Validity &amp; Reliability in Research</a>
   <ul class="collapse">
-  <li><a href="#random-error" id="toc-random-error" class="nav-link" data-scroll-target="#random-error"><span class="toc-section-number">3.4.1</span>  Random Error</a></li>
-  <li><a href="#systematic-error" id="toc-systematic-error" class="nav-link" data-scroll-target="#systematic-error"><span class="toc-section-number">3.4.2</span>  Systematic Error</a></li>
-  <li><a href="#bias-in-research" id="toc-bias-in-research" class="nav-link" data-scroll-target="#bias-in-research"><span class="toc-section-number">3.4.3</span>  Bias in Research</a></li>
-  <li><a href="#table-enlisting-different-types-of-bias" id="toc-table-enlisting-different-types-of-bias" class="nav-link" data-scroll-target="#table-enlisting-different-types-of-bias"><span class="toc-section-number">3.4.4</span>  Table enlisting different types of Bias</a></li>
+  <li><a href="#random-error" id="toc-random-error" class="nav-link" data-scroll-target="#random-error"><span class="toc-section-number">4.4.1</span>  Random Error</a></li>
+  <li><a href="#systematic-error" id="toc-systematic-error" class="nav-link" data-scroll-target="#systematic-error"><span class="toc-section-number">4.4.2</span>  Systematic Error</a></li>
+  <li><a href="#bias-in-research" id="toc-bias-in-research" class="nav-link" data-scroll-target="#bias-in-research"><span class="toc-section-number">4.4.3</span>  Bias in Research</a></li>
+  <li><a href="#table-enlisting-different-types-of-bias" id="toc-table-enlisting-different-types-of-bias" class="nav-link" data-scroll-target="#table-enlisting-different-types-of-bias"><span class="toc-section-number">4.4.4</span>  Table enlisting different types of Bias</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -169,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quality Issues in Research</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quality Issues in Research</span></h1>
 </div>
 
 
@@ -188,14 +193,14 @@ ul.task-list li input[type="checkbox"] {
 <p>In the realm of research, <strong>Validity and Reliability</strong> serve as critical checks for ensuring its credibility. Together, these concepts form the backbone of robust research practices. In this session, we will delve into both validity and reliability in detail, exploring their definitions, significance, and the various methods used to assess them, ultimately highlighting how they contribute to the overall trustworthiness of research findings.</p>
 <p>We will understand both the concept in detail in this session.</p>
 </div>
-<section id="validity-in-research" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="validity-in-research"><span class="header-section-number">3.1</span> Validity in Research</h2>
+<section id="validity-in-research" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="validity-in-research"><span class="header-section-number">4.1</span> Validity in Research</h2>
 <div style="text-align:justify">
 <p>Validity is concerned with the integrity of the conclusions that are generated from a piece of research.</p>
 </div>
 </section>
-<section id="main-types-of-validity-typically-distinguished-in-research" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="main-types-of-validity-typically-distinguished-in-research"><span class="header-section-number">3.2</span> Main types of validity typically distinguished in research:</h2>
+<section id="main-types-of-validity-typically-distinguished-in-research" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="main-types-of-validity-typically-distinguished-in-research"><span class="header-section-number">4.2</span> Main types of validity typically distinguished in research:</h2>
 <div style="text-align:justify">
 <ul>
 <li><p>Measurement Validity</p></li>
@@ -204,13 +209,13 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Ecological Validity</p></li>
 </ul>
 </div>
-<section id="measurement-validity" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="measurement-validity"><span class="header-section-number">3.2.1</span> Measurement Validity</h3>
+<section id="measurement-validity" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="measurement-validity"><span class="header-section-number">4.2.1</span> Measurement Validity</h3>
 <div style="text-align:justify">
 <p>The soundness or appropriateness of a test or instrument or it could be even an indicator to measure a concept, in measuring what it is designed to measure.</p>
 </div>
-<section id="several-ways-of-establishing-measurement-validity" class="level4" data-number="3.2.1.1">
-<h4 data-number="3.2.1.1" class="anchored" data-anchor-id="several-ways-of-establishing-measurement-validity"><span class="header-section-number">3.2.1.1</span> Several Ways of Establishing Measurement Validity</h4>
+<section id="several-ways-of-establishing-measurement-validity" class="level4" data-number="4.2.1.1">
+<h4 data-number="4.2.1.1" class="anchored" data-anchor-id="several-ways-of-establishing-measurement-validity"><span class="header-section-number">4.2.1.1</span> Several Ways of Establishing Measurement Validity</h4>
 <div style="text-align:justify">
 <ul>
 <li><p><strong>Face Validity</strong>: Reflects the content of the concept in question.It can be established by consulting experts to see if the measure accurately addresses the intended concept.</p></li>
@@ -222,8 +227,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="conventional-paradigms-of-validity" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="conventional-paradigms-of-validity"><span class="header-section-number">3.2.2</span> Conventional Paradigms of Validity</h3>
+<section id="conventional-paradigms-of-validity" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="conventional-paradigms-of-validity"><span class="header-section-number">4.2.2</span> Conventional Paradigms of Validity</h3>
 <div style="text-align:justify">
 <ul>
 <li><p><strong>Internal validity</strong>: The best approximation of truth or falsity of a statement implying a relationship or its absence between two variables –indicative of causation.</p></li>
@@ -231,20 +236,20 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 </section>
-<section id="ecological-validity" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="ecological-validity"><span class="header-section-number">3.2.3</span> Ecological Validity</h3>
+<section id="ecological-validity" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="ecological-validity"><span class="header-section-number">4.2.3</span> Ecological Validity</h3>
 <div style="text-align:justify">
 <p>Ecological Validity is concerned with the question of whether social scientific findings are applicable to people’s everyday, natural social settings, commonly applicable in social science research.Do the tools/instruments capture the daily life conditions, opinions, values, attitudes, and knowledge base of those studied as expressed in their natural habitat?’</p>
 </div>
 </section>
 </section>
-<section id="reliability-in-research" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="reliability-in-research"><span class="header-section-number">3.3</span> Reliability in Research</h2>
+<section id="reliability-in-research" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="reliability-in-research"><span class="header-section-number">4.3</span> Reliability in Research</h2>
 <div style="text-align:justify">
 <p>Reliability is fundamentally concerned with issues of consistency of measures.</p>
 </div>
-<section id="definitions" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="definitions"><span class="header-section-number">3.3.1</span> Definitions</h3>
+<section id="definitions" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="definitions"><span class="header-section-number">4.3.1</span> Definitions</h3>
 <div style="text-align:justify">
 <ul>
 <li><p>The degree to which a test or measure produces the same scores when applied in the same circumstances - Nelson 1997</p></li>
@@ -257,8 +262,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 </section>
-<section id="types-of-reliability" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="types-of-reliability"><span class="header-section-number">3.3.2</span> Types of Reliability</h3>
+<section id="types-of-reliability" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="types-of-reliability"><span class="header-section-number">4.3.2</span> Types of Reliability</h3>
 <div style="text-align:justify">
 <ul>
 <li><p><strong>Intra-rater reliability</strong>:The consistency of a given observer or measurement tool on more than one occasion. Used to assess the degree to which <strong>the same rater/observer</strong> give consistent estimates of the same phenomenon.</p></li>
@@ -277,8 +282,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="possible-threats-to-validity-reliability-in-research" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="possible-threats-to-validity-reliability-in-research"><span class="header-section-number">3.4</span> Possible Threats to Validity &amp; Reliability in Research</h2>
+<section id="possible-threats-to-validity-reliability-in-research" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="possible-threats-to-validity-reliability-in-research"><span class="header-section-number">4.4</span> Possible Threats to Validity &amp; Reliability in Research</h2>
 <div style="text-align:justify">
 <p>One of the key challenges researchers face in achieving valid and reliable results is the presence of random and systematic errors. These errors can skew findings, undermine the interpretation of data, and ultimately affect the generalizability of the research outcomes. Understanding the distinction between these two types of error and how they impact research quality is critical for improving both the validity and reliability of a study.</p>
 <p><strong>Random error and systematic error</strong> are the two main types of measurement error. Measurement error occurs when the measured value differs from the true value of the quantity being measured.</p>
@@ -288,8 +293,8 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/error.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
-<section id="random-error" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="random-error"><span class="header-section-number">3.4.1</span> Random Error</h3>
+<section id="random-error" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="random-error"><span class="header-section-number">4.4.1</span> Random Error</h3>
 <div style="text-align:justify">
 <p>Occurs due to <strong>chance</strong>. Even if we do everything correctly for each measurement, we’ll get slightly different results when measuring the same item multiple times. Random error is a <strong>threat to reliablity</strong> of the research.</p>
 <ul>
@@ -300,8 +305,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Statisticians often refer to random error as <strong>“noise”</strong> because it can interfere with the true value (or “signal”) of what you’re trying to measure.</p>
 </div>
-<section id="how-to-reduce-random-error" class="level4" data-number="3.4.1.1">
-<h4 data-number="3.4.1.1" class="anchored" data-anchor-id="how-to-reduce-random-error"><span class="header-section-number">3.4.1.1</span> How to reduce Random Error?</h4>
+<section id="how-to-reduce-random-error" class="level4" data-number="4.4.1.1">
+<h4 data-number="4.4.1.1" class="anchored" data-anchor-id="how-to-reduce-random-error"><span class="header-section-number">4.4.1.1</span> How to reduce Random Error?</h4>
 <div style="text-align:justify">
 <p>Random error is unavoidable in research, even if you try to control everything perfectly. However, there are simple ways to reduce it, such as:</p>
 <ul>
@@ -313,8 +318,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="systematic-error" class="level3" data-number="3.4.2">
-<h3 data-number="3.4.2" class="anchored" data-anchor-id="systematic-error"><span class="header-section-number">3.4.2</span> Systematic Error</h3>
+<section id="systematic-error" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="systematic-error"><span class="header-section-number">4.4.2</span> Systematic Error</h3>
 <div style="text-align:justify">
 <p>Occurs when the measurement system makes the same kind of mistake every time it measures something. Often happens because of a problem with the tool or the way the experiment or research is carried out. For example, a caliper might be miscalibrated and always show larger widths than they are. Systematic error is a <strong>threat to validity</strong> of the research</p>
 <ul>
@@ -326,14 +331,14 @@ ul.task-list li input[type="checkbox"] {
 <p>Many factors can cause systematic error, including errors in the measurement instrument calibration, a bias in the measurement process, or external factors that influence the measurement process in a consistent non-random manner.</p>
 </div>
 </section>
-<section id="bias-in-research" class="level3" data-number="3.4.3">
-<h3 data-number="3.4.3" class="anchored" data-anchor-id="bias-in-research"><span class="header-section-number">3.4.3</span> Bias in Research</h3>
+<section id="bias-in-research" class="level3" data-number="4.4.3">
+<h3 data-number="4.4.3" class="anchored" data-anchor-id="bias-in-research"><span class="header-section-number">4.4.3</span> Bias in Research</h3>
 <div style="text-align:justify">
 <p>Bias refers to a <strong>systematic tendency to favor one perspective, outcome, or group over others</strong>, leading to distortion in research, decision-making, or judgment.</p>
 <p>In research, bias can result from various factors, including the way studies are designed, how data is collected, and how results are interpreted. This can lead to inaccurate conclusions that do not reflect the true nature of the subject being studied.</p>
 </div>
-<section id="definitions-1" class="level4" data-number="3.4.3.1">
-<h4 data-number="3.4.3.1" class="anchored" data-anchor-id="definitions-1"><span class="header-section-number">3.4.3.1</span> Definitions</h4>
+<section id="definitions-1" class="level4" data-number="4.4.3.1">
+<h4 data-number="4.4.3.1" class="anchored" data-anchor-id="definitions-1"><span class="header-section-number">4.4.3.1</span> Definitions</h4>
 <div style="text-align:justify">
 <ul>
 <li><p>Deviation of results or inferences from the truth, or processes leading to such deviation. Any trend in the collection, analysis, interpretation, publication, or review of data that can lead to conclusions that are systematically different from the truth.</p></li>
@@ -346,8 +351,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Bacon’s words remind us that our understanding of the world is influenced by who we are and where we come from. In research, this means our personal biases can affect how we design studies, analyze data, and draw conclusions.</p>
 </div>
 </section>
-<section id="major-types-of-bias-distinguished-in-research" class="level4" data-number="3.4.3.2">
-<h4 data-number="3.4.3.2" class="anchored" data-anchor-id="major-types-of-bias-distinguished-in-research"><span class="header-section-number">3.4.3.2</span> Major types of Bias distinguished in Research</h4>
+<section id="major-types-of-bias-distinguished-in-research" class="level4" data-number="4.4.3.2">
+<h4 data-number="4.4.3.2" class="anchored" data-anchor-id="major-types-of-bias-distinguished-in-research"><span class="header-section-number">4.4.3.2</span> Major types of Bias distinguished in Research</h4>
 <div style="text-align:justify">
 <p><strong>Selection Bias</strong></p>
 <p>Errors due to systematic differences in characteristics between those who are selected for study and those who are not.(Last; Beaglehole)</p>
@@ -358,8 +363,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Information bias typically arises when there is a discrepancy between the true values of variables and how they are measured or recorded. It can happen at any stage of a study, whether it’s during data collection, participant interviews, surveys, clinical examinations, or laboratory tests.</p>
 </div>
 </section>
-<section id="confounding-bias" class="level4" data-number="3.4.3.3">
-<h4 data-number="3.4.3.3" class="anchored" data-anchor-id="confounding-bias"><span class="header-section-number">3.4.3.3</span> Confounding Bias</h4>
+<section id="confounding-bias" class="level4" data-number="4.4.3.3">
+<h4 data-number="4.4.3.3" class="anchored" data-anchor-id="confounding-bias"><span class="header-section-number">4.4.3.3</span> Confounding Bias</h4>
 <div style="text-align:justify">
 <p>In research, identifying true relationships between variables is essential for drawing valid conclusions. However, the process is often complicated by confounding bias, a phenomenon where an external variable—called a “confounder”—distorts or misrepresents the true relationship between the variables being studied.</p>
 <p>A confounder is a variable that influences both the independent variable (the cause) and the dependent variable (the effect), creating a false impression of a relationship. This can lead to misleading results, making it difficult to establish cause-and-effect links with certainty.</p>
@@ -373,8 +378,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Should be working independently and not as part of the proposed exposure-health outcome pathway</p></li>
 </ul>
 </div>
-<section id="handling-confounding" class="level5" data-number="3.4.3.3.1">
-<h5 data-number="3.4.3.3.1" class="anchored" data-anchor-id="handling-confounding"><span class="header-section-number">3.4.3.3.1</span> Handling Confounding</h5>
+<section id="handling-confounding" class="level5" data-number="4.4.3.3.1">
+<h5 data-number="4.4.3.3.1" class="anchored" data-anchor-id="handling-confounding"><span class="header-section-number">4.4.3.3.1</span> Handling Confounding</h5>
 <div style="text-align:justify">
 <p><strong>At the Stage of Study Design</strong>:</p>
 <p><strong>Randomization</strong>: Randomization is a technique used during study design to assign participants to different groups in a way that ensures each participant has an equal chance of being assigned to any group, minimizing the potential for confounding variables to affect the results.</p>
@@ -387,8 +392,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 </section>
-<section id="table-enlisting-different-types-of-bias" class="level3" data-number="3.4.4">
-<h3 data-number="3.4.4" class="anchored" data-anchor-id="table-enlisting-different-types-of-bias"><span class="header-section-number">3.4.4</span> Table enlisting different types of Bias</h3>
+<section id="table-enlisting-different-types-of-bias" class="level3" data-number="4.4.4">
+<h3 data-number="4.4.4" class="anchored" data-anchor-id="table-enlisting-different-types-of-bias"><span class="header-section-number">4.4.4</span> Table enlisting different types of Bias</h3>
 <div style="text-align:justify">
 <div class="cell">
 <div class="cell-output-display">
@@ -449,8 +454,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<section id="directed-acyclic-graph" class="level4" data-number="3.4.4.1">
-<h4 data-number="3.4.4.1" class="anchored" data-anchor-id="directed-acyclic-graph"><span class="header-section-number">3.4.4.1</span> Directed Acyclic Graph</h4>
+<section id="directed-acyclic-graph" class="level4" data-number="4.4.4.1">
+<h4 data-number="4.4.4.1" class="anchored" data-anchor-id="directed-acyclic-graph"><span class="header-section-number">4.4.4.1</span> Directed Acyclic Graph</h4>
 <div style="text-align:justify">
 <p>Directed Acyclic Graph is a graphical representation of the relationships between variables in a study, where each node represents a variable, and each directed edge (arrow) represents a causal relationship between two variables. The acyclic nature of the graph means there are no feedback loops, so the graph doesn’t contain any cycles, no variable can cause itself, directly or indirectly, through a series of causal links.</p>
 <p>In DAG, Causal Effect of X on Y is given by:</p>
@@ -663,12 +668,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./study_design.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./digital_data.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Digital Data Collection using ODK</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Digital Data Collection using ODK</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

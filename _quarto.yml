@@ -11,8 +11,8 @@ book:
   - index.qmd
   - preface.qmd
   - research_methods.qmd
+  - research_quality_issues.qmd
   - study_design.qmd
-  - validity_reliability_research.qmd
   - digital_data.qmd
   - intro_r.qmd
   - statistical_methods.qmd

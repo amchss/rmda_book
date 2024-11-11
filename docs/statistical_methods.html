@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Research Methodologies &amp; Data Analysis Using R - 6&nbsp; Statistical Methods</title>
+<title>Research Methodologies &amp; Data Analysis Using R - 7&nbsp; Statistical Methods</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -152,7 +152,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Methods</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistical Methods</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -192,27 +192,32 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./study_design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></a>
+  <a href="./research_quality_issues.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Research Methods &amp; Quality Assurance</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./validity_reliability_research.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quality Issues in Research</span></a>
+  <a href="./study_design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Epidemiological Study Designs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./digital_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Digital Data Collection using ODK</span></a>
+  <a href="./validity_reliability_research.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quality Issues in Research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro_r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></a>
+  <a href="./digital_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Digital Data Collection using ODK</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistical_methods.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Methods</span></a>
+  <a href="./intro_r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./statistical_methods.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistical Methods</span></a>
   </div>
 </li>
     </ul>
@@ -224,47 +229,47 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction-to-biostatistics-and-types-of-variables" id="toc-introduction-to-biostatistics-and-types-of-variables" class="nav-link active" data-scroll-target="#introduction-to-biostatistics-and-types-of-variables"><span class="toc-section-number">6.1</span>  Introduction to Biostatistics and Types of Variables</a>
+  <li><a href="#introduction-to-biostatistics-and-types-of-variables" id="toc-introduction-to-biostatistics-and-types-of-variables" class="nav-link active" data-scroll-target="#introduction-to-biostatistics-and-types-of-variables"><span class="toc-section-number">7.1</span>  Introduction to Biostatistics and Types of Variables</a>
   <ul class="collapse">
-  <li><a href="#biostatistics" id="toc-biostatistics" class="nav-link" data-scroll-target="#biostatistics"><span class="toc-section-number">6.1.1</span>  Biostatistics</a></li>
-  <li><a href="#types-of-variables" id="toc-types-of-variables" class="nav-link" data-scroll-target="#types-of-variables"><span class="toc-section-number">6.1.3</span>  Types of Variables</a></li>
-  <li><a href="#two-major-parts-of-statistics" id="toc-two-major-parts-of-statistics" class="nav-link" data-scroll-target="#two-major-parts-of-statistics"><span class="toc-section-number">6.1.4</span>  Two Major Parts of Statistics</a></li>
+  <li><a href="#biostatistics" id="toc-biostatistics" class="nav-link" data-scroll-target="#biostatistics"><span class="toc-section-number">7.1.1</span>  Biostatistics</a></li>
+  <li><a href="#types-of-variables" id="toc-types-of-variables" class="nav-link" data-scroll-target="#types-of-variables"><span class="toc-section-number">7.1.3</span>  Types of Variables</a></li>
+  <li><a href="#two-major-parts-of-statistics" id="toc-two-major-parts-of-statistics" class="nav-link" data-scroll-target="#two-major-parts-of-statistics"><span class="toc-section-number">7.1.4</span>  Two Major Parts of Statistics</a></li>
   </ul></li>
-  <li><a href="#descriptive-statistics-graphical-methods" id="toc-descriptive-statistics-graphical-methods" class="nav-link" data-scroll-target="#descriptive-statistics-graphical-methods"><span class="toc-section-number">6.2</span>  Descriptive Statistics: Graphical Methods</a>
+  <li><a href="#descriptive-statistics-graphical-methods" id="toc-descriptive-statistics-graphical-methods" class="nav-link" data-scroll-target="#descriptive-statistics-graphical-methods"><span class="toc-section-number">7.2</span>  Descriptive Statistics: Graphical Methods</a>
   <ul class="collapse">
-  <li><a href="#graphical-methods-for-a-single-variable" id="toc-graphical-methods-for-a-single-variable" class="nav-link" data-scroll-target="#graphical-methods-for-a-single-variable"><span class="toc-section-number">6.2.1</span>  Graphical Methods for a Single Variable</a></li>
-  <li><a href="#graphical-methods-for-two-variable-visualization" id="toc-graphical-methods-for-two-variable-visualization" class="nav-link" data-scroll-target="#graphical-methods-for-two-variable-visualization"><span class="toc-section-number">6.2.2</span>  Graphical Methods for Two Variable Visualization</a></li>
-  <li><a href="#data-visualization-using-r-introduction-to-grammar-of-graphics" id="toc-data-visualization-using-r-introduction-to-grammar-of-graphics" class="nav-link" data-scroll-target="#data-visualization-using-r-introduction-to-grammar-of-graphics"><span class="toc-section-number">6.2.3</span>  Data Visualization Using R: Introduction to Grammar of Graphics</a></li>
-  <li><a href="#visualising-a-single-variable-using-r" id="toc-visualising-a-single-variable-using-r" class="nav-link" data-scroll-target="#visualising-a-single-variable-using-r"><span class="toc-section-number">6.2.4</span>  Visualising a Single Variable using R</a></li>
-  <li><a href="#visualising-two-variables-using-r" id="toc-visualising-two-variables-using-r" class="nav-link" data-scroll-target="#visualising-two-variables-using-r"><span class="toc-section-number">6.2.5</span>  Visualising Two Variables using R</a></li>
-  <li><a href="#visualizing-three-variables-using-r" id="toc-visualizing-three-variables-using-r" class="nav-link" data-scroll-target="#visualizing-three-variables-using-r"><span class="toc-section-number">6.2.6</span>  Visualizing Three Variables using R</a></li>
-  <li><a href="#visualizing-four-variables-using-r" id="toc-visualizing-four-variables-using-r" class="nav-link" data-scroll-target="#visualizing-four-variables-using-r"><span class="toc-section-number">6.2.7</span>  Visualizing Four Variables using R</a></li>
+  <li><a href="#graphical-methods-for-a-single-variable" id="toc-graphical-methods-for-a-single-variable" class="nav-link" data-scroll-target="#graphical-methods-for-a-single-variable"><span class="toc-section-number">7.2.1</span>  Graphical Methods for a Single Variable</a></li>
+  <li><a href="#graphical-methods-for-two-variable-visualization" id="toc-graphical-methods-for-two-variable-visualization" class="nav-link" data-scroll-target="#graphical-methods-for-two-variable-visualization"><span class="toc-section-number">7.2.2</span>  Graphical Methods for Two Variable Visualization</a></li>
+  <li><a href="#data-visualization-using-r-introduction-to-grammar-of-graphics" id="toc-data-visualization-using-r-introduction-to-grammar-of-graphics" class="nav-link" data-scroll-target="#data-visualization-using-r-introduction-to-grammar-of-graphics"><span class="toc-section-number">7.2.3</span>  Data Visualization Using R: Introduction to Grammar of Graphics</a></li>
+  <li><a href="#visualising-a-single-variable-using-r" id="toc-visualising-a-single-variable-using-r" class="nav-link" data-scroll-target="#visualising-a-single-variable-using-r"><span class="toc-section-number">7.2.4</span>  Visualising a Single Variable using R</a></li>
+  <li><a href="#visualising-two-variables-using-r" id="toc-visualising-two-variables-using-r" class="nav-link" data-scroll-target="#visualising-two-variables-using-r"><span class="toc-section-number">7.2.5</span>  Visualising Two Variables using R</a></li>
+  <li><a href="#visualizing-three-variables-using-r" id="toc-visualizing-three-variables-using-r" class="nav-link" data-scroll-target="#visualizing-three-variables-using-r"><span class="toc-section-number">7.2.6</span>  Visualizing Three Variables using R</a></li>
+  <li><a href="#visualizing-four-variables-using-r" id="toc-visualizing-four-variables-using-r" class="nav-link" data-scroll-target="#visualizing-four-variables-using-r"><span class="toc-section-number">7.2.7</span>  Visualizing Four Variables using R</a></li>
   </ul></li>
-  <li><a href="#descriptive-statistics-numerical-methods" id="toc-descriptive-statistics-numerical-methods" class="nav-link" data-scroll-target="#descriptive-statistics-numerical-methods"><span class="toc-section-number">6.3</span>  Descriptive Statistics: Numerical Methods</a>
+  <li><a href="#descriptive-statistics-numerical-methods" id="toc-descriptive-statistics-numerical-methods" class="nav-link" data-scroll-target="#descriptive-statistics-numerical-methods"><span class="toc-section-number">7.3</span>  Descriptive Statistics: Numerical Methods</a>
   <ul class="collapse">
-  <li><a href="#types-of-variables-and-summary-measures" id="toc-types-of-variables-and-summary-measures" class="nav-link" data-scroll-target="#types-of-variables-and-summary-measures"><span class="toc-section-number">6.3.1</span>  Types of Variables and Summary Measures</a></li>
-  <li><a href="#numerical-methods-for-a-single-variable-using-r" id="toc-numerical-methods-for-a-single-variable-using-r" class="nav-link" data-scroll-target="#numerical-methods-for-a-single-variable-using-r"><span class="toc-section-number">6.3.2</span>  Numerical Methods for a Single Variable using R</a></li>
-  <li><a href="#numerical-methods-for-two-variables-using-r" id="toc-numerical-methods-for-two-variables-using-r" class="nav-link" data-scroll-target="#numerical-methods-for-two-variables-using-r"><span class="toc-section-number">6.3.3</span>  Numerical Methods for Two Variables using R</a></li>
+  <li><a href="#types-of-variables-and-summary-measures" id="toc-types-of-variables-and-summary-measures" class="nav-link" data-scroll-target="#types-of-variables-and-summary-measures"><span class="toc-section-number">7.3.1</span>  Types of Variables and Summary Measures</a></li>
+  <li><a href="#numerical-methods-for-a-single-variable-using-r" id="toc-numerical-methods-for-a-single-variable-using-r" class="nav-link" data-scroll-target="#numerical-methods-for-a-single-variable-using-r"><span class="toc-section-number">7.3.2</span>  Numerical Methods for a Single Variable using R</a></li>
+  <li><a href="#numerical-methods-for-two-variables-using-r" id="toc-numerical-methods-for-two-variables-using-r" class="nav-link" data-scroll-target="#numerical-methods-for-two-variables-using-r"><span class="toc-section-number">7.3.3</span>  Numerical Methods for Two Variables using R</a></li>
   </ul></li>
-  <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics"><span class="toc-section-number">6.4</span>  Inferential Statistics</a>
+  <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics"><span class="toc-section-number">7.4</span>  Inferential Statistics</a>
   <ul class="collapse">
-  <li><a href="#population-sample-and-sampling-process" id="toc-population-sample-and-sampling-process" class="nav-link" data-scroll-target="#population-sample-and-sampling-process"><span class="toc-section-number">6.4.1</span>  Population, Sample and Sampling Process</a></li>
-  <li><a href="#focus-areas" id="toc-focus-areas" class="nav-link" data-scroll-target="#focus-areas"><span class="toc-section-number">6.4.2</span>  Focus Areas</a></li>
+  <li><a href="#population-sample-and-sampling-process" id="toc-population-sample-and-sampling-process" class="nav-link" data-scroll-target="#population-sample-and-sampling-process"><span class="toc-section-number">7.4.1</span>  Population, Sample and Sampling Process</a></li>
+  <li><a href="#focus-areas" id="toc-focus-areas" class="nav-link" data-scroll-target="#focus-areas"><span class="toc-section-number">7.4.2</span>  Focus Areas</a></li>
   </ul></li>
-  <li><a href="#inferential-statistics-hypothesis-testing-and-interval-estimation" id="toc-inferential-statistics-hypothesis-testing-and-interval-estimation" class="nav-link" data-scroll-target="#inferential-statistics-hypothesis-testing-and-interval-estimation"><span class="toc-section-number">6.5</span>  Inferential Statistics: Hypothesis Testing and Interval Estimation</a>
+  <li><a href="#inferential-statistics-hypothesis-testing-and-interval-estimation" id="toc-inferential-statistics-hypothesis-testing-and-interval-estimation" class="nav-link" data-scroll-target="#inferential-statistics-hypothesis-testing-and-interval-estimation"><span class="toc-section-number">7.5</span>  Inferential Statistics: Hypothesis Testing and Interval Estimation</a>
   <ul class="collapse">
-  <li><a href="#hypothesis-testing-and-interval-estimation-for-a-mean" id="toc-hypothesis-testing-and-interval-estimation-for-a-mean" class="nav-link" data-scroll-target="#hypothesis-testing-and-interval-estimation-for-a-mean"><span class="toc-section-number">6.5.1</span>  Hypothesis Testing and Interval Estimation for a Mean</a></li>
-  <li><a href="#hypothesis-testing-and-interval-estimation-for-two-means" id="toc-hypothesis-testing-and-interval-estimation-for-two-means" class="nav-link" data-scroll-target="#hypothesis-testing-and-interval-estimation-for-two-means"><span class="toc-section-number">6.5.2</span>  Hypothesis Testing and Interval Estimation for Two Means</a></li>
-  <li><a href="#hypothesis-testing-and-interval-estimation-for-a-proportion" id="toc-hypothesis-testing-and-interval-estimation-for-a-proportion" class="nav-link" data-scroll-target="#hypothesis-testing-and-interval-estimation-for-a-proportion"><span class="toc-section-number">6.5.3</span>  Hypothesis Testing and Interval Estimation for a Proportion</a></li>
-  <li><a href="#chi-squared-test" id="toc-chi-squared-test" class="nav-link" data-scroll-target="#chi-squared-test"><span class="toc-section-number">6.5.4</span>  Chi-Squared Test</a></li>
-  <li><a href="#one-way-anova" id="toc-one-way-anova" class="nav-link" data-scroll-target="#one-way-anova"><span class="toc-section-number">6.5.5</span>  One-way ANOVA</a></li>
+  <li><a href="#hypothesis-testing-and-interval-estimation-for-a-mean" id="toc-hypothesis-testing-and-interval-estimation-for-a-mean" class="nav-link" data-scroll-target="#hypothesis-testing-and-interval-estimation-for-a-mean"><span class="toc-section-number">7.5.1</span>  Hypothesis Testing and Interval Estimation for a Mean</a></li>
+  <li><a href="#hypothesis-testing-and-interval-estimation-for-two-means" id="toc-hypothesis-testing-and-interval-estimation-for-two-means" class="nav-link" data-scroll-target="#hypothesis-testing-and-interval-estimation-for-two-means"><span class="toc-section-number">7.5.2</span>  Hypothesis Testing and Interval Estimation for Two Means</a></li>
+  <li><a href="#hypothesis-testing-and-interval-estimation-for-a-proportion" id="toc-hypothesis-testing-and-interval-estimation-for-a-proportion" class="nav-link" data-scroll-target="#hypothesis-testing-and-interval-estimation-for-a-proportion"><span class="toc-section-number">7.5.3</span>  Hypothesis Testing and Interval Estimation for a Proportion</a></li>
+  <li><a href="#chi-squared-test" id="toc-chi-squared-test" class="nav-link" data-scroll-target="#chi-squared-test"><span class="toc-section-number">7.5.4</span>  Chi-Squared Test</a></li>
+  <li><a href="#one-way-anova" id="toc-one-way-anova" class="nav-link" data-scroll-target="#one-way-anova"><span class="toc-section-number">7.5.5</span>  One-way ANOVA</a></li>
   </ul></li>
-  <li><a href="#inferential-statistics-regression-analysis" id="toc-inferential-statistics-regression-analysis" class="nav-link" data-scroll-target="#inferential-statistics-regression-analysis"><span class="toc-section-number">6.6</span>  Inferential Statistics: Regression Analysis</a>
+  <li><a href="#inferential-statistics-regression-analysis" id="toc-inferential-statistics-regression-analysis" class="nav-link" data-scroll-target="#inferential-statistics-regression-analysis"><span class="toc-section-number">7.6</span>  Inferential Statistics: Regression Analysis</a>
   <ul class="collapse">
-  <li><a href="#simple-linear-regression" id="toc-simple-linear-regression" class="nav-link" data-scroll-target="#simple-linear-regression"><span class="toc-section-number">6.6.1</span>  Simple Linear Regression</a></li>
-  <li><a href="#simple-linear-regression-using-r" id="toc-simple-linear-regression-using-r" class="nav-link" data-scroll-target="#simple-linear-regression-using-r"><span class="toc-section-number">6.6.2</span>  Simple Linear Regression Using R</a></li>
-  <li><a href="#multiple-linear-regression-using-r" id="toc-multiple-linear-regression-using-r" class="nav-link" data-scroll-target="#multiple-linear-regression-using-r"><span class="toc-section-number">6.6.3</span>  Multiple Linear Regression using R</a></li>
-  <li><a href="#logistic-regression-using-r" id="toc-logistic-regression-using-r" class="nav-link" data-scroll-target="#logistic-regression-using-r"><span class="toc-section-number">6.6.4</span>  Logistic Regression using R</a></li>
+  <li><a href="#simple-linear-regression" id="toc-simple-linear-regression" class="nav-link" data-scroll-target="#simple-linear-regression"><span class="toc-section-number">7.6.1</span>  Simple Linear Regression</a></li>
+  <li><a href="#simple-linear-regression-using-r" id="toc-simple-linear-regression-using-r" class="nav-link" data-scroll-target="#simple-linear-regression-using-r"><span class="toc-section-number">7.6.2</span>  Simple Linear Regression Using R</a></li>
+  <li><a href="#multiple-linear-regression-using-r" id="toc-multiple-linear-regression-using-r" class="nav-link" data-scroll-target="#multiple-linear-regression-using-r"><span class="toc-section-number">7.6.3</span>  Multiple Linear Regression using R</a></li>
+  <li><a href="#logistic-regression-using-r" id="toc-logistic-regression-using-r" class="nav-link" data-scroll-target="#logistic-regression-using-r"><span class="toc-section-number">7.6.4</span>  Logistic Regression using R</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
@@ -276,7 +281,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Methods</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistical Methods</span></h1>
 </div>
 
 
@@ -300,21 +305,21 @@ div.csl-indent {
 <li><p>Be able to differentiate between the two major parts of statistics: descriptive and inferential analysis</p></li>
 </ul>
 </div>
-<section id="introduction-to-biostatistics-and-types-of-variables" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="introduction-to-biostatistics-and-types-of-variables"><span class="header-section-number">6.1</span> Introduction to Biostatistics and Types of Variables</h2>
-<section id="biostatistics" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="biostatistics"><span class="header-section-number">6.1.1</span> Biostatistics</h3>
+<section id="introduction-to-biostatistics-and-types-of-variables" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="introduction-to-biostatistics-and-types-of-variables"><span class="header-section-number">7.1</span> Introduction to Biostatistics and Types of Variables</h2>
+<section id="biostatistics" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="biostatistics"><span class="header-section-number">7.1.1</span> Biostatistics</h3>
 <div style="text-align:justify">
 <p><strong>Biostatistics</strong> is the application of statistical methods to biological and medical data. It helps clinicians make informed decisions based on data collected from clinical trials, observational studies, and patient records.</p>
-<section id="variables" class="level3" data-number="6.1.2">
-<h3 data-number="6.1.2" class="anchored" data-anchor-id="variables"><span class="header-section-number">6.1.2</span> Variables</h3>
+<section id="variables" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="variables"><span class="header-section-number">7.1.2</span> Variables</h3>
 <p>If, as we observe a characteristic, we find that it takes on different values in different persons, places, or things, we label the characteristic a variable.</p>
 <p>For example, if we are observing the characteristic’height’ in a group of people, we will notice that height varies from person to person. Therefore, height is a variable.</p>
 </section>
 </div>
 </section>
-<section id="types-of-variables" class="level3" data-number="6.1.3">
-<h3 data-number="6.1.3" class="anchored" data-anchor-id="types-of-variables"><span class="header-section-number">6.1.3</span> Types of Variables</h3>
+<section id="types-of-variables" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="types-of-variables"><span class="header-section-number">7.1.3</span> Types of Variables</h3>
 <div style="text-align:justify">
 <p>Variables are essential in data analysis and are categorized into four types:</p>
 <div class="quarto-figure quarto-figure-center">
@@ -331,8 +336,8 @@ div.csl-indent {
 </ul>
 </div>
 </section>
-<section id="two-major-parts-of-statistics" class="level3" data-number="6.1.4">
-<h3 data-number="6.1.4" class="anchored" data-anchor-id="two-major-parts-of-statistics"><span class="header-section-number">6.1.4</span> Two Major Parts of Statistics</h3>
+<section id="two-major-parts-of-statistics" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" class="anchored" data-anchor-id="two-major-parts-of-statistics"><span class="header-section-number">7.1.4</span> Two Major Parts of Statistics</h3>
 <div style="text-align:justify">
 <p>Statistics is divided into two main areas:</p>
 <ol type="1">
@@ -343,13 +348,13 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="descriptive-statistics-graphical-methods" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="descriptive-statistics-graphical-methods"><span class="header-section-number">6.2</span> Descriptive Statistics: Graphical Methods</h2>
+<section id="descriptive-statistics-graphical-methods" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="descriptive-statistics-graphical-methods"><span class="header-section-number">7.2</span> Descriptive Statistics: Graphical Methods</h2>
 <div style="text-align:justify">
 <p>Graphical methods are crucial for understanding data at a glance. Depending on the number and type of variables, we use different graphical techniques. The graphical methods provided here are just some of the available methods for data visualization. There are many others that can be explored in more detail later. This is intended to be a basic introduction to help you get started.</p>
 </div>
-<section id="graphical-methods-for-a-single-variable" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="graphical-methods-for-a-single-variable"><span class="header-section-number">6.2.1</span> Graphical Methods for a Single Variable</h3>
+<section id="graphical-methods-for-a-single-variable" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="graphical-methods-for-a-single-variable"><span class="header-section-number">7.2.1</span> Graphical Methods for a Single Variable</h3>
 <table class="table">
 <colgroup>
 <col style="width: 32%">
@@ -397,8 +402,8 @@ div.csl-indent {
 </tbody>
 </table>
 </section>
-<section id="graphical-methods-for-two-variable-visualization" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="graphical-methods-for-two-variable-visualization"><span class="header-section-number">6.2.2</span> Graphical Methods for Two Variable Visualization</h3>
+<section id="graphical-methods-for-two-variable-visualization" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="graphical-methods-for-two-variable-visualization"><span class="header-section-number">7.2.2</span> Graphical Methods for Two Variable Visualization</h3>
 <table class="table">
 <colgroup>
 <col style="width: 34%">
@@ -426,8 +431,8 @@ div.csl-indent {
 </tbody>
 </table>
 </section>
-<section id="data-visualization-using-r-introduction-to-grammar-of-graphics" class="level3" data-number="6.2.3">
-<h3 data-number="6.2.3" class="anchored" data-anchor-id="data-visualization-using-r-introduction-to-grammar-of-graphics"><span class="header-section-number">6.2.3</span> Data Visualization Using R: Introduction to Grammar of Graphics</h3>
+<section id="data-visualization-using-r-introduction-to-grammar-of-graphics" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="data-visualization-using-r-introduction-to-grammar-of-graphics"><span class="header-section-number">7.2.3</span> Data Visualization Using R: Introduction to Grammar of Graphics</h3>
 <div style="text-align:justify">
 <p>Data visualization in R can be effectively done using the <code>ggplot2</code> package, which is included in the popular <code>tidyverse</code> collection of R packages. <code>ggplot2</code> is based on the <strong>Grammar of Graphics</strong>, a structured approach that allows you to build plots layer by layer. This grammar provides a framework for describing and creating visualizations by combining different graphical elements. The idea is that any plot can be constructed by breaking it down into components.</p>
 <p>The visualisation using <code>ggplot2</code> package, which follows the philosophy of grammar of graphics, breaks down a plot into several components:</p>
@@ -517,13 +522,13 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="visualising-a-single-variable-using-r" class="level3" data-number="6.2.4">
-<h3 data-number="6.2.4" class="anchored" data-anchor-id="visualising-a-single-variable-using-r"><span class="header-section-number">6.2.4</span> Visualising a Single Variable using R</h3>
+<section id="visualising-a-single-variable-using-r" class="level3" data-number="7.2.4">
+<h3 data-number="7.2.4" class="anchored" data-anchor-id="visualising-a-single-variable-using-r"><span class="header-section-number">7.2.4</span> Visualising a Single Variable using R</h3>
 <div style="text-align:justify">
 <p>Graphical methods are essential for summarizing and understanding the distribution of a single variable. In this section, we will explore different types of plots for visualizing one variable, based on its type (nominal, ordinal, discrete, or continuous). The key graphical methods include bar charts, boxplots, histograms, and density plots.</p>
 </div>
-<section id="bar-chart" class="level4" data-number="6.2.4.1">
-<h4 data-number="6.2.4.1" class="anchored" data-anchor-id="bar-chart"><span class="header-section-number">6.2.4.1</span> Bar Chart</h4>
+<section id="bar-chart" class="level4" data-number="7.2.4.1">
+<h4 data-number="7.2.4.1" class="anchored" data-anchor-id="bar-chart"><span class="header-section-number">7.2.4.1</span> Bar Chart</h4>
 <div style="text-align:justify">
 <p>A <strong>bar chart</strong> is used to represent categorical data (nominal or ordinal). Each bar represents the frequency (or count) of a category. It’s commonly used for visualizing nominal variables like race or education level.</p>
 <p>Example:</p>
@@ -542,8 +547,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="boxplot" class="level4" data-number="6.2.4.2">
-<h4 data-number="6.2.4.2" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">6.2.4.2</span> Boxplot</h4>
+<section id="boxplot" class="level4" data-number="7.2.4.2">
+<h4 data-number="7.2.4.2" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">7.2.4.2</span> Boxplot</h4>
 <div style="text-align:justify">
 <p>A boxplot is used to represent the distribution of a continuous variable. It shows the median, quartiles, and potential outliers.</p>
 <p>Example:</p>
@@ -562,8 +567,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="histogram" class="level4" data-number="6.2.4.3">
-<h4 data-number="6.2.4.3" class="anchored" data-anchor-id="histogram"><span class="header-section-number">6.2.4.3</span> Histogram</h4>
+<section id="histogram" class="level4" data-number="7.2.4.3">
+<h4 data-number="7.2.4.3" class="anchored" data-anchor-id="histogram"><span class="header-section-number">7.2.4.3</span> Histogram</h4>
 <div style="text-align:justify">
 <p>A histogram is used to visualize the distribution of a continuous variable by dividing the data into bins and counting the number of observations in each bin. It’s useful for understanding the shape, spread, and central tendency of continuous variables like age or income.</p>
 <p>Example:</p>
@@ -604,8 +609,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="density-plot" class="level4" data-number="6.2.4.4">
-<h4 data-number="6.2.4.4" class="anchored" data-anchor-id="density-plot"><span class="header-section-number">6.2.4.4</span> Density Plot</h4>
+<section id="density-plot" class="level4" data-number="7.2.4.4">
+<h4 data-number="7.2.4.4" class="anchored" data-anchor-id="density-plot"><span class="header-section-number">7.2.4.4</span> Density Plot</h4>
 <div style="text-align:justify">
 <p>A density plot is a smoothed version of a histogram, used for continuous data. It provides an estimate of the probability distribution of a continuous variable.</p>
 <div class="cell">
@@ -646,8 +651,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="combining-multiple-geometries-overlaying-histogram-and-density-plot" class="level4" data-number="6.2.4.5">
-<h4 data-number="6.2.4.5" class="anchored" data-anchor-id="combining-multiple-geometries-overlaying-histogram-and-density-plot"><span class="header-section-number">6.2.4.5</span> Combining Multiple Geometries: Overlaying Histogram and Density Plot</h4>
+<section id="combining-multiple-geometries-overlaying-histogram-and-density-plot" class="level4" data-number="7.2.4.5">
+<h4 data-number="7.2.4.5" class="anchored" data-anchor-id="combining-multiple-geometries-overlaying-histogram-and-density-plot"><span class="header-section-number">7.2.4.5</span> Combining Multiple Geometries: Overlaying Histogram and Density Plot</h4>
 <div style="text-align:justify">
 <p>One of the strengths of <code>ggplot2</code> is its ability to add multiple geometric shapes (geoms) to a single plot. For example, you can overlay a <strong>density plot</strong> on top of a <strong>histogram</strong> to visualize both the frequency distribution and the smoothed probability distribution of a continuous variable in a single canvas.</p>
 <p>Example: Histogram and Density Plot Together</p>
@@ -694,13 +699,13 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="visualising-two-variables-using-r" class="level3" data-number="6.2.5">
-<h3 data-number="6.2.5" class="anchored" data-anchor-id="visualising-two-variables-using-r"><span class="header-section-number">6.2.5</span> Visualising Two Variables using R</h3>
+<section id="visualising-two-variables-using-r" class="level3" data-number="7.2.5">
+<h3 data-number="7.2.5" class="anchored" data-anchor-id="visualising-two-variables-using-r"><span class="header-section-number">7.2.5</span> Visualising Two Variables using R</h3>
 <div style="text-align:justify">
 <p>When working with two variables, visualizing the relationship between them helps reveal patterns, associations, or differences. The appropriate plot depends on the types of variables involved (categorical, continuous, or a combination). In this section, we will explore different graphical methods for visualizing two variables: stacked bar charts, grouped bar charts, scatter plots, box plots by category, and regression lines with standard error.</p>
 </div>
-<section id="stacked-bar-chart" class="level4" data-number="6.2.5.1">
-<h4 data-number="6.2.5.1" class="anchored" data-anchor-id="stacked-bar-chart"><span class="header-section-number">6.2.5.1</span> Stacked Bar Chart</h4>
+<section id="stacked-bar-chart" class="level4" data-number="7.2.5.1">
+<h4 data-number="7.2.5.1" class="anchored" data-anchor-id="stacked-bar-chart"><span class="header-section-number">7.2.5.1</span> Stacked Bar Chart</h4>
 <div style="text-align:justify">
 <p>A <strong>stacked bar chart</strong> is used when both variables are categorical. It displays the distribution of one variable while stacking the bars based on the categories of the second variable.</p>
 <p>Example:</p>
@@ -716,8 +721,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="grouped-bar-chart" class="level4" data-number="6.2.5.2">
-<h4 data-number="6.2.5.2" class="anchored" data-anchor-id="grouped-bar-chart"><span class="header-section-number">6.2.5.2</span> Grouped Bar Chart</h4>
+<section id="grouped-bar-chart" class="level4" data-number="7.2.5.2">
+<h4 data-number="7.2.5.2" class="anchored" data-anchor-id="grouped-bar-chart"><span class="header-section-number">7.2.5.2</span> Grouped Bar Chart</h4>
 <div style="text-align:justify">
 <p>A grouped bar chart is another option for visualizing two categorical variables. Instead of stacking the bars, it places bars for each category side-by-side, allowing for a clearer comparison between categories.</p>
 <p>Example:</p>
@@ -734,8 +739,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="scatter-plot" class="level4" data-number="6.2.5.3">
-<h4 data-number="6.2.5.3" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">6.2.5.3</span> Scatter Plot</h4>
+<section id="scatter-plot" class="level4" data-number="7.2.5.3">
+<h4 data-number="7.2.5.3" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">7.2.5.3</span> Scatter Plot</h4>
 <div style="text-align:justify">
 <p>A scatter plot is used to visualize the relationship between two continuous variables. Each point on the plot represents an observation, and patterns like clusters, trends, or outliers can be detected.</p>
 <p>Example:</p>
@@ -755,8 +760,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="box-plot-by-category" class="level4" data-number="6.2.5.4">
-<h4 data-number="6.2.5.4" class="anchored" data-anchor-id="box-plot-by-category"><span class="header-section-number">6.2.5.4</span> Box Plot by Category</h4>
+<section id="box-plot-by-category" class="level4" data-number="7.2.5.4">
+<h4 data-number="7.2.5.4" class="anchored" data-anchor-id="box-plot-by-category"><span class="header-section-number">7.2.5.4</span> Box Plot by Category</h4>
 <div style="text-align:justify">
 <p>A box plot by category is useful when comparing the distribution of a continuous variable across different categories of a categorical variable. It shows the median, quartiles, and potential outliers within each category.</p>
 <p>Example:</p>
@@ -776,8 +781,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="combining-multiple-geometries-scatter-plot-with-regression-line" class="level4" data-number="6.2.5.5">
-<h4 data-number="6.2.5.5" class="anchored" data-anchor-id="combining-multiple-geometries-scatter-plot-with-regression-line"><span class="header-section-number">6.2.5.5</span> Combining Multiple Geometries: Scatter Plot with Regression Line</h4>
+<section id="combining-multiple-geometries-scatter-plot-with-regression-line" class="level4" data-number="7.2.5.5">
+<h4 data-number="7.2.5.5" class="anchored" data-anchor-id="combining-multiple-geometries-scatter-plot-with-regression-line"><span class="header-section-number">7.2.5.5</span> Combining Multiple Geometries: Scatter Plot with Regression Line</h4>
 <div style="text-align:justify">
 <p>A scatter plot with a regression line helps visualize the relationship between two continuous variables. Adding a regression line shows the trend, while the standard error (SE) band around the line indicates the uncertainty in the estimate of the relationship.</p>
 <p>While regression is an inferential method (used for making predictions or understanding relationships), the purpose of this example is to demonstrate how multiple geometries can be combined when visualizing two variables.</p>
@@ -821,8 +826,8 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="visualizing-three-variables-using-r" class="level3" data-number="6.2.6">
-<h3 data-number="6.2.6" class="anchored" data-anchor-id="visualizing-three-variables-using-r"><span class="header-section-number">6.2.6</span> Visualizing Three Variables using R</h3>
+<section id="visualizing-three-variables-using-r" class="level3" data-number="7.2.6">
+<h3 data-number="7.2.6" class="anchored" data-anchor-id="visualizing-three-variables-using-r"><span class="header-section-number">7.2.6</span> Visualizing Three Variables using R</h3>
 <div style="text-align:justify">
 <p>When working with three variables, we can extend basic plots like scatter plots by adding a third variable as an aesthetic element such as color or fill. This allows us to represent more dimensions of the data in a single plot. One common approach is to use <strong>color</strong> to represent a categorical or continuous variable in a scatter plot.</p>
 <p>Example: Scatter Plot with Color for a Third Variable</p>
@@ -869,8 +874,8 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="visualizing-four-variables-using-r" class="level3" data-number="6.2.7">
-<h3 data-number="6.2.7" class="anchored" data-anchor-id="visualizing-four-variables-using-r"><span class="header-section-number">6.2.7</span> Visualizing Four Variables using R</h3>
+<section id="visualizing-four-variables-using-r" class="level3" data-number="7.2.7">
+<h3 data-number="7.2.7" class="anchored" data-anchor-id="visualizing-four-variables-using-r"><span class="header-section-number">7.2.7</span> Visualizing Four Variables using R</h3>
 <div style="text-align:justify">
 <p>To visualize four variables, we can use a combination of <strong>color</strong> (or fill) for the third variable and <strong>facet wrapping</strong> for the fourth variable. Facet wrapping creates a series of smaller plots based on the levels of a categorical variable, allowing us to compare the relationships across different subgroups.</p>
 <p>Example: Scatter Plot with Color and Facet Wrap</p>
@@ -896,8 +901,8 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="descriptive-statistics-numerical-methods" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="descriptive-statistics-numerical-methods"><span class="header-section-number">6.3</span> Descriptive Statistics: Numerical Methods</h2>
+<section id="descriptive-statistics-numerical-methods" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="descriptive-statistics-numerical-methods"><span class="header-section-number">7.3</span> Descriptive Statistics: Numerical Methods</h2>
 <div style="text-align:justify">
 <p>Welcome to the world of numerical descriptive methods! These techniques are your go-to tools for exploring data and understanding key concepts like distribution, central tendency, and variability. Think of them as helpful signs that guide you in figuring out how your data works.</p>
 <p>These methods can be broadly categorized into two key areas: <a href="https://www.nios.ac.in/media/documents/SecMathcour/Eng/Chapter-25.pdf">measures of central tendency</a> and <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3198538/">measures of dispersion</a>. Both are crucial for painting a comprehensive picture of your data. However, we won’t be diving too deeply into these measures in this section; you can read more about them through the provided links. Instead, let’s consider something important: the choice of summary measures depends on the type of variable you’re working with. Whether you’re dealing with categorical variables (like nominal and ordinal data) or numeric variables (which can be discrete or continuous), different summary statistics come into play.</p>
@@ -909,13 +914,13 @@ div.csl-indent {
 </div>
 </div>
 <p><br></p>
-<section id="types-of-variables-and-summary-measures" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="types-of-variables-and-summary-measures"><span class="header-section-number">6.3.1</span> Types of Variables and Summary Measures</h3>
+<section id="types-of-variables-and-summary-measures" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="types-of-variables-and-summary-measures"><span class="header-section-number">7.3.1</span> Types of Variables and Summary Measures</h3>
 <div style="text-align:justify">
 <p>So, what exactly should you use when analyzing your data? Let’s break it down!</p>
 </div>
-<section id="numerical-methods-for-a-single-variable" class="level4" data-number="6.3.1.1">
-<h4 data-number="6.3.1.1" class="anchored" data-anchor-id="numerical-methods-for-a-single-variable"><span class="header-section-number">6.3.1.1</span> Numerical Methods for a Single Variable</h4>
+<section id="numerical-methods-for-a-single-variable" class="level4" data-number="7.3.1.1">
+<h4 data-number="7.3.1.1" class="anchored" data-anchor-id="numerical-methods-for-a-single-variable"><span class="header-section-number">7.3.1.1</span> Numerical Methods for a Single Variable</h4>
 <div style="text-align:justify">
 <p>When you’re focusing on just one variable, numerical methods allow you to summarize and analyze your data through various statistical measures. For numeric variables, you can explore measures of central tendency like the mean, median, and mode. These give you a glimpse into the typical values of your dataset. But that’s not all—measures of dispersion, such as standard deviation, variance, and range, tell you how spread out your data is.</p>
 <p>And don’t forget about categorical variables! For nominal and ordinal data, you can utilize frequency, proportion, and percentage to get a clearer picture of your dataset.</p>
@@ -946,8 +951,8 @@ div.csl-indent {
 </table>
 <p><br></p>
 </section>
-<section id="numerical-methods-for-two-variable" class="level4" data-number="6.3.1.2">
-<h4 data-number="6.3.1.2" class="anchored" data-anchor-id="numerical-methods-for-two-variable"><span class="header-section-number">6.3.1.2</span> Numerical Methods for Two Variable</h4>
+<section id="numerical-methods-for-two-variable" class="level4" data-number="7.3.1.2">
+<h4 data-number="7.3.1.2" class="anchored" data-anchor-id="numerical-methods-for-two-variable"><span class="header-section-number">7.3.1.2</span> Numerical Methods for Two Variable</h4>
 <div style="text-align:justify">
 <p>When you’re analyzing two variables, the methods you choose will depend on the types of variables involved. If you’re working with categorical variables, like nominal and ordinal, you might find yourself comparing frequencies or proportions.</p>
 <p>But when numeric variables enter the equation, you’ve got a whole new set of tools at your disposal. Think correlation and comparing means—these methods help you uncover relationships and differences between the variables, bringing you closer to understanding the data dynamics at play.</p>
@@ -993,21 +998,18 @@ div.csl-indent {
 <p><br></p>
 </section>
 </section>
-<section id="numerical-methods-for-a-single-variable-using-r" class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" data-anchor-id="numerical-methods-for-a-single-variable-using-r"><span class="header-section-number">6.3.2</span> Numerical Methods for a Single Variable using R</h3>
+<section id="numerical-methods-for-a-single-variable-using-r" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="numerical-methods-for-a-single-variable-using-r"><span class="header-section-number">7.3.2</span> Numerical Methods for a Single Variable using R</h3>
 <div style="text-align:justify">
 <p>As we mentioned earlier, there are various ways to describe variables based on their types. In this section, we’ll explore how to describe different variables using R. First, we’ll look at numerical variables (both discrete and continuous), and then we’ll dive into categorical variables (nominal and ordinal).</p>
-<div class="cell">
-
 </div>
-</div>
-<section id="describing-a-single-numerical-discrete-categorical-variable-using-r" class="level4" data-number="6.3.2.1">
-<h4 data-number="6.3.2.1" class="anchored" data-anchor-id="describing-a-single-numerical-discrete-categorical-variable-using-r"><span class="header-section-number">6.3.2.1</span> Describing a Single Numerical (Discrete / Categorical) Variable using R</h4>
+<section id="describing-a-single-numerical-discrete-categorical-variable-using-r" class="level4" data-number="7.3.2.1">
+<h4 data-number="7.3.2.1" class="anchored" data-anchor-id="describing-a-single-numerical-discrete-categorical-variable-using-r"><span class="header-section-number">7.3.2.1</span> Describing a Single Numerical (Discrete / Categorical) Variable using R</h4>
 <div style="text-align:justify">
 <p>Now, let’s explore how to describe numerical variables. We can use various measures, including mean, median, range, standard deviation, interquartile range, and percentiles.</p>
 </div>
-<section id="mean" class="level5" data-number="6.3.2.1.1">
-<h5 data-number="6.3.2.1.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">6.3.2.1.1</span> Mean</h5>
+<section id="mean" class="level5" data-number="7.3.2.1.1">
+<h5 data-number="7.3.2.1.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">7.3.2.1.1</span> Mean</h5>
 <div style="text-align:justify">
 <p>The mean is the average of all the data points.</p>
 <div class="cell">
@@ -1063,8 +1065,8 @@ div.csl-indent {
 </div>
 <p><br></p>
 </section>
-<section id="median" class="level5" data-number="6.3.2.1.2">
-<h5 data-number="6.3.2.1.2" class="anchored" data-anchor-id="median"><span class="header-section-number">6.3.2.1.2</span> Median</h5>
+<section id="median" class="level5" data-number="7.3.2.1.2">
+<h5 data-number="7.3.2.1.2" class="anchored" data-anchor-id="median"><span class="header-section-number">7.3.2.1.2</span> Median</h5>
 <div style="text-align:justify">
 <p>The median is the middle value when the data is ordered.</p>
 <div class="cell">
@@ -1090,8 +1092,8 @@ div.csl-indent {
 <p><br></p>
 </div>
 </section>
-<section id="range" class="level5" data-number="6.3.2.1.3">
-<h5 data-number="6.3.2.1.3" class="anchored" data-anchor-id="range"><span class="header-section-number">6.3.2.1.3</span> Range</h5>
+<section id="range" class="level5" data-number="7.3.2.1.3">
+<h5 data-number="7.3.2.1.3" class="anchored" data-anchor-id="range"><span class="header-section-number">7.3.2.1.3</span> Range</h5>
 <div style="text-align:justify">
 <p>The range is the difference between the maximum and minimum values.</p>
 <div class="cell">
@@ -1132,8 +1134,8 @@ div.csl-indent {
 </div>
 <p><br></p>
 </section>
-<section id="standard-deviation" class="level5" data-number="6.3.2.1.4">
-<h5 data-number="6.3.2.1.4" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">6.3.2.1.4</span> Standard Deviation</h5>
+<section id="standard-deviation" class="level5" data-number="7.3.2.1.4">
+<h5 data-number="7.3.2.1.4" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">7.3.2.1.4</span> Standard Deviation</h5>
 <div style="text-align:justify">
 <p>Standard deviation measures the amount of variation or dispersion in a variable.</p>
 <div class="cell">
@@ -1149,8 +1151,8 @@ div.csl-indent {
 </div>
 <p><br></p>
 </section>
-<section id="percentiles" class="level5" data-number="6.3.2.1.5">
-<h5 data-number="6.3.2.1.5" class="anchored" data-anchor-id="percentiles"><span class="header-section-number">6.3.2.1.5</span> Percentiles</h5>
+<section id="percentiles" class="level5" data-number="7.3.2.1.5">
+<h5 data-number="7.3.2.1.5" class="anchored" data-anchor-id="percentiles"><span class="header-section-number">7.3.2.1.5</span> Percentiles</h5>
 <div style="text-align:justify">
 <p>Percentiles indicate the relative standing of a value within the dataset.</p>
 <div class="cell">
@@ -1181,8 +1183,8 @@ div.csl-indent {
 <p><br></p>
 </div>
 </section>
-<section id="inter-quartile-range" class="level5" data-number="6.3.2.1.6">
-<h5 data-number="6.3.2.1.6" class="anchored" data-anchor-id="inter-quartile-range"><span class="header-section-number">6.3.2.1.6</span> Inter Quartile Range</h5>
+<section id="inter-quartile-range" class="level5" data-number="7.3.2.1.6">
+<h5 data-number="7.3.2.1.6" class="anchored" data-anchor-id="inter-quartile-range"><span class="header-section-number">7.3.2.1.6</span> Inter Quartile Range</h5>
 <div style="text-align:justify">
 <p>The IQR is the range between the 25th percentile (Q1) and the 75th percentile (Q3).</p>
 <div class="cell">
@@ -1216,8 +1218,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="combining-multiple-summary-measures" class="level5" data-number="6.3.2.1.7">
-<h5 data-number="6.3.2.1.7" class="anchored" data-anchor-id="combining-multiple-summary-measures"><span class="header-section-number">6.3.2.1.7</span> Combining Multiple Summary Measures</h5>
+<section id="combining-multiple-summary-measures" class="level5" data-number="7.3.2.1.7">
+<h5 data-number="7.3.2.1.7" class="anchored" data-anchor-id="combining-multiple-summary-measures"><span class="header-section-number">7.3.2.1.7</span> Combining Multiple Summary Measures</h5>
 <div style="text-align:justify">
 <p>If you want to combine multiple measures as a single outcome, it is also possible.</p>
 <div class="cell">
@@ -1241,15 +1243,15 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="describing-a-single-categorical-nominal-ordinal-variable-using-r" class="level4" data-number="6.3.2.2">
-<h4 data-number="6.3.2.2" class="anchored" data-anchor-id="describing-a-single-categorical-nominal-ordinal-variable-using-r"><span class="header-section-number">6.3.2.2</span> Describing a Single Categorical (Nominal / Ordinal) Variable using R</h4>
+<section id="describing-a-single-categorical-nominal-ordinal-variable-using-r" class="level4" data-number="7.3.2.2">
+<h4 data-number="7.3.2.2" class="anchored" data-anchor-id="describing-a-single-categorical-nominal-ordinal-variable-using-r"><span class="header-section-number">7.3.2.2</span> Describing a Single Categorical (Nominal / Ordinal) Variable using R</h4>
 <div style="text-align:justify">
 <p>Now let’s dive into categorical variables! When working with categorical data, we often summarize it using frequencies (how often each category appears), percentages (what proportion of the total each category makes up), and cumulative percentages (the running total of those percentages). Let’s explore how to do all of this in a tidy way using R.</p>
 <p>We’ll continue working with the NHANES dataset to see this in action.</p>
 <p><br></p>
 </div>
-<section id="frequency" class="level5" data-number="6.3.2.2.1">
-<h5 data-number="6.3.2.2.1" class="anchored" data-anchor-id="frequency"><span class="header-section-number">6.3.2.2.1</span> Frequency</h5>
+<section id="frequency" class="level5" data-number="7.3.2.2.1">
+<h5 data-number="7.3.2.2.1" class="anchored" data-anchor-id="frequency"><span class="header-section-number">7.3.2.2.1</span> Frequency</h5>
 <div style="text-align:justify">
 <p>Frequency tells us how many times each category appears in the data. Let’s calculate the frequency for the marital status variable (<code>marital_status</code>).</p>
 <div class="cell">
@@ -1275,8 +1277,8 @@ div.csl-indent {
 </div>
 <p><br></p>
 </section>
-<section id="percent" class="level5" data-number="6.3.2.2.2">
-<h5 data-number="6.3.2.2.2" class="anchored" data-anchor-id="percent"><span class="header-section-number">6.3.2.2.2</span> Percent</h5>
+<section id="percent" class="level5" data-number="7.3.2.2.2">
+<h5 data-number="7.3.2.2.2" class="anchored" data-anchor-id="percent"><span class="header-section-number">7.3.2.2.2</span> Percent</h5>
 <div style="text-align:justify">
 <p>Next, we’ll calculate the percentage for each category, which shows the relative proportion of each category within the dataset.</p>
 <div class="cell">
@@ -1303,8 +1305,8 @@ div.csl-indent {
 <p><br></p>
 </div>
 </section>
-<section id="cumulative-percent" class="level5" data-number="6.3.2.2.3">
-<h5 data-number="6.3.2.2.3" class="anchored" data-anchor-id="cumulative-percent"><span class="header-section-number">6.3.2.2.3</span> Cumulative Percent</h5>
+<section id="cumulative-percent" class="level5" data-number="7.3.2.2.3">
+<h5 data-number="7.3.2.2.3" class="anchored" data-anchor-id="cumulative-percent"><span class="header-section-number">7.3.2.2.3</span> Cumulative Percent</h5>
 <div style="text-align:justify">
 <p>Cumulative percent shows the running total of percentages, which can help understand the distribution across categories as you move through them.</p>
 <div class="cell">
@@ -1332,8 +1334,8 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="publication-ready-tables" class="level4" data-number="6.3.2.3">
-<h4 data-number="6.3.2.3" class="anchored" data-anchor-id="publication-ready-tables"><span class="header-section-number">6.3.2.3</span> Publication Ready Tables</h4>
+<section id="publication-ready-tables" class="level4" data-number="7.3.2.3">
+<h4 data-number="7.3.2.3" class="anchored" data-anchor-id="publication-ready-tables"><span class="header-section-number">7.3.2.3</span> Publication Ready Tables</h4>
 <div style="text-align:justify">
 <p>To create publication-ready tables, you can use the <code>gtsummary</code> package in R. Here’s an example of how to generate a summary table for a single variable dataset:</p>
 <div class="cell">
@@ -1355,23 +1357,24 @@ div.csl-indent {
 <span id="cb77-16"><a href="#cb77-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the table</span></span>
 <span id="cb77-17"><a href="#cb77-17" aria-hidden="true" tabindex="-1"></a>summary_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="ypqcvzzgjm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ypqcvzzgjm table {
+
+<div id="stlfyyjbjx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#stlfyyjbjx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ypqcvzzgjm thead, #ypqcvzzgjm tbody, #ypqcvzzgjm tfoot, #ypqcvzzgjm tr, #ypqcvzzgjm td, #ypqcvzzgjm th {
+#stlfyyjbjx thead, #stlfyyjbjx tbody, #stlfyyjbjx tfoot, #stlfyyjbjx tr, #stlfyyjbjx td, #stlfyyjbjx th {
   border-style: none;
 }
 
-#ypqcvzzgjm p {
+#stlfyyjbjx p {
   margin: 0;
   padding: 0;
 }
 
-#ypqcvzzgjm .gt_table {
+#stlfyyjbjx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1397,12 +1400,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#ypqcvzzgjm .gt_caption {
+#stlfyyjbjx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ypqcvzzgjm .gt_title {
+#stlfyyjbjx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1414,7 +1417,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#ypqcvzzgjm .gt_subtitle {
+#stlfyyjbjx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1426,7 +1429,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#ypqcvzzgjm .gt_heading {
+#stlfyyjbjx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1438,13 +1441,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ypqcvzzgjm .gt_bottom_border {
+#stlfyyjbjx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ypqcvzzgjm .gt_col_headings {
+#stlfyyjbjx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1459,7 +1462,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ypqcvzzgjm .gt_col_heading {
+#stlfyyjbjx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1479,7 +1482,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#ypqcvzzgjm .gt_column_spanner_outer {
+#stlfyyjbjx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1491,15 +1494,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#ypqcvzzgjm .gt_column_spanner_outer:first-child {
+#stlfyyjbjx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ypqcvzzgjm .gt_column_spanner_outer:last-child {
+#stlfyyjbjx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ypqcvzzgjm .gt_column_spanner {
+#stlfyyjbjx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1511,11 +1514,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#ypqcvzzgjm .gt_spanner_row {
+#stlfyyjbjx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ypqcvzzgjm .gt_group_heading {
+#stlfyyjbjx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1541,7 +1544,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#ypqcvzzgjm .gt_empty_group_heading {
+#stlfyyjbjx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1556,15 +1559,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#ypqcvzzgjm .gt_from_md > :first-child {
+#stlfyyjbjx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ypqcvzzgjm .gt_from_md > :last-child {
+#stlfyyjbjx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ypqcvzzgjm .gt_row {
+#stlfyyjbjx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1583,7 +1586,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#ypqcvzzgjm .gt_stub {
+#stlfyyjbjx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1596,7 +1599,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ypqcvzzgjm .gt_stub_row_group {
+#stlfyyjbjx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1610,15 +1613,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#ypqcvzzgjm .gt_row_group_first td {
+#stlfyyjbjx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ypqcvzzgjm .gt_row_group_first th {
+#stlfyyjbjx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ypqcvzzgjm .gt_summary_row {
+#stlfyyjbjx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1628,16 +1631,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ypqcvzzgjm .gt_first_summary_row {
+#stlfyyjbjx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ypqcvzzgjm .gt_first_summary_row.thick {
+#stlfyyjbjx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ypqcvzzgjm .gt_last_summary_row {
+#stlfyyjbjx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1647,7 +1650,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#ypqcvzzgjm .gt_grand_summary_row {
+#stlfyyjbjx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1657,7 +1660,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ypqcvzzgjm .gt_first_grand_summary_row {
+#stlfyyjbjx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1667,7 +1670,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#ypqcvzzgjm .gt_last_grand_summary_row_top {
+#stlfyyjbjx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1677,11 +1680,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#ypqcvzzgjm .gt_striped {
+#stlfyyjbjx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ypqcvzzgjm .gt_table_body {
+#stlfyyjbjx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1690,7 +1693,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#ypqcvzzgjm .gt_footnotes {
+#stlfyyjbjx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1704,7 +1707,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ypqcvzzgjm .gt_footnote {
+#stlfyyjbjx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1713,7 +1716,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ypqcvzzgjm .gt_sourcenotes {
+#stlfyyjbjx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1727,7 +1730,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ypqcvzzgjm .gt_sourcenote {
+#stlfyyjbjx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1735,135 +1738,72 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ypqcvzzgjm .gt_left {
+#stlfyyjbjx .gt_left {
   text-align: left;
 }
 
-#ypqcvzzgjm .gt_center {
+#stlfyyjbjx .gt_center {
   text-align: center;
 }
 
-#ypqcvzzgjm .gt_right {
+#stlfyyjbjx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ypqcvzzgjm .gt_font_normal {
+#stlfyyjbjx .gt_font_normal {
   font-weight: normal;
 }
 
-#ypqcvzzgjm .gt_font_bold {
+#stlfyyjbjx .gt_font_bold {
   font-weight: bold;
 }
 
-#ypqcvzzgjm .gt_font_italic {
+#stlfyyjbjx .gt_font_italic {
   font-style: italic;
 }
 
-#ypqcvzzgjm .gt_super {
+#stlfyyjbjx .gt_super {
   font-size: 65%;
 }
 
-#ypqcvzzgjm .gt_footnote_marks {
+#stlfyyjbjx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ypqcvzzgjm .gt_asterisk {
+#stlfyyjbjx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ypqcvzzgjm .gt_indent_1 {
+#stlfyyjbjx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ypqcvzzgjm .gt_indent_2 {
+#stlfyyjbjx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ypqcvzzgjm .gt_indent_3 {
+#stlfyyjbjx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ypqcvzzgjm .gt_indent_4 {
+#stlfyyjbjx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ypqcvzzgjm .gt_indent_5 {
+#stlfyyjbjx .gt_indent_5 {
   text-indent: 25px;
 }
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header gt_col_headings">
-<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
-<th id="<strong>N = 5,679</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 5,679</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">age</td>
-<td class="gt_row gt_center" headers="stat_0">46.43 (17.78)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">gender</td>
-<td class="gt_row gt_center" headers="stat_0"><br>
-</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;female</td>
-<td class="gt_row gt_center" headers="stat_0">2,903 (51%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;male</td>
-<td class="gt_row gt_center" headers="stat_0">2,776 (49%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">race</td>
-<td class="gt_row gt_center" headers="stat_0"><br>
-</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;White</td>
-<td class="gt_row gt_center" headers="stat_0">3,517 (62%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Black</td>
-<td class="gt_row gt_center" headers="stat_0">760 (13%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Mexican</td>
-<td class="gt_row gt_center" headers="stat_0">564 (9.9%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic</td>
-<td class="gt_row gt_center" headers="stat_0">366 (6.4%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Other</td>
-<td class="gt_row gt_center" headers="stat_0">472 (8.3%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">height</td>
-<td class="gt_row gt_center" headers="stat_0">168.52 (10.17)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
-<td class="gt_row gt_center" headers="stat_0">47</td>
-</tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="odd">
-<td colspan="2" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Mean (SD); n (%)</td>
-</tr>
-</tfoot>
+#stlfyyjbjx .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
 
-#jjbahtfpzw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#stlfyyjbjx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1873,36 +1813,36 @@ div.csl-indent {
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipDaGFyYWN0ZXJpc3RpYyoq&quot;><div class='gt_from_md'><p><strong>Characteristic</strong></p>
 </div></div>"><div data-qmd-base64="KipDaGFyYWN0ZXJpc3RpYyoq"><div class="gt_from_md"><p><strong>Characteristic</strong></p>
 </div></div></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipOID0gMTAsMDAwKio=&quot;><div class='gt_from_md'><p><strong>N = 10,000</strong></p>
-</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KipOID0gMTAsMDAwKio="><div class="gt_from_md"><p><strong>N = 10,000</strong></p>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipOID0gNSw2NzkqKg==&quot;><div class='gt_from_md'><p><strong>N = 5,679</strong></p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KipOID0gNSw2NzkqKg=="><div class="gt_from_md"><p><strong>N = 5,679</strong></p>
 </div></div><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr><td headers="label" class="gt_row gt_left">age</td>
-<td headers="stat_0" class="gt_row gt_center">36.74 (22.40)</td></tr>
+<td headers="stat_0" class="gt_row gt_center">46.43 (17.78)</td></tr>
     <tr><td headers="label" class="gt_row gt_left">gender</td>
 <td headers="stat_0" class="gt_row gt_center"><br></td></tr>
     <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;female</td>
-<td headers="stat_0" class="gt_row gt_center">5,020 (50%)</td></tr>
+<td headers="stat_0" class="gt_row gt_center">2,903 (51%)</td></tr>
     <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;male</td>
-<td headers="stat_0" class="gt_row gt_center">4,980 (50%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">race1</td>
+<td headers="stat_0" class="gt_row gt_center">2,776 (49%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">race</td>
 <td headers="stat_0" class="gt_row gt_center"><br></td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Black</td>
-<td headers="stat_0" class="gt_row gt_center">1,197 (12%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic</td>
-<td headers="stat_0" class="gt_row gt_center">610 (6.1%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Mexican</td>
-<td headers="stat_0" class="gt_row gt_center">1,015 (10%)</td></tr>
     <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;White</td>
-<td headers="stat_0" class="gt_row gt_center">6,372 (64%)</td></tr>
+<td headers="stat_0" class="gt_row gt_center">3,517 (62%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Black</td>
+<td headers="stat_0" class="gt_row gt_center">760 (13%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Mexican</td>
+<td headers="stat_0" class="gt_row gt_center">564 (9.9%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic</td>
+<td headers="stat_0" class="gt_row gt_center">366 (6.4%)</td></tr>
     <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Other</td>
-<td headers="stat_0" class="gt_row gt_center">806 (8.1%)</td></tr>
+<td headers="stat_0" class="gt_row gt_center">472 (8.3%)</td></tr>
     <tr><td headers="label" class="gt_row gt_left">height</td>
-<td headers="stat_0" class="gt_row gt_center">161.88 (20.19)</td></tr>
+<td headers="stat_0" class="gt_row gt_center">168.52 (10.17)</td></tr>
     <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
-<td headers="stat_0" class="gt_row gt_center">353</td></tr>
+<td headers="stat_0" class="gt_row gt_center">47</td></tr>
   </tbody>
   
   <tfoot class="gt_footnotes">
@@ -1919,8 +1859,8 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="numerical-methods-for-two-variables-using-r" class="level3" data-number="6.3.3">
-<h3 data-number="6.3.3" class="anchored" data-anchor-id="numerical-methods-for-two-variables-using-r"><span class="header-section-number">6.3.3</span> Numerical Methods for Two Variables using R</h3>
+<section id="numerical-methods-for-two-variables-using-r" class="level3" data-number="7.3.3">
+<h3 data-number="7.3.3" class="anchored" data-anchor-id="numerical-methods-for-two-variables-using-r"><span class="header-section-number">7.3.3</span> Numerical Methods for Two Variables using R</h3>
 <div style="text-align:justify">
 <p>In this section, we’ll dive into how to describe relationships between two variables using R. Depending on the types of variables—categorical or numeric—the methods vary. We’ll cover three main scenarios:</p>
 <ul>
@@ -1929,15 +1869,15 @@ div.csl-indent {
 <li><p>One categorical and one numeric variable</p></li>
 </ul>
 </div>
-<section id="two-categorical-variables" class="level4" data-number="6.3.3.1">
-<h4 data-number="6.3.3.1" class="anchored" data-anchor-id="two-categorical-variables"><span class="header-section-number">6.3.3.1</span> Two Categorical Variables</h4>
+<section id="two-categorical-variables" class="level4" data-number="7.3.3.1">
+<h4 data-number="7.3.3.1" class="anchored" data-anchor-id="two-categorical-variables"><span class="header-section-number">7.3.3.1</span> Two Categorical Variables</h4>
 <div style="text-align:justify">
 <p>When working with two categorical variables, one of the most common ways to analyze the relationship between them is by using cross-tabulation.</p>
 <p>Cross-tabulation creates a <strong>contingency table</strong> that shows the frequency distribution for each combination of categories.</p>
 <p>Let’s use the <code>gender</code> and <code>race1</code> variables in the NHANES dataset to explore this.</p>
 </div>
-<section id="cross-tabulation" class="level5" data-number="6.3.3.1.1">
-<h5 data-number="6.3.3.1.1" class="anchored" data-anchor-id="cross-tabulation"><span class="header-section-number">6.3.3.1.1</span> Cross-Tabulation</h5>
+<section id="cross-tabulation" class="level5" data-number="7.3.3.1.1">
+<h5 data-number="7.3.3.1.1" class="anchored" data-anchor-id="cross-tabulation"><span class="header-section-number">7.3.3.1.1</span> Cross-Tabulation</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cross-tabulation of 'gender' and 'race1'</span></span>
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>gender_race_table <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
@@ -1964,8 +1904,8 @@ div.csl-indent {
 <p>This table shows how the categories of gender and race1 are distributed across each other. But to make this even more informative, let’s add percentages.</p>
 </div>
 </section>
-<section id="cross-tabulation-with-percentages" class="level5" data-number="6.3.3.1.2">
-<h5 data-number="6.3.3.1.2" class="anchored" data-anchor-id="cross-tabulation-with-percentages"><span class="header-section-number">6.3.3.1.2</span> Cross-Tabulation with Percentages</h5>
+<section id="cross-tabulation-with-percentages" class="level5" data-number="7.3.3.1.2">
+<h5 data-number="7.3.3.1.2" class="anchored" data-anchor-id="cross-tabulation-with-percentages"><span class="header-section-number">7.3.3.1.2</span> Cross-Tabulation with Percentages</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cross-tabulation with percentages</span></span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>gender_race_percent <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
@@ -1996,13 +1936,13 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="two-numeric-variables" class="level4" data-number="6.3.3.2">
-<h4 data-number="6.3.3.2" class="anchored" data-anchor-id="two-numeric-variables"><span class="header-section-number">6.3.3.2</span> Two Numeric Variables</h4>
+<section id="two-numeric-variables" class="level4" data-number="7.3.3.2">
+<h4 data-number="7.3.3.2" class="anchored" data-anchor-id="two-numeric-variables"><span class="header-section-number">7.3.3.2</span> Two Numeric Variables</h4>
 <div style="text-align:justify">
 <p>When both variables are numeric, we can correlation to explore the relationship between them.</p>
 </div>
-<section id="correlation" class="level5" data-number="6.3.3.2.1">
-<h5 data-number="6.3.3.2.1" class="anchored" data-anchor-id="correlation"><span class="header-section-number">6.3.3.2.1</span> Correlation</h5>
+<section id="correlation" class="level5" data-number="7.3.3.2.1">
+<h5 data-number="7.3.3.2.1" class="anchored" data-anchor-id="correlation"><span class="header-section-number">7.3.3.2.1</span> Correlation</h5>
 <div style="text-align:justify">
 <p>Correlation measures the strength and direction of the linear relationship between two numeric variables. The most common measure is Pearson’s correlation coefficient.</p>
 <p>Let’s calculate the correlation between <code>height</code> and <code>weight</code>.</p>
@@ -2033,8 +1973,8 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="one-categorical-and-one-numeric-variables" class="level4" data-number="6.3.3.3">
-<h4 data-number="6.3.3.3" class="anchored" data-anchor-id="one-categorical-and-one-numeric-variables"><span class="header-section-number">6.3.3.3</span> One categorical and One Numeric Variables</h4>
+<section id="one-categorical-and-one-numeric-variables" class="level4" data-number="7.3.3.3">
+<h4 data-number="7.3.3.3" class="anchored" data-anchor-id="one-categorical-and-one-numeric-variables"><span class="header-section-number">7.3.3.3</span> One categorical and One Numeric Variables</h4>
 <div style="text-align:justify">
 <p>When you have one categorical and one numeric variable, you’re often interested in comparing the distribution of the numeric variable across different categories. Group-wise summaries and box plots are common methods for this.</p>
 <p>Let’s look at the relationship between gender (categorical) and height (numeric).</p>
@@ -2059,8 +1999,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="publication-ready-tables-for-two-variables" class="level4" data-number="6.3.3.4">
-<h4 data-number="6.3.3.4" class="anchored" data-anchor-id="publication-ready-tables-for-two-variables"><span class="header-section-number">6.3.3.4</span> Publication Ready Tables for Two Variables</h4>
+<section id="publication-ready-tables-for-two-variables" class="level4" data-number="7.3.3.4">
+<h4 data-number="7.3.3.4" class="anchored" data-anchor-id="publication-ready-tables-for-two-variables"><span class="header-section-number">7.3.3.4</span> Publication Ready Tables for Two Variables</h4>
 <div style="text-align:justify">
 <p>When you need to present results in a polished, publication-ready format, the gtsummary package in R is an excellent tool. It allows you to easily create clean, professional tables summarizing relationships between two variables. Below is an example of how you can use gtsummary to generate a table for a two-variable analysis, showcasing how your results can be made ready for publication.</p>
 <div class="cell">
@@ -2073,23 +2013,24 @@ div.csl-indent {
 <span id="cb88-7"><a href="#cb88-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the table</span></span>
 <span id="cb88-8"><a href="#cb88-8" aria-hidden="true" tabindex="-1"></a>table_cat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="cyxrlzncwy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cyxrlzncwy table {
+
+<div id="bmofiecitx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bmofiecitx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cyxrlzncwy thead, #cyxrlzncwy tbody, #cyxrlzncwy tfoot, #cyxrlzncwy tr, #cyxrlzncwy td, #cyxrlzncwy th {
+#bmofiecitx thead, #bmofiecitx tbody, #bmofiecitx tfoot, #bmofiecitx tr, #bmofiecitx td, #bmofiecitx th {
   border-style: none;
 }
 
-#cyxrlzncwy p {
+#bmofiecitx p {
   margin: 0;
   padding: 0;
 }
 
-#cyxrlzncwy .gt_table {
+#bmofiecitx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2115,12 +2056,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#cyxrlzncwy .gt_caption {
+#bmofiecitx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cyxrlzncwy .gt_title {
+#bmofiecitx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2132,7 +2073,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#cyxrlzncwy .gt_subtitle {
+#bmofiecitx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2144,7 +2085,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#cyxrlzncwy .gt_heading {
+#bmofiecitx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2156,13 +2097,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#cyxrlzncwy .gt_bottom_border {
+#bmofiecitx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cyxrlzncwy .gt_col_headings {
+#bmofiecitx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2177,7 +2118,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#cyxrlzncwy .gt_col_heading {
+#bmofiecitx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2197,7 +2138,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#cyxrlzncwy .gt_column_spanner_outer {
+#bmofiecitx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2209,15 +2150,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#cyxrlzncwy .gt_column_spanner_outer:first-child {
+#bmofiecitx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cyxrlzncwy .gt_column_spanner_outer:last-child {
+#bmofiecitx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cyxrlzncwy .gt_column_spanner {
+#bmofiecitx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2229,11 +2170,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#cyxrlzncwy .gt_spanner_row {
+#bmofiecitx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cyxrlzncwy .gt_group_heading {
+#bmofiecitx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2259,7 +2200,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#cyxrlzncwy .gt_empty_group_heading {
+#bmofiecitx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2274,15 +2215,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#cyxrlzncwy .gt_from_md > :first-child {
+#bmofiecitx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cyxrlzncwy .gt_from_md > :last-child {
+#bmofiecitx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cyxrlzncwy .gt_row {
+#bmofiecitx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2301,7 +2242,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#cyxrlzncwy .gt_stub {
+#bmofiecitx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2314,7 +2255,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#cyxrlzncwy .gt_stub_row_group {
+#bmofiecitx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2328,15 +2269,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#cyxrlzncwy .gt_row_group_first td {
+#bmofiecitx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cyxrlzncwy .gt_row_group_first th {
+#bmofiecitx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cyxrlzncwy .gt_summary_row {
+#bmofiecitx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2346,16 +2287,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#cyxrlzncwy .gt_first_summary_row {
+#bmofiecitx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cyxrlzncwy .gt_first_summary_row.thick {
+#bmofiecitx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cyxrlzncwy .gt_last_summary_row {
+#bmofiecitx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2365,7 +2306,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#cyxrlzncwy .gt_grand_summary_row {
+#bmofiecitx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2375,7 +2316,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#cyxrlzncwy .gt_first_grand_summary_row {
+#bmofiecitx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2385,7 +2326,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#cyxrlzncwy .gt_last_grand_summary_row_top {
+#bmofiecitx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2395,11 +2336,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#cyxrlzncwy .gt_striped {
+#bmofiecitx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cyxrlzncwy .gt_table_body {
+#bmofiecitx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2408,7 +2349,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#cyxrlzncwy .gt_footnotes {
+#bmofiecitx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2422,7 +2363,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#cyxrlzncwy .gt_footnote {
+#bmofiecitx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2431,7 +2372,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#cyxrlzncwy .gt_sourcenotes {
+#bmofiecitx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2445,7 +2386,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#cyxrlzncwy .gt_sourcenote {
+#bmofiecitx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2453,123 +2394,72 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#cyxrlzncwy .gt_left {
+#bmofiecitx .gt_left {
   text-align: left;
 }
 
-#cyxrlzncwy .gt_center {
+#bmofiecitx .gt_center {
   text-align: center;
 }
 
-#cyxrlzncwy .gt_right {
+#bmofiecitx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cyxrlzncwy .gt_font_normal {
+#bmofiecitx .gt_font_normal {
   font-weight: normal;
 }
 
-#cyxrlzncwy .gt_font_bold {
+#bmofiecitx .gt_font_bold {
   font-weight: bold;
 }
 
-#cyxrlzncwy .gt_font_italic {
+#bmofiecitx .gt_font_italic {
   font-style: italic;
 }
 
-#cyxrlzncwy .gt_super {
+#bmofiecitx .gt_super {
   font-size: 65%;
 }
 
-#cyxrlzncwy .gt_footnote_marks {
+#bmofiecitx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cyxrlzncwy .gt_asterisk {
+#bmofiecitx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cyxrlzncwy .gt_indent_1 {
+#bmofiecitx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cyxrlzncwy .gt_indent_2 {
+#bmofiecitx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cyxrlzncwy .gt_indent_3 {
+#bmofiecitx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cyxrlzncwy .gt_indent_4 {
+#bmofiecitx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cyxrlzncwy .gt_indent_5 {
+#bmofiecitx .gt_indent_5 {
   text-indent: 25px;
 }
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header gt_col_headings">
-<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
-<th id="<strong>female</strong><br />
-N = 2,903<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>female</strong><br>
-N = 2,903<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<strong>male</strong><br />
-N = 2,776<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>male</strong><br>
-N = 2,776<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">Race/Ethnicity</td>
-<td class="gt_row gt_center" headers="stat_1"><br>
-</td>
-<td class="gt_row gt_center" headers="stat_2"><br>
-</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;White</td>
-<td class="gt_row gt_center" headers="stat_1">1,807 (62%)</td>
-<td class="gt_row gt_center" headers="stat_2">1,710 (62%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Black</td>
-<td class="gt_row gt_center" headers="stat_1">406 (14%)</td>
-<td class="gt_row gt_center" headers="stat_2">354 (13%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Mexican</td>
-<td class="gt_row gt_center" headers="stat_1">251 (8.6%)</td>
-<td class="gt_row gt_center" headers="stat_2">313 (11%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic</td>
-<td class="gt_row gt_center" headers="stat_1">193 (6.6%)</td>
-<td class="gt_row gt_center" headers="stat_2">173 (6.2%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Other</td>
-<td class="gt_row gt_center" headers="stat_1">246 (8.5%)</td>
-<td class="gt_row gt_center" headers="stat_2">226 (8.1%)</td>
-</tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="odd">
-<td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> n (%)</td>
-</tr>
-</tfoot>
+#bmofiecitx .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
 
-#msngvefrlc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#bmofiecitx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2579,15 +2469,15 @@ N = 2,776<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipDaGFyYWN0ZXJpc3RpYyoq&quot;><div class='gt_from_md'><p><strong>Characteristic</strong></p>
 </div></div>"><div data-qmd-base64="KipDaGFyYWN0ZXJpc3RpYyoq"><div class="gt_from_md"><p><strong>Characteristic</strong></p>
 </div></div></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipmZW1hbGUqKiAgCk4gPSA1LDAyMA==&quot;><div class='gt_from_md'><p><strong>female</strong><br />
-N = 5,020</p>
-</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KipmZW1hbGUqKiAgCk4gPSA1LDAyMA=="><div class="gt_from_md"><p><strong>female</strong><br>
-N = 5,020</p>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipmZW1hbGUqKiAgCk4gPSAyLDkwMw==&quot;><div class='gt_from_md'><p><strong>female</strong><br />
+N = 2,903</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KipmZW1hbGUqKiAgCk4gPSAyLDkwMw=="><div class="gt_from_md"><p><strong>female</strong><br>
+N = 2,903</p>
 </div></div><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KiptYWxlKiogIApOID0gNCw5ODA=&quot;><div class='gt_from_md'><p><strong>male</strong><br />
-N = 4,980</p>
-</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KiptYWxlKiogIApOID0gNCw5ODA="><div class="gt_from_md"><p><strong>male</strong><br>
-N = 4,980</p>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KiptYWxlKiogIApOID0gMiw3NzY=&quot;><div class='gt_from_md'><p><strong>male</strong><br />
+N = 2,776</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KiptYWxlKiogIApOID0gMiw3NzY="><div class="gt_from_md"><p><strong>male</strong><br>
+N = 2,776</p>
 </div></div><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
     </tr>
   </thead>
@@ -2595,21 +2485,21 @@ N = 4,980</p>
     <tr><td headers="label" class="gt_row gt_left">Race/Ethnicity</td>
 <td headers="stat_1" class="gt_row gt_center"><br></td>
 <td headers="stat_2" class="gt_row gt_center"><br></td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Black</td>
-<td headers="stat_1" class="gt_row gt_center">614 (12%)</td>
-<td headers="stat_2" class="gt_row gt_center">583 (12%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic</td>
-<td headers="stat_1" class="gt_row gt_center">320 (6.4%)</td>
-<td headers="stat_2" class="gt_row gt_center">290 (5.8%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Mexican</td>
-<td headers="stat_1" class="gt_row gt_center">452 (9.0%)</td>
-<td headers="stat_2" class="gt_row gt_center">563 (11%)</td></tr>
     <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;White</td>
-<td headers="stat_1" class="gt_row gt_center">3,221 (64%)</td>
-<td headers="stat_2" class="gt_row gt_center">3,151 (63%)</td></tr>
+<td headers="stat_1" class="gt_row gt_center">1,807 (62%)</td>
+<td headers="stat_2" class="gt_row gt_center">1,710 (62%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Black</td>
+<td headers="stat_1" class="gt_row gt_center">406 (14%)</td>
+<td headers="stat_2" class="gt_row gt_center">354 (13%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Mexican</td>
+<td headers="stat_1" class="gt_row gt_center">251 (8.6%)</td>
+<td headers="stat_2" class="gt_row gt_center">313 (11%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic</td>
+<td headers="stat_1" class="gt_row gt_center">193 (6.6%)</td>
+<td headers="stat_2" class="gt_row gt_center">173 (6.2%)</td></tr>
     <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Other</td>
-<td headers="stat_1" class="gt_row gt_center">413 (8.2%)</td>
-<td headers="stat_2" class="gt_row gt_center">393 (7.9%)</td></tr>
+<td headers="stat_1" class="gt_row gt_center">246 (8.5%)</td>
+<td headers="stat_2" class="gt_row gt_center">226 (8.1%)</td></tr>
   </tbody>
   
   <tfoot class="gt_footnotes">
@@ -2635,23 +2525,24 @@ N = 4,980</p>
 <span id="cb89-9"><a href="#cb89-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the table</span></span>
 <span id="cb89-10"><a href="#cb89-10" aria-hidden="true" tabindex="-1"></a>table_cat_num</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="xqgwhfrgwg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xqgwhfrgwg table {
+
+<div id="bqsbdjpwul" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bqsbdjpwul table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xqgwhfrgwg thead, #xqgwhfrgwg tbody, #xqgwhfrgwg tfoot, #xqgwhfrgwg tr, #xqgwhfrgwg td, #xqgwhfrgwg th {
+#bqsbdjpwul thead, #bqsbdjpwul tbody, #bqsbdjpwul tfoot, #bqsbdjpwul tr, #bqsbdjpwul td, #bqsbdjpwul th {
   border-style: none;
 }
 
-#xqgwhfrgwg p {
+#bqsbdjpwul p {
   margin: 0;
   padding: 0;
 }
 
-#xqgwhfrgwg .gt_table {
+#bqsbdjpwul .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2677,12 +2568,12 @@ N = 4,980</p>
   border-left-color: #D3D3D3;
 }
 
-#xqgwhfrgwg .gt_caption {
+#bqsbdjpwul .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xqgwhfrgwg .gt_title {
+#bqsbdjpwul .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2694,7 +2585,7 @@ N = 4,980</p>
   border-bottom-width: 0;
 }
 
-#xqgwhfrgwg .gt_subtitle {
+#bqsbdjpwul .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2706,7 +2597,7 @@ N = 4,980</p>
   border-top-width: 0;
 }
 
-#xqgwhfrgwg .gt_heading {
+#bqsbdjpwul .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2718,13 +2609,13 @@ N = 4,980</p>
   border-right-color: #D3D3D3;
 }
 
-#xqgwhfrgwg .gt_bottom_border {
+#bqsbdjpwul .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xqgwhfrgwg .gt_col_headings {
+#bqsbdjpwul .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2739,7 +2630,7 @@ N = 4,980</p>
   border-right-color: #D3D3D3;
 }
 
-#xqgwhfrgwg .gt_col_heading {
+#bqsbdjpwul .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2759,7 +2650,7 @@ N = 4,980</p>
   overflow-x: hidden;
 }
 
-#xqgwhfrgwg .gt_column_spanner_outer {
+#bqsbdjpwul .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2771,15 +2662,15 @@ N = 4,980</p>
   padding-right: 4px;
 }
 
-#xqgwhfrgwg .gt_column_spanner_outer:first-child {
+#bqsbdjpwul .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xqgwhfrgwg .gt_column_spanner_outer:last-child {
+#bqsbdjpwul .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xqgwhfrgwg .gt_column_spanner {
+#bqsbdjpwul .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2791,11 +2682,11 @@ N = 4,980</p>
   width: 100%;
 }
 
-#xqgwhfrgwg .gt_spanner_row {
+#bqsbdjpwul .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xqgwhfrgwg .gt_group_heading {
+#bqsbdjpwul .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2821,7 +2712,7 @@ N = 4,980</p>
   text-align: left;
 }
 
-#xqgwhfrgwg .gt_empty_group_heading {
+#bqsbdjpwul .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2836,15 +2727,15 @@ N = 4,980</p>
   vertical-align: middle;
 }
 
-#xqgwhfrgwg .gt_from_md > :first-child {
+#bqsbdjpwul .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xqgwhfrgwg .gt_from_md > :last-child {
+#bqsbdjpwul .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xqgwhfrgwg .gt_row {
+#bqsbdjpwul .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2863,7 +2754,7 @@ N = 4,980</p>
   overflow-x: hidden;
 }
 
-#xqgwhfrgwg .gt_stub {
+#bqsbdjpwul .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2876,7 +2767,7 @@ N = 4,980</p>
   padding-right: 5px;
 }
 
-#xqgwhfrgwg .gt_stub_row_group {
+#bqsbdjpwul .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2890,15 +2781,15 @@ N = 4,980</p>
   vertical-align: top;
 }
 
-#xqgwhfrgwg .gt_row_group_first td {
+#bqsbdjpwul .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xqgwhfrgwg .gt_row_group_first th {
+#bqsbdjpwul .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xqgwhfrgwg .gt_summary_row {
+#bqsbdjpwul .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2908,16 +2799,16 @@ N = 4,980</p>
   padding-right: 5px;
 }
 
-#xqgwhfrgwg .gt_first_summary_row {
+#bqsbdjpwul .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xqgwhfrgwg .gt_first_summary_row.thick {
+#bqsbdjpwul .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xqgwhfrgwg .gt_last_summary_row {
+#bqsbdjpwul .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2927,7 +2818,7 @@ N = 4,980</p>
   border-bottom-color: #D3D3D3;
 }
 
-#xqgwhfrgwg .gt_grand_summary_row {
+#bqsbdjpwul .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2937,7 +2828,7 @@ N = 4,980</p>
   padding-right: 5px;
 }
 
-#xqgwhfrgwg .gt_first_grand_summary_row {
+#bqsbdjpwul .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2947,7 +2838,7 @@ N = 4,980</p>
   border-top-color: #D3D3D3;
 }
 
-#xqgwhfrgwg .gt_last_grand_summary_row_top {
+#bqsbdjpwul .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2957,11 +2848,11 @@ N = 4,980</p>
   border-bottom-color: #D3D3D3;
 }
 
-#xqgwhfrgwg .gt_striped {
+#bqsbdjpwul .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xqgwhfrgwg .gt_table_body {
+#bqsbdjpwul .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2970,7 +2861,7 @@ N = 4,980</p>
   border-bottom-color: #D3D3D3;
 }
 
-#xqgwhfrgwg .gt_footnotes {
+#bqsbdjpwul .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2984,7 +2875,7 @@ N = 4,980</p>
   border-right-color: #D3D3D3;
 }
 
-#xqgwhfrgwg .gt_footnote {
+#bqsbdjpwul .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2993,7 +2884,7 @@ N = 4,980</p>
   padding-right: 5px;
 }
 
-#xqgwhfrgwg .gt_sourcenotes {
+#bqsbdjpwul .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3007,7 +2898,7 @@ N = 4,980</p>
   border-right-color: #D3D3D3;
 }
 
-#xqgwhfrgwg .gt_sourcenote {
+#bqsbdjpwul .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3015,96 +2906,72 @@ N = 4,980</p>
   padding-right: 5px;
 }
 
-#xqgwhfrgwg .gt_left {
+#bqsbdjpwul .gt_left {
   text-align: left;
 }
 
-#xqgwhfrgwg .gt_center {
+#bqsbdjpwul .gt_center {
   text-align: center;
 }
 
-#xqgwhfrgwg .gt_right {
+#bqsbdjpwul .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xqgwhfrgwg .gt_font_normal {
+#bqsbdjpwul .gt_font_normal {
   font-weight: normal;
 }
 
-#xqgwhfrgwg .gt_font_bold {
+#bqsbdjpwul .gt_font_bold {
   font-weight: bold;
 }
 
-#xqgwhfrgwg .gt_font_italic {
+#bqsbdjpwul .gt_font_italic {
   font-style: italic;
 }
 
-#xqgwhfrgwg .gt_super {
+#bqsbdjpwul .gt_super {
   font-size: 65%;
 }
 
-#xqgwhfrgwg .gt_footnote_marks {
+#bqsbdjpwul .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xqgwhfrgwg .gt_asterisk {
+#bqsbdjpwul .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xqgwhfrgwg .gt_indent_1 {
+#bqsbdjpwul .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xqgwhfrgwg .gt_indent_2 {
+#bqsbdjpwul .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xqgwhfrgwg .gt_indent_3 {
+#bqsbdjpwul .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xqgwhfrgwg .gt_indent_4 {
+#bqsbdjpwul .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xqgwhfrgwg .gt_indent_5 {
+#bqsbdjpwul .gt_indent_5 {
   text-indent: 25px;
 }
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header gt_col_headings">
-<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
-<th id="<strong>female</strong><br />
-N = 2,876<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>female</strong><br>
-N = 2,876<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<strong>male</strong><br />
-N = 2,756<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>male</strong><br>
-N = 2,756<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">Height</td>
-<td class="gt_row gt_center" headers="stat_1">162 (157, 167)</td>
-<td class="gt_row gt_center" headers="stat_2">175 (171, 181)</td>
-</tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="even">
-<td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Median (Q1, Q3)</td>
-</tr>
-</tfoot>
+#bqsbdjpwul .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
 
-#ziamrfadch div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#bqsbdjpwul div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3114,22 +2981,22 @@ N = 2,756<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipDaGFyYWN0ZXJpc3RpYyoq&quot;><div class='gt_from_md'><p><strong>Characteristic</strong></p>
 </div></div>"><div data-qmd-base64="KipDaGFyYWN0ZXJpc3RpYyoq"><div class="gt_from_md"><p><strong>Characteristic</strong></p>
 </div></div></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipmZW1hbGUqKiAgCk4gPSA0LDg0Nw==&quot;><div class='gt_from_md'><p><strong>female</strong><br />
-N = 4,847</p>
-</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KipmZW1hbGUqKiAgCk4gPSA0LDg0Nw=="><div class="gt_from_md"><p><strong>female</strong><br>
-N = 4,847</p>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipmZW1hbGUqKiAgCk4gPSAyLDg3Ng==&quot;><div class='gt_from_md'><p><strong>female</strong><br />
+N = 2,876</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KipmZW1hbGUqKiAgCk4gPSAyLDg3Ng=="><div class="gt_from_md"><p><strong>female</strong><br>
+N = 2,876</p>
 </div></div><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KiptYWxlKiogIApOID0gNCw4MDA=&quot;><div class='gt_from_md'><p><strong>male</strong><br />
-N = 4,800</p>
-</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KiptYWxlKiogIApOID0gNCw4MDA="><div class="gt_from_md"><p><strong>male</strong><br>
-N = 4,800</p>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KiptYWxlKiogIApOID0gMiw3NTY=&quot;><div class='gt_from_md'><p><strong>male</strong><br />
+N = 2,756</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KiptYWxlKiogIApOID0gMiw3NTY="><div class="gt_from_md"><p><strong>male</strong><br>
+N = 2,756</p>
 </div></div><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr><td headers="label" class="gt_row gt_left">Height</td>
-<td headers="stat_1" class="gt_row gt_center">161 (154, 166)</td>
-<td headers="stat_2" class="gt_row gt_center">174 (166, 179)</td></tr>
+<td headers="stat_1" class="gt_row gt_center">162 (157, 167)</td>
+<td headers="stat_2" class="gt_row gt_center">175 (171, 181)</td></tr>
   </tbody>
   
   <tfoot class="gt_footnotes">
@@ -3155,23 +3022,24 @@ N = 4,800</p>
 <span id="cb90-9"><a href="#cb90-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the table</span></span>
 <span id="cb90-10"><a href="#cb90-10" aria-hidden="true" tabindex="-1"></a>table_cat_num</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="puofucbcmb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#puofucbcmb table {
+
+<div id="exzwauswbm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#exzwauswbm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#puofucbcmb thead, #puofucbcmb tbody, #puofucbcmb tfoot, #puofucbcmb tr, #puofucbcmb td, #puofucbcmb th {
+#exzwauswbm thead, #exzwauswbm tbody, #exzwauswbm tfoot, #exzwauswbm tr, #exzwauswbm td, #exzwauswbm th {
   border-style: none;
 }
 
-#puofucbcmb p {
+#exzwauswbm p {
   margin: 0;
   padding: 0;
 }
 
-#puofucbcmb .gt_table {
+#exzwauswbm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3197,12 +3065,12 @@ N = 4,800</p>
   border-left-color: #D3D3D3;
 }
 
-#puofucbcmb .gt_caption {
+#exzwauswbm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#puofucbcmb .gt_title {
+#exzwauswbm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3214,7 +3082,7 @@ N = 4,800</p>
   border-bottom-width: 0;
 }
 
-#puofucbcmb .gt_subtitle {
+#exzwauswbm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3226,7 +3094,7 @@ N = 4,800</p>
   border-top-width: 0;
 }
 
-#puofucbcmb .gt_heading {
+#exzwauswbm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3238,13 +3106,13 @@ N = 4,800</p>
   border-right-color: #D3D3D3;
 }
 
-#puofucbcmb .gt_bottom_border {
+#exzwauswbm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#puofucbcmb .gt_col_headings {
+#exzwauswbm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3259,7 +3127,7 @@ N = 4,800</p>
   border-right-color: #D3D3D3;
 }
 
-#puofucbcmb .gt_col_heading {
+#exzwauswbm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3279,7 +3147,7 @@ N = 4,800</p>
   overflow-x: hidden;
 }
 
-#puofucbcmb .gt_column_spanner_outer {
+#exzwauswbm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3291,15 +3159,15 @@ N = 4,800</p>
   padding-right: 4px;
 }
 
-#puofucbcmb .gt_column_spanner_outer:first-child {
+#exzwauswbm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#puofucbcmb .gt_column_spanner_outer:last-child {
+#exzwauswbm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#puofucbcmb .gt_column_spanner {
+#exzwauswbm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3311,11 +3179,11 @@ N = 4,800</p>
   width: 100%;
 }
 
-#puofucbcmb .gt_spanner_row {
+#exzwauswbm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#puofucbcmb .gt_group_heading {
+#exzwauswbm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3341,7 +3209,7 @@ N = 4,800</p>
   text-align: left;
 }
 
-#puofucbcmb .gt_empty_group_heading {
+#exzwauswbm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3356,15 +3224,15 @@ N = 4,800</p>
   vertical-align: middle;
 }
 
-#puofucbcmb .gt_from_md > :first-child {
+#exzwauswbm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#puofucbcmb .gt_from_md > :last-child {
+#exzwauswbm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#puofucbcmb .gt_row {
+#exzwauswbm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3383,7 +3251,7 @@ N = 4,800</p>
   overflow-x: hidden;
 }
 
-#puofucbcmb .gt_stub {
+#exzwauswbm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3396,7 +3264,7 @@ N = 4,800</p>
   padding-right: 5px;
 }
 
-#puofucbcmb .gt_stub_row_group {
+#exzwauswbm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3410,15 +3278,15 @@ N = 4,800</p>
   vertical-align: top;
 }
 
-#puofucbcmb .gt_row_group_first td {
+#exzwauswbm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#puofucbcmb .gt_row_group_first th {
+#exzwauswbm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#puofucbcmb .gt_summary_row {
+#exzwauswbm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3428,16 +3296,16 @@ N = 4,800</p>
   padding-right: 5px;
 }
 
-#puofucbcmb .gt_first_summary_row {
+#exzwauswbm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#puofucbcmb .gt_first_summary_row.thick {
+#exzwauswbm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#puofucbcmb .gt_last_summary_row {
+#exzwauswbm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3447,7 +3315,7 @@ N = 4,800</p>
   border-bottom-color: #D3D3D3;
 }
 
-#puofucbcmb .gt_grand_summary_row {
+#exzwauswbm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3457,7 +3325,7 @@ N = 4,800</p>
   padding-right: 5px;
 }
 
-#puofucbcmb .gt_first_grand_summary_row {
+#exzwauswbm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3467,7 +3335,7 @@ N = 4,800</p>
   border-top-color: #D3D3D3;
 }
 
-#puofucbcmb .gt_last_grand_summary_row_top {
+#exzwauswbm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3477,11 +3345,11 @@ N = 4,800</p>
   border-bottom-color: #D3D3D3;
 }
 
-#puofucbcmb .gt_striped {
+#exzwauswbm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#puofucbcmb .gt_table_body {
+#exzwauswbm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3490,7 +3358,7 @@ N = 4,800</p>
   border-bottom-color: #D3D3D3;
 }
 
-#puofucbcmb .gt_footnotes {
+#exzwauswbm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3504,7 +3372,7 @@ N = 4,800</p>
   border-right-color: #D3D3D3;
 }
 
-#puofucbcmb .gt_footnote {
+#exzwauswbm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3513,7 +3381,7 @@ N = 4,800</p>
   padding-right: 5px;
 }
 
-#puofucbcmb .gt_sourcenotes {
+#exzwauswbm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3527,7 +3395,7 @@ N = 4,800</p>
   border-right-color: #D3D3D3;
 }
 
-#puofucbcmb .gt_sourcenote {
+#exzwauswbm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3535,96 +3403,72 @@ N = 4,800</p>
   padding-right: 5px;
 }
 
-#puofucbcmb .gt_left {
+#exzwauswbm .gt_left {
   text-align: left;
 }
 
-#puofucbcmb .gt_center {
+#exzwauswbm .gt_center {
   text-align: center;
 }
 
-#puofucbcmb .gt_right {
+#exzwauswbm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#puofucbcmb .gt_font_normal {
+#exzwauswbm .gt_font_normal {
   font-weight: normal;
 }
 
-#puofucbcmb .gt_font_bold {
+#exzwauswbm .gt_font_bold {
   font-weight: bold;
 }
 
-#puofucbcmb .gt_font_italic {
+#exzwauswbm .gt_font_italic {
   font-style: italic;
 }
 
-#puofucbcmb .gt_super {
+#exzwauswbm .gt_super {
   font-size: 65%;
 }
 
-#puofucbcmb .gt_footnote_marks {
+#exzwauswbm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#puofucbcmb .gt_asterisk {
+#exzwauswbm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#puofucbcmb .gt_indent_1 {
+#exzwauswbm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#puofucbcmb .gt_indent_2 {
+#exzwauswbm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#puofucbcmb .gt_indent_3 {
+#exzwauswbm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#puofucbcmb .gt_indent_4 {
+#exzwauswbm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#puofucbcmb .gt_indent_5 {
+#exzwauswbm .gt_indent_5 {
   text-indent: 25px;
 }
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header gt_col_headings">
-<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
-<th id="<strong>female</strong><br />
-N = 2,876<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>female</strong><br>
-N = 2,876<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<strong>male</strong><br />
-N = 2,756<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>male</strong><br>
-N = 2,756<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">height</td>
-<td class="gt_row gt_center" headers="stat_1">162 (7)</td>
-<td class="gt_row gt_center" headers="stat_2">176 (8)</td>
-</tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="even">
-<td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Mean (SD)</td>
-</tr>
-</tfoot>
+#exzwauswbm .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
 
-#ybjzcjmbjk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#exzwauswbm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3634,22 +3478,22 @@ N = 2,756<span class="gt_footnote_marks" style="white-space:nowrap;font-style:it
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipDaGFyYWN0ZXJpc3RpYyoq&quot;><div class='gt_from_md'><p><strong>Characteristic</strong></p>
 </div></div>"><div data-qmd-base64="KipDaGFyYWN0ZXJpc3RpYyoq"><div class="gt_from_md"><p><strong>Characteristic</strong></p>
 </div></div></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipmZW1hbGUqKiAgCk4gPSA0LDg0Nw==&quot;><div class='gt_from_md'><p><strong>female</strong><br />
-N = 4,847</p>
-</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KipmZW1hbGUqKiAgCk4gPSA0LDg0Nw=="><div class="gt_from_md"><p><strong>female</strong><br>
-N = 4,847</p>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KipmZW1hbGUqKiAgCk4gPSAyLDg3Ng==&quot;><div class='gt_from_md'><p><strong>female</strong><br />
+N = 2,876</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KipmZW1hbGUqKiAgCk4gPSAyLDg3Ng=="><div class="gt_from_md"><p><strong>female</strong><br>
+N = 2,876</p>
 </div></div><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KiptYWxlKiogIApOID0gNCw4MDA=&quot;><div class='gt_from_md'><p><strong>male</strong><br />
-N = 4,800</p>
-</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KiptYWxlKiogIApOID0gNCw4MDA="><div class="gt_from_md"><p><strong>male</strong><br>
-N = 4,800</p>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<div data-qmd-base64=&quot;KiptYWxlKiogIApOID0gMiw3NTY=&quot;><div class='gt_from_md'><p><strong>male</strong><br />
+N = 2,756</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>"><div data-qmd-base64="KiptYWxlKiogIApOID0gMiw3NTY="><div class="gt_from_md"><p><strong>male</strong><br>
+N = 2,756</p>
 </div></div><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr><td headers="label" class="gt_row gt_left">height</td>
-<td headers="stat_1" class="gt_row gt_center">157 (17)</td>
-<td headers="stat_2" class="gt_row gt_center">167 (22)</td></tr>
+<td headers="stat_1" class="gt_row gt_center">162 (7)</td>
+<td headers="stat_2" class="gt_row gt_center">176 (8)</td></tr>
   </tbody>
   
   <tfoot class="gt_footnotes">
@@ -3666,13 +3510,13 @@ N = 4,800</p>
 </section>
 </section>
 </section>
-<section id="inferential-statistics" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="inferential-statistics"><span class="header-section-number">6.4</span> Inferential Statistics</h2>
+<section id="inferential-statistics" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="inferential-statistics"><span class="header-section-number">7.4</span> Inferential Statistics</h2>
 <div style="text-align:justify">
 <p>Inferential statistics is a branch of statistics that allows us to make conclusions about a population based on a sample of data drawn from that population. Unlike descriptive statistics, which focuses on summarizing and describing data, inferential statistics enables researchers to draw conclusions, make predictions, and test hypotheses, making it a crucial tool in various fields, including healthcare, public health, social sciences, and business.</p>
 </div>
-<section id="population-sample-and-sampling-process" class="level3" data-number="6.4.1">
-<h3 data-number="6.4.1" class="anchored" data-anchor-id="population-sample-and-sampling-process"><span class="header-section-number">6.4.1</span> Population, Sample and Sampling Process</h3>
+<section id="population-sample-and-sampling-process" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="population-sample-and-sampling-process"><span class="header-section-number">7.4.1</span> Population, Sample and Sampling Process</h3>
 <div style="text-align:justify">
 <p>Inferential statistics operates on the fundamental idea that we can infer characteristics of a population from a carefully selected sample. Since studying an entire population is often impractical or impossible due to time, cost, or accessibility constraints, researchers rely on samples. The goal is to use the sample data to draw conclusions or make estimates about the larger population.</p>
 <ul>
@@ -3688,8 +3532,8 @@ N = 4,800</p>
 </figure>
 </div>
 </section>
-<section id="focus-areas" class="level3" data-number="6.4.2">
-<h3 data-number="6.4.2" class="anchored" data-anchor-id="focus-areas"><span class="header-section-number">6.4.2</span> Focus Areas</h3>
+<section id="focus-areas" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="focus-areas"><span class="header-section-number">7.4.2</span> Focus Areas</h3>
 <div style="text-align:justify">
 <p>In following chapters, we are focusing on three key areas of inferential statistics:</p>
 <ul>
@@ -3701,8 +3545,8 @@ N = 4,800</p>
 </div>
 </section>
 </section>
-<section id="inferential-statistics-hypothesis-testing-and-interval-estimation" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="inferential-statistics-hypothesis-testing-and-interval-estimation"><span class="header-section-number">6.5</span> Inferential Statistics: Hypothesis Testing and Interval Estimation</h2>
+<section id="inferential-statistics-hypothesis-testing-and-interval-estimation" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="inferential-statistics-hypothesis-testing-and-interval-estimation"><span class="header-section-number">7.5</span> Inferential Statistics: Hypothesis Testing and Interval Estimation</h2>
 <div style="text-align:justify">
 <p>In inferential statistics, hypothesis testing and interval estimation are core methods used to make conclusions about a population from sample data. While hypothesis testing determines if there is enough evidence to reject a null hypothesis, interval estimation provides a range of values (confidence intervals) likely to contain the true population parameter. Together, these tools form the basis of statistical inference.</p>
 <p>In this chapter, we explore hypothesis testing and interval estimation for various scenarios using R, including means, proportions, and categorical variables. We focus on practical implementation and provide references for more in-depth theoretical understanding. For a more in-depth understanding, refer to additional resources.</p>
@@ -3712,16 +3556,16 @@ N = 4,800</p>
 <li><p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5723800/pdf/jtd-09-10-4125.pdf">Using the confidence interval confidently</a>: The paper discusses the application and significance of confidence intervals (CIs) in biomedical research, particularly for estimating population parameters based on sample data. It outlines the process of calculating CIs, noting that the margin of error depends on sample variability, sample size, and confidence level. The authors highlight how CIs provide more meaningful insights than p-values alone by offering an estimated range for effect size, which is crucial for assessing clinical relevance. <span class="citation" data-cites="hazra2017">(<a href="#ref-hazra2017" role="doc-biblioref">Hazra 2017</a>)</span></p></li>
 </ul>
 </div>
-<section id="hypothesis-testing-and-interval-estimation-for-a-mean" class="level3" data-number="6.5.1">
-<h3 data-number="6.5.1" class="anchored" data-anchor-id="hypothesis-testing-and-interval-estimation-for-a-mean"><span class="header-section-number">6.5.1</span> Hypothesis Testing and Interval Estimation for a Mean</h3>
-<section id="one-sample-t-test-hypothesis-testing" class="level4" data-number="6.5.1.1">
-<h4 data-number="6.5.1.1" class="anchored" data-anchor-id="one-sample-t-test-hypothesis-testing"><span class="header-section-number">6.5.1.1</span> One-Sample T-Test: Hypothesis Testing</h4>
+<section id="hypothesis-testing-and-interval-estimation-for-a-mean" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="hypothesis-testing-and-interval-estimation-for-a-mean"><span class="header-section-number">7.5.1</span> Hypothesis Testing and Interval Estimation for a Mean</h3>
+<section id="one-sample-t-test-hypothesis-testing" class="level4" data-number="7.5.1.1">
+<h4 data-number="7.5.1.1" class="anchored" data-anchor-id="one-sample-t-test-hypothesis-testing"><span class="header-section-number">7.5.1.1</span> One-Sample T-Test: Hypothesis Testing</h4>
 <div style="text-align:justify">
 <p>The one-sample t-test is a statistical method that compares the mean of a sample to a known reference value—usually a population mean—to assess if there is a significant difference.</p>
 <p>In this context, using the NHANES dataset, we can investigate whether the mean blood pressure (BP) of a sample of adults differs significantly from the standard “normal” BP value, which is often considered to be around 120 mmHg for systolic pressure.</p>
 <p><strong>Hypotheses:</strong></p>
-<p><strong>Null Hypothesis (<span class="math inline">\(H_0\)</span>)</strong>: The mean systolic blood pressure of the sample is equal to the normal value (120 mmHg).</p>
-<p><strong>Alternative Hypothesis (<span class="math inline">\(H_1\)</span>)</strong>: The mean systolic blood pressure of the sample differs from 120 mmHg.</p>
+<p><strong>Null Hypothesis (</strong><span class="math inline">\(H_0\)</span>): The mean systolic blood pressure of the sample is equal to the normal value (120 mmHg).</p>
+<p><strong>Alternative Hypothesis (</strong><span class="math inline">\(H_1\)</span>): The mean systolic blood pressure of the sample differs from 120 mmHg.</p>
 <p><strong>R Implementation</strong>: We’ll use the <code>t.test()</code> function to conduct the one-sample t-test, specifying 120 as the value for comparison.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Conduct a one-sample t-test</span></span>
@@ -3753,8 +3597,8 @@ mean of x
 <p>In this case, while there’s a statistically significant difference, the 0.9503 mmHg increase from the standard value is likely too small to have clinical importance. This reminds us that even if a result is statistically significant, it’s the practical impact on patient outcomes that ultimately matters.</p>
 </div>
 </section>
-<section id="one-sample-t-test-interval-estimation" class="level4" data-number="6.5.1.2">
-<h4 data-number="6.5.1.2" class="anchored" data-anchor-id="one-sample-t-test-interval-estimation"><span class="header-section-number">6.5.1.2</span> One-Sample T-Test: Interval Estimation</h4>
+<section id="one-sample-t-test-interval-estimation" class="level4" data-number="7.5.1.2">
+<h4 data-number="7.5.1.2" class="anchored" data-anchor-id="one-sample-t-test-interval-estimation"><span class="header-section-number">7.5.1.2</span> One-Sample T-Test: Interval Estimation</h4>
 <div style="text-align:justify">
 <p>In addition to hypothesis testing, we also estimate a confidence interval (CI) for the mean systolic blood pressure of the sample. The confidence interval provides a range of values that likely contains the true mean systolic blood pressure of the population.</p>
 <p><strong>95% Confidence Interval Calculation:</strong></p>
@@ -3769,10 +3613,10 @@ mean of x
 </div>
 </section>
 </section>
-<section id="hypothesis-testing-and-interval-estimation-for-two-means" class="level3" data-number="6.5.2">
-<h3 data-number="6.5.2" class="anchored" data-anchor-id="hypothesis-testing-and-interval-estimation-for-two-means"><span class="header-section-number">6.5.2</span> Hypothesis Testing and Interval Estimation for Two Means</h3>
-<section id="two-sample-t-test-hypothesis-testing" class="level4" data-number="6.5.2.1">
-<h4 data-number="6.5.2.1" class="anchored" data-anchor-id="two-sample-t-test-hypothesis-testing"><span class="header-section-number">6.5.2.1</span> Two-Sample T-Test: Hypothesis Testing</h4>
+<section id="hypothesis-testing-and-interval-estimation-for-two-means" class="level3" data-number="7.5.2">
+<h3 data-number="7.5.2" class="anchored" data-anchor-id="hypothesis-testing-and-interval-estimation-for-two-means"><span class="header-section-number">7.5.2</span> Hypothesis Testing and Interval Estimation for Two Means</h3>
+<section id="two-sample-t-test-hypothesis-testing" class="level4" data-number="7.5.2.1">
+<h4 data-number="7.5.2.1" class="anchored" data-anchor-id="two-sample-t-test-hypothesis-testing"><span class="header-section-number">7.5.2.1</span> Two-Sample T-Test: Hypothesis Testing</h4>
 <div style="text-align:justify">
 <p>The two-sample t-test is a statistical method used to compare the means of two independent groups. In this context, we will examine whether there is a significant difference in height between males and females using the NHANES dataset.</p>
 <p><strong>Hypotheses:</strong></p>
@@ -3809,8 +3653,8 @@ mean in group female   mean in group male
 <p><strong>Conclusion:</strong> The very low p-value (&lt; 0.05) indicates that we reject the null hypothesis, suggesting that there is a statistically significant difference in average height between males and females in this sample.</p>
 </div>
 </section>
-<section id="two-sample-t-test-confidence-interval" class="level4" data-number="6.5.2.2">
-<h4 data-number="6.5.2.2" class="anchored" data-anchor-id="two-sample-t-test-confidence-interval"><span class="header-section-number">6.5.2.2</span> Two-Sample T-Test: Confidence Interval</h4>
+<section id="two-sample-t-test-confidence-interval" class="level4" data-number="7.5.2.2">
+<h4 data-number="7.5.2.2" class="anchored" data-anchor-id="two-sample-t-test-confidence-interval"><span class="header-section-number">7.5.2.2</span> Two-Sample T-Test: Confidence Interval</h4>
 <div style="text-align:justify">
 <p>In addition to hypothesis testing, it is important to calculate the confidence interval for the difference in means to provide further context regarding the effect size.</p>
 <p><strong>95% Confidence Interval for the Difference in Means:</strong></p>
@@ -3827,8 +3671,8 @@ mean in group female   mean in group male
 <p>The confidence interval provides a range of values that, with 95% confidence, includes the true difference in average height between males and females. Since the entire interval is negative, this reinforces our earlier conclusion that males are significantly taller than females.</p>
 </div>
 </section>
-<section id="paired-t-test-hypothesis-testing" class="level4" data-number="6.5.2.3">
-<h4 data-number="6.5.2.3" class="anchored" data-anchor-id="paired-t-test-hypothesis-testing"><span class="header-section-number">6.5.2.3</span> Paired T-Test: Hypothesis Testing</h4>
+<section id="paired-t-test-hypothesis-testing" class="level4" data-number="7.5.2.3">
+<h4 data-number="7.5.2.3" class="anchored" data-anchor-id="paired-t-test-hypothesis-testing"><span class="header-section-number">7.5.2.3</span> Paired T-Test: Hypothesis Testing</h4>
 <div style="text-align:justify">
 <p>The paired t-test is a statistical method used to compare two related samples, measuring the same group at two different times.</p>
 <p>For example, to examine the effect of an intervention, a paired t-test can be used to compare blood pressure (BP) measurements taken pre- and post-intervention among individuals with a BMI greater than 25.</p>
@@ -3873,8 +3717,8 @@ mean difference
 </ul>
 <p>The t-statistic is -132.99, indicating a significant difference in systolic blood pressure (BP) between the average pre-intervention and post-intervention measurements.The degrees of freedom is 3683, indicating a large sample size, which adds robustness to the statistical findings.</p>
 <p>The p-value is &lt; 2.2e-16, which is extremely low and suggests a statistically significant difference in systolic blood pressure before and after the intervention. Since this p-value is well below the standard threshold of 0.05, we reject the null hypothesis, indicating that there is a meaningful change in BP levels.</p>
-<section id="paired-t-test-confidence-interval" class="level4" data-number="6.5.2.4">
-<h4 data-number="6.5.2.4" class="anchored" data-anchor-id="paired-t-test-confidence-interval"><span class="header-section-number">6.5.2.4</span> Paired T-Test: Confidence Interval</h4>
+<section id="paired-t-test-confidence-interval" class="level4" data-number="7.5.2.4">
+<h4 data-number="7.5.2.4" class="anchored" data-anchor-id="paired-t-test-confidence-interval"><span class="header-section-number">7.5.2.4</span> Paired T-Test: Confidence Interval</h4>
 <p>The 95% confidence interval for the mean difference is (-4.582318, -4.449170). This interval indicates that we can be 95% confident that the true mean decrease in systolic blood pressure lies between -4.58 mmHg and -4.45 mmHg. Since the entire interval is negative, this strongly supports the conclusion that the intervention has led to a significant reduction in systolic BP.</p>
 <p>The mean difference in systolic blood pressure is approximately -4.515744 mmHg, suggesting that, on average, individuals with a BMI greater than 25 experienced a decrease of about 4.52 mmHg in systolic BP following the intervention.</p>
 <p>The results of the paired t-test indicate that the intervention was effective, resulting in a statistically significant decrease in systolic blood pressure among individuals with a BMI greater than 25. The average decrease of 4.52 mmHg is both statistically significant and clinically relevant.</p>
@@ -3882,11 +3726,11 @@ mean difference
 </div>
 </section>
 </section>
-<section id="hypothesis-testing-and-interval-estimation-for-a-proportion" class="level3" data-number="6.5.3">
-<h3 data-number="6.5.3" class="anchored" data-anchor-id="hypothesis-testing-and-interval-estimation-for-a-proportion"><span class="header-section-number">6.5.3</span> Hypothesis Testing and Interval Estimation for a Proportion</h3>
+<section id="hypothesis-testing-and-interval-estimation-for-a-proportion" class="level3" data-number="7.5.3">
+<h3 data-number="7.5.3" class="anchored" data-anchor-id="hypothesis-testing-and-interval-estimation-for-a-proportion"><span class="header-section-number">7.5.3</span> Hypothesis Testing and Interval Estimation for a Proportion</h3>
 <p>Now we cover the concepts of hypothesis testing and interval estimation for proportions.</p>
-<section id="hypothesis-testing-for-a-proportion" class="level4" data-number="6.5.3.1">
-<h4 data-number="6.5.3.1" class="anchored" data-anchor-id="hypothesis-testing-for-a-proportion"><span class="header-section-number">6.5.3.1</span> Hypothesis Testing for a Proportion</h4>
+<section id="hypothesis-testing-for-a-proportion" class="level4" data-number="7.5.3.1">
+<h4 data-number="7.5.3.1" class="anchored" data-anchor-id="hypothesis-testing-for-a-proportion"><span class="header-section-number">7.5.3.1</span> Hypothesis Testing for a Proportion</h4>
 <div style="text-align:justify">
 <p>Our research question is:</p>
 <p><em>Is the prevalence of diabetes in the adult population equal to 10%?</em></p>
@@ -3930,8 +3774,8 @@ sample estimates:
 <p>In a clinical context, this suggests that the observed prevalence of diabetes in the sample aligns closely with the expected prevalence, and no significant deviation is observed.</p>
 </div>
 </section>
-<section id="confidence-interval-for-a-proportion" class="level4" data-number="6.5.3.2">
-<h4 data-number="6.5.3.2" class="anchored" data-anchor-id="confidence-interval-for-a-proportion"><span class="header-section-number">6.5.3.2</span> Confidence Interval for a Proportion</h4>
+<section id="confidence-interval-for-a-proportion" class="level4" data-number="7.5.3.2">
+<h4 data-number="7.5.3.2" class="anchored" data-anchor-id="confidence-interval-for-a-proportion"><span class="header-section-number">7.5.3.2</span> Confidence Interval for a Proportion</h4>
 <div style="text-align:justify">
 <p>Interpretation of Confidence Interval</p>
 <p>The 95% confidence interval for the proportion of individuals with diabetes in the population is approximately (0.1073, 0.1080). This interval suggests that we can be 95% confident that the true proportion of individuals with diabetes lies between 10.73% and 10.80%.</p>
@@ -3939,8 +3783,8 @@ sample estimates:
 </div>
 </section>
 </section>
-<section id="chi-squared-test" class="level3" data-number="6.5.4">
-<h3 data-number="6.5.4" class="anchored" data-anchor-id="chi-squared-test"><span class="header-section-number">6.5.4</span> Chi-Squared Test</h3>
+<section id="chi-squared-test" class="level3" data-number="7.5.4">
+<h3 data-number="7.5.4" class="anchored" data-anchor-id="chi-squared-test"><span class="header-section-number">7.5.4</span> Chi-Squared Test</h3>
 <div style="text-align:justify">
 <p>The chi-squared test is a statistical method used to determine if there is a significant association between two categorical variables. By comparing the observed frequency distribution of categories with the expected distribution (assuming no association), the test evaluates whether the variables are independent of each other or if there is an association. This test is particularly useful in analyzing relationships in large datasets with categorical data, like survey responses or patient characteristics.</p>
 <p>As an example, we’ll use the chi-squared test to examine whether there is an association between BMI category and diabetes status among adults in our dataset.</p>
@@ -3994,8 +3838,8 @@ X-squared = 169, df = 3, p-value &lt; 2.2e-16</code></pre>
 <p>For binary outcomes like diabetes status, logistic regression would be a suitable approach. It would allow us to model the probability of diabetes as a function of BMI categories while providing insights into how each category impacts the likelihood of diabetes, as reflected by odds ratios. This approach also enables adjustments for potential confounders, offering a more comprehensive understanding of the relationship.</p>
 </div>
 </section>
-<section id="one-way-anova" class="level3" data-number="6.5.5">
-<h3 data-number="6.5.5" class="anchored" data-anchor-id="one-way-anova"><span class="header-section-number">6.5.5</span> One-way ANOVA</h3>
+<section id="one-way-anova" class="level3" data-number="7.5.5">
+<h3 data-number="7.5.5" class="anchored" data-anchor-id="one-way-anova"><span class="header-section-number">7.5.5</span> One-way ANOVA</h3>
 <div style="text-align:justify">
 <p>One-way ANOVA (Analysis of Variance) is used to compare the means of more than two groups to determine if at least one group mean differs significantly from the others. This method is suitable when we have a categorical independent variable (factor) with multiple levels and a continuous dependent variable. For example, we could use one-way ANOVA to test if the average blood pressure differs across BMI categories.</p>
 <p>As an example, we’ll use the one-way ANOVA To determine if average systolic blood pressure varies across BMI categories.</p>
@@ -4029,8 +3873,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 </div>
 </section>
 </section>
-<section id="inferential-statistics-regression-analysis" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="inferential-statistics-regression-analysis"><span class="header-section-number">6.6</span> Inferential Statistics: Regression Analysis</h2>
+<section id="inferential-statistics-regression-analysis" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="inferential-statistics-regression-analysis"><span class="header-section-number">7.6</span> Inferential Statistics: Regression Analysis</h2>
 <div style="text-align:justify">
 <p>Regression analysis is a powerful statistical method used to examine the relationship between two or more variables. The goal of regression is to understand how the dependent variable (also called the outcome or response variable) changes when one or more independent variables (also known as predictors or explanatory variables) are varied This method is widely used in various fields such as economics, healthcare, social sciences, and engineering to make predictions, identify trends, and uncover relationships between variables.</p>
 <p>There are various types of regression, each suited to different types of data and research questions. Some common types include:</p>
@@ -4042,13 +3886,13 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 </ul>
 <p>In this session, we will focus on two important types of regression: linear regression and logistic regression, and demonstrate how to perform them in R.</p>
 </div>
-<section id="simple-linear-regression" class="level3" data-number="6.6.1">
-<h3 data-number="6.6.1" class="anchored" data-anchor-id="simple-linear-regression"><span class="header-section-number">6.6.1</span> Simple Linear Regression</h3>
+<section id="simple-linear-regression" class="level3" data-number="7.6.1">
+<h3 data-number="7.6.1" class="anchored" data-anchor-id="simple-linear-regression"><span class="header-section-number">7.6.1</span> Simple Linear Regression</h3>
 <div style="text-align:justify">
 <p>Simple Linear regression (SLR) is one of the most widely used statistical methods for modeling the relationship between a dependent variable and one independent variable. However, to ensure the model’s accuracy and validity, several assumptions must be met.</p>
 </div>
-<section id="assumptions-of-simple-linear-regression" class="level4" data-number="6.6.1.1">
-<h4 data-number="6.6.1.1" class="anchored" data-anchor-id="assumptions-of-simple-linear-regression"><span class="header-section-number">6.6.1.1</span> Assumptions of Simple Linear Regression</h4>
+<section id="assumptions-of-simple-linear-regression" class="level4" data-number="7.6.1.1">
+<h4 data-number="7.6.1.1" class="anchored" data-anchor-id="assumptions-of-simple-linear-regression"><span class="header-section-number">7.6.1.1</span> Assumptions of Simple Linear Regression</h4>
 <div style="text-align:justify">
 <p>The acronym <strong>LINE</strong> helps us remember the key assumptions needed for making inferences and predictions with models based on linear least squares regression (LLSR).</p>
 <p>In the case of simple linear regression with a single predictor <span class="math inline">\(X\)</span>, the assumptions are as follows:</p>
@@ -4073,8 +3917,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 </ul>
 </div>
 </section>
-<section id="the-simple-linear-regression-model" class="level4" data-number="6.6.1.2">
-<h4 data-number="6.6.1.2" class="anchored" data-anchor-id="the-simple-linear-regression-model"><span class="header-section-number">6.6.1.2</span> The Simple Linear Regression Model</h4>
+<section id="the-simple-linear-regression-model" class="level4" data-number="7.6.1.2">
+<h4 data-number="7.6.1.2" class="anchored" data-anchor-id="the-simple-linear-regression-model"><span class="header-section-number">7.6.1.2</span> The Simple Linear Regression Model</h4>
 <div style="text-align:justify">
 <p>In SLR, the goal is to model the relationship between a dependent variable (response) and an independent variable (predictor). The model predicts the dependent variable based on the independent variable, helping us understand how changes in one variable impact the other.</p>
 <p>The general form of a simple linear regression model is:</p>
@@ -4089,8 +3933,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 </ul>
 </div>
 </section>
-<section id="interpreting-the-model" class="level4" data-number="6.6.1.3">
-<h4 data-number="6.6.1.3" class="anchored" data-anchor-id="interpreting-the-model"><span class="header-section-number">6.6.1.3</span> Interpreting the Model</h4>
+<section id="interpreting-the-model" class="level4" data-number="7.6.1.3">
+<h4 data-number="7.6.1.3" class="anchored" data-anchor-id="interpreting-the-model"><span class="header-section-number">7.6.1.3</span> Interpreting the Model</h4>
 <div style="text-align:justify">
 <ul>
 <li><p><strong>Intercept (</strong><span class="math inline">\(\beta_0\)</span>): The intercept tells us the expected value of the dependent variable when the independent variable is zero. However, in some cases, like the relationship between height and weight, interpreting the intercept might not make practical sense (e.g., predicting weight when height is zero).</p></li>
@@ -4100,13 +3944,13 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 </div>
 </section>
 </section>
-<section id="simple-linear-regression-using-r" class="level3" data-number="6.6.2">
-<h3 data-number="6.6.2" class="anchored" data-anchor-id="simple-linear-regression-using-r"><span class="header-section-number">6.6.2</span> Simple Linear Regression Using R</h3>
+<section id="simple-linear-regression-using-r" class="level3" data-number="7.6.2">
+<h3 data-number="7.6.2" class="anchored" data-anchor-id="simple-linear-regression-using-r"><span class="header-section-number">7.6.2</span> Simple Linear Regression Using R</h3>
 <div style="text-align:justify">
 <p>If the assumptions of simple linear regression are met, we can proceed with fitting the model to the data. In this section, we will explore how to perform simple linear regression using R. This method allows us to examine the relationship between a dependent variable (response) and an independent variable (predictor) and make predictions based on the data.</p>
 </div>
-<section id="simple-linear-regression-with-a-numeric-independent-variable" class="level4" data-number="6.6.2.1">
-<h4 data-number="6.6.2.1" class="anchored" data-anchor-id="simple-linear-regression-with-a-numeric-independent-variable"><span class="header-section-number">6.6.2.1</span> Simple Linear Regression with a Numeric Independent Variable</h4>
+<section id="simple-linear-regression-with-a-numeric-independent-variable" class="level4" data-number="7.6.2.1">
+<h4 data-number="7.6.2.1" class="anchored" data-anchor-id="simple-linear-regression-with-a-numeric-independent-variable"><span class="header-section-number">7.6.2.1</span> Simple Linear Regression with a Numeric Independent Variable</h4>
 <div style="text-align:justify">
 <p>When dealing with a numeric independent variable, simple linear regression helps us understand how changes in the independent variable affect the dependent variable. In R, we can easily fit and evaluate this relationship using the lm() function.</p>
 <p>Here’s an example of performing simple linear regression when the independent variable is numeric:</p>
@@ -4224,8 +4068,8 @@ F-statistic:  1882 on 1 and 7412 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>The interpretation shows that height has a positive and significant relationship with weight, but the relatively low <span class="math inline">\(R^2\)</span> value suggests that other factors besides height influence weight.</p>
 </div>
 </section>
-<section id="simple-linear-regression-with-a-categorical-independent-variable" class="level4" data-number="6.6.2.2">
-<h4 data-number="6.6.2.2" class="anchored" data-anchor-id="simple-linear-regression-with-a-categorical-independent-variable"><span class="header-section-number">6.6.2.2</span> Simple Linear Regression with a Categorical Independent Variable</h4>
+<section id="simple-linear-regression-with-a-categorical-independent-variable" class="level4" data-number="7.6.2.2">
+<h4 data-number="7.6.2.2" class="anchored" data-anchor-id="simple-linear-regression-with-a-categorical-independent-variable"><span class="header-section-number">7.6.2.2</span> Simple Linear Regression with a Categorical Independent Variable</h4>
 <p>When dealing with a categorical independent variable, simple linear regression can be used to analyze how the different categories influence the dependent variable. In this case, we’ll explore the relationship between height and race in adults using the NHANES dataset.</p>
 <p><strong>Research Question</strong></p>
 <p>Is there an association between race and weight in adult individuals from the NHANES dataset?</p>
@@ -4302,8 +4146,8 @@ F-statistic: 47.55 on 4 and 7415 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </section>
 </section>
-<section id="multiple-linear-regression-using-r" class="level3" data-number="6.6.3">
-<h3 data-number="6.6.3" class="anchored" data-anchor-id="multiple-linear-regression-using-r"><span class="header-section-number">6.6.3</span> Multiple Linear Regression using R</h3>
+<section id="multiple-linear-regression-using-r" class="level3" data-number="7.6.3">
+<h3 data-number="7.6.3" class="anchored" data-anchor-id="multiple-linear-regression-using-r"><span class="header-section-number">7.6.3</span> Multiple Linear Regression using R</h3>
 <div style="text-align:justify">
 <p>Multiple linear regression expands on simple linear regression by incorporating multiple independent variables (predictors) to predict the outcome variable (dependent variable). This approach allows us to analyze how each predictor contributes to the outcome, while controlling for other variables.</p>
 <p>The general form of a multiple linear regression model with k predictors,</p>
@@ -4380,8 +4224,8 @@ F-statistic:   414 on 5 and 7408 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>In addition, we observe that the coefficient for the Hispanic category is not statistically significant (p = 0.199), suggesting that, for this model, being Hispanic does not have a statistically significant impact on weight compared to the reference category (White) when controlling for height. This lack of significance indicates that the model does not provide evidence of a meaningful difference in weight between White and Hispanic individuals at the same height within this dataset.</p>
 </div>
 </section>
-<section id="logistic-regression-using-r" class="level3" data-number="6.6.4">
-<h3 data-number="6.6.4" class="anchored" data-anchor-id="logistic-regression-using-r"><span class="header-section-number">6.6.4</span> Logistic Regression using R</h3>
+<section id="logistic-regression-using-r" class="level3" data-number="7.6.4">
+<h3 data-number="7.6.4" class="anchored" data-anchor-id="logistic-regression-using-r"><span class="header-section-number">7.6.4</span> Logistic Regression using R</h3>
 <div style="text-align:justify">
 <p>In this book, we’re providing a basic introduction to performing logistic regression using R, without diving deeply into the underlying concepts. For readers interested in a more detailed exploration of logistic regression, please refer to <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8710907/pdf/fmch-2021-001290.pdf">(Harris, 2021)</a>.</p>
 <p>In the following example, we aim to address the following research question:</p>
@@ -4625,7 +4469,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./intro_r.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

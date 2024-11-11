@@ -18,7 +18,8 @@ This verb is composed of the Old French prefix "re-" meaning "again" and "cerchi
 
 ### Defining Research
 
-::: {style="text-align:justify"}
+:::: {style="text-align:justify",.columns}
+
 Research may be defined as the creation of new knowledge and/or the use of existing knowledge in a new and creative way so as to generate new concepts, methodologies and understandings. This could include synthesis and analysis of previous research to the extent that it leads to new and creative outcomes.
 
 ![](images/research_library.jpg){fig-align="center" width="300"}
@@ -39,7 +40,7 @@ Let us visit few definitions given for research by luminaries in the field.
 
 -   To be sure the best research is that which is **reliable, verifiable, and exhaustive**, so that it provides information in which we have **confidence**. The main point here is that research is, literally speaking, a kind of **human behaviour**, an activity in which people engage.
 
-    - **Francis G Cornell**
+    -   **Francis G Cornell**
 
 Cornell, here adds another dimension by asserting that effective research must be reliable, verifiable, and exhaustive. This perspective emphasizes the credibility of research findings and their importance in fostering confidence. By characterizing research as a form of human behavior, Fourier highlights its collaborative and social aspects, recognizing that research involves interaction and engagement among individuals.
 :::
@@ -47,13 +48,11 @@ Cornell, here adds another dimension by asserting that effective research must b
 ## Philosophical Underpinnings of Research
 
 ::: {style="text-align:justify"}
-
 The pursuit of knowledge is deeply rooted in philosophical inquiry, shaping the very foundation of research. Understanding the philosophical underpinnings of research is essential for scholars and practitioners alike, as it informs the way we approach questions, interpret data, and derive conclusions.
 
 Philosophy encompasses a range of inquiries into existence, knowledge, and values, each of which holds profound implications for research. By examining the epistemological, ontological, and axiological dimensions of inquiry, researchers can better appreciate the frameworks that guide their work.
 
 Research, as we stated earlier, is discovering and validating innovative approaches to investigate and comprehend reality. By investigating reality, we mean to understand its nature and to gather knowledge about the reality and make sense about the same. This understanding of research takes us to the philosophical concepts of ontology, epistemology and axiology.
-
 :::
 
 ### Ontology
@@ -138,12 +137,11 @@ This shift allows us to apply these abstract principles into actionable framewor
 #### Differentiate Quantitative & Qualitative Research Methodology
 
 ::: {style="text-align:justify"}
-
 ```{r,echo=FALSE}
 library(kableExtra)
-df <- data.frame ("Characteristics" = c("Ontology", "Epistemology", "Axiology", "Methodology", "Sampling Strategy","Methods & Analysis", "Core Principles"),
-"Quantitative Research" = c("Assumes reality is single, tangible, and fragmentable", " An etic view in epistemology where researchers are outsiders of what is being investigated, cannot influence or be influenced by what is being investigated to find the truth that is objectively measured", "Makes a distinction between facts and values, facts are viewed as objective truth whereas values are seen as subjective which can be inherently misleading","Deductive reasoning, start with research questions and hypotheses, conduct interventions, and analyze the results in terms of either supporting or not supporting the hypotheses.", "Random Sampling,construct a sample that can be an unbiased representation of the population","Observational research,experimental research and quasiexperimental research & statitical analysis", "Objectivity and Generalizability"),
-"Qualitative Research" = c("Assumes that realities are multiple, socially constructed, and holistic", "An emic view in epistemology where interactions between researchers and participants or what is being investigated, understand it only through their perceptions and interpretations ", "Researcher reports their values and biases they bring to the study as well as the value-laden nature of data they gather","Inductive reasoning, researchers provide their interpretations of what is being investigated, seeks to understand a phenomenon through an in-depth description of it from researchers’ and participants’ perspectives","Purposive Sampling,a sample that can provide rich information to understand the phenomenon","Interviews, observations, and participatory activities", "Credibility, transferability, dependability, and confirmability"))
+df <- data.frame ("Characteristics" = c("Ontology", "Epistemology", "Axiology","Focus Area", "Approach", "Methods Employed", "Data Collection", "Sampling Strategy","Data Analysis","Presentation of Findings" , "Core Principles"),
+"Quantitative Research" = c("Assumes reality is single, tangible, and fragmentable", " An etic view in epistemology where researchers are outsiders of what is being investigated, cannot influence or be influenced by what is being investigated to find the truth that is objectively measured", "Makes a distinction between facts and values, facts are viewed as objective truth whereas values are seen as subjective which can be inherently misleading","Deals with numbers and statistics,used to test or confirm theories and assumptions" ,"Deductive reasoning, start with research questions and hypotheses, conduct interventions, and analyze the results in terms of either supporting or not supporting the hypotheses.", "Observational or Experimental Designs", "Questionnaires, surveys, interview schedule", "Random Sampling,construct a sample that can be an unbiased representation of the population","Statitical tests and Modelling","Descriptive or inferential numerical forms with tables and graphs", "Objectivity and Generalizability"),
+"Qualitative Research" = c("Assumes that realities are multiple, socially constructed, and holistic", "An emic view in epistemology where interactions between researchers and participants or what is being investigated, understand it only through their perceptions and interpretations ", "Researcher reports their values and biases they bring to the study as well as the value-laden nature of data they gather","Focuses on understanding concepts, thoughts, or experiences by exploring worda and meanings", "Inductive reasoning, researchers provide their interpretations of what is being investigated, seeks to understand a phenomenon through an in-depth description of it from researchers’ and participants’ perspectives","Phenomenology, Ethnography,Grounded Theory", "Participant/ Non-Participant Observation, Open-ended, unstructured/ semi structured interviews, Focus Group Interviews, Review of documents, testimonies etc.", "Purposive, Convenience, Snowball Sampling,a sample that can provide rich information to understand the phenomenon","Transcription verbatim, coding, content or thematic analysis", "Verbatim Quotes, categories,themes,conceptual frameworks", "Credibility, transferability, dependability, and confirmability"))
 
 kable(df, caption = "Differentiate Quantitative & Qualitative Research Methodology")
 ```
@@ -160,7 +158,6 @@ Without further ado let us enlist the steps involved in research process.
 ### Steps in Research Process
 
 ::: {style="text-align:justify"}
-
 Familiarity with the steps involved in the research process enhances the rigor of the research. Each stage, contributes to the validity of the findings and following established procedures reduces bias and increases the reliability of results.
 
 Let's enlist the steps one by one.
@@ -169,38 +166,35 @@ Let's enlist the steps one by one.
 
 The research journey begins with the identification of a specific problem or question. This step requires a clear definition of the issue at hand, ensuring that the research is focused and relevant. Engaging with existing literature can help refine the problem and clarify its significance.
 
-- **Reviewing the Literature**
+-   **Reviewing the Literature**
 
 Once the problem is identified, a comprehensive literature review is conducted. This step involves analyzing existing studies, theories, and frameworks related to the topic. The insights gained from this review not only provide context but also highlight gaps in current knowledge, informing the research design.
 
-- **Formulating a Research Question or Hypothesis**
+-   **Formulating a Research Question or Hypothesis**
 
 Based on the literature review, researchers can formulate a hypothesis or a set of research questions. This step is crucial as it guides the direction of the study, framing what the researcher aims to discover or test. A well-defined hypothesis provides a clear focus for the research.
 
-- **Research Design**
+-   **Research Design**
 
 The next step involves designing the research methodology. This includes selecting appropriate research methods (qualitative, quantitative, or mixed-methods), determining data collection techniques, and establishing a plan for analysis. A well-structured methodology is essential for obtaining valid and reliable results.
 
-- **Data Collection**
+-   **Data Collection**
 
 With the methodology in place, researchers proceed to collect data. This phase can involve surveys, experiments, interviews, or observational studies, depending on the research design. Effective data collection is critical, as it forms the foundation for analysis and interpretation.
 
-- **Data Analysis & Hypothesis Testing**
+-   **Data Analysis & Hypothesis Testing**
 
 After data collection, the analysis phase begins. Researchers employ statistical tools, qualitative analysis methods, or other techniques to interpret the data. This step reveals patterns, relationships, and insights, providing answers to the research questions or validating the hypothesis.
 
-- **Interpretation, Generalisation & Reporting**
+-   **Interpretation, Generalisation & Reporting**
 
 The final step is reporting the research findings. This includes writing a detailed report or paper, presenting at conferences, or publishing in academic journals. Sharing results is crucial for advancing knowledge and sparking further inquiry in the field.
-
 :::
 
 ### Research as a Cyclical Process
 
 ::: {style="text-align:justify"}
-
 Research is inherently iterative. The insights gained from interpretation can lead to new questions, hypotheses, or areas of interest. As researchers analyze their findings, they often uncover complexities that warrant further investigation, prompting a return to earlier stages of the research process.
-
 
 ```{mermaid}
 flowchart TB
@@ -214,5 +208,4 @@ flowchart TB
 ```
 
 Recognizing research as a cyclical process emphasizes that each study is part of a larger continuum of knowledge. Each cycle contributes to a deeper understanding of complex issues, fostering innovation and discovery. This perspective encourages researchers to embrace uncertainty and view each finding not as a conclusion, but as a stepping stone to new questions and explorations.
-
 :::
