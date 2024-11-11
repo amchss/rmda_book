@@ -3,6 +3,7 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
+
 # Epidemiological Measures
 
 ## Intoduction
@@ -22,130 +23,120 @@ Throughout this chapter, we will introduce these epidemiological measures and de
 ## Measures of Disease Occurance
 
 ::: {style="text-align:justify"}
-
 In epidemiology, understanding disease occurrence is fundamental to assessing health outcomes in populations. Three key measures—Risk, Incidence Rate, and Prevalence—offer distinct insights into the frequency and impact of health conditions within a group. Each measure is used based on specific research questions and population characteristics:
-
 :::
 
 ### Risk (Incidence Proportion)
 
 ::: {style="text-align:justify"}
-
 Risk, or incidence proportion, quantifies the probability that an initially disease-free individual will develop a disease over a specified time period. It is commonly used in studies with defined time frames and stable populations.
-
 :::
 
 ### Incidence Rate
 
 ::: {style="text-align:justify"}
-
 Incidence rate, often referred to as the person-time incidence rate, accounts for variations in follow-up time by measuring the rate at which new cases of a disease occur in a population per unit of person-time. This measure adjusts for dynamic populations where individuals may join or leave during the study.
-
 :::
 
 ### Prevalence
 
 ::: {style="text-align:justify"}
-
 Prevalence assesses the proportion of individuals within a population who have a specific disease at a particular point (point prevalence) or over a period (period prevalence). Unlike incidence, prevalence includes both new and pre-existing cases, offering a snapshot of the disease burden.
 
 For a more in-depth discussion of these epidemiological measures, please refer to the recommended paper [(KJ Jager et al., 2007)](https://www.kidney-international.org/action/showPdf?pii=S0085-2538%2815%2952672-0) on understanding and applying disease occurrence metrics. This resource provides a thorough explanation of the definitions, and applications for each measure in various research contexts.
-
 :::
 
 ## Measures of Disease Occurance using R
 
 In epidemiology, understanding how frequently a disease occurs within a population is fundamental to assessing the burden of the disease, identifying risk factors, and implementing preventive measures. This session will cover the key measures used to quantify disease occurrence, using practical examples and R code to illustrate each concept. The focus will be on practical implementation, similar to the approach used in [R for Epidemiology](https://www.r4epi.com/) by Brad Cannell, ensuring that you can easily apply these techniques in real-world research settings.
 
-
 **Study Description**
 
 This study followed 10 participants over a period of 13 months, with monthly follow-up visits. The main goal was to track the progression of their health status, specifically looking at four possible states:
 
-1. **Pre-follow-up**: Before the participant was at risk (baseline state).
+1.  **Pre-follow-up**: Before the participant was at risk (baseline state).
 
-2. **At Risk:** The participant was healthy but at risk of developing the disease.
+2.  **At Risk:** The participant was healthy but at risk of developing the disease.
 
-3. **Diseased:** The participant had developed the disease during the follow-up period.
+3.  **Diseased:** The participant had developed the disease during the follow-up period.
 
-4. **Deceased:** The participant had passed away.
+4.  **Deceased:** The participant had passed away.
 
 Here's a description of each participant in the study:
 
 **1. Participant 1:**
 
-- Already had the disease before the study started.
+-   Already had the disease before the study started.
 
 **Participant 2:**
 
-- Healthy at the start.
+-   Healthy at the start.
 
-- At risk for 2 months, then developed the disease in the third month.
+-   At risk for 2 months, then developed the disease in the third month.
 
-- Passed away in the sixth month.
+-   Passed away in the sixth month.
 
 **Participant 3:**
 
-- Healthy at the start.
+-   Healthy at the start.
 
-- At risk for 4 months, then developed the disease in the fifth month.
+-   At risk for 4 months, then developed the disease in the fifth month.
 
-- Stayed diseased for the rest of the study period.
-
+-   Stayed diseased for the rest of the study period.
 
 **Participant 4:**
 
-- Healthy at the start.
+-   Healthy at the start.
 
-- At risk for 5 months, then developed the disease in the sixth month.
+-   At risk for 5 months, then developed the disease in the sixth month.
 
-- Remained diseased until the end of the study.
+-   Remained diseased until the end of the study.
 
 **Participant 5:**
 
-- Healthy at the start.
+-   Healthy at the start.
 
-- At risk for 7 months, then developed the disease in the eighth month.
+-   At risk for 7 months, then developed the disease in the eighth month.
 
-- Stayed diseased for the rest of the study.
+-   Stayed diseased for the rest of the study.
 
 **Participant 6:**
 
-- Healthy at the start.
+-   Healthy at the start.
 
-- At risk for 8 months, then developed the disease in the ninth month.
+-   At risk for 8 months, then developed the disease in the ninth month.
 
-- Passed away shortly after in the eleventh month.
+-   Passed away shortly after in the eleventh month.
 
 **Participant 7:**
 
-- Healthy at the start.
+-   Healthy at the start.
 
-- At risk for 9 months and never developed the disease.
+-   At risk for 9 months and never developed the disease.
 
-- Passed away in the tenth month.
+-   Passed away in the tenth month.
 
 **Participant 8:**
 
-- Healthy at the start.
+-   Healthy at the start.
 
-- At risk for 5 months and never developed the disease.
+-   At risk for 5 months and never developed the disease.
 
-- Passed away in the sixth month.
+-   Passed away in the sixth month.
 
 **Participant 9:**
 
-- Healthy at the start.
+-   Healthy at the start.
 
-- At risk for the entire study and never developed the disease or passed away.
+-   At risk for the entire study and never developed the disease or passed away.
 
 **Participant 10:**
 
-- Similar to Participant 9:
+-   Similar to Participant 9:
 
-- Healthy at the start.
+-   Healthy at the start.
 
-- At risk for the entire study without developing the disease or passing away.
+-   At risk for the entire study without developing the disease or passing away.
 
 ```{r}
 #| echo: false
@@ -243,71 +234,20 @@ ggplot(pop_10_wide) +
   labs(title = "Graphical Representation of the Diseases Status of Participants in each Month")
 ```
 
-### Calculating Prevalence with R
-
-In this example, we conducted a cross-sectional study at the 3-month mark to determine the prevalence of the disease among the 10 participants. Prevalence measures the proportion of individuals in the population who have the disease at a specific point in time. It helps us understand how widespread the disease is within the study population.
-
-**Step 1: Filter Data for the Third Month**
-
-Using the R code below, we first filter the data to include only records from the third month.
-
-```{r}
-# Load necessary packages
-pacman::p_load(tidyverse)
-
-# Filter data for the third month
-month3 <- pop_10 |> 
-  filter(month == 3)
-
-```
-
-**Step 2: Calculate Disease Prevalence**
-
-Next, we count the number of participants in each health status category and compute the prevalence of the disease. 
-
-```{r}
-# Count status categories and calculate prevalence
-prevalence <- month3 |> 
-  count(status) |> 
-  mutate(prevalence = n / sum(n))
-
-
-prevalence
-```
-
-Interpretation: The table output shows the proportion of participants in each status category (e.g., "At Risk," "Diseased," "Deceased") at the third month. The prevalence of the disease is the proportion of participants classified as "Diseased".
-
-For this example, the prevalence of the disease in the third month is  `r month3 |> count(status) |> mutate(prevalence = n / sum(n)) |> filter(status == "Diseased") |> pull(prevalence)`  (or 20%), meaning that 2 out of the 10 participants were diseased at the time of the survey.
-
-
-**Step 3: Calculating the 95% Confidence Interval**
-
-Since the sample size is small (n = 10), we also want to calculate a 95% confidence interval for the estimated prevalence. This helps us understand the precision of our estimate. In R, we use the prop.test() function, which performs a test for proportions and provides the confidence interval.
-
-```{r}
-# Calculate the 95% confidence interval for prevalence
-
-prop_test <- prop.test(x = 2, n = 10)
-
-prop_test$conf.int
-
-```
-
-**Interpretation of the Confidence Interval**
-
-The 95% confidence interval for the disease prevalence is (0.035, 0.558). This interval suggests that the true prevalence of the disease in the population lies somewhere between 3.5% and 55.8%. The interval is quite wide due to the small sample size, indicating a higher level of uncertainty in our estimate.
 
 ### Calculating Incidence Proportion with R
 
-The Incidence Proportion (also known as Risk or Cumulative Incidence) measures the proportion of individuals who develop a disease during a specified time period. 
- 
+::: {style="text-align:justify"}
+
+The Incidence Proportion (also known as Risk or Cumulative Incidence) measures the proportion of individuals who develop a disease during a specified time period.
+
 Applying this to Our Example
 
 In your dataset:
 
-- We need to count the participants who developed the disease during the follow-up period.
+-   We need to count the participants who developed the disease during the follow-up period.
 
-- We exclude participants who already had the disease before the follow-up (like Participant 1) because they were not initially at risk.
+-   We exclude participants who already had the disease before the follow-up (like Participant 1) because they were not initially at risk.
 
 **Step 1: Determine the Number of Participants at Risk**
 
@@ -360,13 +300,9 @@ incidence_number / pop_at_risk
 
 The incidence proportion is 0.556, or 55.6%. This indicates that approximately 55.6% of the at-risk participants developed the disease during the follow-up period.
 
-
-
 **Step 4: Calculate the 95% Confidence Interval**
 
 To assess the precision of our estimate, we calculate a 95% confidence interval for the incidence proportion using the prop.test() function in R
-
-
 
 ```{r}
 #| warning: false
@@ -378,7 +314,11 @@ prop_test$conf.int
 
 The 95% confidence interval for the incidence proportion is (22.7%, 84.7%). This wide interval reflects the uncertainty due to the small sample size. It suggests that the true incidence proportion in the population could be as low as 22.7% or as high as 84.7%.
 
+:::
+
 ### Calculating Incidence Rate with R
+
+::: {style="text-align:justify"}
 
 The Incidence Rate is another measure of disease occurrence that accounts for the varying amount of time each participant contributes to the study. Instead of simply dividing by the total number of at-risk participants, we use the person-time contributed by each individual as the denominator. This approach is particularly useful when participants have different follow-up times, such as when someone drops out of the study early.
 
@@ -388,11 +328,11 @@ To calculate the incidence rate, we first need to determine the person-time cont
 
 In our example, we need to:
 
-- Exclude participants who were already diseased at the start (e.g., Participant 1).
+-   Exclude participants who were already diseased at the start (e.g., Participant 1).
 
-- Exclude follow-up time after the study period (e.g., after month 12).
+-   Exclude follow-up time after the study period (e.g., after month 12).
 
-- Count only the time when the participants were at risk (status = "At Risk").
+-   Count only the time when the participants were at risk (status = "At Risk").
 
 ```{r}
 person_month <- pop_10 |> 
@@ -431,9 +371,9 @@ The total follow-up time contributed by all participants is 64 person-months, wh
 
 With the total person-time and the number of new cases (incidence number) from earlier steps, we can now calculate the incidence rate.
 
-- Incidence Rate per Month: This measures the rate of new cases per person-month of follow-up.
+-   Incidence Rate per Month: This measures the rate of new cases per person-month of follow-up.
 
-- Incidence Rate per Year: This measures the rate of new cases per person-year of follow-up.
+-   Incidence Rate per Year: This measures the rate of new cases per person-year of follow-up.
 
 ```{r}
 # Calculate incidence rates
@@ -454,20 +394,84 @@ incidence_per_year
 
 **Interpretation**
 
-- The incidence rate per month is 0.078, meaning there are about 7.8 new cases per 100 person-months of follow-up.
+-   The incidence rate per month is 0.078, meaning there are about 7.8 new cases per 100 person-months of follow-up.
 
-- The incidence rate per year is 0.938, indicating that there are about 0.94 new cases per person-year of follow-up.
-
+-   The incidence rate per year is 0.938, indicating that there are about 0.94 new cases per person-year of follow-up.
 
 We are not discussing how to calculate the confidence interval for the incidence rate in this section, as it requires a deeper understanding.
 
+:::
+
+### Calculating Prevalence with R
+
+::: {style="text-align:justify"}
+
+In this example, we conducted a cross-sectional study at the 3-month mark to determine the prevalence of the disease among the 10 participants. Prevalence measures the proportion of individuals in the population who have the disease at a specific point in time. It helps us understand how widespread the disease is within the study population.
+
+**Step 1: Filter Data for the Third Month**
+
+Using the R code below, we first filter the data to include only records from the third month.
+
+```{r}
+# Load necessary packages
+pacman::p_load(tidyverse)
+
+# Filter data for the third month
+month3 <- pop_10 |> 
+  filter(month == 3)
+
+```
+
+**Step 2: Calculate Disease Prevalence**
+
+Next, we count the number of participants in each health status category and compute the prevalence of the disease.
+
+```{r}
+# Count status categories and calculate prevalence
+prevalence <- month3 |> 
+  count(status) |> 
+  mutate(prevalence = n / sum(n))
+
+
+prevalence
+```
+
+Interpretation: The table output shows the proportion of participants in each status category (e.g., "At Risk," "Diseased," "Deceased") at the third month. The prevalence of the disease is the proportion of participants classified as "Diseased".
+
+For this example, the prevalence of the disease in the third month is `r month3 |> count(status) |> mutate(prevalence = n / sum(n)) |> filter(status == "Diseased") |> pull(prevalence)` (or 20%), meaning that 2 out of the 10 participants were diseased at the time of the survey.
+
+**Step 3: Calculating the 95% Confidence Interval**
+
+Since the sample size is small (n = 10), we also want to calculate a 95% confidence interval for the estimated prevalence. This helps us understand the precision of our estimate. In R, we use the prop.test() function, which performs a test for proportions and provides the confidence interval.
+
+```{r}
+# Calculate the 95% confidence interval for prevalence
+
+prop_test <- prop.test(x = 2, n = 10)
+
+prop_test$conf.int
+
+```
+
+**Interpretation of the Confidence Interval**
+
+The 95% confidence interval for the disease prevalence is (0.035, 0.558). This interval suggests that the true prevalence of the disease in the population lies somewhere between 3.5% and 55.8%. The interval is quite wide due to the small sample size, indicating a higher level of uncertainty in our estimate.
+
+:::
+
 ## Odds: A Quick Overview
+
+::: {style="text-align:justify"}
 
 Odds is an important concept in epidemiology, commonly used in the calculation of measures like odds ratios to assess the strength of associations between exposures and disease, although it is not directly classified as a measure of disease occurrence.
 
 Before we move on to discussing measures of association, it is essential to first understand the concept of odds, as it forms the foundation for some of the most commonly used statistical methods in epidemiological research, including the calculation of odds ratios and other association measures.
 
+:::
+
 ### What is Odds?
+
+::: {style="text-align:justify"}
 
 In simple terms, odds expresses the likelihood of an event occurring relative to the likelihood of it not occurring. It is a ratio of the probability of the event happening to the probability of the event not happening. Mathematically, odds can be calculated as:
 
@@ -479,13 +483,15 @@ Mathematically, this can be written as:
 
 $$\text{Odds} = \frac{\text{Number of Events}}{\text{Number of Non-Events}}$$
 
-
 For example, if 5 people develop a disease (event) and 95 people do not (non-event), the odds of the disease occurring are:
 
 $$\text{Odds} = \frac{5}{95}$$
 
+:::
 
 ### Prevalence Odds (Optional Reading)
+
+::: {style="text-align:justify"}
 
 Prevalence odds is used to describe the odds of having a disease at a particular point in time, typically in a cross-sectional study. It compares the odds of having the disease to the odds of not having it.
 
@@ -513,3 +519,303 @@ prevalence_odds <- 0.2 /  (1 - 0.2)
 prevalence_odds
 ```
 
+:::
+
+## Measures of Association in Epidemiology using R
+
+::: {style="text-align:justify"}
+
+A fundamental task in epidemiology is to measure the strength of associations between risk factors—often termed exposures—and health outcomes. The term "exposure" broadly refers to any variable whose association with an outcome is under investigation. In practice, when studying these associations, we often compare conditions within a population of interest. For example, we might examine whether the prevalence of diabetes varies by state of residence. In this context, diabetes would be the outcome, while state of residence would serve as the exposure. Individuals experiencing the exposure are typically referred to as the exposed group, or simply the exposed. This framework helps clarify the roles of different variables as we seek to understand their relationship to health outcomes.
+
+For a deeper understanding of measures of association, refer to this vignnete by [Mark Stevenson, 2024](https://cran.r-project.org/web/packages/epiR/vignettes/epiR_measures_of_association.html).
+
+:::
+
+### Calculating measures of association using R
+
+::: {style="text-align:justify"}
+
+We are using `epir` package for this session.
+
+```{r}
+# Install and Load epir package
+
+pacman::p_load(epiR, tidyverse, here)
+```
+
+#### **Direct entry of 2 by 2 table contingency table cell frequencies** {.unnumbered}
+
+Firstly, a 2 × 2 table can be created by listing the contingency table cell frequencies in vector format. Take the following example.
+
+The following table is the outcome of a cross sectional study.
+
+|               | Outcome-Positive | Outcome-Negative | Total |
+|---------------|------------------|------------------|-------|
+| **Exposed**   | 13               | 2163             | 2176  |
+| **Unexposed** | 5                | 3349             | 3354  |
+| **Total**     | 18               | 5512             | 5530  |
+
+
+We could create a 2 by 2 table for this data in R
+
+```{r}
+
+dat <- c(13, 2163, 5, 3349)
+
+# View the data in the usual 2 by 2 table format:
+matrix(dat, 
+       nrow = 2, 
+       byrow = TRUE)
+
+```
+
+
+To calculate the outcome prevalence ratio, odds ratio, attributable prevalence in the exposed, attributable fraction in the exposed, attributable prevalence in the population, and attributable fraction in the population, use the function `epi.2by2`. It’s important to note that we refer to these as the prevalence risk ratio and prevalence odds ratio, rather than the incidence risk ratio and incidence odds ratio, because we are working with data from a cross-sectional study, where disease frequency is measured as prevalence rather than incidence.
+
+```{r}
+epi.2by2(dat = dat, 
+         method = "cross.sectional", 
+         units = 100, 
+         conf.level = 0.95, 
+         outcome = "as.columns")
+```
+
+The code provided uses the epi.2by2 function to calculate various measures of association and effect for cross-sectional data. Here’s a breakdown of each argument:
+
+- `dat`: This is the data input, which can be a vector of length four, a table, or a grouped data frame (from the dplyr package). It should contain the individual cell frequencies for the 2x2 table.
+
+- `method`: Specifies the study design used for the data. In this case, "`cross.sectional`" indicates that the analysis is based on cross-sectional study data. Other options include "`cohort.count`", "`cohort.time`", and "`case.control`", which would be used for cohort studies or case-control studies, respectively. The function will compute the appropriate measures of association and effect based on this specification.
+
+
+- `conf.level`: This specifies the confidence level for the confidence intervals in the output. The value should be between 0 and 1, where 0.95 corresponds to a 95% confidence interval.
+
+- `units`: This is a multiplier for the prevalence and incidence estimates (risk or rate). It is used to adjust the magnitude of the output estimates, typically for scaling purposes, like reporting in per 100 or per 1000 individuals.
+
+
+- `outcome`: A character string that defines how the outcome variable is represented in the contingency table. The options are:
+
+  + "`as.columns`": The outcome variable is placed in the columns of the table.
+  + "`as.rows`": The outcome variable is placed in the rows of the table.
+  
+  
+Need a hand to get the correct wording to explain each of the listed measures of association and measures of effect? Set interpret = TRUE in epi.2by2:
+
+```{r}
+epi.2by2(dat = dat, 
+         method = "cross.sectional", 
+         units = 100, 
+         conf.level = 0.95, 
+         outcome = "as.columns", 
+         interpret = T)
+```
+
+#### **Data frame with one row per observation** {.unnumbered}
+
+In epidemiological studies, particularly those investigating birth outcomes, it's common to have data structured in a way that each row represents a unique observation. In the case of the low birth weight dataset, this structure would typically contain one row per individual (or birth), with variables representing various factors, such as birth weight, maternal characteristics, and other risk factors that could affect birth outcomes.
+
+To find the measures of association from a dataset, we are using the low birth weight dataset as an example.
+
+```{r}
+#| warning: false
+#| message: false
+
+
+df <- read_csv(here("data", "low_birth_weight.csv"))
+```
+
+creating 2 by 2 table
+
+```{r}
+dat <- table(df$low, df$smoke)
+
+dat
+```
+
+Here we can see that the outcome is in rows.
+
+Now compute the odds ratio (we are assuming this is a cohort study) for smoking and delivery of a low birth weight baby:
+
+```{r}
+ epi.2by2(dat = dat, 
+          method = "cohort.count",
+          conf.level = 0.95,
+          units = 100, 
+          interpret = FALSE, 
+          outcome = "as.rows")
+```
+
+You could try `interpret = TRUE` to get the interpretation of these results.
+
+:::
+
+## Receiver Operating Characteristic (ROC) curve 
+
+::: {style="text-align:justify"}
+
+Evaluating diagnostic tests is crucial in modern medicine for both confirming the presence of a disease and ruling it out in healthy individuals. For tests with a simple positive/negative result, measures like sensitivity and specificity are commonly used to assess accuracy. However, when test results are reported on an ordinal or continuous scale (e.g., from "definitely normal" to "definitely abnormal"), sensitivity and specificity vary across different thresholds. The ROC (Receiver Operating Characteristic) curve is a plot of sensitivity against 1-specificity across these thresholds, and the Area Under the Curve (AUC) provides a summary measure of the test's accuracy. The ROC curve helps in identifying the optimal cutoff values and comparing different diagnostic tests. It is widely applied in clinical research, particularly for assessing biomarkers and imaging tests, and plays an important role in predicting adverse outcomes based on patient risk profiles.
+
+For a foundational understanding of ROC curves, refer to the paper "[Receiver Operating Characteristic (ROC) Curve Analysis for Medical Diagnostic Test Evaluation](https://pmc.ncbi.nlm.nih.gov/articles/PMC3755824/pdf/cjim-4-627.pdf)" by Hajian-Tilaki K, et al., 2013. This resource provides a comprehensive overview of the concepts involved. 
+
+:::
+
+### ROC using R
+
+::: {style="text-align:justify"}
+
+In this session, we will demonstrate how to create ROC curves using the `plotROC` package in R. As a first step install and load `plotROC` and `shiny` package in R.
+
+```{r}
+# Install and load necessary packages
+
+pacman::p_load(plotROC, tidyverse, here, shiny)
+
+df <- read_rds(here("data", "roc_demo_df.rds"))
+```
+
+#### **My First ROC Curve** {.unnumbered}
+
+We could follow the framework of ggplot using `plotROC` package. The demo dataset consists of four columns and represents data related to diagnostic testing, where different biomarkers are used to distinguish between diseased and healthy subjects. Below is a description of each variable:
+
+1. `disease_status_numeric`: This variable is a numeric representation of the disease status. It contains binary values:
+  + 1: Represents subjects who are ill (diseased).
+  + 0: Represents subjects who are healthy.
+
+2. `disease_status_str`: This variable is a string (character) representation of the disease status. It contains two categories:
+  + "Ill": Indicates the subject is diseased.
+  + "Healthy": Indicates the subject is not diseased.
+  
+3. `biomarker`: This variable indicates the type of biomarker being evaluated. It has two unique values:
+  + "biomarker1": Refers to the first biomarker under analysis.
+  + "biomarker2": Refers to the second biomarker under analysis.
+
+4. `value`: This column contains the numeric measurements of the biomarkers for each subject. These values are continuous and reflect the level or concentration of the biomarker in the sample.
+
+For creating ROC curve for the first biomarker, first filter out the data for biomarker1.
+
+```{r}
+biomarker1 <- df |> 
+  filter(biomarker == "biomarker1")
+```
+
+Now create your first ROC curve
+
+```{r}
+
+basicplot <- ggplot(data = biomarker1,
+       aes(d = disease_status_numeric,
+           m = value)) +
+  geom_roc()
+
+basicplot
+
+```
+
+In this example, we use the `ggplot()` function from the `ggplot2` package to define the plot's aesthetics, and then add an ROC curve layer using the `geom_roc()` function from the `plotROC` package. The `aes()` function specifies the aesthetics for the ROC curve:
+
+- `d`: Represents the disease status of the subjects (in this case, disease_status_numeric), where 0 typically indicates healthy (disease-free) and 1 indicates ill (diseased).
+
+- `m`: Represents the biomarker measurement (value), which serves as the marker for predicting disease status.
+
+The `geom_roc()` function creates the ROC curve layer. It internally relies on stat_roc for the computation of the empirical ROC curve based on the provided disease status (d) and marker (m) values. 
+
+**Note**
+
+If the disease status is not coded as 0 and 1, stat_roc will assume the lowest value represents the disease-free status, and a warning may be issued.
+
+The disease status aesthetic can be specified as a string or factor, but with a warning.
+
+```{r}
+ggplot(data = biomarker1,
+       aes(d = disease_status_str,
+           m = value)) +
+  geom_roc()
+```
+
+
+The `geom_roc` layer includes the ROC curve line combined with points and labels to display the values of the biomarker at the different cutpoints. It accepts the argument `n.cuts` to define the number of cutpoints to display along the curve. Labels can be suppressed by using `n.cuts = 0` or `labels = FALSE`. The size of the labels and the number of significant digits can be adjusted with `labelsize` and `labelround`, respectively.
+
+```{r}
+ ggplot(data = biomarker1,
+       aes(d = disease_status_numeric,
+           m = value)) + 
+  geom_roc(n.cuts = 5, 
+           labelsize = 5, 
+           labelround = 2)
+```
+
+try `style_roc` as the next layer
+
+```{r}
+ ggplot(data = biomarker1,
+       aes(d = disease_status_numeric,
+           m = value)) + 
+  geom_roc(n.cuts = 5, 
+           labelsize = 5, 
+           labelround = 2) +
+  style_roc()
+```
+
+If you want to change the X axis name, then
+
+
+```{r}
+ ggplot(data = biomarker1,
+       aes(d = disease_status_numeric,
+           m = value)) + 
+  geom_roc(n.cuts = 5, 
+           labelsize = 5, 
+           labelround = 2) +
+  style_roc(xlab = "1 - Specificity")
+```
+
+
+#### **Confidence regions and the Rocci Geom** {.unnumbered}
+
+It is common to compute confidence regions for points on the ROC curve using the Clopper and Pearson (1934) exact method. This is implemented in the stat_rocci and displayed as a `geom_rocci` layer.
+
+```{r}
+basicplot +
+  geom_rocci()
+```
+
+
+#### **Multiple ROC curves** {.unnumbered}
+
+When comparing multiple biomarkers within the same plot, we can use the color aesthetic within aes() to differentiate the ROC curves for each biomarker. This allows us to visualize and compare the diagnostic performance of multiple biomarkers simultaneously. In the example below, the color argument is set to the biomarker variable, so each ROC curve is colored according to the biomarker type:
+
+
+```{r}
+ ggplot(data = df,
+       aes(d = disease_status_numeric,
+           m = value,
+           color = biomarker)) + 
+  geom_roc() +
+  style_roc()
+```
+
+#### **Area Under the Curve (AUC) tables
+
+We could calculate AUC using the same package.
+
+```{r}
+
+bybiomarker <-  ggplot(data = df,
+       aes(d = disease_status_numeric,
+           m = value,
+           group = biomarker)) + 
+  geom_roc() +
+  facet_wrap(~biomarker)
+
+plot
+```
+
+To find AUC
+
+```{r}
+calc_auc(bybiomarker)
+```
+
+
+To learn more about how to use the plotROC package effectively, I recommend exploring the package's [vignette](https://cran.r-project.org/web/packages/plotROC/vignettes/examples.html). It provides a comprehensive guide on creating and customizing ROC plots in R, including advanced features like plotting multiple ROC curves, customizing aesthetics, and calculating AUC. 
+
+:::
