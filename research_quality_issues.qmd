@@ -892,13 +892,13 @@ All data can be stored in one place, making it easier for researchers to manage 
 
 -   `Visualizations`: Use graphs (e.g., histograms, box plots) to explore data distributions, trends, and correlations. Visual checks can often reveal anomalies or issues that require attention.
 
-\-`Descriptive Statistics`: Calculate summary statistics (mean, median, standard deviation) to get a sense of the central tendency and variability in the data.
+- `Descriptive Statistics`: Calculate summary statistics (mean, median, standard deviation) to get a sense of the central tendency and variability in the data.
 
-\-`Data Segmentation`: Check for consistent patterns or discrepancies across subgroups to identify potential biases in data.
+- `Data Segmentation`: Check for consistent patterns or discrepancies across subgroups to identify potential biases in data.
 
 **Risks to Address**:
 
-\-`Overfitting`: During EDA, there's a risk of "cherry-picking" patterns that seem significant, even if they aren't. Avoid jumping to conclusions based on visualizations without statistical testing.
+- `Overfitting`: During EDA, there's a risk of "cherry-picking" patterns that seem significant, even if they aren't. Avoid jumping to conclusions based on visualizations without statistical testing.
 
 -   EDA helps in identifying and correcting outliers, misclassifications, or other random errors before deeper analysis.
 
