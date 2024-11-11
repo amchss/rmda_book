@@ -6,7 +6,7 @@ editor_options:
 
 # Epidemiological Measures
 
-## Intoduction
+## Introduction
 
 ::: {style="text-align:justify"}
 Epidemiology is broadly defined as the study of the occurrence and distribution of health-related states or events within specific populations, as well as the determinants influencing these states. A core goal of epidemiology is to apply this knowledge to prevent and control health issues, improving population well-being.
